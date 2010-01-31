@@ -306,7 +306,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {519, 7020}}";
 			sepNavSelRange = "{3708, 0}";
-			sepNavVisRange = "{3466, 455}";
+			sepNavVisRange = "{3466, 456}";
 		};
 	};
 	FD78A50F111638E6008B87CB /* OSC-receive.c */ = {

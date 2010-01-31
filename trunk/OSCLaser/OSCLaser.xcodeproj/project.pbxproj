@@ -19,6 +19,7 @@
 		289233A70DB2D0840083E9F9 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A50DB2D0840083E9F9 /* MainView.m */; };
 		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
+		FD0CF9E311163EC000DF5C0F /* OSCConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF9E211163EC000DF5C0F /* OSCConfig.m */; };
 		FD78A516111638E6008B87CB /* NetworkReturnAddress.c in Sources */ = {isa = PBXBuildFile; fileRef = FD78A4FD111638E6008B87CB /* NetworkReturnAddress.c */; };
 		FD78A517111638E6008B87CB /* OSC-address-space.c in Sources */ = {isa = PBXBuildFile; fileRef = FD78A500111638E6008B87CB /* OSC-address-space.c */; };
 		FD78A518111638E6008B87CB /* OSC-callbacklist.c in Sources */ = {isa = PBXBuildFile; fileRef = FD78A502111638E6008B87CB /* OSC-callbacklist.c */; };
@@ -57,6 +58,8 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* OSCLaser_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCLaser_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* OSCLaser-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OSCLaser-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		FD0CF9E111163EC000DF5C0F /* OSCConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCConfig.h; sourceTree = "<group>"; };
+		FD0CF9E211163EC000DF5C0F /* OSCConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCConfig.m; sourceTree = "<group>"; };
 		FD78A4FD111638E6008B87CB /* NetworkReturnAddress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NetworkReturnAddress.c; sourceTree = "<group>"; };
 		FD78A4FE111638E6008B87CB /* NetworkReturnAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkReturnAddress.h; sourceTree = "<group>"; };
 		FD78A4FF111638E6008B87CB /* NetworkUDP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUDP.h; sourceTree = "<group>"; };
@@ -225,6 +228,8 @@
 				FD78A513111638E6008B87CB /* OSC-system-dependent.c */,
 				FD78A514111638E6008B87CB /* OSC-timetag.c */,
 				FD78A515111638E6008B87CB /* OSC-timetag.h */,
+				FD0CF9E111163EC000DF5C0F /* OSCConfig.h */,
+				FD0CF9E211163EC000DF5C0F /* OSCConfig.m */,
 			);
 			path = OSCKit;
 			sourceTree = "<group>";
@@ -310,6 +315,7 @@
 				FD78A520111638E6008B87CB /* OSC-timetag.c in Sources */,
 				FD78A5231116390E008B87CB /* OSCPort.m in Sources */,
 				FD78A5241116390E008B87CB /* OSCInPort.m in Sources */,
+				FD0CF9E311163EC000DF5C0F /* OSCConfig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
