@@ -8,8 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MainView : UIView {
+@class OSCPort;
 
+@interface MainView : UIView {
+	
 }
 
 @end

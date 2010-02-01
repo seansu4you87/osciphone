@@ -8,13 +8,20 @@
 
 #import <Foundation/Foundation.h>
 
+@class OSCPort;
 
 @interface OSCConfig : NSObject {
 	int port;
 	NSString * ip;
+	OSCPort * oscPort;
 }
 
 - (id) initFromPrefs;
+
+- (BOOL) portIsConfigured;
+- (BOOL) ipIsConfigured;
+- (BOOL) isConfigured;
+- (void) updateOSCPort;
 
 - (void) setPort:(int)thePort;
 - (void) setIP:(NSString*)theIP;
@@ -23,5 +30,6 @@
 
 @property(nonatomic, readonly) int port;
 @property(nonatomic, readonly) NSString * ip;
+@property(nonatomic, readonly) OSCPort * oscPort;
 
 @end
