@@ -20,6 +20,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         collection = [[SharedCollection alloc] init];
+		currentlyManipulated = [[NSMutableSet setWithCapacity:0] retain];
     }
     return self;
 }
@@ -93,13 +94,14 @@
 
 - (void)dealloc {
 	[collection release];
+	[currentlyManipulated release];
     [super dealloc];
 }
 
 #pragma mark touch responders
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	NSLog(@"stopped tracking %d touches", [touches count]);
+	//NSLog(@"stopped tracking %d touches", [touches count]);
 	if([touches count] == 1)
 	{
 		UITouch * touch = [touches anyObject];
@@ -109,35 +111,46 @@
 		}
 	}
 	
-	if([currentlyManipulated stopTrackingTouches:touches])
+	NSMutableSet * toTrash = [NSMutableSet setWithCapacity:0];
+	for(SharedObject * cur in currentlyManipulated)
 	{
-		currentlyManipulated = nil;
+		if([cur stopTrackingTouches:touches])
+		{
+			[toTrash addObject:cur];
+		}
 	}
+	
+	for(SharedObject * cur in toTrash)
+	{
+		[currentlyManipulated removeObject:cur];
+	}
+	
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 { 
-	NSLog(@"%d touches moving", [touches count]);
-	[currentlyManipulated updateForTouches:touches];
+	//NSLog(@"%d touches moving", [touches count]);
+	for(SharedObject * cur in currentlyManipulated)
+	{
+		[cur updateForTouches:touches];
+	}
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	NSLog(@"%d touches beginning", [touches count]);
+	//NSLog(@"%d touches beginning", [touches count]);
 
 	NSArray * allObjects = [collection objects];
 	BOOL anyRelevant = NO;
 	for(SharedObject * curObject in allObjects)
 	{
-		if(!anyRelevant)
-		{
 			if([curObject touchesAreRelevant:touches])
 			{
-				currentlyManipulated = curObject;
-				[currentlyManipulated trackTouches:touches];
+				[currentlyManipulated addObject:curObject];
+				[curObject trackTouches:touches];
 				anyRelevant = YES;
 		   }
-		}
+		
 	}
 	
    if(anyRelevant)
@@ -156,8 +169,8 @@
 			
 			LineObject * newLine = [[LineObject alloc] initOnView:self.view withStartPoint:[startTouch locationInView:self.view] endPoint:[theTouch locationInView:self.view]];
 			[collection addSharedObject:[newLine autorelease]];
-			currentlyManipulated = newLine;
-			[currentlyManipulated trackTouches:[NSMutableSet setWithObjects:theTouch, startTouch, nil]];
+			[currentlyManipulated addObject:newLine];
+			[newLine trackTouches:[NSMutableSet setWithObjects:theTouch, startTouch, nil]];
 		}
 	}else if([touches count] == 2)
 	{
@@ -171,8 +184,8 @@
 		
 		LineObject * newLine = [[LineObject alloc] initOnView:self.view withStartPoint:[firstTouch locationInView:self.view] endPoint:[secondTouch locationInView:self.view]];
 		[collection addSharedObject:[newLine autorelease]];
-		currentlyManipulated = newLine;
-		[currentlyManipulated trackTouches:touches];
+		[currentlyManipulated addObject: newLine];
+		[newLine trackTouches:touches];
 	}
 }
 

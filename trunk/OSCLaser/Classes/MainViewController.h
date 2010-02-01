@@ -13,7 +13,7 @@
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
 	SharedCollection * collection;
-	SharedObject * currentlyManipulated;
+	NSMutableSet * currentlyManipulated;
 	
 	UITouch * startTouch;
 }
