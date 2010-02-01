@@ -20,12 +20,15 @@
 	BOOL startBeingDragged;
 	BOOL endBeingDragged;
 	
-	NSMutableSet * downTouches;
+	//NSMutableSet * downTouches;
+	UITouch * startTouch;
+	UITouch * endTouch;
 }
 
 @property(nonatomic, assign) LineObject * parent;
 @property(nonatomic, assign) float circleRadius;
 @property(nonatomic, readonly) CGPoint localStart, localEnd;
+@property(nonatomic, retain) UITouch *startTouch, *endTouch;
 
 - (id) initWithFrame:(CGRect)frame startPoint:(CGPoint)theLocalStart endPoint:(CGPoint)theLocalEnd radius:(float)theRadius;
 + (LineObjectView*) lineViewOnParentView:(UIView*)parentView withParentStart:(CGPoint)parentStart parentEnd:(CGPoint)parentEnd radius:(float)theRadius;
