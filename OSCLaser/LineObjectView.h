@@ -1,0 +1,30 @@
+//
+//  LineObjectView.h
+//  OSCLaser
+//
+//  Created by Ben Cunningham on 2/1/10.
+//  Copyright 2010 Stanford University. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@class LineObject;
+
+@interface LineObjectView : UIView {
+	LineObject * parent;
+	float circleRadius;
+	
+	CGPoint localStart;
+	CGPoint localEnd;
+}
+
+@property(nonatomic, assign) LineObject * parent;
+@property(nonatomic, assign) float circleRadius;
+
+- (id) initWithFrame:(CGRect)frame startPoint:(CGPoint)theLocalStart endPoint:(CGPoint)theLocalEnd radius:(float)theRadius;
++ (LineObjectView*) lineViewOnParentView:(UIView*)parentView withParentStart:(CGPoint)parentStart parentEnd:(CGPoint)parentEnd radius:(float)theRadius;
+
+- (void) drawCircleAtPoint:(CGPoint)thePoint withRadius:(float)theRadius inContext:(CGContextRef)theContext;
+- (BOOL) touchesAreRelevant:(NSSet*)touches;
+
+@end

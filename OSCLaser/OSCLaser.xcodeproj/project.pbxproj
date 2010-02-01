@@ -37,6 +37,8 @@
 		FD78A5241116390E008B87CB /* OSCInPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FD78A5221116390E008B87CB /* OSCInPort.m */; };
 		FD78A55711163AE4008B87CB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD78A55611163AE4008B87CB /* CFNetwork.framework */; };
 		FD78A55B11163AF7008B87CB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD78A55A11163AF7008B87CB /* CoreFoundation.framework */; };
+		FD8EC1B31116C60400907A48 /* LineObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8EC1B21116C60400907A48 /* LineObject.m */; };
+		FD8EC1C31116C7A100907A48 /* LineObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8EC1C21116C7A100907A48 /* LineObjectView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +99,10 @@
 		FD78A5261116391C008B87CB /* OSCInPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCInPort.h; sourceTree = "<group>"; };
 		FD78A55611163AE4008B87CB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FD78A55A11163AF7008B87CB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		FD8EC1B11116C60400907A48 /* LineObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineObject.h; sourceTree = "<group>"; };
+		FD8EC1B21116C60400907A48 /* LineObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineObject.m; sourceTree = "<group>"; };
+		FD8EC1C11116C7A100907A48 /* LineObjectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineObjectView.h; sourceTree = "<group>"; };
+		FD8EC1C21116C7A100907A48 /* LineObjectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineObjectView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +164,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				FD26DA3D1116C2DA0062DF1F /* SharedObjects */,
 				FD26DA101116B0410062DF1F /* SharedProtocol */,
 				FD78A4FC111638E6008B87CB /* OSCKit */,
 				289233A00DB2D0730083E9F9 /* Main View */,
@@ -212,6 +219,17 @@
 				FD26DA301116B1E50062DF1F /* SharedCollection.m */,
 			);
 			name = SharedProtocol;
+			sourceTree = "<group>";
+		};
+		FD26DA3D1116C2DA0062DF1F /* SharedObjects */ = {
+			isa = PBXGroup;
+			children = (
+				FD8EC1B11116C60400907A48 /* LineObject.h */,
+				FD8EC1B21116C60400907A48 /* LineObject.m */,
+				FD8EC1C11116C7A100907A48 /* LineObjectView.h */,
+				FD8EC1C21116C7A100907A48 /* LineObjectView.m */,
+			);
+			name = SharedObjects;
 			sourceTree = "<group>";
 		};
 		FD78A4FC111638E6008B87CB /* OSCKit */ = {
@@ -336,6 +354,8 @@
 				FD0CF9E311163EC000DF5C0F /* OSCConfig.m in Sources */,
 				FD26DA131116B0760062DF1F /* SharedObject.m in Sources */,
 				FD26DA311116B1E50062DF1F /* SharedCollection.m in Sources */,
+				FD8EC1B31116C60400907A48 /* LineObject.m in Sources */,
+				FD8EC1C31116C7A100907A48 /* LineObjectView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,22 @@
 
 @implementation SharedCollection
 
+- (id) init
+{
+	if(self = [super init])
+	{
+		sharedObjects = [[NSMutableArray array] retain];
+	}
+	
+	return self;
+}
+
+- (void) dealloc
+{
+	[sharedObjects release];
+	[super dealloc];
+}
+
 - (void) sendAddMessageForObject:(SharedObject*)newObject
 {
 	NSString * addAddress = [NSString stringWithFormat:@"/%@/add", [newObject objectName]];
@@ -20,11 +36,16 @@
 	[thePort sendTo:[addAddress UTF8String] types:"i", newObject.objectID];
  }
  
- - (void) addObject:(SharedObject*)newObject
+ - (void) addSharedObject:(SharedObject*)newObject
 {
 	[sharedObjects addObject:newObject];
 	[self sendAddMessageForObject:newObject];
 	[newObject updateAllValues];
+}
+
+- (NSArray*) objects
+{
+	return [NSArray arrayWithArray:sharedObjects];
 }
 
 - (SharedObject*) objectWithID:(int)theID
