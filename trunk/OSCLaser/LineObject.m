@@ -42,6 +42,29 @@
 	return [myView touchesAreRelevant:touches];
 }
 
+- (void) setPointsFromView
+{
+	LineObjectView * myView = (LineObjectView*)objectView;
+	UIView * parentView = myView.superview;
+	
+	CGPoint parentStart = CGPointMake(myView.frame.origin.x + myView.localStart.x, myView.frame.origin.y + myView.localStart.y);
+	CGPoint parentEnd = CGPointMake(myView.frame.origin.x + myView.localEnd.x, myView.frame.origin.y + myView.localEnd.y);
+	
+	float parentWidth = parentView.frame.size.width;
+	float parentHeight = parentView.frame.size.height;
+	
+	startPercentPoint = CGPointMake(parentStart.x/parentWidth, parentStart.y/parentHeight);
+	endPercentPoint = CGPointMake(parentEnd.x/parentWidth, parentEnd.y/parentHeight);
+}
+
+- (void) updateForTouches:(NSSet*)touches
+{
+	LineObjectView * myView = (LineObjectView*)objectView;
+	[myView updateForTouches:touches];
+	[self setPointsFromView];
+	[self updateAllValues];
+}
+
 - (void) updateAllValues
 {
 	NSString * address = [SharedCollection addressForObjectManip:self];

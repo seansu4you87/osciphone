@@ -36,6 +36,11 @@ static int currentID;
 	//this needs to be overridden
 }
 
+- (void) updateForTouches:(NSSet*)touches
+{
+	//this needs to be overridden
+}
+
 + (void) resetIDs
 {
 	currentID = 0;
