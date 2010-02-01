@@ -7,10 +7,13 @@
 //
 
 #import "MainView.h"
+#import "MainViewController.h"
 #import "OSCConfig.h"
 #import "OSCPort.h"
 
 @implementation MainView
+
+@synthesize parent;
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -21,27 +24,26 @@
 
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	
+	if(parent)
+	{
+		[parent touchesBegan:touches withEvent:event];
+	}
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 { 
-	
+	if(parent)
+	{
+		[parent touchesBegan:touches withEvent:event];
+	}
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
-	
-	if([touches count] == 1)
+	if(parent)
 	{
-		UITouch * theTouch = [touches anyObject];
-		CGPoint viewCoord = [theTouch locationInView:self];
-		float xPercent = viewCoord.x/self.frame.size.width;
-		float yPercent = viewCoord.y/self.frame.size.height;
-		[thePort sendTo:[[NSString stringWithFormat:@"/begin1"]UTF8String] types:"ff", xPercent, yPercent];
+		[parent touchesBegan:touches withEvent:event];
 	}
-	
 }
 
 - (void)drawRect:(CGRect)rect {

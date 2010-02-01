@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@class OSCPort;
+@class OSCPort, MainViewController;
 
 @interface MainView : UIView {
-	
+	MainViewController * parent;
 }
+
+@property(nonatomic, assign) MainViewController * parent;
 
 @end

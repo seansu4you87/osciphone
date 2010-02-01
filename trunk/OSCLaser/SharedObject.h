@@ -11,6 +11,7 @@
 
 @interface SharedObject : NSObject {
 	int objectID;
+	UIView * objectView;
 }
 
 + (void) resetIDs;
@@ -18,6 +19,7 @@
 
 - (NSString *) objectName;
 - (void) updateAllValues;
+- (BOOL) touchesAreRelevant:(NSSet*)touches;
 
 @property(nonatomic, readonly) int objectID;
 

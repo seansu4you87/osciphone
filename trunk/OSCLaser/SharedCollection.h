@@ -14,7 +14,8 @@
 	NSMutableArray * sharedObjects;
 }
 
-- (void) addObject:(SharedObject*)newObject;
+- (NSArray*) objects;
+- (void) addSharedObject:(SharedObject*)newObject;
 - (SharedObject*) objectWithID:(int)theID;
 + (NSString*) addressForObjectManip:(SharedObject*)theObject;
 

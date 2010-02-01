@@ -47,4 +47,15 @@ static int currentID;
 	return currentID;
 }
 
+- (BOOL) touchesAreRelevant:(NSSet*)touches
+{
+	return NO;
+}
+
+- (void) dealloc
+{
+	[objectView release];
+	[super dealloc];
+}
+
 @end
