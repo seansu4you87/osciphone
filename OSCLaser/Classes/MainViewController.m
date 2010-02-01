@@ -142,21 +142,40 @@
 
 	NSArray * allObjects = [collection objects];
 	BOOL anyRelevant = NO;
+	
+	//consider prepopulating takenTouches with the contents of all manipulated objects' downTouches field
+	NSMutableSet * takenTouches = [NSMutableSet setWithCapacity:0];
 	for(SharedObject * curObject in allObjects)
 	{
-			if([curObject touchesAreRelevant:touches])
+		NSMutableSet * curRelevantTouches = [curObject relevantTouches:touches];
+		if([curRelevantTouches count] > 0)
+		{
+			NSMutableSet * allowableTouches = [NSMutableSet setWithCapacity:0];
+			for(UITouch * touch in curRelevantTouches)
+			{
+				if(![takenTouches containsObject:touch])
+				{
+					[allowableTouches addObject:touch];
+				}
+			}
+			
+			if([allowableTouches count] > 0)
 			{
 				[currentlyManipulated addObject:curObject];
-				[curObject trackTouches:touches];
+				[curObject trackTouches:allowableTouches];
+				[takenTouches unionSet:allowableTouches];
 				anyRelevant = YES;
-		   }
-		
+			}
+		}
 	}
 	
    if(anyRelevant)
    {
 	   return;
    }
+	
+	NSMutableSet * touchesLeft = [NSMutableSet setWithSet:touches];
+	[touchesLeft minusSet:touch
 	   
 	if([touches count] == 1)
 	{

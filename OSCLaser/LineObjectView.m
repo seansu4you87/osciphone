@@ -96,6 +96,21 @@
 	}
 }
 
+- (NSMutableSet*) relevantTouches:(NSSet*)touches
+{
+	NSMutableSet * result = [NSMutableSet setWithCapacity:0];
+	
+	for(UITouch * touch in touches)
+	{
+		if([self touchIsRelevant:touch])
+		{
+			[result addObject:touch];
+		}
+	}
+	
+	return result;
+}
+
 - (BOOL) stopTrackingTouches:(NSSet*)touches
 {
 	NSMutableArray * toTrash = [NSMutableArray array];
@@ -158,15 +173,7 @@
 
 - (BOOL) touchesAreRelevant:(NSSet*)touches
 {
-	for(UITouch * touch in touches)
-	{
-		if([self touchIsRelevant:touch])
-		{
-			return YES;
-		}
-	}
-	
-	return NO;
+	return [self relevantTouches:touches] > 0;
 }
 
 - (void) readjustFrame
