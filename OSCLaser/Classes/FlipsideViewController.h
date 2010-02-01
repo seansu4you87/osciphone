@@ -11,10 +11,14 @@
 
 @interface FlipsideViewController : UIViewController {
 	id <FlipsideViewControllerDelegate> delegate;
+	IBOutlet UITextField * portTextField;
+	IBOutlet UITextField * ipTextField;
 }
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
 - (IBAction)done;
+- (void)ipChanged;
+- (void)portChanged;
 
 @end
 

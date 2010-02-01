@@ -8,7 +8,7 @@
 
 #import "MainViewController.h"
 #import "MainView.h"
-
+#import "OSCConfig.h"
 
 @implementation MainViewController
 
@@ -21,12 +21,19 @@
 }
 
 
-/*
+
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
- [super viewDidLoad];
+	 [super viewDidLoad];
+	 OSCConfig * theConfig = [OSCConfig sharedConfig];
+	 if(![theConfig isConfigured])
+	 {
+		 UIAlertView * alert = [[UIAlertView alloc] initWithTitle:@"Warning" message:@"You must configure network settings before OSC events will be sent. Please click the info button." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+		 [alert show];
+		 [alert release];
+	 }
  }
- */
+ 
 
 
 /*

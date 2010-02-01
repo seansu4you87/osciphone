@@ -7,31 +7,43 @@
 //
 
 #import "FlipsideViewController.h"
-
+#import "OSCConfig.h"
 
 @implementation FlipsideViewController
 
 @synthesize delegate;
 
-- (id) init {
-	if(self = [super init])
-	{
-		self.title = @"OSC Settings";
-	}
-	
-	return self;
-}
-
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor viewFlipsideBackgroundColor];
-	self.title = @"OSC Settings";
-	
+	OSCConfig * theConfig = [OSCConfig sharedConfig];
+	if([theConfig ipIsConfigured])
+	{
+		ipTextField.text = theConfig.ip;
+	}
+	if([theConfig portIsConfigured])
+	{
+		portTextField.text = [NSString stringWithFormat:@"%d", theConfig.port];
+	}
 }
 
 
 - (IBAction)done {
-	[self.delegate flipsideViewControllerDidFinish:self];	
+	[self ipChanged];
+	[self portChanged];
+	[self.delegate flipsideViewControllerDidFinish:self];
+}
+
+- (void) ipChanged
+{
+	OSCConfig * theConfig = [OSCConfig sharedConfig];
+	[theConfig setIP:ipTextField.text];
+}
+
+- (void) portChanged
+{
+	OSCConfig * theConfig = [OSCConfig sharedConfig];
+	[theConfig setPort:[portTextField.text intValue]];
 }
 
 
