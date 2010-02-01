@@ -24,6 +24,7 @@
 - (BOOL) stopTrackingTouches:(NSSet*)touches;
 - (void) updateForTouches:(NSSet*)touches;
 - (NSMutableSet*) relevantTouches:(NSSet*)touches;
+- (NSMutableSet*) trackedTouches;
 
 @property(nonatomic, readonly) int objectID;
 

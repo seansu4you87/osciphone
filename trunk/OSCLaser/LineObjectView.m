@@ -111,6 +111,11 @@
 	return result;
 }
 
+- (NSMutableSet*) trackedTouches
+{
+	return downTouches;
+}
+
 - (BOOL) stopTrackingTouches:(NSSet*)touches
 {
 	NSMutableArray * toTrash = [NSMutableArray array];

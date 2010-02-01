@@ -145,6 +145,10 @@
 	
 	//consider prepopulating takenTouches with the contents of all manipulated objects' downTouches field
 	NSMutableSet * takenTouches = [NSMutableSet setWithCapacity:0];
+	for(SharedObject * curObject in currentlyManipulated)
+	{
+		[takenTouches unionSet:[curObject trackedTouches]];
+	}
 	for(SharedObject * curObject in allObjects)
 	{
 		NSMutableSet * curRelevantTouches = [curObject relevantTouches:touches];
@@ -169,32 +173,36 @@
 		}
 	}
 	
-   if(anyRelevant)
-   {
-	   return;
-   }
-	
 	NSMutableSet * touchesLeft = [NSMutableSet setWithSet:touches];
-	[touchesLeft minusSet:touch
-	   
-	if([touches count] == 1)
+	[touchesLeft minusSet:takenTouches];
+	if([touchesLeft count] == 0)
+	{
+		self.startTouch = nil;
+	}else if([touchesLeft count] == 1)
 	{
 		if(startTouch == nil)
 		{
-			UITouch * theTouch = [touches anyObject];
+			UITouch * theTouch = [touchesLeft anyObject];
 			self.startTouch = theTouch;
-		}else {
-			UITouch * theTouch = [touches anyObject];
-			
-			LineObject * newLine = [[LineObject alloc] initOnView:self.view withStartPoint:[startTouch locationInView:self.view] endPoint:[theTouch locationInView:self.view]];
-			[collection addSharedObject:[newLine autorelease]];
-			[currentlyManipulated addObject:newLine];
-			[newLine trackTouches:[NSMutableSet setWithObjects:theTouch, startTouch, nil]];
+		}else if(![takenTouches containsObject:startTouch]){
+			CGPoint startPoint = [startTouch locationInView:self.view];
+			if(!CGPointEqualToPoint(startPoint, CGPointZero))
+			{
+				UITouch * theTouch = [touchesLeft anyObject];
+				LineObject * newLine = [[LineObject alloc] initOnView:self.view withStartPoint:startPoint endPoint:[theTouch locationInView:self.view]];
+				[collection addSharedObject:[newLine autorelease]];
+				[currentlyManipulated addObject:newLine];
+				[newLine trackTouches:[NSMutableSet setWithObjects:theTouch, startTouch, nil]];
+			}else{
+				self.startTouch = nil;
+			}
+		}else{
+			self.startTouch = nil;
 		}
-	}else if([touches count] == 2)
+	}else if([touchesLeft count] == 2)
 	{
 		NSMutableArray * orderedTouches = [NSMutableArray arrayWithCapacity:2];
-		for(UITouch * curTouch in touches)
+		for(UITouch * curTouch in touchesLeft)
 		{
 			[orderedTouches addObject:curTouch];
 		}
