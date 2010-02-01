@@ -45,6 +45,10 @@
 	
 	[self drawCircleAtPoint:localStart withRadius:circleRadius inContext: contextRef];
 	[self drawCircleAtPoint:localEnd withRadius:circleRadius inContext: contextRef];
+	
+	CGContextMoveToPoint(contextRef, localStart.x, localStart.y);
+	CGContextAddLineToPoint( contextRef, localEnd.x, localEnd.y);
+	CGContextStrokePath(contextRef);
 }
 
 - (void) drawCircleAtPoint:(CGPoint)thePoint withRadius:(float)theRadius inContext:(CGContextRef)theContext
@@ -214,14 +218,14 @@
 	
 	if(startBeingDragged)
 	{
-		UITouch * theTouch = [self touchRelevantToPoint:localStart outOf:touches];
+		UITouch * theTouch = [self touchRelevantToPoint:localStart outOf:downTouches];
 		localStart = [theTouch locationInView:self];
 		[self setNeedsDisplay];
 	}
 	
 	if(endBeingDragged)
 	{
-		UITouch * theTouch = [self touchRelevantToPoint:localEnd outOf:touches];
+		UITouch * theTouch = [self touchRelevantToPoint:localEnd outOf:downTouches];
 		localEnd = [theTouch locationInView:self];
 		[self setNeedsDisplay];
 	}
