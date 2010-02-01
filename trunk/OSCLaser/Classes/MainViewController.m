@@ -177,6 +177,11 @@
 		}
 	}
 	
+	if([takenTouches containsObject:startTouch])
+	{
+		self.startTouch = nil;
+	}
+	
 	//NSMutableSet * touchesLeft = [NSMutableSet setWithSet:touches];
 	//[touchesLeft minusSet:takenTouches];
 	if([touchesLeft count] == 0)
