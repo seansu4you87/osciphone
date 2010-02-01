@@ -16,6 +16,9 @@
 + (void) resetIDs;
 + (int) nextID;
 
+- (NSString *) objectName;
+- (void) updateAllValues;
+
 @property(nonatomic, readonly) int objectID;
 
 @end

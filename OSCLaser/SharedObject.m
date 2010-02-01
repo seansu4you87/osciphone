@@ -7,6 +7,9 @@
 //
 
 #import "SharedObject.h"
+#import "OSCConfig.h"
+#import "OSCPort.h"
+
 static int currentID;
 
 @implementation SharedObject
@@ -21,6 +24,16 @@ static int currentID;
 	}
 	
 	return self;
+}
+
+- (NSString*) objectName
+{
+	return @"superObj";
+}
+
+- (void) updateAllValues
+{
+	//this needs to be overridden
 }
 
 + (void) resetIDs
