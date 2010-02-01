@@ -46,9 +46,10 @@ static int currentID;
 	//override this
 }
 
-- (void) stopTrackingTouches
+- (BOOL) stopTrackingTouches:(NSSet*)touches
 {
 	//override this
+	return YES;
 }
 
 + (void) resetIDs

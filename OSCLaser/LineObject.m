@@ -48,10 +48,10 @@
 	[myView trackTouches:touches];
 }
 
-- (void) stopTrackingTouches
+- (BOOL) stopTrackingTouches:(NSSet*)touches
 {
 	LineObjectView * myView = (LineObjectView*)objectView;
-	[myView stopTrackingTouches];
+	return [myView stopTrackingTouches:touches];
 }
 
 - (void) setPointsFromView

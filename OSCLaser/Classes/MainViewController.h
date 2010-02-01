@@ -14,7 +14,11 @@
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
 	SharedCollection * collection;
 	SharedObject * currentlyManipulated;
+	
+	UITouch * startTouch;
 }
+
+@property(nonatomic, retain) UITouch * startTouch;
 
 - (IBAction)showInfo;
 
