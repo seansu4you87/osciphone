@@ -15,6 +15,7 @@
 
 @implementation MainViewController
 
+@synthesize startTouch;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -98,19 +99,32 @@
 #pragma mark touch responders
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	[currentlyManipulated stopTrackingTouches];
-	currentlyManipulated = nil;
+	NSLog(@"stopped tracking %d touches", [touches count]);
+	if([touches count] == 1)
+	{
+		UITouch * touch = [touches anyObject];
+		if([touch isEqual:startTouch])
+		{
+			self.startTouch = nil;
+		}
+	}
+	
+	if([currentlyManipulated stopTrackingTouches:touches])
+	{
+		currentlyManipulated = nil;
+	}
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 { 
+	NSLog(@"%d touches moving", [touches count]);
 	[currentlyManipulated updateForTouches:touches];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
-	
+	NSLog(@"%d touches beginning", [touches count]);
+
 	NSArray * allObjects = [collection objects];
 	BOOL anyRelevant = NO;
 	for(SharedObject * curObject in allObjects)
@@ -130,16 +144,21 @@
    {
 	   return;
    }
-	
-	currentlyManipulated = nil;
-	
-	NSLog(@"began %d touches", [touches count]);
-		   
+	   
 	if([touches count] == 1)
 	{
-		UITouch * theTouch = [touches anyObject];
-		CGPoint percentCoords = [self percentCoordsForTouch:theTouch];
-		[thePort sendTo:[[NSString stringWithFormat:@"/begin1"]UTF8String] types:"ff", percentCoords.x, percentCoords.y];
+		if(startTouch == nil)
+		{
+			UITouch * theTouch = [touches anyObject];
+			self.startTouch = theTouch;
+		}else {
+			UITouch * theTouch = [touches anyObject];
+			
+			LineObject * newLine = [[LineObject alloc] initOnView:self.view withStartPoint:[startTouch locationInView:self.view] endPoint:[theTouch locationInView:self.view]];
+			[collection addSharedObject:[newLine autorelease]];
+			currentlyManipulated = newLine;
+			[currentlyManipulated trackTouches:[NSMutableSet setWithObjects:theTouch, startTouch, nil]];
+		}
 	}else if([touches count] == 2)
 	{
 		NSMutableArray * orderedTouches = [NSMutableArray arrayWithCapacity:2];
@@ -151,7 +170,9 @@
 		UITouch * secondTouch = [orderedTouches objectAtIndex:1];
 		
 		LineObject * newLine = [[LineObject alloc] initOnView:self.view withStartPoint:[firstTouch locationInView:self.view] endPoint:[secondTouch locationInView:self.view]];
-		[collection addSharedObject:newLine];
+		[collection addSharedObject:[newLine autorelease]];
+		currentlyManipulated = newLine;
+		[currentlyManipulated trackTouches:touches];
 	}
 }
 

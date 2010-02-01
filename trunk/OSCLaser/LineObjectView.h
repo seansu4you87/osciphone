@@ -19,6 +19,8 @@
 	
 	BOOL startBeingDragged;
 	BOOL endBeingDragged;
+	
+	NSMutableSet * downTouches;
 }
 
 @property(nonatomic, assign) LineObject * parent;
@@ -33,8 +35,9 @@
 - (BOOL) touchesAreRelevant:(NSSet*)touches;
 - (void) updateForTouches:(NSSet*)touches;
 - (void) trackTouches:(NSSet*)touches;
-- (void) stopTrackingTouches;
+- (BOOL) stopTrackingTouches:(NSSet*)touches;
 - (BOOL) touchStartRelevant:(UITouch*)touch;
 - (BOOL) touchEndRelevant:(UITouch*)touch;
+- (UITouch*) touchRelevantToPoint:(CGPoint)thePoint outOf:(NSSet*)touches;
 
 @end
