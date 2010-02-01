@@ -20,6 +20,7 @@
 		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
 		FD0CF9E311163EC000DF5C0F /* OSCConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF9E211163EC000DF5C0F /* OSCConfig.m */; };
+		FD26DA131116B0760062DF1F /* SharedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26DA121116B0760062DF1F /* SharedObject.m */; };
 		FD78A516111638E6008B87CB /* NetworkReturnAddress.c in Sources */ = {isa = PBXBuildFile; fileRef = FD78A4FD111638E6008B87CB /* NetworkReturnAddress.c */; };
 		FD78A517111638E6008B87CB /* OSC-address-space.c in Sources */ = {isa = PBXBuildFile; fileRef = FD78A500111638E6008B87CB /* OSC-address-space.c */; };
 		FD78A518111638E6008B87CB /* OSC-callbacklist.c in Sources */ = {isa = PBXBuildFile; fileRef = FD78A502111638E6008B87CB /* OSC-callbacklist.c */; };
@@ -60,6 +61,8 @@
 		8D1107310486CEB800E47090 /* OSCLaser-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OSCLaser-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
 		FD0CF9E111163EC000DF5C0F /* OSCConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCConfig.h; sourceTree = "<group>"; };
 		FD0CF9E211163EC000DF5C0F /* OSCConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCConfig.m; sourceTree = "<group>"; };
+		FD26DA111116B0760062DF1F /* SharedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedObject.h; sourceTree = "<group>"; };
+		FD26DA121116B0760062DF1F /* SharedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedObject.m; sourceTree = "<group>"; };
 		FD78A4FD111638E6008B87CB /* NetworkReturnAddress.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = NetworkReturnAddress.c; sourceTree = "<group>"; };
 		FD78A4FE111638E6008B87CB /* NetworkReturnAddress.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkReturnAddress.h; sourceTree = "<group>"; };
 		FD78A4FF111638E6008B87CB /* NetworkUDP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NetworkUDP.h; sourceTree = "<group>"; };
@@ -152,6 +155,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				FD26DA101116B0410062DF1F /* Classes */,
 				FD78A4FC111638E6008B87CB /* OSCKit */,
 				289233A00DB2D0730083E9F9 /* Main View */,
 				281C6CD70DB2D82200F60ACC /* Flipside View */,
@@ -194,6 +198,15 @@
 				FD78A55A11163AF7008B87CB /* CoreFoundation.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD26DA101116B0410062DF1F /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FD26DA111116B0760062DF1F /* SharedObject.h */,
+				FD26DA121116B0760062DF1F /* SharedObject.m */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 		FD78A4FC111638E6008B87CB /* OSCKit */ = {
@@ -316,6 +329,7 @@
 				FD78A5231116390E008B87CB /* OSCPort.m in Sources */,
 				FD78A5241116390E008B87CB /* OSCInPort.m in Sources */,
 				FD0CF9E311163EC000DF5C0F /* OSCConfig.m in Sources */,
+				FD26DA131116B0760062DF1F /* SharedObject.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
