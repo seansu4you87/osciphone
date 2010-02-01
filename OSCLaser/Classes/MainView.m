@@ -8,6 +8,7 @@
 
 #import "MainView.h"
 #import "OSCConfig.h"
+#import "OSCPort.h"
 
 @implementation MainView
 
@@ -30,13 +31,15 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	if([touches count] = 1)
+	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
+	
+	if([touches count] == 1)
 	{
 		UITouch * theTouch = [touches anyObject];
 		CGPoint viewCoord = [theTouch locationInView:self];
 		float xPercent = viewCoord.x/self.frame.size.width;
 		float yPercent = viewCoord.y/self.frame.size.height;
-		[port sendTo:[[NSString stringWithFormat:@"/begin1"]UTF8String] types:"ff", [touches count], ];
+		[thePort sendTo:[[NSString stringWithFormat:@"/begin1"]UTF8String] types:"ff", xPercent, yPercent];
 	}
 	
 }
