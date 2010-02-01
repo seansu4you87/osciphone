@@ -98,6 +98,7 @@
 #pragma mark touch responders
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+	[currentlyManipulated stopTrackingTouches];
 	currentlyManipulated = nil;
 }
 
@@ -108,7 +109,6 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	
 	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
 	
 	NSArray * allObjects = [collection objects];
@@ -120,6 +120,7 @@
 			if([curObject touchesAreRelevant:touches])
 			{
 				currentlyManipulated = curObject;
+				[currentlyManipulated trackTouches:touches];
 				anyRelevant = YES;
 		   }
 		}

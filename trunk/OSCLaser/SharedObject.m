@@ -41,6 +41,16 @@ static int currentID;
 	//this needs to be overridden
 }
 
+- (void) trackTouches:(NSSet*)touches
+{
+	//override this
+}
+
+- (void) stopTrackingTouches
+{
+	//override this
+}
+
 + (void) resetIDs
 {
 	currentID = 0;

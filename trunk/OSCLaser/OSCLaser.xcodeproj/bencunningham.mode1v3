@@ -330,7 +330,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD8EC2701116DF6900907A48</string>
+										<string>FD8EC2C21116E50B00907A48</string>
 										<key>history</key>
 										<array>
 											<string>FD78A53E11163A5F008B87CB</string>
@@ -345,19 +345,19 @@
 											<string>FD0CFB19111696CC00DF5C0F</string>
 											<string>FD0CFB3E1116991B00DF5C0F</string>
 											<string>FD8EC2071116D51A00907A48</string>
-											<string>FD8EC2411116DA7D00907A48</string>
 											<string>FD8EC2491116DA7D00907A48</string>
 											<string>FD8EC2651116DF6900907A48</string>
 											<string>FD8EC2661116DF6900907A48</string>
 											<string>FD8EC2671116DF6900907A48</string>
-											<string>FD8EC2681116DF6900907A48</string>
-											<string>FD8EC2691116DF6900907A48</string>
-											<string>FD8EC26A1116DF6900907A48</string>
-											<string>FD8EC26B1116DF6900907A48</string>
-											<string>FD8EC26C1116DF6900907A48</string>
-											<string>FD8EC26D1116DF6900907A48</string>
-											<string>FD8EC26E1116DF6900907A48</string>
-											<string>FD8EC26F1116DF6900907A48</string>
+											<string>FD8EC28E1116E06800907A48</string>
+											<string>FD8EC2AE1116E49300907A48</string>
+											<string>FD8EC2AF1116E49300907A48</string>
+											<string>FD8EC2B01116E49300907A48</string>
+											<string>FD8EC2B11116E49300907A48</string>
+											<string>FD8EC2B21116E49300907A48</string>
+											<string>FD8EC2B31116E49300907A48</string>
+											<string>FD8EC2B41116E49300907A48</string>
+											<string>FD8EC2B51116E49300907A48</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -555,13 +555,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FD8EC2711116DF6900907A48</string>
+		<string>FD8EC2C31116E50B00907A48</string>
 		<string>FD8EC2031116D4C600907A48</string>
 		<string>FD8EC2041116D4C600907A48</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C78EAAD065D492600B07095</string>
-		<string>FD78A4EE1116385D008B87CB</string>
 		<string>/Users/bencunningham/Desktop/edgeCity/osc_iphone/OSCLaser/OSCLaser.xcodeproj</string>
+		<string>FD78A4EE1116385D008B87CB</string>
 	</array>
 	<key>WindowString</key>
 	<string>21 96 1245 612 0 0 1280 778 </string>
@@ -580,14 +580,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>LineObjectView.m</string>
+								<string>MainViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -604,6 +602,8 @@
 							<string>264pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>

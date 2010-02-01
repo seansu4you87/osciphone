@@ -54,14 +54,48 @@
 
 + (LineObjectView*) lineViewOnParentView:(UIView*)parentView withParentStart:(CGPoint)parentStart parentEnd:(CGPoint)parentEnd radius:(float)theRadius;
 {
+	/*
 	CGPoint theOrigin = CGPointMake(MIN(parentStart.x, parentEnd.x) - theRadius, MIN(parentStart.y, parentEnd.y) - theRadius);
 	float width = fabs(parentStart.x - parentEnd.x) + 2*theRadius;
 	float height = fabs(parentStart.y - parentEnd.y) + 2*theRadius;
 	
 	CGPoint theLocalStart = CGPointMake(parentStart.x - theOrigin.x, parentStart.y - theOrigin.y);
 	CGPoint theLocalEnd = CGPointMake(parentEnd.x - theOrigin.x, parentEnd.y - theOrigin.y);
+	CGRect frameToBe = parentView.frame;//CGRectMake(theOrigin.x, theOrigin.y, width, height)
+	 */
 	
-	return [[[LineObjectView alloc] initWithFrame:CGRectMake(theOrigin.x, theOrigin.y, width, height) startPoint:theLocalStart endPoint:theLocalEnd radius:theRadius] autorelease];
+	return [[[LineObjectView alloc] initWithFrame:CGRectMake(0, 0, parentView.frame.size.width, parentView.frame.size.height) startPoint:parentStart endPoint:parentEnd radius:theRadius] autorelease];
+}
+
+- (void) trackTouches:(NSSet*)touches
+{
+	startBeingDragged = NO;
+	endBeingDragged = NO;
+	
+	for(UITouch * touch in touches)
+	{
+		if(!startBeingDragged)
+		{
+			if([self touchStartRelevant:touch])
+			{
+				startBeingDragged = YES;
+			}
+		}
+		
+		if(!endBeingDragged)
+		{
+			if([self touchEndRelevant:touch])
+			{
+				endBeingDragged = YES;
+			}
+		}
+	}
+}
+
+- (void) stopTrackingTouches
+{
+	startBeingDragged = NO;
+	endBeingDragged = NO;
 }
 
 + (float) distanceFrom:(CGPoint)fromPoint to:(CGPoint)toPoint
@@ -102,24 +136,48 @@
 	return NO;
 }
 
-- (void) updateForTouch:(UITouch*)touch
+- (void) readjustFrame
 {
-	if([self touchStartRelevant:touch])
+	CGPoint theOrigin = CGPointMake(MIN(localStart.x, localEnd.x) - circleRadius, MIN(localStart.y, localEnd.y) - circleRadius);
+	float width = fabs(localStart.x - localEnd.x) + 2*circleRadius;
+	float height = fabs(localStart.y - localEnd.y) + 2*circleRadius;
+	
+	self.frame = CGRectMake(theOrigin.x, theOrigin.y, width, height);
+}
+
+
+- (UITouch*) touchRelevantToPoint:(CGPoint)thePoint outOf:(NSSet*)touches
+{
+	float currentMin = 10000000000;
+	UITouch * best = nil;
+	for(UITouch * touch in touches)
 	{
-		localStart = [touch locationInView:self];
+		CGPoint touchPoint = [touch locationInView:self];
+		float currentDist = [LineObjectView distanceFrom:touchPoint to:thePoint];
+		if(currentDist < currentMin)
+		{
+			currentMin = currentDist;
+			best = touch;
+		}
 	}
 	
-	if([self touchEndRelevant:touch])
-	{
-		localEnd = [touch locationInView:self];
-	}
+	return best;
 }
 
 - (void) updateForTouches:(NSSet*)touches
 {
-	for(UITouch * touch in touches)
+	if(startBeingDragged)
 	{
-		[self updateForTouch:touch];
+		UITouch * theTouch = [self touchRelevantToPoint:localStart outOf:touches];
+		localStart = [theTouch locationInView:self];
+		[self setNeedsDisplay];
+	}
+	
+	if(endBeingDragged)
+	{
+		UITouch * theTouch = [self touchRelevantToPoint:localEnd outOf:touches];
+		localEnd = [theTouch locationInView:self];
+		[self setNeedsDisplay];
 	}
 }
 
