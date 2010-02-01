@@ -145,13 +145,16 @@
 	
 	//consider prepopulating takenTouches with the contents of all manipulated objects' downTouches field
 	NSMutableSet * takenTouches = [NSMutableSet setWithCapacity:0];
+	NSMutableSet * touchesLeft = [NSMutableSet setWithSet:touches];
+	/*
 	for(SharedObject * curObject in currentlyManipulated)
 	{
 		[takenTouches unionSet:[curObject trackedTouches]];
 	}
+	 */
 	for(SharedObject * curObject in allObjects)
 	{
-		NSMutableSet * curRelevantTouches = [curObject relevantTouches:touches];
+		NSMutableSet * curRelevantTouches = [curObject relevantTouches:touchesLeft];
 		if([curRelevantTouches count] > 0)
 		{
 			NSMutableSet * allowableTouches = [NSMutableSet setWithCapacity:0];
@@ -168,13 +171,14 @@
 				[currentlyManipulated addObject:curObject];
 				[curObject trackTouches:allowableTouches];
 				[takenTouches unionSet:allowableTouches];
+				[touchesLeft minusSet:takenTouches];
 				anyRelevant = YES;
 			}
 		}
 	}
 	
-	NSMutableSet * touchesLeft = [NSMutableSet setWithSet:touches];
-	[touchesLeft minusSet:takenTouches];
+	//NSMutableSet * touchesLeft = [NSMutableSet setWithSet:touches];
+	//[touchesLeft minusSet:takenTouches];
 	if([touchesLeft count] == 0)
 	{
 		self.startTouch = nil;

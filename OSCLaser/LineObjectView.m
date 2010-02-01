@@ -11,12 +11,12 @@
 
 @implementation LineObjectView
 
-@synthesize parent, circleRadius, localStart, localEnd;
+@synthesize parent, circleRadius, localStart, localEnd, startTouch, endTouch;
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
         circleRadius = 10;
-		downTouches = [[NSMutableArray array] retain];
+		//downTouches = [[NSMutableArray array] retain];
 		self.backgroundColor = [UIColor clearColor];
 		self.opaque = NO;
 		self.userInteractionEnabled = NO;
@@ -80,8 +80,9 @@
 		{
 			if([self touchStartRelevant:touch])
 			{
-				[downTouches addObject:touch];
+				//[downTouches addObject:touch];
 				startBeingDragged = YES;
+				self.startTouch = touch;
 			}
 		}
 		
@@ -89,8 +90,9 @@
 		{
 			if([self touchEndRelevant:touch])
 			{
-				[downTouches addObject:touch];
+				//[downTouches addObject:touch];
 				endBeingDragged = YES;
+				self.endTouch = touch;
 			}
 		}
 	}
@@ -113,11 +115,35 @@
 
 - (NSMutableSet*) trackedTouches
 {
-	return downTouches;
+	NSMutableSet * relevant = [NSMutableSet setWithCapacity:2];
+	if(startTouch != nil)
+	{
+		[relevant addObject:startTouch];
+	}
+	if(endTouch != nil)
+	{
+		[relevant addObject:endTouch];
+	}
+	return relevant;
+	//return downTouches;
 }
 
 - (BOOL) stopTrackingTouches:(NSSet*)touches
 {
+	if([touches containsObject:startTouch])
+	{
+		startBeingDragged = NO;
+		self.startTouch = nil;
+	}
+	
+	if([touches containsObject:endTouch])
+	{
+		endBeingDragged = NO;
+		self.endTouch = nil;
+	}
+	
+	return startTouch == nil && endTouch == nil;
+	/*
 	NSMutableArray * toTrash = [NSMutableArray array];
 
 	for(UITouch * touch in downTouches)
@@ -149,6 +175,7 @@
 	}
 	
 	return [downTouches count] == 0;
+	 */
 }
 
 + (float) distanceFrom:(CGPoint)fromPoint to:(CGPoint)toPoint
@@ -215,7 +242,14 @@
 	{
 		UITouch * touch = [touches anyObject];
 		CGPoint touchPoint = [touch locationInView:self];
-		
+		if([touch isEqual:startTouch])
+		{
+			localStart = touchPoint;
+		}else if([touch isEqual:endTouch])
+		{
+			localEnd = touchPoint;
+		}
+		/*
 		float startDistance = [LineObjectView distanceFrom:touchPoint to:localStart];
 		float endDistance = [LineObjectView distanceFrom:touchPoint to:localEnd];
 		if(startDistance < endDistance)
@@ -224,20 +258,23 @@
 		}else{
 			localEnd = touchPoint;
 		}
+		 */
 		[self setNeedsDisplay];
 		return;
 	}
 	
 	if(startBeingDragged)
 	{
-		UITouch * theTouch = [self touchRelevantToPoint:localStart outOf:downTouches];
+		//UITouch * theTouch = [self touchRelevantToPoint:localStart outOf:downTouches];
+		UITouch * theTouch = startTouch;
 		localStart = [theTouch locationInView:self];
 		[self setNeedsDisplay];
 	}
 	
 	if(endBeingDragged)
 	{
-		UITouch * theTouch = [self touchRelevantToPoint:localEnd outOf:downTouches];
+		//UITouch * theTouch = [self touchRelevantToPoint:localEnd outOf:downTouches];
+		UITouch * theTouch = endTouch;
 		localEnd = [theTouch locationInView:self];
 		[self setNeedsDisplay];
 	}
@@ -245,7 +282,7 @@
 
 
 - (void)dealloc {
-	[downTouches release];
+	//[downTouches release];
 	
     [super dealloc];
 }
