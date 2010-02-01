@@ -54,6 +54,12 @@
 	return [myView stopTrackingTouches:touches];
 }
 
+- (NSMutableSet*) trackedTouches
+{
+	LineObjectView * myView = (LineObjectView*)objectView;
+	return [myView trackedTouches];
+}
+
 - (NSMutableSet*) relevantTouches:(NSSet*)touches
 {
 	LineObjectView * myView = (LineObjectView*)objectView;

@@ -40,5 +40,6 @@
 - (BOOL) touchEndRelevant:(UITouch*)touch;
 - (UITouch*) touchRelevantToPoint:(CGPoint)thePoint outOf:(NSSet*)touches;
 - (NSMutableSet*) relevantTouches:(NSSet*)touches;
+- (NSMutableSet*) trackedTouches;
 
 @end

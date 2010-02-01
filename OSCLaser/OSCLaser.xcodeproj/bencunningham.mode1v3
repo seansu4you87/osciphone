@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>FD8EC37E1116F9B500907A48</string>
+						<string>FD8EC39F1116FCE700907A48</string>
 						<key>history</key>
 						<array>
 							<string>FD8EC2D11116E5F200907A48</string>
@@ -371,7 +371,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD8EC37D1116F9B500907A48</string>
+										<string>FD8EC39E1116FCE700907A48</string>
 										<key>history</key>
 										<array>
 											<string>FD78A53E11163A5F008B87CB</string>
@@ -392,13 +392,14 @@
 											<string>FD8EC3381116EFDC00907A48</string>
 											<string>FD8EC3671116F5A700907A48</string>
 											<string>FD8EC3751116F9B500907A48</string>
-											<string>FD8EC3761116F9B500907A48</string>
-											<string>FD8EC3771116F9B500907A48</string>
-											<string>FD8EC3781116F9B500907A48</string>
-											<string>FD8EC3791116F9B500907A48</string>
-											<string>FD8EC37A1116F9B500907A48</string>
-											<string>FD8EC37B1116F9B500907A48</string>
-											<string>FD8EC37C1116F9B500907A48</string>
+											<string>FD8EC3881116FB4500907A48</string>
+											<string>FD8EC3891116FB4500907A48</string>
+											<string>FD8EC38A1116FB4500907A48</string>
+											<string>FD8EC38B1116FB4500907A48</string>
+											<string>FD8EC38C1116FB4500907A48</string>
+											<string>FD8EC38D1116FB4500907A48</string>
+											<string>FD8EC38E1116FB4500907A48</string>
+											<string>FD8EC38F1116FB4500907A48</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -596,12 +597,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>FD8EC3A01116FCE700907A48</string>
 		<string>FD8EC2031116D4C600907A48</string>
 		<string>FD8EC2041116D4C600907A48</string>
-		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>FD8EC2F01116E9CA00907A48</string>
 		<string>FD78A4EE1116385D008B87CB</string>
+		<string>1C78EAAD065D492600B07095</string>
 		<string>/Users/bencunningham/Desktop/edgeCity/osc_iphone/OSCLaser/OSCLaser.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -626,7 +628,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SharedCollection.m</string>
+								<string>MainViewController.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -978,7 +980,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C78EAAD065D492600B07095</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>
