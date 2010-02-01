@@ -20,6 +20,8 @@
 - (NSString *) objectName;
 - (void) updateAllValues;
 - (BOOL) touchesAreRelevant:(NSSet*)touches;
+- (void) trackTouches:(NSSet*)touches;
+- (void) stopTrackingTouches;
 - (void) updateForTouches:(NSSet*)touches;
 
 @property(nonatomic, readonly) int objectID;

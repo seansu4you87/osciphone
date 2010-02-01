@@ -26,7 +26,7 @@
 {
 	if(parent)
 	{
-		[parent touchesBegan:touches withEvent:event];
+		[parent touchesEnded:touches withEvent:event];
 	}
 }
 
@@ -34,7 +34,7 @@
 { 
 	if(parent)
 	{
-		[parent touchesBegan:touches withEvent:event];
+		[parent touchesMoved:touches withEvent:event];
 	}
 }
 
