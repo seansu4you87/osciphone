@@ -11,7 +11,7 @@
 
 @implementation LineObjectView
 
-@synthesize parent, circleRadius;
+@synthesize parent, circleRadius, localStart, localEnd;
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -69,20 +69,58 @@
 	return sqrt(pow(fromPoint.x - toPoint.x, 2) + pow(fromPoint.y - toPoint.y, 2));
 }
 
+- (BOOL) touchStartRelevant:(UITouch*)touch
+{
+	CGPoint touchPoint = [touch locationInView:self];
+	return [LineObjectView distanceFrom:touchPoint to:localStart] < circleRadius;
+}
+
+- (BOOL) touchEndRelevant:(UITouch*)touch
+{
+	CGPoint touchPoint = [touch locationInView:self];
+	return [LineObjectView distanceFrom:touchPoint to:localEnd] < circleRadius;
+}
+
+- (BOOL) touchIsRelevant:(UITouch*)touch
+{
+	BOOL startRelevant = [self touchStartRelevant:touch];
+	BOOL endRelevant = [self touchEndRelevant:touch];
+	
+	return startRelevant || endRelevant;
+}
+
 - (BOOL) touchesAreRelevant:(NSSet*)touches
 {
 	for(UITouch * touch in touches)
 	{
-		CGPoint touchPoint = [touch locationInView:self];
-		BOOL startRelevant = [LineObjectView distanceFrom:touchPoint to:localStart] < circleRadius;
-		BOOL endRelevant = [LineObjectView distanceFrom:touchPoint to:localEnd] < circleRadius;
-		if(startRelevant || endRelevant)
+		if([self touchIsRelevant:touch])
 		{
 			return YES;
 		}
 	}
 	
 	return NO;
+}
+
+- (void) updateForTouch:(UITouch*)touch
+{
+	if([self touchStartRelevant:touch])
+	{
+		localStart = [touch locationInView:self];
+	}
+	
+	if([self touchEndRelevant:touch])
+	{
+		localEnd = [touch locationInView:self];
+	}
+}
+
+- (void) updateForTouches:(NSSet*)touches
+{
+	for(UITouch * touch in touches)
+	{
+		[self updateForTouch:touch];
+	}
 }
 
 

@@ -20,11 +20,14 @@
 
 @property(nonatomic, assign) LineObject * parent;
 @property(nonatomic, assign) float circleRadius;
+@property(nonatomic, readonly) CGPoint localStart, localEnd;
 
 - (id) initWithFrame:(CGRect)frame startPoint:(CGPoint)theLocalStart endPoint:(CGPoint)theLocalEnd radius:(float)theRadius;
 + (LineObjectView*) lineViewOnParentView:(UIView*)parentView withParentStart:(CGPoint)parentStart parentEnd:(CGPoint)parentEnd radius:(float)theRadius;
 
 - (void) drawCircleAtPoint:(CGPoint)thePoint withRadius:(float)theRadius inContext:(CGContextRef)theContext;
+- (BOOL) touchIsRelevant:(UITouch*)touch;
 - (BOOL) touchesAreRelevant:(NSSet*)touches;
+- (void) updateForTouches:(NSSet*)touches;
 
 @end

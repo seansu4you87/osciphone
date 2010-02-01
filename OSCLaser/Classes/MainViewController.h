@@ -8,10 +8,12 @@
 
 #import "FlipsideViewController.h"
 
-@class SharedCollection;
+@class SharedCollection, SharedObject
+;
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
 	SharedCollection * collection;
+	SharedObject * currentlyManipulated;
 }
 
 - (IBAction)showInfo;

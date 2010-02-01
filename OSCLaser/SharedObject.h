@@ -20,6 +20,7 @@
 - (NSString *) objectName;
 - (void) updateAllValues;
 - (BOOL) touchesAreRelevant:(NSSet*)touches;
+- (void) updateForTouches:(NSSet*)touches;
 
 @property(nonatomic, readonly) int objectID;
 

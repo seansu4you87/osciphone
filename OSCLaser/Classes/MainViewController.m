@@ -98,12 +98,12 @@
 #pragma mark touch responders
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	
+	currentlyManipulated = nil;
 }
 
 -(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
 { 
-	
+	[currentlyManipulated updateForTouches:touches];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -119,7 +119,7 @@
 		{
 			if([curObject touchesAreRelevant:touches])
 			{
-				//do some shit
+				currentlyManipulated = curObject;
 				anyRelevant = YES;
 		   }
 		}
@@ -129,6 +129,8 @@
    {
 	   return;
    }
+	
+	currentlyManipulated = nil;
 	
 	NSLog(@"began %d touches", [touches count]);
 		   
