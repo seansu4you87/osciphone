@@ -46,6 +46,11 @@ static int currentID;
 	//override this
 }
 
+- (NSMutableSet*) relevantTouches:(NSSet*)touches
+{
+	return [NSMutableSet setWithCapacity:0];
+}
+
 - (BOOL) stopTrackingTouches:(NSSet*)touches
 {
 	//override this
