@@ -17,6 +17,10 @@
 
 @property (nonatomic, assign) id <FlipsideViewControllerDelegate> delegate;
 - (IBAction)done;
+- (IBAction) ipEditingDone;
+- (IBAction) portEditingDone;
+- (IBAction) ipEditingBegin;
+- (IBAction) portEditingBegin;
 - (void)ipChanged;
 - (void)portChanged;
 

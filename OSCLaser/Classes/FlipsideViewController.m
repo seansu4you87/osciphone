@@ -27,6 +27,48 @@
 	}
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField
+{
+	if([textField isEqual:portTextField])
+	{
+		[self portEditingDone];
+	}else if([textField isEqual:ipTextField])
+	{
+		[self ipEditingDone];
+	}
+	
+	return YES;
+}
+
+- (IBAction) ipEditingBegin
+{
+	OSCConfig * theConfig = [OSCConfig sharedConfig];
+	if([theConfig ipIsConfigured])
+	{
+		ipTextField.text = theConfig.ip;
+	}
+}
+
+- (IBAction) portEditingBegin
+{
+	OSCConfig * theConfig = [OSCConfig sharedConfig];
+	if([theConfig portIsConfigured])
+	{
+		portTextField.text = [NSString stringWithFormat:@"%d", theConfig.port];
+	}
+}
+
+- (IBAction) ipEditingDone
+{
+	[self ipChanged];
+	[portTextField becomeFirstResponder];
+}
+- (IBAction) portEditingDone
+{
+	[self portChanged];
+	[portTextField resignFirstResponder];
+	[self done];
+}
 
 - (IBAction)done {
 	[self ipChanged];

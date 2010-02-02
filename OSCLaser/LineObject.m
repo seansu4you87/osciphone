@@ -12,7 +12,7 @@
 #import "OSCConfig.h"
 #import "OSCPort.h"
 
-#define DEFAULT_RADIUS 20
+#define DEFAULT_RADIUS 25
 
 @implementation LineObject
 
