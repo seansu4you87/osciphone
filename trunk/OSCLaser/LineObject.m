@@ -12,13 +12,13 @@
 #import "OSCConfig.h"
 #import "OSCPort.h"
 
-#define DEFAULT_RADIUS 25
+#define DEFAULT_RADIUS 30
 
 @implementation LineObject
 
 - (NSString *) objectName
 {
-	return @"LObject";
+	return @"LObj";
 }
 
 - (id) initOnView:(UIView*)parentView withStartPoint:(CGPoint)parentStart endPoint:(CGPoint) parentEnd

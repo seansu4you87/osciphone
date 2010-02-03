@@ -15,7 +15,7 @@
 
 @implementation MainViewController
 
-@synthesize startTouch;
+@synthesize startTouch, selected;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -93,6 +93,7 @@
 
 
 - (void)dealloc {
+	[selected release];
 	[collection release];
 	[currentlyManipulated release];
     [super dealloc];
@@ -101,6 +102,10 @@
 #pragma mark touch responders
 -(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
+	if([currentlyManipulated count] == 0)
+	{
+		self.selected = nil;
+	}
 	//NSLog(@"stopped tracking %d touches", [touches count]);
 	if([touches count] == 1)
 	{
@@ -122,8 +127,12 @@
 	
 	for(SharedObject * cur in toTrash)
 	{
-		//only do this if it's not the last
 		[cur updateUnselected];
+		if([currentlyManipulated count] == 1)
+		{
+			self.selected = cur;
+		}
+		
 		[currentlyManipulated removeObject:cur];
 	}
 	
@@ -138,13 +147,37 @@
 	}
 }
 
+- (void) setSelected:(SharedObject*)theObject
+{
+	[selected updateUnselected];
+	[selected release];
+	selected = [theObject retain];
+	[theObject updateSelected];	
+}
+
+- (void) addManipulatedObject:(SharedObject*)theObject withTouches:(NSMutableSet*)manipulatingTouches
+{
+	if([currentlyManipulated count] == 0)
+	{
+		self.selected = theObject;
+	}
+	
+	[currentlyManipulated addObject: theObject];
+	[theObject trackTouches:manipulatingTouches];
+	[theObject updateSelected];
+}
+
+- (void) addSharedObject:(SharedObject*)theObject withTouches:(NSMutableSet*) creatingTouches
+{
+	[collection addSharedObject:theObject];
+	[self addManipulatedObject:theObject withTouches:creatingTouches];	
+}
+
 - (void) addLineForStartTouch:(UITouch*)touchOne endTouch:(UITouch*)touchTwo
 {
 	LineObject * newLine = [[LineObject alloc] initOnView:self.view withStartPoint:[touchOne locationInView:self.view] endPoint:[touchTwo locationInView:self.view]];
-	[collection addSharedObject:[newLine autorelease]];
-	[currentlyManipulated addObject: newLine];
-	[newLine trackTouches:[NSMutableSet setWithObjects:touchOne, touchTwo, nil]];
-	[newLine updateSelected];
+	[self addSharedObject:newLine withTouches:[NSMutableSet setWithObjects:touchOne, touchTwo, nil]];
+	[newLine release];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -152,7 +185,6 @@
 	//NSLog(@"%d touches beginning", [touches count]);
 
 	NSArray * allObjects = [collection objects];
-	BOOL anyRelevant = NO;
 	
 	//consider prepopulating takenTouches with the contents of all manipulated objects' downTouches field
 	NSMutableSet * takenTouches = [NSMutableSet setWithCapacity:0];
@@ -183,12 +215,9 @@
 			
 			if([allowableTouches count] > 0)
 			{
-				[currentlyManipulated addObject:curObject];
-				[curObject trackTouches:allowableTouches];
-				[curObject updateSelected];
+				[self addManipulatedObject:curObject withTouches:allowableTouches];
 				[takenTouches unionSet:allowableTouches];
 				[touchesLeft minusSet:takenTouches];
-				anyRelevant = YES;
 			}
 		}
 	}
