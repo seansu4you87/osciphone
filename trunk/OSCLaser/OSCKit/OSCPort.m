@@ -97,6 +97,7 @@
             
 - (BOOL)sendTo:(char*)address types:(char*)types, ...
 {
+	//NSLog(@"sending message with address:%@", [NSString stringWithCString:address]);
     // potential holders for variable arguments
     char* s;
     

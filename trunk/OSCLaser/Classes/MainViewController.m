@@ -173,6 +173,29 @@
 	[self addManipulatedObject:theObject withTouches:creatingTouches];	
 }
 
+- (void) removeObject:(SharedObject*)theObject
+{
+	if([currentlyManipulated containsObject:theObject])
+	{
+		[currentlyManipulated removeObject:theObject];
+	}
+	[collection removeSharedObject:theObject];
+	[theObject.objectView removeFromSuperview];
+	if(theObject == selected)
+	{
+		self.selected = nil;
+	}
+}
+
+- (void) removeSelectedObject
+{
+	if(selected != nil)
+	{
+		[self removeObject:selected];
+		//self.selected = nil;
+	}
+}
+
 - (void) addLineForStartTouch:(UITouch*)touchOne endTouch:(UITouch*)touchTwo
 {
 	LineObject * newLine = [[LineObject alloc] initOnView:self.view withStartPoint:[touchOne locationInView:self.view] endPoint:[touchTwo locationInView:self.view]];
@@ -182,6 +205,15 @@
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
+	if([touches count] == 1)
+	{
+		UITouch * theTouch = [touches anyObject];
+		if([theTouch tapCount] > 1)
+		{
+			[self removeSelectedObject];
+			return;
+		}
+	}
 	//NSLog(@"%d touches beginning", [touches count]);
 
 	NSArray * allObjects = [collection objects];
@@ -234,15 +266,15 @@
 		self.startTouch = nil;
 	}else if([touchesLeft count] == 1)
 	{
+		UITouch * theTouch = [touchesLeft anyObject];
+		
 		if(startTouch == nil)
 		{
-			UITouch * theTouch = [touchesLeft anyObject];
 			self.startTouch = theTouch;
 		}else if(![takenTouches containsObject:startTouch]){
 			CGPoint startPoint = [startTouch locationInView:self.view];
 			if(!CGPointEqualToPoint(startPoint, CGPointZero))
 			{
-				UITouch * theTouch = [touchesLeft anyObject];
 				[self addLineForStartTouch:startTouch endTouch:theTouch];
 			}else{
 				self.startTouch = nil;

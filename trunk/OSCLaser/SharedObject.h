@@ -14,6 +14,8 @@
 	UIView * objectView;
 }
 
+@property(nonatomic, readonly) UIView * objectView;
+
 + (void) resetIDs;
 + (int) nextID;
 
