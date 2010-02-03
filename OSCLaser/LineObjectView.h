@@ -23,12 +23,16 @@
 	//NSMutableSet * downTouches;
 	UITouch * startTouch;
 	UITouch * endTouch;
+	
+	UIColor * baseColor;
+	UIColor * currentColor;
 }
 
 @property(nonatomic, assign) LineObject * parent;
 @property(nonatomic, assign) float circleRadius;
 @property(nonatomic, readonly) CGPoint localStart, localEnd;
 @property(nonatomic, retain) UITouch *startTouch, *endTouch;
+@property(nonatomic, retain) UIColor *baseColor, *currentColor;
 
 - (id) initWithFrame:(CGRect)frame startPoint:(CGPoint)theLocalStart endPoint:(CGPoint)theLocalEnd radius:(float)theRadius;
 + (LineObjectView*) lineViewOnParentView:(UIView*)parentView withParentStart:(CGPoint)parentStart parentEnd:(CGPoint)parentEnd radius:(float)theRadius;
@@ -44,5 +48,8 @@
 - (UITouch*) touchRelevantToPoint:(CGPoint)thePoint outOf:(NSSet*)touches;
 - (NSMutableSet*) relevantTouches:(NSSet*)touches;
 - (NSMutableSet*) trackedTouches;
+- (void) updateSelected;
+- (void) updateUnselected;
+
 
 @end

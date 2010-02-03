@@ -71,6 +71,8 @@
 		FD78A55B11163AF7008B87CB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD78A55A11163AF7008B87CB /* CoreFoundation.framework */; };
 		FD8EC1B31116C60400907A48 /* LineObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8EC1B21116C60400907A48 /* LineObject.m */; };
 		FD8EC1C31116C7A100907A48 /* LineObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8EC1C21116C7A100907A48 /* LineObjectView.m */; };
+		FDA7844E1118F80000AC33F0 /* SharedUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA7844D1118F80000AC33F0 /* SharedUtility.m */; };
+		FDA7844F1118F80000AC33F0 /* SharedUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA7844D1118F80000AC33F0 /* SharedUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -139,6 +141,8 @@
 		FD8EC1B21116C60400907A48 /* LineObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineObject.m; sourceTree = "<group>"; };
 		FD8EC1C11116C7A100907A48 /* LineObjectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LineObjectView.h; sourceTree = "<group>"; };
 		FD8EC1C21116C7A100907A48 /* LineObjectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineObjectView.m; sourceTree = "<group>"; };
+		FDA7844C1118F80000AC33F0 /* SharedUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedUtility.h; sourceTree = "<group>"; };
+		FDA7844D1118F80000AC33F0 /* SharedUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -263,6 +267,8 @@
 		FD26DA101116B0410062DF1F /* SharedProtocol */ = {
 			isa = PBXGroup;
 			children = (
+				FDA7844C1118F80000AC33F0 /* SharedUtility.h */,
+				FDA7844D1118F80000AC33F0 /* SharedUtility.m */,
 				FD26DA111116B0760062DF1F /* SharedObject.h */,
 				FD26DA121116B0760062DF1F /* SharedObject.m */,
 				FD26DA2F1116B1E50062DF1F /* SharedCollection.h */,
@@ -444,6 +450,7 @@
 				FD26DA311116B1E50062DF1F /* SharedCollection.m in Sources */,
 				FD8EC1B31116C60400907A48 /* LineObject.m in Sources */,
 				FD8EC1C31116C7A100907A48 /* LineObjectView.m in Sources */,
+				FDA7844E1118F80000AC33F0 /* SharedUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -475,6 +482,7 @@
 				FD6408B71118A5DB005185AC /* SharedCollection.m in Sources */,
 				FD6408B81118A5DB005185AC /* LineObject.m in Sources */,
 				FD6408B91118A5DB005185AC /* LineObjectView.m in Sources */,
+				FDA7844F1118F80000AC33F0 /* SharedUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

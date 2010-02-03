@@ -25,6 +25,8 @@
 - (void) updateForTouches:(NSSet*)touches;
 - (NSMutableSet*) relevantTouches:(NSSet*)touches;
 - (NSMutableSet*) trackedTouches;
+- (void) updateSelected;
+- (void) updateUnselected;
 
 @property(nonatomic, readonly) int objectID;
 

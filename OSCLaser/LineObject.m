@@ -81,6 +81,18 @@
 	endPercentPoint = CGPointMake(parentEnd.x/parentWidth, parentEnd.y/parentHeight);
 }
 
+- (void) updateSelected
+{
+	LineObjectView * myView = (LineObjectView*)objectView;
+	[myView updateSelected];
+}
+
+- (void) updateUnselected
+{
+	LineObjectView * myView = (LineObjectView*)objectView;
+	[myView updateUnselected];
+}
+
 - (void) updateForTouches:(NSSet*)touches
 {
 	LineObjectView * myView = (LineObjectView*)objectView;
