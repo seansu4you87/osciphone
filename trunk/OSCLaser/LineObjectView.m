@@ -8,10 +8,14 @@
 
 #import "LineObjectView.h"
 #import "LineObject.h"
+#import "SharedUtility.h"
+
+#define DEFAULT_BASE_COLOR [UIColor blueColor]
+#define DEFAULT_SELECTED_COLOR [UIColor whiteColor]
 
 @implementation LineObjectView
 
-@synthesize parent, circleRadius, localStart, localEnd, startTouch, endTouch;
+@synthesize parent, circleRadius, localStart, localEnd, startTouch, endTouch, baseColor, currentColor;
 
 - (id)initWithFrame:(CGRect)frame {
     if (self = [super initWithFrame:frame]) {
@@ -20,6 +24,8 @@
 		self.backgroundColor = [UIColor clearColor];
 		self.opaque = NO;
 		self.userInteractionEnabled = NO;
+		self.baseColor = DEFAULT_BASE_COLOR;
+		self.currentColor = self.baseColor;
     }
     return self;
 }
@@ -38,15 +44,21 @@
 
 
 - (void)drawRect:(CGRect)rect {
+	UIColor * theColor = self.currentColor;
+	float red = [SharedUtility getRedFromColor:theColor];
+	float green = [SharedUtility getGreenFromColor:theColor];
+	float blue = [SharedUtility getBlueFromColor:theColor];
+	float alpha = [SharedUtility getAlphaFromColor:theColor];
     CGContextRef contextRef = UIGraphicsGetCurrentContext();
 	
-	CGContextSetRGBFillColor(contextRef, 0, 0, 1.0, 0.75);
-	CGContextSetRGBStrokeColor(contextRef, 0, 0, 1.0, 0.5);
+	CGContextSetRGBFillColor(contextRef, red, green, blue, alpha);
+	CGContextSetRGBStrokeColor(contextRef, red, green, blue, 0.75*alpha);
 	
 	[self drawCircleAtPoint:localStart withRadius:circleRadius inContext: contextRef];
 	[self drawCircleAtPoint:localEnd withRadius:circleRadius inContext: contextRef];
 	
 	CGContextMoveToPoint(contextRef, localStart.x, localStart.y);
+	CGContextSetLineWidth (contextRef, 10.0);
 	CGContextAddLineToPoint( contextRef, localEnd.x, localEnd.y);
 	CGContextStrokePath(contextRef);
 }
@@ -208,6 +220,18 @@
 	return [self relevantTouches:touches] > 0;
 }
 
+- (void) updateSelected
+{
+	self.currentColor = DEFAULT_SELECTED_COLOR;
+	[self setNeedsDisplay];
+}
+
+- (void) updateUnselected
+{
+	self.currentColor = self.baseColor;
+	[self setNeedsDisplay];
+}
+
 - (void) readjustFrame
 {
 	CGPoint theOrigin = CGPointMake(MIN(localStart.x, localEnd.x) - circleRadius, MIN(localStart.y, localEnd.y) - circleRadius);
@@ -283,6 +307,10 @@
 
 - (void)dealloc {
 	//[downTouches release];
+	[currentColor release];
+	[baseColor release];
+	[startTouch release];
+	[endTouch release];
 	
     [super dealloc];
 }

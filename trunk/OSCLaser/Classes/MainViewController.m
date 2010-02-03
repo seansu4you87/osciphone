@@ -122,6 +122,8 @@
 	
 	for(SharedObject * cur in toTrash)
 	{
+		//only do this if it's not the last
+		[cur updateUnselected];
 		[currentlyManipulated removeObject:cur];
 	}
 	
@@ -134,6 +136,15 @@
 	{
 		[cur updateForTouches:touches];
 	}
+}
+
+- (void) addLineForStartTouch:(UITouch*)touchOne endTouch:(UITouch*)touchTwo
+{
+	LineObject * newLine = [[LineObject alloc] initOnView:self.view withStartPoint:[touchOne locationInView:self.view] endPoint:[touchTwo locationInView:self.view]];
+	[collection addSharedObject:[newLine autorelease]];
+	[currentlyManipulated addObject: newLine];
+	[newLine trackTouches:[NSMutableSet setWithObjects:touchOne, touchTwo, nil]];
+	[newLine updateSelected];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -154,6 +165,10 @@
 	 */
 	for(SharedObject * curObject in allObjects)
 	{
+		if([touchesLeft count] == 0)
+		{
+			break;
+		}
 		NSMutableSet * curRelevantTouches = [curObject relevantTouches:touchesLeft];
 		if([curRelevantTouches count] > 0)
 		{
@@ -170,6 +185,7 @@
 			{
 				[currentlyManipulated addObject:curObject];
 				[curObject trackTouches:allowableTouches];
+				[curObject updateSelected];
 				[takenTouches unionSet:allowableTouches];
 				[touchesLeft minusSet:takenTouches];
 				anyRelevant = YES;
@@ -198,10 +214,7 @@
 			if(!CGPointEqualToPoint(startPoint, CGPointZero))
 			{
 				UITouch * theTouch = [touchesLeft anyObject];
-				LineObject * newLine = [[LineObject alloc] initOnView:self.view withStartPoint:startPoint endPoint:[theTouch locationInView:self.view]];
-				[collection addSharedObject:[newLine autorelease]];
-				[currentlyManipulated addObject:newLine];
-				[newLine trackTouches:[NSMutableSet setWithObjects:theTouch, startTouch, nil]];
+				[self addLineForStartTouch:startTouch endTouch:theTouch];
 			}else{
 				self.startTouch = nil;
 			}
@@ -218,10 +231,7 @@
 		UITouch * firstTouch = [orderedTouches objectAtIndex:0];
 		UITouch * secondTouch = [orderedTouches objectAtIndex:1];
 		
-		LineObject * newLine = [[LineObject alloc] initOnView:self.view withStartPoint:[firstTouch locationInView:self.view] endPoint:[secondTouch locationInView:self.view]];
-		[collection addSharedObject:[newLine autorelease]];
-		[currentlyManipulated addObject: newLine];
-		[newLine trackTouches:touches];
+		[self addLineForStartTouch:firstTouch endTouch:secondTouch];
 	}
 }
 
