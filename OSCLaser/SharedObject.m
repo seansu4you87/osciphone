@@ -14,7 +14,7 @@ static int currentID;
 
 @implementation SharedObject
 
-@synthesize objectID;
+@synthesize objectID, objectView;
 
 - (id) init
 {

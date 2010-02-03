@@ -35,12 +35,25 @@
 	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
 	[thePort sendTo:[addAddress UTF8String] types:"i", newObject.objectID];
  }
+
+- (void) sendDeleteMessageForObject:(SharedObject*)deletedObject
+{
+	NSString * deleteAddress = [NSString stringWithFormat:@"/%@/del", [deletedObject objectName]];
+	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
+	[thePort sendTo:[deleteAddress UTF8String] types:"i", deletedObject.objectID];
+}
  
  - (void) addSharedObject:(SharedObject*)newObject
 {
-	[sharedObjects addObject:newObject];
 	[self sendAddMessageForObject:newObject];
+	[sharedObjects addObject:newObject];
 	[newObject updateAllValues];
+}
+
+- (void) removeSharedObject:(SharedObject*)deletedObject
+{
+	[self sendDeleteMessageForObject:deletedObject];
+	[sharedObjects removeObjectAtIndex:[sharedObjects indexOfObject:deletedObject]];
 }
 
 - (NSArray*) objects
