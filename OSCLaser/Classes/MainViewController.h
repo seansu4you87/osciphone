@@ -14,18 +14,21 @@
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
 	SharedCollection * collection;
 	NSMutableSet * currentlyManipulated;
-	
+	SharedObject * selected;
 	UITouch * startTouch;
 }
 
 @property(nonatomic, retain) UITouch * startTouch;
+@property(nonatomic, retain) SharedObject * selected;
 
 - (IBAction)showInfo;
 
 - (CGPoint) percentCoordsForTouch:(UITouch*)theTouch;
 - (void) addLineForStartTouch:(UITouch*)touchOne endTouch:(UITouch*)touchTwo;
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
--(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
+- (void) addManipulatedObject:(SharedObject*)theObject withTouches:(NSMutableSet*)manipulatingTouches;
+- (void) addSharedObject:(SharedObject*)theObject withTouches:(NSMutableSet*) creatingTouches;
 
 @end
