@@ -11,6 +11,7 @@
 
 @interface SharedObject : NSObject {
 	int objectID;
+	BOOL selected;
 	UIView * objectView;
 }
 
@@ -29,6 +30,8 @@
 - (NSMutableSet*) trackedTouches;
 - (void) updateSelected;
 - (void) updateUnselected;
+
+- (void) step;
 
 @property(nonatomic, readonly) int objectID;
 

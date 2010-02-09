@@ -21,6 +21,7 @@ static int currentID;
 	if(self = [super init])
 	{
 		objectID = [SharedObject nextID];
+		selected = NO;//this behavior will be handled by controller
 	}
 	
 	return self;
@@ -46,6 +47,11 @@ static int currentID;
 	//override this
 }
 
+- (void) step
+{
+	//override this
+}
+
 - (NSMutableSet*) relevantTouches:(NSSet*)touches
 {
 	return [NSMutableSet setWithCapacity:0];
@@ -58,10 +64,12 @@ static int currentID;
 
 - (void) updateSelected
 {
+	selected = YES;
 }
 
 - (void) updateUnselected
 {
+	selected = NO;
 }
 
 - (BOOL) stopTrackingTouches:(NSSet*)touches

@@ -190,21 +190,16 @@
 	 */
 }
 
-+ (float) distanceFrom:(CGPoint)fromPoint to:(CGPoint)toPoint
-{
-	return sqrt(pow(fromPoint.x - toPoint.x, 2) + pow(fromPoint.y - toPoint.y, 2));
-}
-
 - (BOOL) touchStartRelevant:(UITouch*)touch
 {
 	CGPoint touchPoint = [touch locationInView:self];
-	return [LineObjectView distanceFrom:touchPoint to:localStart] < circleRadius;
+	return [SharedUtility distanceFrom:touchPoint to:localStart] < circleRadius;
 }
 
 - (BOOL) touchEndRelevant:(UITouch*)touch
 {
 	CGPoint touchPoint = [touch locationInView:self];
-	return [LineObjectView distanceFrom:touchPoint to:localEnd] < circleRadius;
+	return [SharedUtility distanceFrom:touchPoint to:localEnd] < circleRadius;
 }
 
 - (BOOL) touchIsRelevant:(UITouch*)touch
@@ -249,7 +244,7 @@
 	for(UITouch * touch in touches)
 	{
 		CGPoint touchPoint = [touch locationInView:self];
-		float currentDist = [LineObjectView distanceFrom:touchPoint to:thePoint];
+		float currentDist = [SharedUtility distanceFrom:touchPoint to:thePoint];
 		if(currentDist < currentMin)
 		{
 			currentMin = currentDist;
@@ -273,16 +268,7 @@
 		{
 			localEnd = touchPoint;
 		}
-		/*
-		float startDistance = [LineObjectView distanceFrom:touchPoint to:localStart];
-		float endDistance = [LineObjectView distanceFrom:touchPoint to:localEnd];
-		if(startDistance < endDistance)
-		{
-			localStart = touchPoint;
-		}else{
-			localEnd = touchPoint;
-		}
-		 */
+
 		[self setNeedsDisplay];
 		return;
 	}
