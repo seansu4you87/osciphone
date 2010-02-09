@@ -85,12 +85,14 @@
 {
 	LineObjectView * myView = (LineObjectView*)objectView;
 	[myView updateSelected];
+	[super updateSelected];
 }
 
 - (void) updateUnselected
 {
 	LineObjectView * myView = (LineObjectView*)objectView;
 	[myView updateUnselected];
+	[super updateUnselected];
 }
 
 - (void) updateForTouches:(NSSet*)touches

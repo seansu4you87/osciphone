@@ -13,6 +13,9 @@
 
 }
 
+//math
++ (float) distanceFrom:(CGPoint)fromPoint to:(CGPoint)toPoint;
+
 //color functions
 + (UIColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
 + (UIColor *)colorFromColor:(UIColor*)color andAlpha:(float)alpha;

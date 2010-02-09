@@ -203,6 +203,19 @@
 	[newLine release];
 }
 
+- (void) step
+{
+	
+}
+
+- (void) mainThread
+{
+	while(true)
+	{
+		[self step];
+	}
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
 	if([touches count] == 1)

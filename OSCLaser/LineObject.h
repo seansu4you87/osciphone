@@ -17,7 +17,6 @@
 - (id) initOnView:(UIView*)parentView withStartPoint:(CGPoint)parentStart endPoint:(CGPoint) parentEnd;
 
 
-- (NSString *) objectName;
 - (void) updateAllValues;
 
 @end

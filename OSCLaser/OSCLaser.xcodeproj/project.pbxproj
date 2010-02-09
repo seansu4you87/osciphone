@@ -73,6 +73,10 @@
 		FD8EC1C31116C7A100907A48 /* LineObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD8EC1C21116C7A100907A48 /* LineObjectView.m */; };
 		FDA7844E1118F80000AC33F0 /* SharedUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA7844D1118F80000AC33F0 /* SharedUtility.m */; };
 		FDA7844F1118F80000AC33F0 /* SharedUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA7844D1118F80000AC33F0 /* SharedUtility.m */; };
+		FDBFB3C511211F310054E172 /* MultiPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */; };
+		FDBFB3C611211F310054E172 /* MultiPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */; };
+		FDBFB3E511211F710054E172 /* ControlPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3E411211F710054E172 /* ControlPoint.m */; };
+		FDBFB3E611211F710054E172 /* ControlPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3E411211F710054E172 /* ControlPoint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +147,10 @@
 		FD8EC1C21116C7A100907A48 /* LineObjectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LineObjectView.m; sourceTree = "<group>"; };
 		FDA7844C1118F80000AC33F0 /* SharedUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedUtility.h; sourceTree = "<group>"; };
 		FDA7844D1118F80000AC33F0 /* SharedUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedUtility.m; sourceTree = "<group>"; };
+		FDBFB3C311211F310054E172 /* MultiPointObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiPointObject.h; sourceTree = "<group>"; };
+		FDBFB3C411211F310054E172 /* MultiPointObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiPointObject.m; sourceTree = "<group>"; };
+		FDBFB3E311211F710054E172 /* ControlPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPoint.h; sourceTree = "<group>"; };
+		FDBFB3E411211F710054E172 /* ControlPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlPoint.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -280,10 +288,14 @@
 		FD26DA3D1116C2DA0062DF1F /* SharedObjects */ = {
 			isa = PBXGroup;
 			children = (
+				FDBFB3C311211F310054E172 /* MultiPointObject.h */,
+				FDBFB3C411211F310054E172 /* MultiPointObject.m */,
 				FD8EC1B11116C60400907A48 /* LineObject.h */,
 				FD8EC1B21116C60400907A48 /* LineObject.m */,
 				FD8EC1C11116C7A100907A48 /* LineObjectView.h */,
 				FD8EC1C21116C7A100907A48 /* LineObjectView.m */,
+				FDBFB3E311211F710054E172 /* ControlPoint.h */,
+				FDBFB3E411211F710054E172 /* ControlPoint.m */,
 			);
 			name = SharedObjects;
 			sourceTree = "<group>";
@@ -451,6 +463,8 @@
 				FD8EC1B31116C60400907A48 /* LineObject.m in Sources */,
 				FD8EC1C31116C7A100907A48 /* LineObjectView.m in Sources */,
 				FDA7844E1118F80000AC33F0 /* SharedUtility.m in Sources */,
+				FDBFB3C611211F310054E172 /* MultiPointObject.m in Sources */,
+				FDBFB3E611211F710054E172 /* ControlPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,6 +497,8 @@
 				FD6408B81118A5DB005185AC /* LineObject.m in Sources */,
 				FD6408B91118A5DB005185AC /* LineObjectView.m in Sources */,
 				FDA7844F1118F80000AC33F0 /* SharedUtility.m in Sources */,
+				FDBFB3C511211F310054E172 /* MultiPointObject.m in Sources */,
+				FDBFB3E511211F710054E172 /* ControlPoint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

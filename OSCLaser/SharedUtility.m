@@ -11,6 +11,7 @@
 
 @implementation SharedUtility
 
+#pragma mark colors
 
 + (UIColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha
 {
@@ -43,6 +44,13 @@
 + (UIColor*) colorFromColor:(UIColor*)theColor andAlpha:(float)newAlpha
 {
 	return [UIColor colorWithRed:[SharedUtility getRedFromColor:theColor] green:[SharedUtility getGreenFromColor:theColor] blue:[SharedUtility getBlueFromColor:theColor] alpha:newAlpha];
+}
+
+#pragma mark math
+
++ (float) distanceFrom:(CGPoint)fromPoint to:(CGPoint)toPoint
+{
+	return sqrt(pow(fromPoint.x - toPoint.x, 2) + pow(fromPoint.y - toPoint.y, 2));
 }
 
 
