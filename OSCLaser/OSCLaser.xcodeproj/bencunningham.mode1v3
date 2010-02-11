@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>FD2A3F6F112402530069C149</string>
+						<string>FD2A40A511240D0B0069C149</string>
 						<key>history</key>
 						<array>
 							<string>FDE0BBB31123EDDB00A7CE0E</string>
@@ -308,14 +308,14 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateExpansionKey</key>
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
+								<string>FD2A3FA6112404020069C149</string>
 								<string>FD26DA3D1116C2DA0062DF1F</string>
 								<string>FD26DA101116B0410062DF1F</string>
-								<string>FD78A4FC111638E6008B87CB</string>
 								<string>289233A00DB2D0730083E9F9</string>
 								<string>281C6CD70DB2D82200F60ACC</string>
 								<string>080E96DDFE201D6D7F000001</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
-								<string>FD6408C51118A5DB005185AC</string>
+								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
 							</array>
@@ -361,7 +361,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MultiPointObject.m</string>
+								<string>MainViewController.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -369,11 +369,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MultiPointObject.m</string>
+										<string>MainViewController.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD2A3F6E112402530069C149</string>
+										<string>FD2A40A411240D0B0069C149</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -394,10 +394,7 @@
 											<string>FDBFB3C811211F410054E172</string>
 											<string>FDBFB3CC11211F410054E172</string>
 											<string>FDBFB3CE11211F410054E172</string>
-											<string>FDF0585C1122876900B30634</string>
-											<string>FDE0BADC1123CE1F00A7CE0E</string>
 											<string>FDE0BADE1123CE1F00A7CE0E</string>
-											<string>FDE0BAE11123CE1F00A7CE0E</string>
 											<string>FDE0BB191123D2B000A7CE0E</string>
 											<string>FDE0BB891123E9B400A7CE0E</string>
 											<string>FDE0BBA41123EDDB00A7CE0E</string>
@@ -405,24 +402,31 @@
 											<string>FDE0BBAC1123EDDB00A7CE0E</string>
 											<string>FDE0BBAE1123EDDB00A7CE0E</string>
 											<string>FD2A3EB21123F4620069C149</string>
-											<string>FD2A3EBD1123F4D90069C149</string>
 											<string>FD2A3ED81123F6980069C149</string>
 											<string>FD2A3ED91123F6980069C149</string>
 											<string>FD2A3EFF1123F87C0069C149</string>
-											<string>FD2A3F001123F87C0069C149</string>
-											<string>FD2A3F011123F87C0069C149</string>
-											<string>FD2A3F1A1123FD2F0069C149</string>
 											<string>FD2A3F1C1123FD2F0069C149</string>
 											<string>FD2A3F491123FEA00069C149</string>
-											<string>FD2A3F4D1123FEA00069C149</string>
-											<string>FD2A3F561123FF120069C149</string>
 											<string>FD2A3F581123FF120069C149</string>
 											<string>FD2A3F591123FF120069C149</string>
 											<string>FD2A3F69112402530069C149</string>
 											<string>FD2A3F6A112402530069C149</string>
 											<string>FD2A3F6B112402530069C149</string>
 											<string>FD2A3F6C112402530069C149</string>
-											<string>FD2A3F6D112402530069C149</string>
+											<string>FD2A405B1124064A0069C149</string>
+											<string>FD2A40641124073D0069C149</string>
+											<string>FD2A406A1124073D0069C149</string>
+											<string>FD2A406B1124073D0069C149</string>
+											<string>FD2A409011240CEF0069C149</string>
+											<string>FD2A409111240CEF0069C149</string>
+											<string>FD2A409211240CEF0069C149</string>
+											<string>FD2A409311240CEF0069C149</string>
+											<string>FD2A409411240CEF0069C149</string>
+											<string>FD2A409511240CEF0069C149</string>
+											<string>FD2A409611240CEF0069C149</string>
+											<string>FD2A409711240CEF0069C149</string>
+											<string>FD2A409811240CEF0069C149</string>
+											<string>FD2A409911240CEF0069C149</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -620,13 +624,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FD2A3F70112402530069C149</string>
+		<string>FD2A40A611240D0B0069C149</string>
 		<string>FD2A3EB81123F4620069C149</string>
 		<string>FD2A3EA31123F3960069C149</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>FDE0BB4A1123D57B00A7CE0E</string>
 		<string>FD78A4EE1116385D008B87CB</string>
+		<string>FDE0BB4A1123D57B00A7CE0E</string>
 		<string>/Users/bencunningham/Desktop/edgeCity/osc_iphone/OSCLaser/OSCLaser.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -646,14 +650,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MultiPointObject.m</string>
+								<string>ES1Renderer.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -670,6 +672,8 @@
 							<string>264pt</string>
 						</dict>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -722,7 +726,7 @@
 			<key>WindowToolGUID</key>
 			<string>FD78A4EE1116385D008B87CB</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>

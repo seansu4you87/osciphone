@@ -9,7 +9,9 @@
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
 
-#import "ESRenderer.h"
+#import "ES1Renderer.h"
+
+@class SharedCollection;
 
 // This class wraps the CAEAGLLayer from CoreAnimation into a convenient UIView subclass.
 // The view content is basically an EAGL surface you render your OpenGL scene into.
@@ -17,7 +19,7 @@
 @interface EAGLView : UIView
 {    
 @private
-	id <ESRenderer> renderer;
+	ES1Renderer * renderer;
 	
 	BOOL animating;
 	BOOL displayLinkSupported;
@@ -28,10 +30,12 @@
 	// isn't available.
 	id displayLink;
     NSTimer *animationTimer;
+	SharedCollection * collection;
 }
 
 @property (readonly, nonatomic, getter=isAnimating) BOOL animating;
 @property (nonatomic) NSInteger animationFrameInterval;
+@property(nonatomic, retain) SharedCollection * collection;
 
 - (void) startAnimation;
 - (void) stopAnimation;

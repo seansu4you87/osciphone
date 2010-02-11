@@ -7,6 +7,8 @@
 //
 
 #import "ES1Renderer.h"
+#import "MultiPointObject.h"
+#import "ControlPoint.h"
 
 @implementation ES1Renderer
 
@@ -34,7 +36,7 @@
 	return self;
 }
 
-- (void) render
+- (void) renderMultiPoints:(NSArray*)multiObjects
 {
     // Replace the implementation of this method to do your own custom drawing
     
@@ -73,6 +75,28 @@
     glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     
+	for(MultiPointObject * object in multiObjects)
+	{
+		NSArray * controlPoints = [object getControlPoints];
+		for(int i = 0; i < [controlPoints count]; i++)
+		{
+			ControlPoint * current = [controlPoints objectAtIndex:i];
+			ControlPoint * next;
+			if(i == [controlPoints count] - 1)
+			{
+				next = [controlPoints objectAtIndex:0];
+			}else{
+				next = [controlPoints objectAtIndex:i+1];
+			}
+			//push matrix
+			//translate to currentPoint
+			//draw circle using circle vertices
+			//rotate to face nextPoint
+			//draw line using rect vertices
+			//pop matrix
+		}
+	}
+	
     glVertexPointer(2, GL_FLOAT, 0, squareVertices);
     glEnableClientState(GL_VERTEX_ARRAY);
     glColorPointer(4, GL_UNSIGNED_BYTE, 0, squareColors);

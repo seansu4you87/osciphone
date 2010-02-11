@@ -25,7 +25,22 @@
 	[window addSubview:[mainViewController view]];
     [window makeKeyAndVisible];
 	
-	[mainViewController startMainThread];
+	[mainViewController startAnimation];
+}
+
+- (void) applicationWillResignActive:(UIApplication *)application
+{
+	[mainViewController stopAnimation];
+}
+
+- (void) applicationDidBecomeActive:(UIApplication *)application
+{
+	[mainViewController startAnimation];
+}
+
+- (void)applicationWillTerminate:(UIApplication *)application
+{
+	[mainViewController stopAnimation];
 }
 
 

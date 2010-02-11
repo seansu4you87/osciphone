@@ -11,9 +11,9 @@
 #import "OSCConfig.h"
 #import "OSCPort.h"
 #import "SharedCollection.h"
-
 #import "LineObject.h"
 #import "MultiPointObject.h"
+#import "EAGLView.h"
 
 //seconds it takes a touch to become an object
 #define TOUCH_TIME 0.55
@@ -32,7 +32,15 @@
     return self;
 }
 
+- (void) startAnimation
+{
+	[glView startAnimation];
+}
 
+- (void) stopAnimation
+{
+	[glView stopAnimation];
+}
 
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
@@ -46,6 +54,9 @@
 		 [alert show];
 		 [alert release];
 	 }
+	 
+	 [self.view bringSubviewToFront:infoButton];
+	 glView.collection = collection;
  }
  
 
@@ -143,28 +154,6 @@
 	if(selected != nil)
 	{
 		[self removeObject:selected];
-	}
-}
-
-- (void) step
-{
-	@synchronized(self)
-	{
-		[collection step];
-	}
-}
-
-- (void) startMainThread
-{
-	[NSThread detachNewThreadSelector:@selector(mainThread) toTarget:self withObject:nil];
-}
-
-- (void) mainThread
-{
-	while(true)
-	{
-		[self step];
-		[NSThread sleepForTimeInterval:LOOP_INTERVAL];
 	}
 }
 
