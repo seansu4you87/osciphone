@@ -9,7 +9,7 @@
 #import "ControlPoint.h"
 
 #define DEFAULT_RADIUS 30
-#define VELOCITY_FACTOR 0.25
+#define VELOCITY_FACTOR 0.15
 
 @implementation ControlPoint
 
@@ -63,13 +63,28 @@
 	return [result autorelease];
 }
 
-- (void) step
+- (CGPoint) nextPoint
+{
+	return CGPointMake(position.x + VELOCITY_FACTOR*velocity.x, position.y + VELOCITY_FACTOR*velocity.y);
+}
+
+- (void) stepInBounds:(CGRect)bounds
 {
 	if(PHYSICS)
 	{
 		if(controllingTouch == nil)
 		{
-			[self setPosition:CGPointMake(position.x + VELOCITY_FACTOR*velocity.x, position.y + VELOCITY_FACTOR*velocity.y)];
+			CGPoint newPoint = [self nextPoint];
+			if(newPoint.x - radius < 0 || newPoint.x + radius > bounds.size.width)
+			{
+				velocity.x = -1.0*velocity.x;
+				newPoint = [self nextPoint];
+			} else if(newPoint.y - radius < 0 || newPoint.y + radius > bounds.size.height)
+			{
+				velocity.y = -1.0*velocity.y;
+				newPoint = [self nextPoint];
+			}
+			[self setPosition:newPoint];
 		}
 	}
 }

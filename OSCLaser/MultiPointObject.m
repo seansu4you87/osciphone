@@ -13,6 +13,8 @@
 
 @implementation MultiPointObject
 
+#define VELOCITY_THRESHOLD 3.0
+
 @synthesize parentView;
 
 - (id) init
@@ -97,11 +99,20 @@
 			if([touches containsObject:point.controllingTouch])
 			{
 				[controllingTouches removeObject:point.controllingTouch];
-				point.controllingTouch = nil;
 				if(PHYSICS)
 				{
-					[point setVelocityFromPointChange];
+					CGPoint current = [point.controllingTouch locationInView:parentView];
+					CGPoint prev = [point.controllingTouch previousLocationInView:parentView];
+					CGPoint vel = CGPointMake(current.x - prev.x, current.y - prev.y);
+					if(fabs(vel.x) + fabs(vel.y) < VELOCITY_THRESHOLD)
+					{
+						vel = CGPointZero;
+					}
+					
+					[point setVelocity:vel];
 				}
+				point.controllingTouch = nil;
+				
 			}
 		}
 	}
@@ -210,7 +221,10 @@
 {
 	for(ControlPoint * curPoint in controlPoints)
 	{
-		[curPoint step];
+		if(self.objectView != nil)
+		{
+			[curPoint stepInBounds:self.objectView.frame];
+		}
 	}
 	
 	[self.objectView performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:NO ];
