@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 #import <QuartzCore/QuartzCore.h>
+#import <OpenGLES/EAGL.h>
+#import <OpenGLES/EAGLDrawable.h>
 
 #import "ES1Renderer.h"
 
-@class SharedCollection;
+@class SharedCollection, ES1Renderer;
 
 // This class wraps the CAEAGLLayer from CoreAnimation into a convenient UIView subclass.
 // The view content is basically an EAGL surface you render your OpenGL scene into.
