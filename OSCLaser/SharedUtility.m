@@ -53,6 +53,11 @@
 	return sqrt(pow(fromPoint.x - toPoint.x, 2) + pow(fromPoint.y - toPoint.y, 2));
 }
 
++ (float) magnitudeOf:(CGPoint)thePoint
+{
+	return [SharedUtility distanceFrom:thePoint to:CGPointZero];
+}
+
 #pragma mark CG drawing
 
 + (void) drawCircleAtPoint:(CGPoint)thePoint withRadius:(float)theRadius inContext:(CGContextRef)theContext

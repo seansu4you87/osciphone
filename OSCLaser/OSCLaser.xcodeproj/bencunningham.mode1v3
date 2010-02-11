@@ -216,7 +216,7 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>FD2A3F3A1123FDC00069C149</string>
+						<string>FD2A3F6F112402530069C149</string>
 						<key>history</key>
 						<array>
 							<string>FDE0BBB31123EDDB00A7CE0E</string>
@@ -361,7 +361,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ControlPoint.m</string>
+								<string>MultiPointObject.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -369,11 +369,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ControlPoint.m</string>
+										<string>MultiPointObject.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD2A3F391123FDC00069C149</string>
+										<string>FD2A3F6E112402530069C149</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -405,24 +405,24 @@
 											<string>FDE0BBAC1123EDDB00A7CE0E</string>
 											<string>FDE0BBAE1123EDDB00A7CE0E</string>
 											<string>FD2A3EB21123F4620069C149</string>
-											<string>FD2A3EB31123F4620069C149</string>
 											<string>FD2A3EBD1123F4D90069C149</string>
 											<string>FD2A3ED81123F6980069C149</string>
 											<string>FD2A3ED91123F6980069C149</string>
-											<string>FD2A3EE01123F6DA0069C149</string>
-											<string>FD2A3EFE1123F87C0069C149</string>
 											<string>FD2A3EFF1123F87C0069C149</string>
 											<string>FD2A3F001123F87C0069C149</string>
 											<string>FD2A3F011123F87C0069C149</string>
-											<string>FD2A3F0D1123FAA20069C149</string>
-											<string>FD2A3F0E1123FAA20069C149</string>
-											<string>FD2A3F101123FAA20069C149</string>
 											<string>FD2A3F1A1123FD2F0069C149</string>
-											<string>FD2A3F1B1123FD2F0069C149</string>
 											<string>FD2A3F1C1123FD2F0069C149</string>
-											<string>FD2A3F1D1123FD2F0069C149</string>
-											<string>FD2A3F1E1123FD2F0069C149</string>
-											<string>FD2A3F1F1123FD2F0069C149</string>
+											<string>FD2A3F491123FEA00069C149</string>
+											<string>FD2A3F4D1123FEA00069C149</string>
+											<string>FD2A3F561123FF120069C149</string>
+											<string>FD2A3F581123FF120069C149</string>
+											<string>FD2A3F591123FF120069C149</string>
+											<string>FD2A3F69112402530069C149</string>
+											<string>FD2A3F6A112402530069C149</string>
+											<string>FD2A3F6B112402530069C149</string>
+											<string>FD2A3F6C112402530069C149</string>
+											<string>FD2A3F6D112402530069C149</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -620,13 +620,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FD2A3F3B1123FDC00069C149</string>
+		<string>FD2A3F70112402530069C149</string>
 		<string>FD2A3EB81123F4620069C149</string>
 		<string>FD2A3EA31123F3960069C149</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>FD78A4EE1116385D008B87CB</string>
 		<string>FDE0BB4A1123D57B00A7CE0E</string>
+		<string>FD78A4EE1116385D008B87CB</string>
 		<string>/Users/bencunningham/Desktop/edgeCity/osc_iphone/OSCLaser/OSCLaser.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -646,12 +646,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string></string>
+								<string>MultiPointObject.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -720,7 +722,7 @@
 			<key>WindowToolGUID</key>
 			<string>FD78A4EE1116385D008B87CB</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -954,6 +956,8 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
