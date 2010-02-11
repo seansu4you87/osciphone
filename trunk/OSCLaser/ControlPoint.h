@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#define PHYSICS NO
+#define PHYSICS YES
 
 @interface ControlPoint : NSObject {
 	float radius;
@@ -22,7 +22,7 @@
 @property(nonatomic, readonly) CGPoint position;
 @property(nonatomic, readonly) float radius;
 
-- (void) step;
+- (void) stepInBounds:(CGRect)bounds;
 - (BOOL) beingTouched;
 - (void) setVelocity:(CGPoint)newVelocity;
 - (void) setVelocityFromPointChange;
