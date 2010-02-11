@@ -98,6 +98,10 @@
 			{
 				[controllingTouches removeObject:point.controllingTouch];
 				point.controllingTouch = nil;
+				if(PHYSICS)
+				{
+					[point setVelocityFromPointChange];
+				}
 			}
 		}
 	}
@@ -208,6 +212,8 @@
 	{
 		[curPoint step];
 	}
+	
+	[self.objectView performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:NO ];
 }
 
 - (BOOL) canAddControlPoint
