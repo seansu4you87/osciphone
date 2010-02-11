@@ -27,7 +27,6 @@
 	{
 		LineObjectView * theView = [LineObjectView lineViewOnParentView:parentView withParentStart:parentStart parentEnd:parentEnd radius:DEFAULT_RADIUS];
 		objectView = [theView retain];
-		[parentView addSubview:theView];
 		
 		startPercentPoint = CGPointMake(parentStart.x/parentView.frame.size.width, parentStart.y/parentView.frame.size.height);
 		endPercentPoint = CGPointMake(parentEnd.x/parentView.frame.size.width, parentEnd.y/parentView.frame.size.height);

@@ -11,6 +11,8 @@
 #import "OSCConfig.h"
 #import "OSCPort.h"
 
+#define USE_NEW YES
+
 @implementation MainView
 
 @synthesize parent;
@@ -26,7 +28,12 @@
 {
 	if(parent)
 	{
-		[parent touchesEnded:touches withEvent:event];
+		if(USE_NEW)
+		{
+			[parent theTouchesEnded:touches withEvent:event];
+		}else{
+			[parent touchesEnded:touches withEvent:event];
+		}
 	}
 }
 
@@ -34,7 +41,12 @@
 { 
 	if(parent)
 	{
-		[parent touchesMoved:touches withEvent:event];
+		if(USE_NEW)
+		{
+			[parent theTouchesMoved:touches withEvent:event];
+		}else {
+			[parent touchesMoved:touches withEvent:event];
+		}
 	}
 }
 
@@ -42,7 +54,12 @@
 {
 	if(parent)
 	{
-		[parent touchesBegan:touches withEvent:event];
+		if(USE_NEW)
+		{
+			[parent theTouchesBegan:touches withEvent:event];
+		}else{
+			[parent touchesBegan:touches withEvent:event];
+		}
 	}
 }
 
