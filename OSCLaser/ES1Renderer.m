@@ -9,19 +9,32 @@
 #import "ES1Renderer.h"
 #import "MultiPointObject.h"
 #import "ControlPoint.h"
+#import "SharedUtility.h"
 
 @implementation ES1Renderer
 
-#define NUM_CIRCLE_DIVISIONS
+#define NUM_CIRCLE_DIVISIONS 20
 
 - (void) initCircleVertices
 {
-	circleVertices = malloc((NUM_CIRCLE_DIVISIONS + 1)*sizeof(GLfloat));
+	circleVertices = malloc(2*(NUM_CIRCLE_DIVISIONS + 2)*sizeof(GLfloat));
+	circleVertices[0] = 0.0;
+	circleVertices[1] = 0.0;
+	
+	float theta = 0;
+	float thetaStep = 2.0*[SharedUtility PI]/NUM_CIRCLE_DIVISIONS;
+	
+	for(int i = 1; i < NUM_CIRCLE_DIVISIONS + 2; i++)
+	{
+		circleVertices[2*i] = cos(theta);
+		circleVertices[2*i+1] = sin(theta);
+		theta += thetaStep;
+	}
 }
 
 - (void) initRectVertices
 {
-	rectVertices = malloc(4*sizeof(GLfloat));
+	rectVertices = malloc(2*4*sizeof(GLfloat));
 }
 
 // Create an ES 1.1 context
@@ -54,13 +67,6 @@
 - (void) renderMultiPoints:(NSArray*)multiObjects
 {
     // Replace the implementation of this method to do your own custom drawing
-    
-    static const GLfloat squareVertices[] = {
-        -0.5f,  -0.33f,
-         0.5f,  -0.33f,
-        -0.5f,   0.33f,
-         0.5f,   0.33f,
-    };
 	
     static const GLubyte squareColors[] = {
         255, 255,   0, 255,
@@ -68,9 +74,7 @@
         0,     0,   0,   0,
         255,   0, 255, 255,
     };
-    
-	static float transY = 0.0f;
-	
+
 	// This application only creates a single context which is already set current at this point.
 	// This call is redundant, but needed if dealing with multiple contexts.
     [EAGLContext setCurrentContext:context];
@@ -79,13 +83,13 @@
 	// This call is redundant, but needed if dealing with multiple framebuffers.
     glBindFramebufferOES(GL_FRAMEBUFFER_OES, defaultFramebuffer);
     glViewport(0, 0, backingWidth, backingHeight);
-    
+  
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     glMatrixMode(GL_MODELVIEW);
 	glLoadIdentity();
-    glTranslatef(0.0f, (GLfloat)(sinf(transY)/2.0f), 0.0f);
-	transY += 0.075f;
+	glTranslatef(-1.0, 1.0, 0);
+	glScalef(2.0/backingWidth, -2.0/backingHeight, 1.0);
 	
     glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
@@ -103,21 +107,23 @@
 			}else{
 				next = [controlPoints objectAtIndex:i+1];
 			}
-			//push matrix
-			//translate to currentPoint
-			//draw circle using circle vertices
+			glPushMatrix();
+			glTranslatef(current.position.x, current.position.y, 0);
+			glScalef(current.radius, current.radius, 1.0);
+			
+			glVertexPointer(2, GL_FLOAT, 0, circleVertices);
+			glEnableClientState(GL_VERTEX_ARRAY);
+			/*
+			glColorPointer(4, GL_UNSIGNED_BYTE, 0, squareColors);
+			glEnableClientState(GL_COLOR_ARRAY);
+			 */
+			glDrawArrays(GL_TRIANGLE_FAN, 0, NUM_CIRCLE_DIVISIONS+2);
+			
 			//rotate to face nextPoint
 			//draw line using rect vertices
-			//pop matrix
+			glPopMatrix();
 		}
 	}
-	
-    glVertexPointer(2, GL_FLOAT, 0, squareVertices);
-    glEnableClientState(GL_VERTEX_ARRAY);
-    glColorPointer(4, GL_UNSIGNED_BYTE, 0, squareColors);
-    glEnableClientState(GL_COLOR_ARRAY);
-    
-    glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
     
 	// This application only creates a single color renderbuffer which is already bound at this point.
 	// This call is redundant, but needed if dealing with multiple renderbuffers.

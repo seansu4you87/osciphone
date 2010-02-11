@@ -140,11 +140,6 @@
 		
 		}
 	}
-	//this will go away when no longer using UIView stuff
-	if(anyMoved)
-	{
-		[self.objectView setNeedsDisplay];
-	}
 }
 
 - (NSMutableSet*) relevantTouches:(NSSet*)touches
@@ -207,9 +202,6 @@
 - (void) addControlPoint:(ControlPoint*)newPoint
 {
 	[controlPoints addObject:newPoint];
-	
-	//this won't happen when we're drawing with GL
-	[self.objectView setNeedsDisplay];
 }
 
 - (NSString*) objectName
@@ -226,8 +218,6 @@
 			[curPoint stepInBounds:self.objectView.frame];
 		}
 	}
-	
-	[self.objectView performSelectorOnMainThread:@selector(setNeedsDisplay) withObject:nil waitUntilDone:NO ];
 }
 
 - (BOOL) canAddControlPoint

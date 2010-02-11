@@ -66,17 +66,11 @@ static int currentID;
 - (void) updateSelected
 {
 	selected = YES;
-	
-	//gone with GL
-	[self.objectView setNeedsDisplay];
 }
 
 - (void) updateUnselected
 {
 	selected = NO;
-	
-	//gone with GL
-	[self.objectView setNeedsDisplay];
 }
 
 - (BOOL) stopTrackingTouches:(NSSet*)touches

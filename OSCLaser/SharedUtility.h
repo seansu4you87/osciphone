@@ -16,6 +16,7 @@
 //math
 + (float) distanceFrom:(CGPoint)fromPoint to:(CGPoint)toPoint;
 + (float) magnitudeOf:(CGPoint)thePoint;
++ (float) PI;
 
 //color functions
 + (UIColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;

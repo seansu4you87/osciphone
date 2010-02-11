@@ -58,6 +58,11 @@
 	return [SharedUtility distanceFrom:thePoint to:CGPointZero];
 }
 
++ (float) PI
+{
+	return 3.141592653589793;
+}
+
 #pragma mark CG drawing
 
 + (void) drawCircleAtPoint:(CGPoint)thePoint withRadius:(float)theRadius inContext:(CGContextRef)theContext
