@@ -13,7 +13,7 @@
 
 @implementation MultiPointObject
 
-#define VELOCITY_THRESHOLD 2.0
+#define VELOCITY_THRESHOLD 3.0
 
 @synthesize parentView;
 
@@ -74,16 +74,20 @@
 
 - (void) trackTouches:(NSSet*)touches
 {
-	for(ControlPoint * point in controlPoints)
+	for(int i = [controlPoints count] - 1; i >=0; i--)
 	{
+		ControlPoint * point = [controlPoints objectAtIndex:i];
 		if(![point beingTouched])
 		{
 			for(UITouch * touch in touches)
 			{
-				if([self touch:touch isRelevantToControlPoint:point])
+				if(![controllingTouches containsObject:touch])
 				{
-					point.controllingTouch = touch;
-					[controllingTouches addObject:touch];
+					if([self touch:touch isRelevantToControlPoint:point])
+					{
+						point.controllingTouch = touch;
+						[controllingTouches addObject:touch];
+					}
 				}
 			}
 		}
