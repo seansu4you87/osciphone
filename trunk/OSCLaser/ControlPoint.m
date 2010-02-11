@@ -8,6 +8,7 @@
 
 #import "ControlPoint.h"
 
+#define DEFAULT_RADIUS 30
 
 @implementation ControlPoint
 
@@ -20,6 +21,34 @@
 	}
 	
 	return self;
+}
+
+- (void) setVelocity:(CGPoint)newVelocity
+{
+	velocity = newVelocity;
+}
+
+- (id) initWithPosition:(CGPoint)thePosition andRadius:(float)theRadius
+{
+	if(self = [self init])
+	{
+		position = thePosition;
+		radius = theRadius;
+		velocity = CGPointZero;
+	}
+	
+	return self;
+}
+
++ (ControlPoint*) controlPointWithPosition:(CGPoint)thePosition
+{
+	return [ControlPoint controlPointWithPosition:thePosition andRadius:DEFAULT_RADIUS];
+}
+
++ (ControlPoint*) controlPointWithPosition:(CGPoint)thePosition andRadius:(float)theRadius
+{
+	ControlPoint * result = [[ControlPoint alloc] initWithPosition:thePosition andRadius:theRadius];
+	return [result autorelease];
 }
 
 - (void) step

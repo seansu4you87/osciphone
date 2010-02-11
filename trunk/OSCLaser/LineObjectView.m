@@ -54,19 +54,13 @@
 	CGContextSetRGBFillColor(contextRef, red, green, blue, alpha);
 	CGContextSetRGBStrokeColor(contextRef, red, green, blue, 0.75*alpha);
 	
-	[self drawCircleAtPoint:localStart withRadius:circleRadius inContext: contextRef];
-	[self drawCircleAtPoint:localEnd withRadius:circleRadius inContext: contextRef];
+	[SharedUtility drawCircleAtPoint:localStart withRadius:circleRadius inContext: contextRef];
+	[SharedUtility drawCircleAtPoint:localEnd withRadius:circleRadius inContext: contextRef];
 	
 	CGContextMoveToPoint(contextRef, localStart.x, localStart.y);
 	CGContextSetLineWidth (contextRef, 10.0);
 	CGContextAddLineToPoint( contextRef, localEnd.x, localEnd.y);
 	CGContextStrokePath(contextRef);
-}
-
-- (void) drawCircleAtPoint:(CGPoint)thePoint withRadius:(float)theRadius inContext:(CGContextRef)theContext
-{
-	CGContextFillEllipseInRect(theContext, CGRectMake(thePoint.x - theRadius, thePoint.y - theRadius, theRadius*2, theRadius*2));
-	CGContextStrokeEllipseInRect(theContext, CGRectMake(thePoint.x - theRadius, thePoint.y - theRadius, theRadius*2, theRadius*2));
 }
 
 + (LineObjectView*) lineViewOnParentView:(UIView*)parentView withParentStart:(CGPoint)parentStart parentEnd:(CGPoint)parentEnd radius:(float)theRadius;

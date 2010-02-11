@@ -11,14 +11,17 @@
 #import "OSCConfig.h"
 #import "OSCPort.h"
 #import "SharedCollection.h"
-#import "LineObject.h"
 
-#define TOUCH_TIME 0.5
+#import "LineObject.h"
+#import "MultiPointObject.h"
+
+//seconds it takes a touch to become an object
+#define TOUCH_TIME 0.80
 #define LOOP_INTERVAL 1.0/60.0
 
 @implementation MainViewController
 
-@synthesize startTouch, selected;
+@synthesize startTouch, selected, touchTimer;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
@@ -128,6 +131,10 @@
 - (void) addSharedObject:(SharedObject*)theObject withTouches:(NSMutableSet*) creatingTouches
 {
 	[collection addSharedObject:theObject];
+	if(theObject.objectView != nil)
+	{
+		[self.view addSubview:theObject.objectView];
+	}
 	[self addManipulatedObject:theObject withTouches:creatingTouches];	
 }
 
@@ -150,8 +157,16 @@
 	if(selected != nil)
 	{
 		[self removeObject:selected];
-		//self.selected = nil;
 	}
+}
+
+- (void) addMultiPointForStartTouch:(UITouch*)touchOne
+{
+	MultiPointObject * newMulti = [[MultiPointObject alloc] initWithPoint:[touchOne locationInView:self.view]];
+	newMulti.parentView = self.view;
+	[newMulti setupView];
+	[self addSharedObject:newMulti withTouches:[NSMutableSet setWithObject:touchOne]];
+	[newMulti release];
 }
 
 - (void) addLineForStartTouch:(UITouch*)touchOne endTouch:(UITouch*)touchTwo
@@ -194,6 +209,11 @@
 
 - (void) theTouchesEnded:(NSSet *)touches withEvent:(UIEvent*)event
 {
+	if([touches containsObject:startTouch])
+	{
+		[self removeTouchTimer];
+		self.startTouch = nil;
+	}
 	
 	[downTouches minusSet:touches];
 }
@@ -202,13 +222,41 @@
 {
 }
 
+- (void) checkCreationTouch:(NSTimer*)theTimer
+{
+	UITouch * starter = [theTimer userInfo];
+	if([startTouch isEqual:starter])
+	{
+		[self addMultiPointForStartTouch:startTouch];
+		[self removeTouchTimer];
+	}
+}
+	
+- (void) removeTouchTimer
+{
+	[touchTimer invalidate];
+	self.touchTimer = nil;
+}
+
+- (void) observedCreationTouch:(UITouch*)theTouch
+{
+	[self removeTouchTimer];
+	
+	self.startTouch = theTouch;
+	self.touchTimer = [[[NSTimer alloc] initWithFireDate:[NSDate dateWithTimeIntervalSinceNow:TOUCH_TIME] interval:1 target:self selector:@selector(checkCreationTouch:) userInfo:theTouch repeats:NO] autorelease];
+	[[NSRunLoop currentRunLoop] addTimer:touchTimer forMode:NSDefaultRunLoopMode];
+}
+
 - (void)theTouchesBegan:(NSSet *)touches withEvent:(UIEvent*)event
 {
+	//check to see if touches are manipulating other objects and remove ones that are
+	
+	//then go into object creation logic
 	if([touches count] == 1)
 	{
 		if([downTouches count] == 0)
 		{
-			
+			[self observedCreationTouch:[touches anyObject]];
 		}
 	}
 	

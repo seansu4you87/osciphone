@@ -19,7 +19,12 @@
 
 @property(nonatomic, assign) UIView * parentView;
 
+- (id) initWithPoint:(CGPoint)initialStart;
+
+- (NSArray*) getControlPoints;
 - (void) addControlPoint:(ControlPoint*)newPoint;
 - (BOOL) touch:(UITouch*)theTouch isRelevantToControlPoint:(ControlPoint*)theControlPoint;
+
+- (void) setupView;//this must be called after parentView is set
 
 @end

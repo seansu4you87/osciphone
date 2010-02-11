@@ -9,6 +9,7 @@
 #import "MultiPointObject.h"
 #import "ControlPoint.h"
 #import "SharedUtility.h"
+#import "MultiPointObjectView.h"
 
 @implementation MultiPointObject
 
@@ -23,6 +24,35 @@
 	}
 	
 	return self;
+}
+
+- (id) initWithPoint:(CGPoint)initialStart
+{
+	if(self = [self init])
+	{
+		[controlPoints addObject:[ControlPoint controlPointWithPosition:initialStart]];
+	}
+	
+	return self;
+}
+
+- (NSArray*) getControlPoints
+{
+	return controlPoints;
+}
+
+- (void) setupView
+{
+	if(parentView != nil)
+	{
+		CGRect properFrame = parentView.frame;
+		properFrame.origin.x = 0.0;
+		properFrame.origin.y = 0.0;
+		
+		MultiPointObjectView * myView =  [[MultiPointObjectView alloc] initWithFrame:properFrame];
+		myView.parentObject = self;
+		objectView = myView;
+	}
 }
 
 - (BOOL) touchesAreRelevant:(NSSet*)touches

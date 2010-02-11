@@ -24,4 +24,7 @@
 + (float) getBlueFromColor:(UIColor*)theColor;
 + (float) getAlphaFromColor:(UIColor*)theColor;
 
+//cg drawing
++ (void) drawCircleAtPoint:(CGPoint)thePoint withRadius:(float)theRadius inContext:(CGContextRef)theContext;
+
 @end
