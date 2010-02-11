@@ -30,15 +30,10 @@
 - (IBAction)showInfo;
 
 - (CGPoint) percentCoordsForTouch:(UITouch*)theTouch;
-- (void) addLineForStartTouch:(UITouch*)touchOne endTouch:(UITouch*)touchTwo;
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
-
-- (void)theTouchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
-- (void)theTouchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
-- (void)theTouchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;
 
 - (void) addManipulatedObject:(SharedObject*)theObject withTouches:(NSMutableSet*)manipulatingTouches;
 - (void) addSharedObject:(SharedObject*)theObject withTouches:(NSMutableSet*) creatingTouches;
