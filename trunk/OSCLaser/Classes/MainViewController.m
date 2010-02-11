@@ -125,12 +125,6 @@
 	[selected release];
 	selected = [theObject retain];
 	[theObject updateSelected];
-	
-	//will go with GL
-	if(theObject.objectView != nil)
-	{
-		[self.view bringSubviewToFront:theObject.objectView];
-	}
 }
 
 
@@ -179,12 +173,6 @@
 	[currentlyManipulated addObject: theObject];
 	[theObject trackTouches:manipulatingTouches];
 	[theObject updateSelected];
-	
-	//will go with GL
-	if(theObject.objectView != nil)
-	{
-		[self.view bringSubviewToFront:theObject.objectView];
-	}
 }
 
 - (void) addSharedObject:(SharedObject*)theObject withTouches:(NSMutableSet*) creatingTouches
@@ -193,10 +181,7 @@
 	{
 		[collection addSharedObject:theObject];
 	}
-	if(theObject.objectView != nil)
-	{
-		[self.view addSubview:theObject.objectView];
-	}
+
 	[self addManipulatedObject:theObject withTouches:creatingTouches];	
 }
 
@@ -204,7 +189,7 @@
 {
 	MultiPointObject * newMulti = [[MultiPointObject alloc] initWithPoint:[touchOne locationInView:self.view]];
 	newMulti.parentView = self.view;
-	[newMulti setupView];
+	//[newMulti setupView];
 	[self addSharedObject:newMulti withTouches:[NSMutableSet setWithObject:touchOne]];
 	[newMulti release];
 }
@@ -276,10 +261,12 @@
 		{
 			self.selected = cur;
 		}else{
+			/*
 			if(cur.objectView != nil)
 			{
 				[self.view sendSubviewToBack:cur.objectView];
 			}
+			 */
 		}
 		
 		[currentlyManipulated removeObject:cur];
