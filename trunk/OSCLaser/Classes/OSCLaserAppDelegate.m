@@ -11,7 +11,6 @@
 
 @implementation OSCLaserAppDelegate
 
-
 @synthesize window;
 @synthesize mainViewController;
 
@@ -25,6 +24,8 @@
     mainViewController.view.frame = [UIScreen mainScreen].applicationFrame;
 	[window addSubview:[mainViewController view]];
     [window makeKeyAndVisible];
+	
+	//[mainViewController startMainThread];
 }
 
 

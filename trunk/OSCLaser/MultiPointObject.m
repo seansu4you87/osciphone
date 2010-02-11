@@ -8,8 +8,11 @@
 
 #import "MultiPointObject.h"
 #import "ControlPoint.h"
+#import "SharedUtility.h"
 
 @implementation MultiPointObject
+
+@synthesize parentView;
 
 - (id) init
 {
@@ -24,6 +27,17 @@
 
 - (BOOL) touchesAreRelevant:(NSSet*)touches
 {
+	return [self relevantTouches:touches] > 0;
+}
+
+- (BOOL) touch:(UITouch*)theTouch isRelevantToControlPoint:(ControlPoint*)theControlPoint
+{
+	if(parentView != nil)
+	{
+		CGPoint touchPoint = [theTouch locationInView:parentView];
+		return [SharedUtility distanceFrom:touchPoint to:theControlPoint.position] <= theControlPoint.radius;
+	}
+	
 	return NO;
 }
 
@@ -35,8 +49,11 @@
 		{
 			for(UITouch * touch in touches)
 			{
-				//check if relevant
-				//if relevant, set controllingTouch and add to controllingTouches
+				if([self touch:touch isRelevantToControlPoint:point])
+				{
+					point.controllingTouch = touch;
+					[controllingTouches addObject:touch];
+				}
 			}
 		}
 	}
@@ -61,10 +78,33 @@
 
 - (void) updateForTouches:(NSSet*)touches
 {
+	//different behavior
 }
 
 - (NSMutableSet*) relevantTouches:(NSSet*)touches
 {
+	NSMutableSet * result = [NSMutableSet setWithCapacity:1];
+	
+	for(UITouch * touch in touches)
+	{
+		if([controllingTouches containsObject:touch])
+		{
+			[result addObject:touch];
+		}else{
+			for(ControlPoint * point in controlPoints)
+			{
+				if(![point beingTouched])
+				{
+					if([self touch:touch isRelevantToControlPoint:point])
+					{
+						[result addObject:touch];
+						continue;
+					}
+				}
+			}
+		}
+	}
+	
 	return [NSMutableSet setWithCapacity:0];
 }
 

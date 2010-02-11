@@ -17,6 +17,8 @@
 }
 
 @property(nonatomic, retain) UITouch * controllingTouch;
+@property(nonatomic, readonly) CGPoint position;
+@property(nonatomic, readonly) float radius;
 
 - (void) step;
 - (BOOL) beingTouched;

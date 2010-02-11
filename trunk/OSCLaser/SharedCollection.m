@@ -29,6 +29,14 @@
 	[super dealloc];
 }
 
+- (void) step
+{
+	for(SharedObject * obj in sharedObjects)
+	{
+		[obj step];
+	}
+}
+
 - (void) sendAddMessageForObject:(SharedObject*)newObject
 {
 	NSString * addAddress = [NSString stringWithFormat:@"/%@/add", [newObject objectName]];

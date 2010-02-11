@@ -14,6 +14,7 @@
 	NSMutableArray * sharedObjects;
 }
 
+- (void) step;
 - (NSArray*) objects;
 - (void) addSharedObject:(SharedObject*)newObject;
 - (void) removeSharedObject:(SharedObject*)deletedObject;

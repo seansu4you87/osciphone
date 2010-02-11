@@ -14,8 +14,12 @@
 @interface MultiPointObject : SharedObject {
 	NSMutableArray * controlPoints;
 	NSMutableSet * controllingTouches;
+	UIView * parentView;
 }
 
+@property(nonatomic, assign) UIView * parentView;
+
 - (void) addControlPoint:(ControlPoint*)newPoint;
+- (BOOL) touch:(UITouch*)theTouch isRelevantToControlPoint:(ControlPoint*)theControlPoint;
 
 @end
