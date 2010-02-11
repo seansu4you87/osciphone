@@ -213,10 +213,7 @@
 {
 	for(ControlPoint * curPoint in controlPoints)
 	{
-		if(self.objectView != nil)
-		{
-			[curPoint stepInBounds:self.objectView.frame];
-		}
+		[curPoint stepInBounds:parentView.frame];
 	}
 }
 
