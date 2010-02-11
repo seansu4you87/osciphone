@@ -14,7 +14,7 @@ static int currentID;
 
 @implementation SharedObject
 
-@synthesize objectID, objectView;
+@synthesize objectID, objectView, controllingTouches, selected;
 
 - (id) init
 {
@@ -22,6 +22,7 @@ static int currentID;
 	{
 		objectID = [SharedObject nextID];
 		selected = NO;//this behavior will be handled by controller
+		controllingTouches = [[NSMutableSet setWithCapacity:3] retain];
 	}
 	
 	return self;
@@ -65,11 +66,17 @@ static int currentID;
 - (void) updateSelected
 {
 	selected = YES;
+	
+	//gone with GL
+	[self.objectView setNeedsDisplay];
 }
 
 - (void) updateUnselected
 {
 	selected = NO;
+	
+	//gone with GL
+	[self.objectView setNeedsDisplay];
 }
 
 - (BOOL) stopTrackingTouches:(NSSet*)touches
@@ -96,6 +103,7 @@ static int currentID;
 
 - (void) dealloc
 {
+	[controllingTouches release];
 	[objectView release];
 	[super dealloc];
 }

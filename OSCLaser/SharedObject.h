@@ -13,9 +13,12 @@
 	int objectID;
 	BOOL selected;
 	UIView * objectView;
+	NSMutableSet * controllingTouches;
 }
 
+@property(nonatomic, readonly) BOOL selected;
 @property(nonatomic, readonly) UIView * objectView;
+@property(nonatomic, readonly) NSMutableSet * controllingTouches;
 
 + (void) resetIDs;
 + (int) nextID;
