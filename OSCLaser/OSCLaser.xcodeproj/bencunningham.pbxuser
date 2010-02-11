@@ -2,7 +2,7 @@
 {
 	1D3623240D0F684500981E51 /* OSCLaserAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 581}}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 529}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 451}";
 		};
@@ -36,16 +36,16 @@
 	};
 	289233A40DB2D0840083E9F9 /* MainView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 556}}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 554}}";
 			sepNavSelRange = "{140, 0}";
 			sepNavVisRange = "{0, 331}";
 		};
 	};
 	289233A50DB2D0840083E9F9 /* MainView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1002, 1215}}";
-			sepNavSelRange = "{520, 0}";
-			sepNavVisRange = "{418, 288}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 1080}}";
+			sepNavSelRange = "{1016, 0}";
+			sepNavVisRange = "{3, 638}";
 		};
 	};
 	289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {
@@ -121,7 +121,7 @@
 				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
 				PBXFileTableDataSourceColumnWidthsKey = (
 					20,
-					758,
+					508,
 					60,
 					20,
 					48,
@@ -250,6 +250,7 @@
 			FD2A3F6D112402530069C149 /* PBXTextBookmark */ = FD2A3F6D112402530069C149 /* PBXTextBookmark */;
 			FD2A3F6E112402530069C149 /* PBXTextBookmark */ = FD2A3F6E112402530069C149 /* PBXTextBookmark */;
 			FD2A3F6F112402530069C149 /* PBXTextBookmark */ = FD2A3F6F112402530069C149 /* PBXTextBookmark */;
+			FD2A4043112404E90069C149 /* PBXTextBookmark */ = FD2A4043112404E90069C149 /* PBXTextBookmark */;
 			FD6A70EF111A24DA004398A9 = FD6A70EF111A24DA004398A9 /* PBXTextBookmark */;
 			FD6A70F0111A24DA004398A9 = FD6A70F0111A24DA004398A9 /* PBXTextBookmark */;
 			FD6A70FA111A24DA004398A9 = FD6A70FA111A24DA004398A9 /* PBXTextBookmark */;
@@ -1542,6 +1543,23 @@
 		vrLen = 1000;
 		vrLoc = 1954;
 	};
+	FD2A3FA8112404180069C149 /* EAGLView.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {726, 615}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{33, 1194}";
+		};
+	};
+	FD2A4043112404E90069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */;
+		name = "MultiPointObject.m: 107";
+		rLen = 0;
+		rLoc = 2242;
+		rType = 0;
+		vrLen = 548;
+		vrLoc = 1832;
+	};
 	FD64089C1118A5DB005185AC /* OSCLaser-iPad */ = {
 		activeExec = 0;
 		executables = (
@@ -1970,9 +1988,9 @@
 	};
 	FDBFB3C411211F310054E172 /* MultiPointObject.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1033, 3570}}";
-			sepNavSelRange = "{3076, 49}";
-			sepNavVisRange = "{1954, 1000}";
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 3645}}";
+			sepNavSelRange = "{2242, 0}";
+			sepNavVisRange = "{1832, 548}";
 			sepNavWindowFrame = "{{15, 63}, {1092, 710}}";
 		};
 	};

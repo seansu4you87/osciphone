@@ -22,6 +22,18 @@
 		FD0CF9E311163EC000DF5C0F /* OSCConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF9E211163EC000DF5C0F /* OSCConfig.m */; };
 		FD26DA131116B0760062DF1F /* SharedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26DA121116B0760062DF1F /* SharedObject.m */; };
 		FD26DA311116B1E50062DF1F /* SharedCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26DA301116B1E50062DF1F /* SharedCollection.m */; };
+		FD2A3FAA112404180069C149 /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FA9112404180069C149 /* EAGLView.m */; };
+		FD2A3FAB112404180069C149 /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FA9112404180069C149 /* EAGLView.m */; };
+		FD2A3FB0112404330069C149 /* ES1Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FAD112404330069C149 /* ES1Renderer.m */; };
+		FD2A3FB1112404330069C149 /* ES2Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FAF112404330069C149 /* ES2Renderer.m */; };
+		FD2A3FB2112404330069C149 /* ES1Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FAD112404330069C149 /* ES1Renderer.m */; };
+		FD2A3FB3112404330069C149 /* ES2Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FAF112404330069C149 /* ES2Renderer.m */; };
+		FD2A3FB71124044A0069C149 /* Shader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FB51124044A0069C149 /* Shader.fsh */; };
+		FD2A3FB81124044A0069C149 /* Shader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FB61124044A0069C149 /* Shader.vsh */; };
+		FD2A3FB91124044A0069C149 /* Shader.fsh in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FB51124044A0069C149 /* Shader.fsh */; };
+		FD2A3FBA1124044A0069C149 /* Shader.vsh in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FB61124044A0069C149 /* Shader.vsh */; };
+		FD2A3FFA112404B60069C149 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2A3FF9112404B60069C149 /* QuartzCore.framework */; };
+		FD2A4033112404CF0069C149 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2A4032112404CF0069C149 /* OpenGLES.framework */; };
 		FD6408A21118A5DB005185AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		FD6408A31118A5DB005185AC /* OSCLaserAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* OSCLaserAppDelegate.m */; };
 		FD6408A41118A5DB005185AC /* FlipsideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A30DB2D0840083E9F9 /* FlipsideView.m */; };
@@ -108,6 +120,17 @@
 		FD26DA121116B0760062DF1F /* SharedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedObject.m; sourceTree = "<group>"; };
 		FD26DA2F1116B1E50062DF1F /* SharedCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedCollection.h; sourceTree = "<group>"; };
 		FD26DA301116B1E50062DF1F /* SharedCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedCollection.m; sourceTree = "<group>"; };
+		FD2A3FA7112404180069C149 /* ESRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ESRenderer.h; sourceTree = "<group>"; };
+		FD2A3FA8112404180069C149 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
+		FD2A3FA9112404180069C149 /* EAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAGLView.m; sourceTree = "<group>"; };
+		FD2A3FAC112404330069C149 /* ES1Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ES1Renderer.h; sourceTree = "<group>"; };
+		FD2A3FAD112404330069C149 /* ES1Renderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ES1Renderer.m; sourceTree = "<group>"; };
+		FD2A3FAE112404330069C149 /* ES2Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ES2Renderer.h; sourceTree = "<group>"; };
+		FD2A3FAF112404330069C149 /* ES2Renderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ES2Renderer.m; sourceTree = "<group>"; };
+		FD2A3FB51124044A0069C149 /* Shader.fsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.fsh; sourceTree = "<group>"; };
+		FD2A3FB61124044A0069C149 /* Shader.vsh */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.glsl; path = Shader.vsh; sourceTree = "<group>"; };
+		FD2A3FF9112404B60069C149 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
+		FD2A4032112404CF0069C149 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		FD6408C31118A5DB005185AC /* OSCLaser-iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSCLaser-iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6408C61118A5DC005185AC /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FlipsideView.xib; path = "Resources-iPad/FlipsideView.xib"; sourceTree = "<group>"; };
 		FD6408C71118A5DC005185AC /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainView.xib; path = "Resources-iPad/MainView.xib"; sourceTree = "<group>"; };
@@ -167,6 +190,8 @@
 				288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */,
 				FD78A55711163AE4008B87CB /* CFNetwork.framework in Frameworks */,
 				FD78A55B11163AF7008B87CB /* CoreFoundation.framework in Frameworks */,
+				FD2A3FFA112404B60069C149 /* QuartzCore.framework in Frameworks */,
+				FD2A4033112404CF0069C149 /* OpenGLES.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,6 +254,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				FD2A3FA6112404020069C149 /* GL Stuff */,
 				FD26DA3D1116C2DA0062DF1F /* SharedObjects */,
 				FD26DA101116B0410062DF1F /* SharedProtocol */,
 				FD78A4FC111638E6008B87CB /* OSCKit */,
@@ -267,6 +293,8 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FD2A4032112404CF0069C149 /* OpenGLES.framework */,
+				FD2A3FF9112404B60069C149 /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765580DF743DE002DB57D /* CoreGraphics.framework */,
@@ -304,6 +332,30 @@
 				FDBFB3E411211F710054E172 /* ControlPoint.m */,
 			);
 			name = SharedObjects;
+			sourceTree = "<group>";
+		};
+		FD2A3FA6112404020069C149 /* GL Stuff */ = {
+			isa = PBXGroup;
+			children = (
+				FD2A3FB41124043F0069C149 /* Shaders */,
+				FD2A3FAC112404330069C149 /* ES1Renderer.h */,
+				FD2A3FAD112404330069C149 /* ES1Renderer.m */,
+				FD2A3FAE112404330069C149 /* ES2Renderer.h */,
+				FD2A3FAF112404330069C149 /* ES2Renderer.m */,
+				FD2A3FA7112404180069C149 /* ESRenderer.h */,
+				FD2A3FA8112404180069C149 /* EAGLView.h */,
+				FD2A3FA9112404180069C149 /* EAGLView.m */,
+			);
+			name = "GL Stuff";
+			sourceTree = "<group>";
+		};
+		FD2A3FB41124043F0069C149 /* Shaders */ = {
+			isa = PBXGroup;
+			children = (
+				FD2A3FB51124044A0069C149 /* Shader.fsh */,
+				FD2A3FB61124044A0069C149 /* Shader.vsh */,
+			);
+			name = Shaders;
 			sourceTree = "<group>";
 		};
 		FD6408C51118A5DB005185AC /* Resources-iPad */ = {
@@ -472,6 +524,11 @@
 				FDBFB3C611211F310054E172 /* MultiPointObject.m in Sources */,
 				FDBFB3E611211F710054E172 /* ControlPoint.m in Sources */,
 				FDE0BAC81123C84C00A7CE0E /* MultiPointObjectView.m in Sources */,
+				FD2A3FAA112404180069C149 /* EAGLView.m in Sources */,
+				FD2A3FB0112404330069C149 /* ES1Renderer.m in Sources */,
+				FD2A3FB1112404330069C149 /* ES2Renderer.m in Sources */,
+				FD2A3FB71124044A0069C149 /* Shader.fsh in Sources */,
+				FD2A3FB81124044A0069C149 /* Shader.vsh in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,6 +564,11 @@
 				FDBFB3C511211F310054E172 /* MultiPointObject.m in Sources */,
 				FDBFB3E511211F710054E172 /* ControlPoint.m in Sources */,
 				FDE0BAC91123C84C00A7CE0E /* MultiPointObjectView.m in Sources */,
+				FD2A3FAB112404180069C149 /* EAGLView.m in Sources */,
+				FD2A3FB2112404330069C149 /* ES1Renderer.m in Sources */,
+				FD2A3FB3112404330069C149 /* ES2Renderer.m in Sources */,
+				FD2A3FB91124044A0069C149 /* Shader.fsh in Sources */,
+				FD2A3FBA1124044A0069C149 /* Shader.vsh in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
