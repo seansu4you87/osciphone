@@ -9,6 +9,7 @@
 #import "ControlPoint.h"
 
 #define DEFAULT_RADIUS 30
+#define VELOCITY_FACTOR 0.25
 
 @implementation ControlPoint
 
@@ -30,7 +31,13 @@
 
 - (void) setPosition:(CGPoint)newPosition
 {
+	prevPosition = position;
 	position = newPosition;
+}
+
+- (void) setVelocityFromPointChange
+{
+	[self setVelocity:CGPointMake(position.x - prevPosition.x, position.y - prevPosition.y)];
 }
 
 - (id) initWithPosition:(CGPoint)thePosition andRadius:(float)theRadius
@@ -58,7 +65,13 @@
 
 - (void) step
 {
-	
+	if(PHYSICS)
+	{
+		if(controllingTouch == nil)
+		{
+			[self setPosition:CGPointMake(position.x + VELOCITY_FACTOR*velocity.x, position.y + VELOCITY_FACTOR*velocity.y)];
+		}
+	}
 }
 
 - (BOOL) beingTouched

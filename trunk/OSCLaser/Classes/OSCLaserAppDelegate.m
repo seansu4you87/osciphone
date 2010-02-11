@@ -25,7 +25,7 @@
 	[window addSubview:[mainViewController view]];
     [window makeKeyAndVisible];
 	
-	//[mainViewController startMainThread];
+	[mainViewController startMainThread];
 }
 
 

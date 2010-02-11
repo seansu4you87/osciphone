@@ -16,7 +16,7 @@
 #import "MultiPointObject.h"
 
 //seconds it takes a touch to become an object
-#define TOUCH_TIME 0.50
+#define TOUCH_TIME 0.40
 #define LOOP_INTERVAL 1.0/60.0
 
 @implementation MainViewController
@@ -148,7 +148,10 @@
 
 - (void) step
 {
-	[collection step];
+	@synchronized(self)
+	{
+		[collection step];
+	}
 }
 
 - (void) startMainThread
@@ -187,11 +190,20 @@
 	[currentlyManipulated addObject: theObject];
 	[theObject trackTouches:manipulatingTouches];
 	[theObject updateSelected];
+	
+	//will go with GL
+	if(theObject.objectView != nil)
+	{
+		[self.view bringSubviewToFront:theObject.objectView];
+	}
 }
 
 - (void) addSharedObject:(SharedObject*)theObject withTouches:(NSMutableSet*) creatingTouches
 {
-	[collection addSharedObject:theObject];
+	@synchronized(self)
+	{
+		[collection addSharedObject:theObject];
+	}
 	if(theObject.objectView != nil)
 	{
 		[self.view addSubview:theObject.objectView];
@@ -274,6 +286,11 @@
 		if([currentlyManipulated count] == 1)
 		{
 			self.selected = cur;
+		}else{
+			if(cur.objectView != nil)
+			{
+				[self.view sendSubviewToBack:cur.objectView];
+			}
 		}
 		
 		[currentlyManipulated removeObject:cur];

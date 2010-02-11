@@ -8,9 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
+#define PHYSICS NO
 
 @interface ControlPoint : NSObject {
 	float radius;
+	CGPoint prevPosition;
 	CGPoint position;
 	CGPoint velocity;
 	UITouch * controllingTouch;
@@ -23,6 +25,7 @@
 - (void) step;
 - (BOOL) beingTouched;
 - (void) setVelocity:(CGPoint)newVelocity;
+- (void) setVelocityFromPointChange;
 - (void) setPosition:(CGPoint)newPosition;
 
 + (ControlPoint*) controlPointWithPosition:(CGPoint)thePosition;
