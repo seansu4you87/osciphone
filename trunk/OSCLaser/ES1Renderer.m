@@ -87,6 +87,20 @@
         0,     0,   0,   0,
         255,   0, 255, 255,
     };
+	
+	//perform z ordering
+	NSMutableArray * sorted = [NSMutableArray arrayWithCapacity:[multiObjects count]];
+	for(MultiPointObject * obj in multiObjects)
+	{
+		if(!obj.selected)
+			[sorted addObject:obj];
+	}
+	for(MultiPointObject * obj in multiObjects)
+	{
+		if(obj.selected)
+			[sorted addObject:obj];
+	}
+	multiObjects = sorted;
 
 	// This application only creates a single context which is already set current at this point.
 	// This call is redundant, but needed if dealing with multiple contexts.
@@ -110,6 +124,8 @@
 	for(MultiPointObject * object in multiObjects)
 	{
 		NSArray * controlPoints = [object getControlPoints];
+		float zCoord = 0.0;
+
 		for(int i = 0; i < [controlPoints count]; i++)
 		{
 			ControlPoint * current = [controlPoints objectAtIndex:i];
@@ -124,7 +140,7 @@
 			{
 				//rotate to face nextPoint
 				glPushMatrix();
-				glTranslatef(current.position.x, current.position.y, 0);
+				glTranslatef(current.position.x, current.position.y, zCoord);
 				CGPoint vector = [SharedUtility point:next.position minusPoint:current.position];
 				float length = [SharedUtility magnitudeOf:vector];
 				float zValue = 1.0;
@@ -147,7 +163,7 @@
 		{
 			ControlPoint * current = [controlPoints objectAtIndex:i];
 			glPushMatrix();
-			glTranslatef(current.position.x, current.position.y, 0);
+			glTranslatef(current.position.x, current.position.y, zCoord);
 			glScalef(current.radius, current.radius, 1.0);
 			glVertexPointer(2, GL_FLOAT, 0, circleVertices);
 			glEnableClientState(GL_VERTEX_ARRAY);

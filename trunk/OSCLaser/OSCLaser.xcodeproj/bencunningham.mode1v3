@@ -273,7 +273,6 @@
 								<string>289233A00DB2D0730083E9F9</string>
 								<string>281C6CD70DB2D82200F60ACC</string>
 								<string>080E96DDFE201D6D7F000001</string>
-								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
@@ -332,7 +331,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD3F5EC91124AC2B00AD17DE</string>
+										<string>FD3F5F111124B16A00AD17DE</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -367,13 +366,10 @@
 											<string>FD2A406B1124073D0069C149</string>
 											<string>FD2A409211240CEF0069C149</string>
 											<string>FD3F5DD91124981400AD17DE</string>
-											<string>FD3F5E0711249A2300AD17DE</string>
 											<string>FD3F5E291124A1DF00AD17DE</string>
 											<string>FD3F5E2F1124A1DF00AD17DE</string>
 											<string>FD3F5E301124A1DF00AD17DE</string>
 											<string>FD3F5E311124A1DF00AD17DE</string>
-											<string>FD3F5E321124A1DF00AD17DE</string>
-											<string>FD3F5E481124A22800AD17DE</string>
 											<string>FD3F5E491124A22800AD17DE</string>
 											<string>FD3F5E601124A45F00AD17DE</string>
 											<string>FD3F5E961124A98B00AD17DE</string>
@@ -385,7 +381,10 @@
 											<string>FD3F5EAB1124AB0300AD17DE</string>
 											<string>FD3F5EAC1124AB0300AD17DE</string>
 											<string>FD3F5EAD1124AB0300AD17DE</string>
-											<string>FD3F5E9E1124AA0A00AD17DE</string>
+											<string>FD3F5ED21124AEC300AD17DE</string>
+											<string>FD3F5ED31124AEC300AD17DE</string>
+											<string>FD3F5ED41124AEC300AD17DE</string>
+											<string>FD3F5EEC1124AF6300AD17DE</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -583,14 +582,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FD3F5ECA1124AC2B00AD17DE</string>
+		<string>FD3F5F121124B16A00AD17DE</string>
 		<string>FD3F5D641124930200AD17DE</string>
 		<string>FD3F5D59112492C500AD17DE</string>
 		<string>FD3F5D611124930200AD17DE</string>
 		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>FD78A4EE1116385D008B87CB</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>1CD10A99069EF8BA00B06720</string>
 		<string>/Users/bencunningham/Desktop/edgeCity/osc_iphone/OSCLaser/OSCLaser.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
