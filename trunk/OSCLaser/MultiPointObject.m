@@ -137,7 +137,17 @@
 			{
 				if([controlPoint.controllingTouch isEqual:movedTouch])
 				{
-					[controlPoint setPosition:[movedTouch locationInView:parentView]];
+					CGPoint newPosition = [movedTouch locationInView:parentView];
+					if(newPosition.x < controlPoint.radius)
+						newPosition.x = controlPoint.radius;
+					if(newPosition.x > parentView.frame.size.width - controlPoint.radius)
+						newPosition.x = parentView.frame.size.width - controlPoint.radius;
+					if(newPosition.y < controlPoint.radius)
+							newPosition.y = controlPoint.radius;
+					if(newPosition.y > parentView.frame.size.height - controlPoint.radius)
+						newPosition.y = parentView.frame.size.height - controlPoint.radius;
+					
+					[controlPoint setPosition:newPosition];
 					anyMoved = YES;
 				}
 			}
