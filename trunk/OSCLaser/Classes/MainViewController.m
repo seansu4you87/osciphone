@@ -116,27 +116,7 @@
 	[theObject updateSelected];	
 }
 
-- (void) addManipulatedObject:(SharedObject*)theObject withTouches:(NSMutableSet*)manipulatingTouches
-{
-	if([currentlyManipulated count] == 0)
-	{
-		self.selected = theObject;
-	}
-	
-	[currentlyManipulated addObject: theObject];
-	[theObject trackTouches:manipulatingTouches];
-	[theObject updateSelected];
-}
 
-- (void) addSharedObject:(SharedObject*)theObject withTouches:(NSMutableSet*) creatingTouches
-{
-	[collection addSharedObject:theObject];
-	if(theObject.objectView != nil)
-	{
-		[self.view addSubview:theObject.objectView];
-	}
-	[self addManipulatedObject:theObject withTouches:creatingTouches];	
-}
 
 - (void) removeObject:(SharedObject*)theObject
 {
@@ -158,22 +138,6 @@
 	{
 		[self removeObject:selected];
 	}
-}
-
-- (void) addMultiPointForStartTouch:(UITouch*)touchOne
-{
-	MultiPointObject * newMulti = [[MultiPointObject alloc] initWithPoint:[touchOne locationInView:self.view]];
-	newMulti.parentView = self.view;
-	[newMulti setupView];
-	[self addSharedObject:newMulti withTouches:[NSMutableSet setWithObject:touchOne]];
-	[newMulti release];
-}
-
-- (void) addLineForStartTouch:(UITouch*)touchOne endTouch:(UITouch*)touchTwo
-{
-	LineObject * newLine = [[LineObject alloc] initOnView:self.view withStartPoint:[touchOne locationInView:self.view] endPoint:[touchTwo locationInView:self.view]];
-	[self addSharedObject:newLine withTouches:[NSMutableSet setWithObjects:touchOne, touchTwo, nil]];
-	[newLine release];
 }
 
 - (void) step
@@ -205,22 +169,47 @@
 	return CGPointMake(xPercent, yPercent);
 }
 
-#pragma mark touch responders
+#pragma mark adding objects
 
-- (void) theTouchesEnded:(NSSet *)touches withEvent:(UIEvent*)event
+- (void) addManipulatedObject:(SharedObject*)theObject withTouches:(NSMutableSet*)manipulatingTouches
 {
-	if([touches containsObject:startTouch])
+	if([currentlyManipulated count] == 0)
 	{
-		[self removeTouchTimer];
-		self.startTouch = nil;
+		self.selected = theObject;
 	}
 	
-	[downTouches minusSet:touches];
+	[currentlyManipulated addObject: theObject];
+	[theObject trackTouches:manipulatingTouches];
+	[theObject updateSelected];
 }
 
-- (void) theTouchesMoved:(NSSet *)touches withEvent:(UIEvent*)event
+- (void) addSharedObject:(SharedObject*)theObject withTouches:(NSMutableSet*) creatingTouches
 {
+	[collection addSharedObject:theObject];
+	if(theObject.objectView != nil)
+	{
+		[self.view addSubview:theObject.objectView];
+	}
+	[self addManipulatedObject:theObject withTouches:creatingTouches];	
 }
+
+- (void) addMultiPointForStartTouch:(UITouch*)touchOne
+{
+	MultiPointObject * newMulti = [[MultiPointObject alloc] initWithPoint:[touchOne locationInView:self.view]];
+	newMulti.parentView = self.view;
+	[newMulti setupView];
+	[self addSharedObject:newMulti withTouches:[NSMutableSet setWithObject:touchOne]];
+	[newMulti release];
+}
+
+- (void) addLineForStartTouch:(UITouch*)touchOne endTouch:(UITouch*)touchTwo
+{
+	LineObject * newLine = [[LineObject alloc] initOnView:self.view withStartPoint:[touchOne locationInView:self.view] endPoint:[touchTwo locationInView:self.view]];
+	[self addSharedObject:newLine withTouches:[NSMutableSet setWithObjects:touchOne, touchTwo, nil]];
+	[newLine release];
+}
+
+#pragma mark touch timers
 
 - (void) checkCreationTouch:(NSTimer*)theTimer
 {
@@ -231,7 +220,7 @@
 		[self removeTouchTimer];
 	}
 }
-	
+
 - (void) removeTouchTimer
 {
 	[touchTimer invalidate];
@@ -247,20 +236,92 @@
 	[[NSRunLoop currentRunLoop] addTimer:touchTimer forMode:NSDefaultRunLoopMode];
 }
 
-- (void)theTouchesBegan:(NSSet *)touches withEvent:(UIEvent*)event
+#pragma mark touch responders
+
+- (void) theTouchesEnded:(NSSet *)touches withEvent:(UIEvent*)event
 {
-	//check to see if touches are manipulating other objects and remove ones that are
-	
-	//then go into object creation logic
-	if([touches count] == 1)
+	if([touches containsObject:startTouch])
 	{
-		if([downTouches count] == 0)
+		[self removeTouchTimer];
+		self.startTouch = nil;
+	}
+	
+	if([currentlyManipulated count] == 0)
+	{
+		self.selected = nil;
+	}
+	
+	//NSLog(@"stopped tracking %d touches", [touches count]);
+	
+	NSMutableSet * toTrash = [NSMutableSet setWithCapacity:0];
+	for(SharedObject * cur in currentlyManipulated)
+	{
+		if([cur stopTrackingTouches:touches])
 		{
-			[self observedCreationTouch:[touches anyObject]];
+			[toTrash addObject:cur];
 		}
 	}
 	
+	for(SharedObject * cur in toTrash)
+	{
+		[cur updateUnselected];
+		if([currentlyManipulated count] == 1)
+		{
+			self.selected = cur;
+		}
+		
+		[currentlyManipulated removeObject:cur];
+	}
+	
+	[downTouches minusSet:touches];
+}
+
+- (void) theTouchesMoved:(NSSet *)touches withEvent:(UIEvent*)event
+{
+	for(SharedObject * cur in currentlyManipulated)
+	{
+		[cur updateForTouches:touches];
+	}
+}
+
+//returns touches that aren't manipulating shit
+- (NSSet*) manipulateWithTouches:(NSSet*)touches
+{
+	NSMutableSet * result = [NSMutableSet setWithSet:touches];
+	NSArray * allObjects = [collection objects];
+	for(SharedObject * curObject in allObjects)
+	{
+		if([result count] == 0)
+		{
+			break;
+		}
+		NSMutableSet * curRelevantTouches = [curObject relevantTouches:result];
+		if([curRelevantTouches count] > 0)
+		{
+			[self addManipulatedObject:curObject withTouches:curRelevantTouches];
+			[result minusSet:curRelevantTouches];
+		}
+	}
+	
+	return result;
+}
+
+- (void)theTouchesBegan:(NSSet *)touches withEvent:(UIEvent*)event
+{
 	[downTouches unionSet:touches];
+	
+	//check to see if touches are manipulating other objects and remove ones that are
+	touches = [self manipulateWithTouches:touches];
+	//then go into object creation logic
+	if([touches count] == 1)
+	{
+		if([downTouches count] == 1)
+		{
+			[self observedCreationTouch:[touches anyObject]];
+		}else{
+		
+		}
+	}
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

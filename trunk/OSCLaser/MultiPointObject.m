@@ -97,8 +97,8 @@
 		{
 			if([touches containsObject:point.controllingTouch])
 			{
-				point.controllingTouch = nil;
 				[controllingTouches removeObject:point.controllingTouch];
+				point.controllingTouch = nil;
 			}
 		}
 	}
@@ -108,7 +108,29 @@
 
 - (void) updateForTouches:(NSSet*)touches
 {
-	//different behavior
+	BOOL anyMoved = NO;
+	if([touches intersectsSet:controllingTouches])
+	{
+		NSMutableSet * relevantOnes = [NSMutableSet setWithSet:touches];
+		[relevantOnes intersectSet:controllingTouches];
+		for(UITouch * movedTouch in relevantOnes)
+		{
+			for(ControlPoint * controlPoint in controlPoints)
+			{
+				if([controlPoint.controllingTouch isEqual:movedTouch])
+				{
+					[controlPoint setPosition:[movedTouch locationInView:parentView]];
+					anyMoved = YES;
+				}
+			}
+		
+		}
+	}
+	//this will go away when no longer using UIView stuff
+	if(anyMoved)
+	{
+		[self.objectView setNeedsDisplay];
+	}
 }
 
 - (NSMutableSet*) relevantTouches:(NSSet*)touches
@@ -135,7 +157,7 @@
 		}
 	}
 	
-	return [NSMutableSet setWithCapacity:0];
+	return result;
 }
 
 - (NSMutableSet*) trackedTouches

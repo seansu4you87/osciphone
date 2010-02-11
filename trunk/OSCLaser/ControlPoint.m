@@ -28,6 +28,11 @@
 	velocity = newVelocity;
 }
 
+- (void) setPosition:(CGPoint)newPosition
+{
+	position = newPosition;
+}
+
 - (id) initWithPosition:(CGPoint)thePosition andRadius:(float)theRadius
 {
 	if(self = [self init])

@@ -23,6 +23,7 @@
 - (void) step;
 - (BOOL) beingTouched;
 - (void) setVelocity:(CGPoint)newVelocity;
+- (void) setPosition:(CGPoint)newPosition;
 
 + (ControlPoint*) controlPointWithPosition:(CGPoint)thePosition;
 + (ControlPoint*) controlPointWithPosition:(CGPoint)thePosition andRadius:(float)theRadius;
