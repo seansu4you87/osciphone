@@ -13,7 +13,7 @@
 
 @implementation MultiPointObject
 
-#define VELOCITY_THRESHOLD 5.0
+#define VELOCITY_THRESHOLD 4.0
 
 @synthesize parentView;
 
