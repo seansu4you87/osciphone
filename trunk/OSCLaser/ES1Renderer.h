@@ -6,7 +6,7 @@
 //  Copyright Stanford University 2010. All rights reserved.
 //
 
-#import "ESRenderer.h"
+#import "EAGLView.h"
 
 #import <OpenGLES/ES1/gl.h>
 #import <OpenGLES/ES1/glext.h>

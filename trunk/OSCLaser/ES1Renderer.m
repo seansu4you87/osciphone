@@ -12,6 +12,18 @@
 
 @implementation ES1Renderer
 
+#define NUM_CIRCLE_DIVISIONS
+
+- (void) initCircleVertices
+{
+	circleVertices = malloc((NUM_CIRCLE_DIVISIONS + 1)*sizeof(GLfloat));
+}
+
+- (void) initRectVertices
+{
+	rectVertices = malloc(4*sizeof(GLfloat));
+}
+
 // Create an ES 1.1 context
 - (id) init
 {
@@ -31,6 +43,9 @@
 		glBindFramebufferOES(GL_FRAMEBUFFER_OES, defaultFramebuffer);
 		glBindRenderbufferOES(GL_RENDERBUFFER_OES, colorRenderbuffer);
 		glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_OES, GL_RENDERBUFFER_OES, colorRenderbuffer);
+		
+		[self initCircleVertices];
+		[self initRectVertices];
 	}
 	
 	return self;
@@ -148,6 +163,9 @@
 	
 	[context release];
 	context = nil;
+	
+	free(circleVertices);
+	free(rectVertices);
 	
 	[super dealloc];
 }
