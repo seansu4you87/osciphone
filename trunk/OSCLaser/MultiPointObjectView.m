@@ -28,7 +28,11 @@
 - (void)drawRect:(CGRect)rect {
 	if(parentObject != nil)
 	{
-		UIColor * theColor = [UIColor greenColor];
+		UIColor * theColor = [UIColor blueColor];
+		if(parentObject.selected)
+		{
+			theColor = [UIColor yellowColor];
+		}
 		float red = [SharedUtility getRedFromColor:theColor];
 		float green = [SharedUtility getGreenFromColor:theColor];
 		float blue = [SharedUtility getBlueFromColor:theColor];
@@ -44,12 +48,30 @@
 		{
 			[SharedUtility drawCircleAtPoint:point.position withRadius:point.radius inContext: contextRef];
 		}
-		/*
-		CGContextMoveToPoint(contextRef, localStart.x, localStart.y);
-		CGContextSetLineWidth (contextRef, 10.0);
-		CGContextAddLineToPoint( contextRef, localEnd.x, localEnd.y);
-		CGContextStrokePath(contextRef);
-		 */
+		if([controlPoints count] == 0)
+		{
+			return;
+		}
+		
+		for(int i = 0; i < [controlPoints count]; i++)
+		{
+			ControlPoint * current = [controlPoints objectAtIndex:i];
+			ControlPoint * next;
+			if(i == [controlPoints count] - 1)
+			{
+				next = [controlPoints objectAtIndex:0];
+			}else{
+				next = [controlPoints objectAtIndex:i+1];
+			}
+			
+			CGContextMoveToPoint(contextRef, current.position.x, current.position.y);
+			CGContextSetLineWidth (contextRef, 10.0);
+			CGContextAddLineToPoint(contextRef, next.position.x, next.position.y);
+			CGContextStrokePath(contextRef);
+		}
+		
+		
+		 
 	}
 }
 

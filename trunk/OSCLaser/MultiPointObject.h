@@ -13,7 +13,6 @@
 
 @interface MultiPointObject : SharedObject {
 	NSMutableArray * controlPoints;
-	NSMutableSet * controllingTouches;
 	UIView * parentView;
 }
 
@@ -22,8 +21,10 @@
 - (id) initWithPoint:(CGPoint)initialStart;
 
 - (NSArray*) getControlPoints;
+- (void) addControlPointAtPosition:(CGPoint)newPosition;
 - (void) addControlPoint:(ControlPoint*)newPoint;
 - (BOOL) touch:(UITouch*)theTouch isRelevantToControlPoint:(ControlPoint*)theControlPoint;
+- (BOOL) canAddControlPoint;
 
 - (void) setupView;//this must be called after parentView is set
 

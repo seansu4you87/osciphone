@@ -16,7 +16,7 @@
 #import "MultiPointObject.h"
 
 //seconds it takes a touch to become an object
-#define TOUCH_TIME 0.80
+#define TOUCH_TIME 0.50
 #define LOOP_INTERVAL 1.0/60.0
 
 @implementation MainViewController
@@ -113,7 +113,13 @@
 	[selected updateUnselected];
 	[selected release];
 	selected = [theObject retain];
-	[theObject updateSelected];	
+	[theObject updateSelected];
+	
+	//will go with GL
+	if(theObject.objectView != nil)
+	{
+		[self.view bringSubviewToFront:theObject.objectView];
+	}
 }
 
 
@@ -311,15 +317,32 @@
 	[downTouches unionSet:touches];
 	
 	//check to see if touches are manipulating other objects and remove ones that are
-	touches = [self manipulateWithTouches:touches];
-	//then go into object creation logic
-	if([touches count] == 1)
+	NSSet * touchesLeft = [self manipulateWithTouches:touches];
+	//then go into object creation/extension logic
+	if([touchesLeft count] == 0)//no more touches for creation
 	{
-		if([downTouches count] == 1)
+		return;
+	}if([touchesLeft count] == 1)
+	{
+		if([downTouches count] == 1)//ie the current one
 		{
-			[self observedCreationTouch:[touches anyObject]];
-		}else{
-		
+			[self observedCreationTouch:[touchesLeft anyObject]];
+		}else {
+			if([currentlyManipulated count] == 1)//only can extend if we are manipulating one at a time
+			{
+				MultiPointObject * manipulated = [currentlyManipulated anyObject];
+				if([manipulated canAddControlPoint])//check to see that it's a candidate
+				{
+					NSMutableSet * remainingTouches = [NSMutableSet setWithSet:downTouches];
+					[remainingTouches minusSet: manipulated.controllingTouches];
+					if([remainingTouches count] == 1)
+					{
+						UITouch * theTouch = [remainingTouches anyObject];
+						[manipulated addControlPointAtPosition:[theTouch locationInView:self.view]];
+						[manipulated trackTouches:remainingTouches];
+					}
+				}
+			}
 		}
 	}
 }

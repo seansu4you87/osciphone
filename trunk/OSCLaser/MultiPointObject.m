@@ -20,7 +20,6 @@
 	if(self = [super init])
 	{
 		controlPoints = [[NSMutableArray arrayWithCapacity:1] retain];
-		controllingTouches = [[NSMutableSet setWithCapacity:1] retain];
 	}
 	
 	return self;
@@ -30,7 +29,7 @@
 {
 	if(self = [self init])
 	{
-		[controlPoints addObject:[ControlPoint controlPointWithPosition:initialStart]];
+		[self addControlPointAtPosition: initialStart];
 	}
 	
 	return self;
@@ -185,9 +184,17 @@
 	[super updateUnselected];
 }
 
+- (void) addControlPointAtPosition:(CGPoint)newPosition
+{
+	[self addControlPoint:[ControlPoint controlPointWithPosition:newPosition]];
+}
+
 - (void) addControlPoint:(ControlPoint*)newPoint
 {
-	[controlPoints addObject:newPoint];	
+	[controlPoints addObject:newPoint];
+	
+	//this won't happen when we're drawing with GL
+	[self.objectView setNeedsDisplay];
 }
 
 - (NSString*) objectName
@@ -203,10 +210,14 @@
 	}
 }
 
+- (BOOL) canAddControlPoint
+{
+	return [controllingTouches count] == [controlPoints count];
+}
+
 - (void) dealloc
 {
 	[controlPoints release];
-	[controllingTouches release];
 		
 	[super dealloc];
 }
