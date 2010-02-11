@@ -11,7 +11,7 @@
 
 @implementation ControlPoint
 
-@synthesize controllingTouch;
+@synthesize controllingTouch, position, radius;
 
 - (id) init
 {

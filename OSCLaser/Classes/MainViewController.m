@@ -13,6 +13,9 @@
 #import "SharedCollection.h"
 #import "LineObject.h"
 
+#define TOUCH_TIME 0.5
+#define LOOP_INTERVAL 1.0/60.0
+
 @implementation MainViewController
 
 @synthesize startTouch, selected;
@@ -21,6 +24,7 @@
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         collection = [[SharedCollection alloc] init];
 		currentlyManipulated = [[NSMutableSet setWithCapacity:0] retain];
+		downTouches = [[NSMutableSet setWithCapacity:0] retain];
     }
     return self;
 }
@@ -96,55 +100,9 @@
 	[selected release];
 	[collection release];
 	[currentlyManipulated release];
+	[downTouches release];
+	
     [super dealloc];
-}
-
-#pragma mark touch responders
--(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
-{
-	if([currentlyManipulated count] == 0)
-	{
-		self.selected = nil;
-	}
-	//NSLog(@"stopped tracking %d touches", [touches count]);
-	if([touches count] == 1)
-	{
-		UITouch * touch = [touches anyObject];
-		if([touch isEqual:startTouch])
-		{
-			self.startTouch = nil;
-		}
-	}
-	
-	NSMutableSet * toTrash = [NSMutableSet setWithCapacity:0];
-	for(SharedObject * cur in currentlyManipulated)
-	{
-		if([cur stopTrackingTouches:touches])
-		{
-			[toTrash addObject:cur];
-		}
-	}
-	
-	for(SharedObject * cur in toTrash)
-	{
-		[cur updateUnselected];
-		if([currentlyManipulated count] == 1)
-		{
-			self.selected = cur;
-		}
-		
-		[currentlyManipulated removeObject:cur];
-	}
-	
-}
-
--(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
-{ 
-	//NSLog(@"%d touches moving", [touches count]);
-	for(SharedObject * cur in currentlyManipulated)
-	{
-		[cur updateForTouches:touches];
-	}
 }
 
 - (void) setSelected:(SharedObject*)theObject
@@ -205,7 +163,12 @@
 
 - (void) step
 {
-	
+	[collection step];
+}
+
+- (void) startMainThread
+{
+	[NSThread detachNewThreadSelector:@selector(mainThread) toTarget:self withObject:nil];
 }
 
 - (void) mainThread
@@ -213,7 +176,43 @@
 	while(true)
 	{
 		[self step];
+		[NSThread sleepForTimeInterval:LOOP_INTERVAL];
 	}
+}
+
+- (CGPoint) percentCoordsForTouch:(UITouch*)theTouch
+{
+	CGPoint viewCoord = [theTouch locationInView:self.view];
+	
+	float xPercent = viewCoord.x/self.view.frame.size.width;
+	float yPercent = viewCoord.y/self.view.frame.size.height;
+	
+	return CGPointMake(xPercent, yPercent);
+}
+
+#pragma mark touch responders
+
+- (void) theTouchesEnded:(NSSet *)touches withEvent:(UIEvent*)event
+{
+	
+	[downTouches minusSet:touches];
+}
+
+- (void) theTouchesMoved:(NSSet *)touches withEvent:(UIEvent*)event
+{
+}
+
+- (void)theTouchesBegan:(NSSet *)touches withEvent:(UIEvent*)event
+{
+	if([touches count] == 1)
+	{
+		if([downTouches count] == 0)
+		{
+			
+		}
+	}
+	
+	[downTouches unionSet:touches];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -228,17 +227,17 @@
 		}
 	}
 	//NSLog(@"%d touches beginning", [touches count]);
-
+	
 	NSArray * allObjects = [collection objects];
 	
 	//consider prepopulating takenTouches with the contents of all manipulated objects' downTouches field
 	NSMutableSet * takenTouches = [NSMutableSet setWithCapacity:0];
 	NSMutableSet * touchesLeft = [NSMutableSet setWithSet:touches];
 	/*
-	for(SharedObject * curObject in currentlyManipulated)
-	{
-		[takenTouches unionSet:[curObject trackedTouches]];
-	}
+	 for(SharedObject * curObject in currentlyManipulated)
+	 {
+	 [takenTouches unionSet:[curObject trackedTouches]];
+	 }
 	 */
 	for(SharedObject * curObject in allObjects)
 	{
@@ -309,15 +308,51 @@
 	}
 }
 
-- (CGPoint) percentCoordsForTouch:(UITouch*)theTouch
+-(void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	CGPoint viewCoord = [theTouch locationInView:self.view];
+	if([currentlyManipulated count] == 0)
+	{
+		self.selected = nil;
+	}
+	//NSLog(@"stopped tracking %d touches", [touches count]);
+	if([touches count] == 1)
+	{
+		UITouch * touch = [touches anyObject];
+		if([touch isEqual:startTouch])
+		{
+			self.startTouch = nil;
+		}
+	}
 	
-	float xPercent = viewCoord.x/self.view.frame.size.width;
-	float yPercent = viewCoord.y/self.view.frame.size.height;
+	NSMutableSet * toTrash = [NSMutableSet setWithCapacity:0];
+	for(SharedObject * cur in currentlyManipulated)
+	{
+		if([cur stopTrackingTouches:touches])
+		{
+			[toTrash addObject:cur];
+		}
+	}
 	
-	return CGPointMake(xPercent, yPercent);
+	for(SharedObject * cur in toTrash)
+	{
+		[cur updateUnselected];
+		if([currentlyManipulated count] == 1)
+		{
+			self.selected = cur;
+		}
+		
+		[currentlyManipulated removeObject:cur];
+	}
+	
 }
 
+-(void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{ 
+	//NSLog(@"%d touches moving", [touches count]);
+	for(SharedObject * cur in currentlyManipulated)
+	{
+		[cur updateForTouches:touches];
+	}
+}
 
 @end

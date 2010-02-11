@@ -13,6 +13,7 @@
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
 	SharedCollection * collection;
+	NSMutableSet * downTouches;
 	NSMutableSet * currentlyManipulated;
 	SharedObject * selected;
 	UITouch * startTouch;
@@ -31,5 +32,7 @@
 - (void) addManipulatedObject:(SharedObject*)theObject withTouches:(NSMutableSet*)manipulatingTouches;
 - (void) addSharedObject:(SharedObject*)theObject withTouches:(NSMutableSet*) creatingTouches;
 - (void) removeSelectedObject;
+
+- (void) startMainThread;
 
 @end
