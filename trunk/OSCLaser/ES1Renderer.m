@@ -90,13 +90,15 @@
 	
 	//perform z ordering
 	NSMutableArray * sorted = [NSMutableArray arrayWithCapacity:[multiObjects count]];
-	for(MultiPointObject * obj in multiObjects)
+	for(int i = 0; i < [multiObjects count]; i++)
 	{
+		MultiPointObject * obj = [multiObjects objectAtIndex:i];
 		if(!obj.selected)
 			[sorted addObject:obj];
 	}
-	for(MultiPointObject * obj in multiObjects)
+	for(int i = 0; i < [multiObjects count]; i++)
 	{
+		MultiPointObject * obj = [multiObjects objectAtIndex:i];
 		if(obj.selected)
 			[sorted addObject:obj];
 	}
@@ -121,8 +123,9 @@
     glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
     
-	for(MultiPointObject * object in multiObjects)
+	for(int j = 0; j< [multiObjects count]; j++)
 	{
+		MultiPointObject * object = [multiObjects objectAtIndex:j];
 		NSArray * controlPoints = [object getControlPoints];
 		float zCoord = 0.0;
 
