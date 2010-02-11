@@ -13,6 +13,8 @@
 
 @implementation SharedCollection
 
+@synthesize sharedObjects;
+
 - (id) init
 {
 	if(self = [super init])

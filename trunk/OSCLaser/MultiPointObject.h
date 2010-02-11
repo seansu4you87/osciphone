@@ -16,6 +16,7 @@
 	UIView * parentView;
 }
 
+
 @property(nonatomic, assign) UIView * parentView;
 
 - (id) initWithPoint:(CGPoint)initialStart;

@@ -11,7 +11,7 @@
 #import <OpenGLES/ES1/gl.h>
 #import <OpenGLES/ES1/glext.h>
 
-@interface ES1Renderer : NSObject <ESRenderer>
+@interface ES1Renderer : NSObject
 {
 @private
 	EAGLContext *context;
@@ -22,9 +22,12 @@
 	
 	// The OpenGL names for the framebuffer and renderbuffer used to render to this view
 	GLuint defaultFramebuffer, colorRenderbuffer;
+	
+	GLfloat * circleVertices;
+	GLfloat * rectVertices;
 }
 
-- (void) render;
+- (void) renderMultiPoints:(NSArray*)multiObjects;
 - (BOOL) resizeFromLayer:(CAEAGLLayer *)layer;
 
 @end

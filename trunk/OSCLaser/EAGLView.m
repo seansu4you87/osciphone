@@ -7,13 +7,12 @@
 //
 
 #import "EAGLView.h"
-
 #import "ES1Renderer.h"
-#import "ES2Renderer.h"
+#import "SharedCollection.h"
 
 @implementation EAGLView
 
-@synthesize animating;
+@synthesize animating, collection;
 @dynamic animationFrameInterval;
 
 // You must implement this method
@@ -34,19 +33,15 @@
         eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
                                         [NSNumber numberWithBool:FALSE], kEAGLDrawablePropertyRetainedBacking, kEAGLColorFormatRGBA8, kEAGLDrawablePropertyColorFormat, nil];
 		
-		renderer = [[ES2Renderer alloc] init];
+		//plan on using ES1Renderer
+		renderer = [[ES1Renderer alloc] init];
 		
 		if (!renderer)
 		{
-			renderer = [[ES1Renderer alloc] init];
-			
-			if (!renderer)
-			{
-				[self release];
-				return nil;
-			}
+			[self release];
+			return nil;
 		}
-        
+		
 		animating = FALSE;
 		displayLinkSupported = FALSE;
 		animationFrameInterval = 1;
@@ -66,7 +61,8 @@
 
 - (void) drawView:(id)sender
 {
-    [renderer render];
+	[collection step];
+    [renderer renderMultiPoints:collection.sharedObjects];
 }
 
 - (void) layoutSubviews
@@ -143,6 +139,7 @@
 - (void) dealloc
 {
     [renderer release];
+	[collection release];
 	
     [super dealloc];
 }

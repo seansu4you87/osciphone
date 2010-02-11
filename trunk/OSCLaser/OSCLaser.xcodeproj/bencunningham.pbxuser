@@ -2,16 +2,16 @@
 {
 	1D3623240D0F684500981E51 /* OSCLaserAppDelegate.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 529}}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 552}}";
 			sepNavSelRange = "{0, 0}";
 			sepNavVisRange = "{0, 451}";
 		};
 	};
 	1D3623250D0F684500981E51 /* OSCLaserAppDelegate.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 585}}";
-			sepNavSelRange = "{710, 0}";
-			sepNavVisRange = "{3, 852}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 810}}";
+			sepNavSelRange = "{1050, 0}";
+			sepNavVisRange = "{151, 919}";
 		};
 	};
 	1D6058900D05DD3D006BFB54 /* OSCLaser */ = {
@@ -36,30 +36,30 @@
 	};
 	289233A40DB2D0840083E9F9 /* MainView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 554}}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 552}}";
 			sepNavSelRange = "{140, 0}";
 			sepNavVisRange = "{0, 331}";
 		};
 	};
 	289233A50DB2D0840083E9F9 /* MainView.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 1080}}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 1155}}";
 			sepNavSelRange = "{1016, 0}";
 			sepNavVisRange = "{3, 638}";
 		};
 	};
 	289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 720}}";
-			sepNavSelRange = "{1463, 0}";
-			sepNavVisRange = "{187, 1309}";
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 780}}";
+			sepNavSelRange = "{1536, 0}";
+			sepNavVisRange = "{448, 492}";
 		};
 	};
 	289233A90DB2D0DB0083E9F9 /* MainViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 7515}}";
-			sepNavSelRange = "{422, 0}";
-			sepNavVisRange = "{0, 1024}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 7380}}";
+			sepNavSelRange = "{1639, 0}";
+			sepNavVisRange = "{1006, 1104}";
 			sepNavWindowFrame = "{{119, 26}, {1092, 710}}";
 		};
 	};
@@ -80,7 +80,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = FD78A4E111163854008B87CB /* OSCLaser */;
-		activeSDKPreference = iphoneos3.1.3;
+		activeSDKPreference = iphonesimulator3.1.3;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* OSCLaser */;
 		addToTargets = (
 			1D6058900D05DD3D006BFB54 /* OSCLaser */,
@@ -251,6 +251,51 @@
 			FD2A3F6E112402530069C149 /* PBXTextBookmark */ = FD2A3F6E112402530069C149 /* PBXTextBookmark */;
 			FD2A3F6F112402530069C149 /* PBXTextBookmark */ = FD2A3F6F112402530069C149 /* PBXTextBookmark */;
 			FD2A4043112404E90069C149 /* PBXTextBookmark */ = FD2A4043112404E90069C149 /* PBXTextBookmark */;
+			FD2A40581124064A0069C149 /* PBXTextBookmark */ = FD2A40581124064A0069C149 /* PBXTextBookmark */;
+			FD2A40591124064A0069C149 /* PBXTextBookmark */ = FD2A40591124064A0069C149 /* PBXTextBookmark */;
+			FD2A405A1124064A0069C149 /* PBXTextBookmark */ = FD2A405A1124064A0069C149 /* PBXTextBookmark */;
+			FD2A405B1124064A0069C149 /* PBXTextBookmark */ = FD2A405B1124064A0069C149 /* PBXTextBookmark */;
+			FD2A405C1124064A0069C149 /* PBXTextBookmark */ = FD2A405C1124064A0069C149 /* PBXTextBookmark */;
+			FD2A405D1124064A0069C149 /* PBXTextBookmark */ = FD2A405D1124064A0069C149 /* PBXTextBookmark */;
+			FD2A405E1124064A0069C149 /* PBXTextBookmark */ = FD2A405E1124064A0069C149 /* PBXTextBookmark */;
+			FD2A405F1124064A0069C149 /* PBXTextBookmark */ = FD2A405F1124064A0069C149 /* PBXTextBookmark */;
+			FD2A40601124064A0069C149 /* PBXTextBookmark */ = FD2A40601124064A0069C149 /* PBXTextBookmark */;
+			FD2A40611124064A0069C149 /* PBXTextBookmark */ = FD2A40611124064A0069C149 /* PBXTextBookmark */;
+			FD2A40641124073D0069C149 /* PBXTextBookmark */ = FD2A40641124073D0069C149 /* PBXTextBookmark */;
+			FD2A40651124073D0069C149 /* PBXTextBookmark */ = FD2A40651124073D0069C149 /* PBXTextBookmark */;
+			FD2A40661124073D0069C149 /* PBXTextBookmark */ = FD2A40661124073D0069C149 /* PBXTextBookmark */;
+			FD2A40671124073D0069C149 /* PBXTextBookmark */ = FD2A40671124073D0069C149 /* PBXTextBookmark */;
+			FD2A40681124073D0069C149 /* PBXTextBookmark */ = FD2A40681124073D0069C149 /* PBXTextBookmark */;
+			FD2A40691124073D0069C149 /* PBXTextBookmark */ = FD2A40691124073D0069C149 /* PBXTextBookmark */;
+			FD2A406A1124073D0069C149 /* PBXTextBookmark */ = FD2A406A1124073D0069C149 /* PBXTextBookmark */;
+			FD2A406B1124073D0069C149 /* PBXTextBookmark */ = FD2A406B1124073D0069C149 /* PBXTextBookmark */;
+			FD2A406C1124073D0069C149 /* PBXTextBookmark */ = FD2A406C1124073D0069C149 /* PBXTextBookmark */;
+			FD2A406D1124073D0069C149 /* PBXTextBookmark */ = FD2A406D1124073D0069C149 /* PBXTextBookmark */;
+			FD2A406E1124073D0069C149 /* PBXTextBookmark */ = FD2A406E1124073D0069C149 /* PBXTextBookmark */;
+			FD2A406F1124074F0069C149 /* PBXTextBookmark */ = FD2A406F1124074F0069C149 /* PBXTextBookmark */;
+			FD2A4072112407770069C149 /* PBXTextBookmark */ = FD2A4072112407770069C149 /* PBXTextBookmark */;
+			FD2A4073112407770069C149 /* PBXTextBookmark */ = FD2A4073112407770069C149 /* PBXTextBookmark */;
+			FD2A4074112407770069C149 /* PBXTextBookmark */ = FD2A4074112407770069C149 /* PBXTextBookmark */;
+			FD2A409011240CEF0069C149 /* PBXTextBookmark */ = FD2A409011240CEF0069C149 /* PBXTextBookmark */;
+			FD2A409111240CEF0069C149 /* PBXTextBookmark */ = FD2A409111240CEF0069C149 /* PBXTextBookmark */;
+			FD2A409211240CEF0069C149 /* PBXTextBookmark */ = FD2A409211240CEF0069C149 /* PBXTextBookmark */;
+			FD2A409311240CEF0069C149 /* PBXTextBookmark */ = FD2A409311240CEF0069C149 /* PBXTextBookmark */;
+			FD2A409411240CEF0069C149 /* PBXTextBookmark */ = FD2A409411240CEF0069C149 /* PBXTextBookmark */;
+			FD2A409511240CEF0069C149 /* PBXTextBookmark */ = FD2A409511240CEF0069C149 /* PBXTextBookmark */;
+			FD2A409611240CEF0069C149 /* PBXTextBookmark */ = FD2A409611240CEF0069C149 /* PBXTextBookmark */;
+			FD2A409711240CEF0069C149 /* PBXTextBookmark */ = FD2A409711240CEF0069C149 /* PBXTextBookmark */;
+			FD2A409811240CEF0069C149 /* PBXTextBookmark */ = FD2A409811240CEF0069C149 /* PBXTextBookmark */;
+			FD2A409911240CEF0069C149 /* XCBuildMessageTextBookmark */ = FD2A409911240CEF0069C149 /* XCBuildMessageTextBookmark */;
+			FD2A409A11240CEF0069C149 /* PBXTextBookmark */ = FD2A409A11240CEF0069C149 /* PBXTextBookmark */;
+			FD2A409B11240CEF0069C149 /* PBXTextBookmark */ = FD2A409B11240CEF0069C149 /* PBXTextBookmark */;
+			FD2A409C11240D090069C149 /* PBXTextBookmark */ = FD2A409C11240D090069C149 /* PBXTextBookmark */;
+			FD2A409D11240D090069C149 /* PBXTextBookmark */ = FD2A409D11240D090069C149 /* PBXTextBookmark */;
+			FD2A409E11240D090069C149 /* PBXTextBookmark */ = FD2A409E11240D090069C149 /* PBXTextBookmark */;
+			FD2A409F11240D090069C149 /* PBXTextBookmark */ = FD2A409F11240D090069C149 /* PBXTextBookmark */;
+			FD2A40A011240D090069C149 /* XCBuildMessageTextBookmark */ = FD2A40A011240D090069C149 /* XCBuildMessageTextBookmark */;
+			FD2A40A111240D090069C149 /* PBXTextBookmark */ = FD2A40A111240D090069C149 /* PBXTextBookmark */;
+			FD2A40A411240D0B0069C149 /* PBXTextBookmark */ = FD2A40A411240D0B0069C149 /* PBXTextBookmark */;
+			FD2A40A511240D0B0069C149 /* PBXTextBookmark */ = FD2A40A511240D0B0069C149 /* PBXTextBookmark */;
 			FD6A70EF111A24DA004398A9 = FD6A70EF111A24DA004398A9 /* PBXTextBookmark */;
 			FD6A70F0111A24DA004398A9 = FD6A70F0111A24DA004398A9 /* PBXTextBookmark */;
 			FD6A70FA111A24DA004398A9 = FD6A70FA111A24DA004398A9 /* PBXTextBookmark */;
@@ -571,7 +616,7 @@
 		fRef = FD26DA2F1116B1E50062DF1F /* SharedCollection.h */;
 		name = "SharedCollection.h: 19";
 		rLen = 57;
-		rLoc = 371;
+		rLoc = 435;
 		rType = 0;
 		vrLen = 525;
 		vrLoc = 0;
@@ -621,7 +666,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 308";
 		rLen = 0;
-		rLoc = 3951;
+		rLoc = 3867;
 		rType = 0;
 		vrLen = 983;
 		vrLoc = 3706;
@@ -643,16 +688,16 @@
 	};
 	FD26DA2F1116B1E50062DF1F /* SharedCollection.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 554}}";
-			sepNavSelRange = "{297, 0}";
-			sepNavVisRange = "{0, 540}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 552}}";
+			sepNavSelRange = "{345, 0}";
+			sepNavVisRange = "{0, 604}";
 		};
 	};
 	FD26DA301116B1E50062DF1F /* SharedCollection.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 1350}}";
-			sepNavSelRange = "{535, 0}";
-			sepNavVisRange = "{279, 842}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 1440}}";
+			sepNavSelRange = "{306, 0}";
+			sepNavVisRange = "{0, 550}";
 		};
 	};
 	FD2A3E961123F3960069C149 /* PBXTextBookmark */ = {
@@ -660,7 +705,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 19";
 		rLen = 0;
-		rLoc = 396;
+		rLoc = 416;
 		rType = 0;
 		vrLen = 978;
 		vrLoc = 0;
@@ -690,7 +735,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 44";
 		rLen = 0;
-		rLoc = 1463;
+		rLoc = 1536;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 187;
@@ -700,7 +745,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 19";
 		rLen = 0;
-		rLoc = 396;
+		rLoc = 416;
 		rType = 0;
 		vrLen = 1064;
 		vrLoc = 1470;
@@ -710,7 +755,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 286";
 		rLen = 0;
-		rLoc = 7124;
+		rLoc = 7040;
 		rType = 0;
 		vrLen = 740;
 		vrLoc = 6629;
@@ -740,7 +785,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 286";
 		rLen = 0;
-		rLoc = 7124;
+		rLoc = 7040;
 		rType = 0;
 		vrLen = 864;
 		vrLoc = 6993;
@@ -750,7 +795,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 205";
 		rLen = 0;
-		rLoc = 4803;
+		rLoc = 4719;
 		rType = 0;
 		vrLen = 1051;
 		vrLoc = 4260;
@@ -770,7 +815,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 205";
 		rLen = 0;
-		rLoc = 4803;
+		rLoc = 4719;
 		rType = 0;
 		vrLen = 1051;
 		vrLoc = 4260;
@@ -780,7 +825,7 @@
 		fRef = FD26DA2F1116B1E50062DF1F /* SharedCollection.h */;
 		name = "SharedCollection.h: 17";
 		rLen = 0;
-		rLoc = 297;
+		rLoc = 361;
 		rType = 0;
 		vrLen = 540;
 		vrLoc = 0;
@@ -790,7 +835,7 @@
 		fRef = FD26DA301116B1E50062DF1F /* SharedCollection.m */;
 		name = "SharedCollection.m: 36";
 		rLen = 0;
-		rLoc = 535;
+		rLoc = 563;
 		rType = 0;
 		vrLen = 844;
 		vrLoc = 279;
@@ -900,7 +945,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 259";
 		rLen = 67;
-		rLoc = 6449;
+		rLoc = 6365;
 		rType = 0;
 		vrLen = 757;
 		vrLoc = 6418;
@@ -910,7 +955,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 155";
 		rLen = 0;
-		rLoc = 3723;
+		rLoc = 3867;
 		rType = 0;
 		vrLen = 529;
 		vrLoc = 3253;
@@ -930,7 +975,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 154";
 		rLen = 0;
-		rLoc = 3723;
+		rLoc = 3867;
 		rType = 0;
 		vrLen = 501;
 		vrLoc = 3253;
@@ -950,7 +995,7 @@
 		fRef = FDBFB3C311211F310054E172 /* MultiPointObject.h */;
 		name = "MultiPointObject.h: 27";
 		rLen = 28;
-		rLoc = 658;
+		rLoc = 659;
 		rType = 0;
 		vrLen = 759;
 		vrLoc = 0;
@@ -1030,7 +1075,7 @@
 		fRef = FD26DA301116B1E50062DF1F /* SharedCollection.m */;
 		name = "SharedCollection.m: 36";
 		rLen = 0;
-		rLoc = 535;
+		rLoc = 563;
 		rType = 0;
 		vrLen = 842;
 		vrLoc = 279;
@@ -1040,7 +1085,7 @@
 		fRef = FD26DA2F1116B1E50062DF1F /* SharedCollection.h */;
 		name = "SharedCollection.h: 17";
 		rLen = 0;
-		rLoc = 297;
+		rLoc = 361;
 		rType = 0;
 		vrLen = 540;
 		vrLoc = 0;
@@ -1180,7 +1225,7 @@
 		fRef = FDBFB3C311211F310054E172 /* MultiPointObject.h */;
 		name = "MultiPointObject.h: 27";
 		rLen = 28;
-		rLoc = 658;
+		rLoc = 659;
 		rType = 0;
 		vrLen = 759;
 		vrLoc = 0;
@@ -1360,7 +1405,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 44";
 		rLen = 0;
-		rLoc = 1463;
+		rLoc = 1536;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 187;
@@ -1370,7 +1415,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 20";
 		rLen = 0;
-		rLoc = 422;
+		rLoc = 442;
 		rType = 0;
 		vrLen = 978;
 		vrLoc = 0;
@@ -1390,7 +1435,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 20";
 		rLen = 0;
-		rLoc = 422;
+		rLoc = 442;
 		rType = 0;
 		vrLen = 1024;
 		vrLoc = 0;
@@ -1543,11 +1588,58 @@
 		vrLen = 1000;
 		vrLoc = 1954;
 	};
+	FD2A3FA7112404180069C149 /* ESRenderer.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = ESRenderer.h;
+		path = /Users/bencunningham/Desktop/edgeCity/osc_iphone/OSCLaser/ESRenderer.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {726, 552}}";
+			sepNavSelRange = "{0, 0}";
+			sepNavVisRange = "{0, 341}";
+		};
+	};
 	FD2A3FA8112404180069C149 /* EAGLView.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 615}}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 675}}";
+			sepNavSelRange = "{1257, 0}";
+			sepNavVisRange = "{139, 1205}";
+		};
+	};
+	FD2A3FA9112404180069C149 /* EAGLView.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {726, 2115}}";
+			sepNavSelRange = "{1728, 0}";
+			sepNavVisRange = "{0, 999}";
+		};
+	};
+	FD2A3FAC112404330069C149 /* ES1Renderer.h */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 525}}";
+			sepNavSelRange = "{260, 0}";
+			sepNavVisRange = "{167, 406}";
+		};
+	};
+	FD2A3FAD112404330069C149 /* ES1Renderer.m */ = {
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 2445}}";
+			sepNavSelRange = "{2450, 0}";
+			sepNavVisRange = "{2210, 490}";
+		};
+	};
+	FD2A3FAE112404330069C149 /* ES2Renderer.h */ = {
+		isa = PBXFileReference;
+		fileEncoding = 4;
+		lastKnownFileType = sourcecode.c.h;
+		name = ES2Renderer.h;
+		path = /Users/bencunningham/Desktop/edgeCity/osc_iphone/OSCLaser/ES2Renderer.h;
+		sourceTree = "<absolute>";
+		uiCtxt = {
+			sepNavIntBoundsRect = "{{0, 0}, {726, 552}}";
 			sepNavSelRange = "{0, 0}";
-			sepNavVisRange = "{33, 1194}";
+			sepNavVisRange = "{0, 625}";
 		};
 	};
 	FD2A4043112404E90069C149 /* PBXTextBookmark */ = {
@@ -1559,6 +1651,454 @@
 		rType = 0;
 		vrLen = 548;
 		vrLoc = 1832;
+	};
+	FD2A40581124064A0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */;
+		name = "MultiPointObject.m: 107";
+		rLen = 0;
+		rLoc = 2242;
+		rType = 0;
+		vrLen = 1040;
+		vrLoc = 1801;
+	};
+	FD2A40591124064A0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A50DB2D0840083E9F9 /* MainView.m */;
+		name = "MainView.m: 59";
+		rLen = 0;
+		rLoc = 1016;
+		rType = 0;
+		vrLen = 638;
+		vrLoc = 3;
+	};
+	FD2A405A1124064A0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A40DB2D0840083E9F9 /* MainView.h */;
+		name = "MainView.h: 8";
+		rLen = 0;
+		rLoc = 140;
+		rType = 0;
+		vrLen = 331;
+		vrLoc = 0;
+	};
+	FD2A405B1124064A0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623240D0F684500981E51 /* OSCLaserAppDelegate.h */;
+		name = "OSCLaserAppDelegate.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 451;
+		vrLoc = 0;
+	};
+	FD2A405C1124064A0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD2A3FAC112404330069C149 /* ES1Renderer.h */;
+		name = "ES1Renderer.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 605;
+		vrLoc = 0;
+	};
+	FD2A405D1124064A0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD2A3FA8112404180069C149 /* EAGLView.h */;
+		name = "EAGLView.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 1197;
+		vrLoc = 30;
+	};
+	FD2A405E1124064A0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD2A3FA9112404180069C149 /* EAGLView.m */;
+		name = "EAGLView.m: 37";
+		rLen = 0;
+		rLoc = 998;
+		rType = 0;
+		vrLen = 953;
+		vrLoc = 0;
+	};
+	FD2A405F1124064A0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
+		name = "MainViewController.h: 44";
+		rLen = 0;
+		rLoc = 1536;
+		rType = 0;
+		vrLen = 1309;
+		vrLoc = 187;
+	};
+	FD2A40601124064A0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
+		name = "MainViewController.h: 11";
+		rLen = 0;
+		rLoc = 234;
+		rType = 0;
+		vrLen = 1308;
+		vrLoc = 41;
+	};
+	FD2A40611124064A0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */;
+		name = "MultiPointObject.m: 150";
+		rLen = 49;
+		rLoc = 3076;
+		rType = 0;
+		vrLen = 1004;
+		vrLoc = 1954;
+	};
+	FD2A40641124073D0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 1D3623250D0F684500981E51 /* OSCLaserAppDelegate.m */;
+		name = "OSCLaserAppDelegate.m: 43";
+		rLen = 0;
+		rLoc = 1050;
+		rType = 0;
+		vrLen = 919;
+		vrLoc = 151;
+	};
+	FD2A40651124073D0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD2A3FAE112404330069C149 /* ES2Renderer.h */;
+		name = "ES2Renderer.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 625;
+		vrLoc = 0;
+	};
+	FD2A40661124073D0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD2A3FA7112404180069C149 /* ESRenderer.h */;
+		name = "ESRenderer.h: 1";
+		rLen = 0;
+		rLoc = 0;
+		rType = 0;
+		vrLen = 341;
+		vrLoc = 0;
+	};
+	FD2A40671124073D0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD2A3FA8112404180069C149 /* EAGLView.h */;
+		name = "EAGLView.h: 36";
+		rLen = 48;
+		rLoc = 1259;
+		rType = 0;
+		vrLen = 1197;
+		vrLoc = 30;
+	};
+	FD2A40681124073D0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD2A3FA9112404180069C149 /* EAGLView.m */;
+		name = "EAGLView.m: 37";
+		rLen = 0;
+		rLoc = 998;
+		rType = 0;
+		vrLen = 953;
+		vrLoc = 0;
+	};
+	FD2A40691124073D0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 65";
+		rLen = 0;
+		rLoc = 1007;
+		rType = 0;
+		vrLen = 933;
+		vrLoc = 0;
+	};
+	FD2A406A1124073D0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A50DB2D0840083E9F9 /* MainView.m */;
+		name = "MainView.m: 59";
+		rLen = 0;
+		rLoc = 1016;
+		rType = 0;
+		vrLen = 638;
+		vrLoc = 3;
+	};
+	FD2A406B1124073D0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A40DB2D0840083E9F9 /* MainView.h */;
+		name = "MainView.h: 8";
+		rLen = 0;
+		rLoc = 140;
+		rType = 0;
+		vrLen = 331;
+		vrLoc = 0;
+	};
+	FD2A406C1124073D0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
+		name = "MainViewController.h: 23";
+		rLen = 0;
+		rLoc = 535;
+		rType = 0;
+		vrLen = 1355;
+		vrLoc = 186;
+	};
+	FD2A406D1124073D0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
+		name = "MainViewController.h: 23";
+		rLen = 0;
+		rLoc = 557;
+		rType = 0;
+		vrLen = 1351;
+		vrLoc = 186;
+	};
+	FD2A406E1124073D0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */;
+		name = "MultiPointObject.m: 150";
+		rLen = 49;
+		rLoc = 3076;
+		rType = 0;
+		vrLen = 1004;
+		vrLoc = 1954;
+	};
+	FD2A406F1124074F0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */;
+		name = "MultiPointObject.m: 107";
+		rLen = 0;
+		rLoc = 2242;
+		rType = 0;
+		vrLen = 553;
+		vrLoc = 1832;
+	};
+	FD2A4072112407770069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
+		name = "MainViewController.h: 23";
+		rLen = 0;
+		rLoc = 557;
+		rType = 0;
+		vrLen = 1351;
+		vrLoc = 186;
+	};
+	FD2A4073112407770069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 80";
+		rLen = 0;
+		rLoc = 1672;
+		rType = 0;
+		vrLen = 869;
+		vrLoc = 1053;
+	};
+	FD2A4074112407770069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */;
+		name = "MultiPointObject.m: 150";
+		rLen = 49;
+		rLoc = 3076;
+		rType = 0;
+		vrLen = 1000;
+		vrLoc = 1954;
+	};
+	FD2A409011240CEF0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
+		name = "MainViewController.h: 23";
+		rLen = 0;
+		rLoc = 557;
+		rType = 0;
+		vrLen = 1351;
+		vrLoc = 186;
+	};
+	FD2A409111240CEF0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD2A3FA8112404180069C149 /* EAGLView.h */;
+		name = "EAGLView.h: 38";
+		rLen = 0;
+		rLoc = 1257;
+		rType = 0;
+		vrLen = 1205;
+		vrLoc = 139;
+	};
+	FD2A409211240CEF0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD26DA2F1116B1E50062DF1F /* SharedCollection.h */;
+		name = "SharedCollection.h: 17";
+		rLen = 0;
+		rLoc = 345;
+		rType = 0;
+		vrLen = 604;
+		vrLoc = 0;
+	};
+	FD2A409311240CEF0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD26DA301116B1E50062DF1F /* SharedCollection.m */;
+		name = "SharedCollection.m: 16";
+		rLen = 0;
+		rLoc = 306;
+		rType = 0;
+		vrLen = 550;
+		vrLoc = 0;
+	};
+	FD2A409411240CEF0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDBFB3C311211F310054E172 /* MultiPointObject.h */;
+		name = "MultiPointObject.h: 19";
+		rLen = 0;
+		rLoc = 333;
+		rType = 0;
+		vrLen = 760;
+		vrLoc = 0;
+	};
+	FD2A409511240CEF0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */;
+		name = "MultiPointObject.m: 40";
+		rLen = 29;
+		rLoc = 626;
+		rType = 0;
+		vrLen = 620;
+		vrLoc = 367;
+	};
+	FD2A409611240CEF0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD2A3FA9112404180069C149 /* EAGLView.m */;
+		name = "EAGLView.m: 65";
+		rLen = 0;
+		rLoc = 1728;
+		rType = 0;
+		vrLen = 999;
+		vrLoc = 0;
+	};
+	FD2A409711240CEF0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD2A3FAC112404330069C149 /* ES1Renderer.h */;
+		name = "ES1Renderer.h: 30";
+		rLen = 0;
+		rLoc = 625;
+		rType = 0;
+		vrLen = 693;
+		vrLoc = 0;
+	};
+	FD2A409811240CEF0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD2A3FAD112404330069C149 /* ES1Renderer.m */;
+		name = "ES1Renderer.m: 96";
+		rLen = 0;
+		rLoc = 2850;
+		rType = 0;
+		vrLen = 1186;
+		vrLoc = 1672;
+	};
+	FD2A409911240CEF0069C149 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Request for member 'collection' in something not a structure or union";
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 58;
+		rType = 1;
+	};
+	FD2A409A11240CEF0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 59";
+		rLen = 0;
+		rLoc = 1639;
+		rType = 0;
+		vrLen = 1129;
+		vrLoc = 981;
+	};
+	FD2A409B11240CEF0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */;
+		name = "MultiPointObject.m: 150";
+		rLen = 49;
+		rLoc = 3076;
+		rType = 0;
+		vrLen = 1004;
+		vrLoc = 1954;
+	};
+	FD2A409C11240D090069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */;
+		name = "MultiPointObject.m: 107";
+		rLen = 0;
+		rLoc = 2242;
+		rType = 0;
+		vrLen = 553;
+		vrLoc = 1832;
+	};
+	FD2A409D11240D090069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 496";
+		rLen = 0;
+		rLoc = 12463;
+		rType = 0;
+		vrLen = 267;
+		vrLoc = 12201;
+	};
+	FD2A409E11240D090069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
+		name = "MainViewController.h: 46";
+		rLen = 0;
+		rLoc = 1536;
+		rType = 0;
+		vrLen = 492;
+		vrLoc = 448;
+	};
+	FD2A409F11240D090069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD2A3FAC112404330069C149 /* ES1Renderer.h */;
+		name = "ES1Renderer.h: 14";
+		rLen = 0;
+		rLoc = 260;
+		rType = 0;
+		vrLen = 406;
+		vrLoc = 167;
+	};
+	FD2A40A011240D090069C149 /* XCBuildMessageTextBookmark */ = {
+		isa = PBXTextBookmark;
+		comments = "Unused variable 'current'";
+		fRef = FD2A3FAD112404330069C149 /* ES1Renderer.m */;
+		fallbackIsa = XCBuildMessageTextBookmark;
+		rLen = 1;
+		rLoc = 82;
+		rType = 1;
+	};
+	FD2A40A111240D090069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD2A3FAD112404330069C149 /* ES1Renderer.m */;
+		name = "ES1Renderer.m: 83";
+		rLen = 0;
+		rLoc = 2450;
+		rType = 0;
+		vrLen = 490;
+		vrLoc = 2210;
+	};
+	FD2A40A411240D0B0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
+		name = "MainViewController.m: 59";
+		rLen = 0;
+		rLoc = 1639;
+		rType = 0;
+		vrLen = 1104;
+		vrLoc = 1006;
+	};
+	FD2A40A511240D0B0069C149 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */;
+		name = "MultiPointObject.m: 150";
+		rLen = 49;
+		rLoc = 3076;
+		rType = 0;
+		vrLen = 1000;
+		vrLoc = 1954;
 	};
 	FD64089C1118A5DB005185AC /* OSCLaser-iPad */ = {
 		activeExec = 0;
@@ -1981,16 +2521,16 @@
 	};
 	FDBFB3C311211F310054E172 /* MultiPointObject.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {726, 554}}";
-			sepNavSelRange = "{658, 28}";
-			sepNavVisRange = "{0, 759}";
+			sepNavIntBoundsRect = "{{0, 0}, {726, 552}}";
+			sepNavSelRange = "{333, 0}";
+			sepNavVisRange = "{0, 760}";
 		};
 	};
 	FDBFB3C411211F310054E172 /* MultiPointObject.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1002, 3645}}";
-			sepNavSelRange = "{2242, 0}";
-			sepNavVisRange = "{1832, 548}";
+			sepNavIntBoundsRect = "{{0, 0}, {1033, 3570}}";
+			sepNavSelRange = "{3076, 49}";
+			sepNavVisRange = "{1954, 1000}";
 			sepNavWindowFrame = "{{15, 63}, {1092, 710}}";
 		};
 	};
@@ -2059,7 +2599,7 @@
 		fRef = FD26DA301116B1E50062DF1F /* SharedCollection.m */;
 		name = "SharedCollection.m: 39";
 		rLen = 64;
-		rLoc = 823;
+		rLoc = 851;
 		rType = 0;
 		vrLen = 471;
 		vrLoc = 1097;
@@ -2113,7 +2653,7 @@
 		fRef = 1D3623250D0F684500981E51 /* OSCLaserAppDelegate.m */;
 		name = "OSCLaserAppDelegate.m: 27";
 		rLen = 0;
-		rLoc = 747;
+		rLoc = 746;
 		rType = 0;
 		vrLen = 433;
 		vrLoc = 382;
@@ -2123,7 +2663,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 33";
 		rLen = 0;
-		rLoc = 1489;
+		rLoc = 1586;
 		rType = 0;
 		vrLen = 778;
 		vrLoc = 344;
@@ -2133,7 +2673,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 208";
 		rLen = 0;
-		rLoc = 3723;
+		rLoc = 3867;
 		rType = 0;
 		vrLen = 511;
 		vrLoc = 4176;
@@ -2143,7 +2683,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 308";
 		rLen = 0;
-		rLoc = 3951;
+		rLoc = 3867;
 		rType = 0;
 		vrLen = 983;
 		vrLoc = 3706;
@@ -2173,7 +2713,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 207";
 		rLen = 0;
-		rLoc = 7980;
+		rLoc = 7896;
 		rType = 0;
 		vrLen = 312;
 		vrLoc = 4940;
@@ -2295,7 +2835,7 @@
 		fRef = FD26DA2F1116B1E50062DF1F /* SharedCollection.h */;
 		name = "SharedCollection.h: 17";
 		rLen = 0;
-		rLoc = 297;
+		rLoc = 361;
 		rType = 0;
 		vrLen = 540;
 		vrLoc = 0;
@@ -2385,7 +2925,7 @@
 		fRef = FDBFB3C311211F310054E172 /* MultiPointObject.h */;
 		name = "MultiPointObject.h: 22";
 		rLen = 43;
-		rLoc = 384;
+		rLoc = 385;
 		rType = 0;
 		vrLen = 709;
 		vrLoc = 0;
@@ -2445,7 +2985,7 @@
 		fRef = FD26DA301116B1E50062DF1F /* SharedCollection.m */;
 		name = "SharedCollection.m: 36";
 		rLen = 0;
-		rLoc = 535;
+		rLoc = 563;
 		rType = 0;
 		vrLen = 601;
 		vrLoc = 145;
@@ -2455,7 +2995,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 44";
 		rLen = 0;
-		rLoc = 1463;
+		rLoc = 1536;
 		rType = 0;
 		vrLen = 1271;
 		vrLoc = 225;
@@ -2465,7 +3005,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 234";
 		rLen = 0;
-		rLoc = 7980;
+		rLoc = 7896;
 		rType = 0;
 		vrLen = 948;
 		vrLoc = 5741;
@@ -2475,7 +3015,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 231";
 		rLen = 0;
-		rLoc = 7980;
+		rLoc = 7896;
 		rType = 0;
 		vrLen = 873;
 		vrLoc = 5581;
@@ -2485,7 +3025,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 231";
 		rLen = 0;
-		rLoc = 7980;
+		rLoc = 7896;
 		rType = 0;
 		vrLen = 1235;
 		vrLoc = 225;
@@ -2555,7 +3095,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 44";
 		rLen = 0;
-		rLoc = 1463;
+		rLoc = 1536;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 187;
@@ -2565,7 +3105,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 280";
 		rLen = 0;
-		rLoc = 7424;
+		rLoc = 7340;
 		rType = 0;
 		vrLen = 770;
 		vrLoc = 6735;
@@ -2605,7 +3145,7 @@
 		fRef = FDBFB3C311211F310054E172 /* MultiPointObject.h */;
 		name = "MultiPointObject.h: 22";
 		rLen = 43;
-		rLoc = 384;
+		rLoc = 385;
 		rType = 0;
 		vrLen = 709;
 		vrLoc = 0;
@@ -2652,7 +3192,7 @@
 		fRef = FD26DA2F1116B1E50062DF1F /* SharedCollection.h */;
 		name = "SharedCollection.h: 17";
 		rLen = 0;
-		rLoc = 297;
+		rLoc = 361;
 		rType = 0;
 		vrLen = 540;
 		vrLoc = 0;
@@ -2692,7 +3232,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 221";
 		rLen = 0;
-		rLoc = 5002;
+		rLoc = 4918;
 		rType = 0;
 		vrLen = 1126;
 		vrLoc = 4640;
@@ -2732,7 +3272,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 279";
 		rLen = 67;
-		rLoc = 7266;
+		rLoc = 7182;
 		rType = 0;
 		vrLen = 740;
 		vrLoc = 6524;
@@ -2742,7 +3282,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 279";
 		rLen = 67;
-		rLoc = 7266;
+		rLoc = 7182;
 		rType = 0;
 		vrLen = 719;
 		vrLoc = 6576;
@@ -2752,7 +3292,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 279";
 		rLen = 67;
-		rLoc = 7266;
+		rLoc = 7182;
 		rType = 0;
 		vrLen = 719;
 		vrLoc = 6576;
@@ -2779,7 +3319,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 281";
 		rLen = 0;
-		rLoc = 7336;
+		rLoc = 7252;
 		rType = 0;
 		vrLen = 719;
 		vrLoc = 6576;
@@ -2828,7 +3368,7 @@
 		isa = PBXTextBookmark;
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		rLen = 0;
-		rLoc = 303;
+		rLoc = 292;
 		rType = 1;
 	};
 	FDE0BB391123D3C200A7CE0E /* PBXTextBookmark */ = {
@@ -2836,7 +3376,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 281";
 		rLen = 0;
-		rLoc = 7336;
+		rLoc = 7252;
 		rType = 0;
 		vrLen = 683;
 		vrLoc = 6616;
@@ -2846,7 +3386,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 301";
 		rLen = 0;
-		rLoc = 7910;
+		rLoc = 7826;
 		rType = 0;
 		vrLen = 920;
 		vrLoc = 7042;
@@ -2856,7 +3396,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 301";
 		rLen = 0;
-		rLoc = 7910;
+		rLoc = 7826;
 		rType = 0;
 		vrLen = 950;
 		vrLoc = 7003;
@@ -2866,7 +3406,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 301";
 		rLen = 0;
-		rLoc = 7910;
+		rLoc = 7826;
 		rType = 0;
 		vrLen = 920;
 		vrLoc = 7040;
@@ -2876,7 +3416,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 301";
 		rLen = 0;
-		rLoc = 7910;
+		rLoc = 7826;
 		rType = 0;
 		vrLen = 920;
 		vrLoc = 7040;
@@ -2906,7 +3446,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 301";
 		rLen = 0;
-		rLoc = 7910;
+		rLoc = 7826;
 		rType = 0;
 		vrLen = 920;
 		vrLoc = 7040;
@@ -2916,7 +3456,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 301";
 		rLen = 0;
-		rLoc = 7910;
+		rLoc = 7826;
 		rType = 0;
 		vrLen = 920;
 		vrLoc = 7040;
@@ -2936,7 +3476,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 301";
 		rLen = 0;
-		rLoc = 7910;
+		rLoc = 7826;
 		rType = 0;
 		vrLen = 920;
 		vrLoc = 7040;
@@ -3002,7 +3542,7 @@
 		isa = PBXTextBookmark;
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		rLen = 0;
-		rLoc = 323;
+		rLoc = 312;
 		rType = 1;
 	};
 	FDE0BB5E1123D5CA00A7CE0E /* PBXTextBookmark */ = {
@@ -3010,7 +3550,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 301";
 		rLen = 0;
-		rLoc = 7840;
+		rLoc = 7756;
 		rType = 0;
 		vrLen = 920;
 		vrLoc = 7040;
@@ -3090,7 +3630,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 44";
 		rLen = 0;
-		rLoc = 1463;
+		rLoc = 1536;
 		rType = 0;
 		vrLen = 1309;
 		vrLoc = 187;
@@ -3100,7 +3640,7 @@
 		fRef = FDBFB3C311211F310054E172 /* MultiPointObject.h */;
 		name = "MultiPointObject.h: 25";
 		rLen = 56;
-		rLoc = 460;
+		rLoc = 461;
 		rType = 0;
 		vrLen = 759;
 		vrLoc = 0;
@@ -3110,7 +3650,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 334";
 		rLen = 0;
-		rLoc = 8765;
+		rLoc = 8681;
 		rType = 0;
 		vrLen = 1153;
 		vrLoc = 7528;
@@ -3180,7 +3720,7 @@
 		fRef = FDBFB3C311211F310054E172 /* MultiPointObject.h */;
 		name = "MultiPointObject.h: 27";
 		rLen = 28;
-		rLoc = 658;
+		rLoc = 659;
 		rType = 0;
 		vrLen = 759;
 		vrLoc = 0;
@@ -3270,7 +3810,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 44";
 		rLen = 0;
-		rLoc = 1463;
+		rLoc = 1536;
 		rType = 0;
 		vrLen = 1271;
 		vrLoc = 225;
@@ -3280,7 +3820,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 121";
 		rLen = 0;
-		rLoc = 3199;
+		rLoc = 3408;
 		rType = 0;
 		vrLen = 651;
 		vrLoc = 2659;
@@ -3290,7 +3830,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 19";
 		rLen = 0;
-		rLoc = 396;
+		rLoc = 416;
 		rType = 0;
 		vrLen = 883;
 		vrLoc = 0;
@@ -3392,7 +3932,7 @@
 		fRef = FDBFB3C311211F310054E172 /* MultiPointObject.h */;
 		name = "MultiPointObject.h: 23";
 		rLen = 0;
-		rLoc = 752;
+		rLoc = 753;
 		rType = 0;
 		vrLen = 567;
 		vrLoc = 0;
@@ -3432,7 +3972,7 @@
 		fRef = 1D3623250D0F684500981E51 /* OSCLaserAppDelegate.m */;
 		name = "OSCLaserAppDelegate.m: 29";
 		rLen = 0;
-		rLoc = 747;
+		rLoc = 746;
 		rType = 0;
 		vrLen = 856;
 		vrLoc = 0;
@@ -3441,8 +3981,8 @@
 		isa = PBXTextBookmark;
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */;
 		name = "MainViewController.m: 214";
-		rLen = 24;
-		rLoc = 3727;
+		rLen = 0;
+		rLoc = 3867;
 		rType = 0;
 		vrLen = 795;
 		vrLoc = 4943;
@@ -3452,7 +3992,7 @@
 		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
 		name = "MainViewController.h: 35";
 		rLen = 0;
-		rLoc = 1489;
+		rLoc = 1586;
 		rType = 0;
 		vrLen = 1155;
 		vrLoc = 0;
@@ -3462,7 +4002,7 @@
 		fRef = FD26DA301116B1E50062DF1F /* SharedCollection.m */;
 		name = "SharedCollection.m: 36";
 		rLen = 0;
-		rLoc = 535;
+		rLoc = 563;
 		rType = 0;
 		vrLen = 677;
 		vrLoc = 145;
@@ -3472,7 +4012,7 @@
 		fRef = FD26DA2F1116B1E50062DF1F /* SharedCollection.h */;
 		name = "SharedCollection.h: 17";
 		rLen = 0;
-		rLoc = 297;
+		rLoc = 361;
 		rType = 0;
 		vrLen = 540;
 		vrLoc = 0;

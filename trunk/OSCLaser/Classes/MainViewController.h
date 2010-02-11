@@ -8,8 +8,7 @@
 
 #import "FlipsideViewController.h"
 
-@class SharedCollection, SharedObject
-;
+@class SharedCollection, SharedObject, EAGLView;
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
 	SharedCollection * collection;
@@ -19,6 +18,9 @@
 	
 	UITouch * startTouch;
 	NSTimer * touchTimer;
+	
+	IBOutlet EAGLView * glView;
+	IBOutlet UIButton * infoButton;
 }
 
 @property(nonatomic, retain) UITouch * startTouch;
@@ -42,6 +44,8 @@
 - (void) addSharedObject:(SharedObject*)theObject withTouches:(NSMutableSet*) creatingTouches;
 - (void) removeSelectedObject;
 - (void) removeTouchTimer;
-- (void) startMainThread;
+
+- (void) startAnimation;
+- (void) stopAnimation;
 
 @end
