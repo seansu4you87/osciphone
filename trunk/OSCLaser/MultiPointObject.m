@@ -13,7 +13,7 @@
 
 @implementation MultiPointObject
 
-#define VELOCITY_THRESHOLD 4.0
+#define VELOCITY_THRESHOLD 2.0
 
 @synthesize parentView;
 
@@ -104,7 +104,7 @@
 					CGPoint current = [point.controllingTouch locationInView:parentView];
 					CGPoint prev = [point.controllingTouch previousLocationInView:parentView];
 					CGPoint vel = CGPointMake(current.x - prev.x, current.y - prev.y);
-					if([SharedUtility magnitudeOf:vel] < VELOCITY_THRESHOLD)
+					if([SharedUtility magnitudeOf:vel] < VELOCITY_THRESHOLD || ![point movedWithTouch])
 					{
 						vel = CGPointZero;
 					}

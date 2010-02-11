@@ -15,15 +15,18 @@
 	CGPoint prevPosition;
 	CGPoint position;
 	CGPoint velocity;
+	CGPoint touchPosition;
 	UITouch * controllingTouch;
 }
 
 @property(nonatomic, retain) UITouch * controllingTouch;
+@property(nonatomic, readonly) CGPoint touchPosition;
 @property(nonatomic, readonly) CGPoint position;
 @property(nonatomic, readonly) float radius;
 
 - (void) stepInBounds:(CGRect)bounds;
 - (BOOL) beingTouched;
+- (BOOL) movedWithTouch;
 - (void) setVelocity:(CGPoint)newVelocity;
 - (void) setVelocityFromPointChange;
 - (void) setPosition:(CGPoint)newPosition;

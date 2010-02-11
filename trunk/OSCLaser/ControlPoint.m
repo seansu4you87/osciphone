@@ -7,13 +7,15 @@
 //
 
 #import "ControlPoint.h"
+#import "SharedUtility.h"
 
 #define DEFAULT_RADIUS 30
 #define VELOCITY_FACTOR 0.15
+#define MOVEMENT_THRESHOLD 5.0
 
 @implementation ControlPoint
 
-@synthesize controllingTouch, position, radius;
+@synthesize controllingTouch, position, radius, touchPosition;;
 
 - (id) init
 {
@@ -22,6 +24,21 @@
 	}
 	
 	return self;
+}
+
+- (void) setControllingTouch:(UITouch *)theTouch
+{
+	[controllingTouch release];
+	controllingTouch = [theTouch retain];
+	if(controllingTouch != nil)
+	{
+		touchPosition = position;
+	}
+}
+
+- (BOOL) movedWithTouch
+{
+	return [SharedUtility distanceFrom:position to:touchPosition] > MOVEMENT_THRESHOLD;
 }
 
 - (void) setVelocity:(CGPoint)newVelocity
