@@ -63,6 +63,34 @@
 	return 3.141592653589793;
 }
 
++ (CGPoint) point:(CGPoint)firstPoint minusPoint:(CGPoint)subtractPoint
+{
+	return CGPointMake(firstPoint.x - subtractPoint.x, firstPoint.y - subtractPoint.y);
+}
+
++ (float) dotProductBetweenVector:(CGPoint)vectorOne andVector:(CGPoint)vectorTwo
+{
+	return vectorOne.x*vectorTwo.x + vectorOne.y*vectorOne.y;
+}
+
++ (float) radiansToDegrees:(float)radians
+{
+	return 360.0*radians/(2*[SharedUtility PI]);
+}
+
++ (float) degreeAngleBetweenVector:(CGPoint)vectorOne andVector:(CGPoint)vectorTwo
+{
+	return [SharedUtility radiansToDegrees:[SharedUtility radianAngleBetweenVector:vectorOne andVector:vectorTwo]];
+}
+
++ (float) radianAngleBetweenVector:(CGPoint)vectorOne andVector:(CGPoint)vectorTwo
+{
+	float cosineValue = [SharedUtility dotProductBetweenVector:vectorOne andVector:vectorTwo]/([SharedUtility magnitudeOf:vectorOne]*[SharedUtility magnitudeOf:vectorTwo]);
+	float angleValue = acos(cosineValue);
+	//NSLog(@"cos: %f theta: %f", cosineValue, angleValue);
+	return angleValue;
+}
+
 #pragma mark CG drawing
 
 + (void) drawCircleAtPoint:(CGPoint)thePoint withRadius:(float)theRadius inContext:(CGContextRef)theContext

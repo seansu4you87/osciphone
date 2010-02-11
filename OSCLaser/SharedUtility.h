@@ -16,7 +16,13 @@
 //math
 + (float) distanceFrom:(CGPoint)fromPoint to:(CGPoint)toPoint;
 + (float) magnitudeOf:(CGPoint)thePoint;
++ (CGPoint) point:(CGPoint)firstPoint minusPoint:(CGPoint)subtractPoint;
 + (float) PI;
+
++ (float) radiansToDegrees:(float)radians;
++ (float) dotProductBetweenVector:(CGPoint)vectorOne andVector:(CGPoint)vectorTwo;
++ (float) degreeAngleBetweenVector:(CGPoint)vectorOne andVector:(CGPoint)vectorTwo;
++ (float) radianAngleBetweenVector:(CGPoint)vectorOne andVector:(CGPoint)vectorTwo;
 
 //color functions
 + (UIColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;

@@ -14,6 +14,7 @@
 @implementation ES1Renderer
 
 #define NUM_CIRCLE_DIVISIONS 20
+#define LINE_WIDTH 10.0
 
 - (void) initCircleVertices
 {
@@ -35,6 +36,18 @@
 - (void) initRectVertices
 {
 	rectVertices = malloc(2*4*sizeof(GLfloat));
+	
+	rectVertices[0] = 0;
+	rectVertices[1] = -0.5;
+	
+	rectVertices[2] = 0;
+	rectVertices[3] = 0.5;
+	
+	rectVertices[4] = 1.0;
+	rectVertices[5] = 0.5;
+	
+	rectVertices[6] = 1.0;
+	rectVertices[7] = -0.5;
 }
 
 // Create an ES 1.1 context
@@ -107,20 +120,40 @@
 			}else{
 				next = [controlPoints objectAtIndex:i+1];
 			}
+			if(!([controlPoints count] == 1 || ([controlPoints count] ==2 && i == 1)))
+			{
+				//rotate to face nextPoint
+				glPushMatrix();
+				glTranslatef(current.position.x, current.position.y, 0);
+				CGPoint vector = [SharedUtility point:next.position minusPoint:current.position];
+				float length = [SharedUtility magnitudeOf:vector];
+				float zValue = 1.0;
+				if(next.position.y < current.position.y)
+				{
+					zValue *= -1;
+				}
+				glRotatef([SharedUtility degreeAngleBetweenVector:CGPointMake(1.0, 0) andVector:vector], 0.0, 0.0, zValue);
+				glScalef(length, LINE_WIDTH, 1.0);
+				glVertexPointer(2, GL_FLOAT, 0, rectVertices);
+				glEnableClientState(GL_VERTEX_ARRAY);
+				glColorPointer(4, GL_UNSIGNED_BYTE, 0, squareColors);
+				glEnableClientState(GL_COLOR_ARRAY);
+				glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+				glPopMatrix();
+			}
+		}
+		
+		for(int i = 0; i < [controlPoints count]; i++)
+		{
+			ControlPoint * current = [controlPoints objectAtIndex:i];
 			glPushMatrix();
 			glTranslatef(current.position.x, current.position.y, 0);
 			glScalef(current.radius, current.radius, 1.0);
-			
 			glVertexPointer(2, GL_FLOAT, 0, circleVertices);
 			glEnableClientState(GL_VERTEX_ARRAY);
-			/*
-			glColorPointer(4, GL_UNSIGNED_BYTE, 0, squareColors);
-			glEnableClientState(GL_COLOR_ARRAY);
-			 */
+			//glColorPointer(4, GL_UNSIGNED_BYTE, 0, squareColors);
+			//glEnableClientState(GL_COLOR_ARRAY);
 			glDrawArrays(GL_TRIANGLE_FAN, 0, NUM_CIRCLE_DIVISIONS+2);
-			
-			//rotate to face nextPoint
-			//draw line using rect vertices
 			glPopMatrix();
 		}
 	}
