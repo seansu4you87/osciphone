@@ -40,6 +40,8 @@
 - (void) removeSelectedObject;
 - (void) removeTouchTimer;
 
+- (UIColor*) colorForIndex:(int)objIndex;
+
 - (void) startAnimation;
 - (void) stopAnimation;
 

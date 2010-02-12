@@ -160,6 +160,27 @@
 	return CGPointMake(xPercent, yPercent);
 }
 
+- (UIColor*) colorForIndex:(int)objIndex
+{
+	switch(objIndex%6)
+	{
+		case 0:
+			return [UIColor greenColor];
+		case 1:
+			return [UIColor blueColor];
+		case 2:
+			return [UIColor redColor];
+		case 3:
+			return [UIColor purpleColor];
+		case 4:
+			return [UIColor orangeColor];
+		case 5:
+			return [UIColor cyanColor];
+	}
+	
+	return [UIColor grayColor];
+}
+
 #pragma mark adding objects
 
 - (void) addManipulatedObject:(SharedObject*)theObject withTouches:(NSMutableSet*)manipulatingTouches
@@ -187,6 +208,7 @@
 - (void) addMultiPointForStartTouch:(UITouch*)touchOne
 {
 	MultiPointObject * newMulti = [[MultiPointObject alloc] initWithPoint:[touchOne locationInView:self.view]];
+	newMulti.baseColor = [self colorForIndex:[[collection objects] count]];
 	newMulti.parentView = self.view;
 	//[newMulti setupView];
 	[self addSharedObject:newMulti withTouches:[NSMutableSet setWithObject:touchOne]];

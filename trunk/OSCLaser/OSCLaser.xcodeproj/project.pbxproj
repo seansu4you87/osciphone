@@ -79,8 +79,6 @@
 		FDBFB3C611211F310054E172 /* MultiPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */; };
 		FDBFB3E511211F710054E172 /* ControlPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3E411211F710054E172 /* ControlPoint.m */; };
 		FDBFB3E611211F710054E172 /* ControlPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3E411211F710054E172 /* ControlPoint.m */; };
-		FDE0BAC81123C84C00A7CE0E /* MultiPointObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE0BAC71123C84C00A7CE0E /* MultiPointObjectView.m */; };
-		FDE0BAC91123C84C00A7CE0E /* MultiPointObjectView.m in Sources */ = {isa = PBXBuildFile; fileRef = FDE0BAC71123C84C00A7CE0E /* MultiPointObjectView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -157,8 +155,6 @@
 		FDBFB3C411211F310054E172 /* MultiPointObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiPointObject.m; sourceTree = "<group>"; };
 		FDBFB3E311211F710054E172 /* ControlPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPoint.h; sourceTree = "<group>"; };
 		FDBFB3E411211F710054E172 /* ControlPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlPoint.m; sourceTree = "<group>"; };
-		FDE0BAC61123C84C00A7CE0E /* MultiPointObjectView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiPointObjectView.h; sourceTree = "<group>"; };
-		FDE0BAC71123C84C00A7CE0E /* MultiPointObjectView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiPointObjectView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -303,8 +299,6 @@
 			children = (
 				FDBFB3C311211F310054E172 /* MultiPointObject.h */,
 				FDBFB3C411211F310054E172 /* MultiPointObject.m */,
-				FDE0BAC61123C84C00A7CE0E /* MultiPointObjectView.h */,
-				FDE0BAC71123C84C00A7CE0E /* MultiPointObjectView.m */,
 				FDBFB3E311211F710054E172 /* ControlPoint.h */,
 				FDBFB3E411211F710054E172 /* ControlPoint.m */,
 			);
@@ -485,7 +479,6 @@
 				FDA7844E1118F80000AC33F0 /* SharedUtility.m in Sources */,
 				FDBFB3C611211F310054E172 /* MultiPointObject.m in Sources */,
 				FDBFB3E611211F710054E172 /* ControlPoint.m in Sources */,
-				FDE0BAC81123C84C00A7CE0E /* MultiPointObjectView.m in Sources */,
 				FD2A3FAA112404180069C149 /* EAGLView.m in Sources */,
 				FD2A3FB0112404330069C149 /* ES1Renderer.m in Sources */,
 			);
@@ -520,7 +513,6 @@
 				FDA7844F1118F80000AC33F0 /* SharedUtility.m in Sources */,
 				FDBFB3C511211F310054E172 /* MultiPointObject.m in Sources */,
 				FDBFB3E511211F710054E172 /* ControlPoint.m in Sources */,
-				FDE0BAC91123C84C00A7CE0E /* MultiPointObjectView.m in Sources */,
 				FD2A3FAB112404180069C149 /* EAGLView.m in Sources */,
 				FD2A3FB2112404330069C149 /* ES1Renderer.m in Sources */,
 			);

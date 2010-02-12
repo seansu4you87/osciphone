@@ -81,12 +81,7 @@
 {
     // Replace the implementation of this method to do your own custom drawing
 	
-    static const GLubyte squareColors[] = {
-        255, 255,   0, 255,
-        0,   255, 255, 255,
-        0,     0,   0,   0,
-        255,   0, 255, 255,
-    };
+    
 	
 	//perform z ordering
 	NSMutableArray * sorted = [NSMutableArray arrayWithCapacity:[multiObjects count]];
@@ -120,14 +115,21 @@
 	glTranslatef(-1.0, 1.0, 0);
 	glScalef(2.0/backingWidth, -2.0/backingHeight, 1.0);
 	
-    glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
+    //glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
+	
+	static GLubyte circleColors[] = {0, 0, 0, 0};
     
 	for(int j = 0; j< [multiObjects count]; j++)
 	{
 		MultiPointObject * object = [multiObjects objectAtIndex:j];
 		NSArray * controlPoints = [object getControlPoints];
 		float zCoord = 0.0;
+		UIColor * curColor = object.currentColor;
+		circleColors[0] = 255*[SharedUtility getRedFromColor:curColor];
+		circleColors[1] = 255*[SharedUtility getBlueFromColor:curColor];
+		circleColors[2] = 255*[SharedUtility getGreenFromColor:curColor];
+		circleColors[3] = 255*[SharedUtility getAlphaFromColor:curColor];
 
 		for(int i = 0; i < [controlPoints count]; i++)
 		{
@@ -155,7 +157,7 @@
 				glScalef(length, LINE_WIDTH, 1.0);
 				glVertexPointer(2, GL_FLOAT, 0, rectVertices);
 				glEnableClientState(GL_VERTEX_ARRAY);
-				glColorPointer(4, GL_UNSIGNED_BYTE, 0, squareColors);
+				glColorPointer(4, GL_UNSIGNED_BYTE, 0, circleColors);
 				glEnableClientState(GL_COLOR_ARRAY);
 				glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 				glPopMatrix();
@@ -170,8 +172,8 @@
 			glScalef(current.radius, current.radius, 1.0);
 			glVertexPointer(2, GL_FLOAT, 0, circleVertices);
 			glEnableClientState(GL_VERTEX_ARRAY);
-			//glColorPointer(4, GL_UNSIGNED_BYTE, 0, squareColors);
-			//glEnableClientState(GL_COLOR_ARRAY);
+			glColorPointer(4, GL_UNSIGNED_BYTE, 0, circleColors);
+			glEnableClientState(GL_COLOR_ARRAY);
 			glDrawArrays(GL_TRIANGLE_FAN, 0, NUM_CIRCLE_DIVISIONS+2);
 			glPopMatrix();
 		}

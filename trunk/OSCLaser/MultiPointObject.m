@@ -9,13 +9,13 @@
 #import "MultiPointObject.h"
 #import "ControlPoint.h"
 #import "SharedUtility.h"
-#import "MultiPointObjectView.h"
 
 @implementation MultiPointObject
 
 #define VELOCITY_THRESHOLD 3.0
+#define SELECTED_COLOR [UIColor whiteColor]
 
-@synthesize parentView;
+@synthesize parentView, currentColor, baseColor;
 
 - (id) init
 {
@@ -40,20 +40,6 @@
 - (NSArray*) getControlPoints
 {
 	return controlPoints;
-}
-
-- (void) setupView
-{
-	if(parentView != nil)
-	{
-		CGRect properFrame = parentView.frame;
-		properFrame.origin.x = 0.0;
-		properFrame.origin.y = 0.0;
-		
-		MultiPointObjectView * myView =  [[MultiPointObjectView alloc] initWithFrame:properFrame];
-		myView.parentObject = self;
-		objectView = myView;
-	}
 }
 
 - (BOOL) touchesAreRelevant:(NSSet*)touches
@@ -200,11 +186,13 @@
 
 - (void) updateSelected
 {
+	self.currentColor = SELECTED_COLOR;
 	[super updateSelected];
 }
 
 - (void) updateUnselected
 {
+	self.currentColor = baseColor;
 	[super updateUnselected];
 }
 
@@ -239,6 +227,8 @@
 - (void) dealloc
 {
 	[controlPoints release];
+	[currentColor release];
+	[baseColor release];
 		
 	[super dealloc];
 }
