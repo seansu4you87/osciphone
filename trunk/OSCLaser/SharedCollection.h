@@ -16,6 +16,9 @@
 
 @property(nonatomic, readonly) NSMutableArray * sharedObjects;
 
++ (SharedCollection*) sharedCollection;
++ (void) releaseCollection;
+
 - (void) step;
 - (NSArray*) objects;
 - (void) addSharedObject:(SharedObject*)newObject;

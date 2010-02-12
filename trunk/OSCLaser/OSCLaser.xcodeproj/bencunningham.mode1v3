@@ -319,7 +319,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ES1Renderer.m</string>
+								<string>SequencerRow.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,18 +327,17 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ES1Renderer.m</string>
+										<string>SequencerRow.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FDA1FE4411255ED500A4BFB1</string>
+										<string>FDA1FEA51125697300A4BFB1</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
 											<string>FD0CFB0C1116923400DF5C0F</string>
 											<string>FD0CFB19111696CC00DF5C0F</string>
 											<string>FD8EC38D1116FB4500907A48</string>
-											<string>FDB7442F1118C1140056A819</string>
 											<string>FD6A70EF111A24DA004398A9</string>
 											<string>FD6A70F0111A24DA004398A9</string>
 											<string>FD6A70FA111A24DA004398A9</string>
@@ -349,36 +348,41 @@
 											<string>FD6A7103111A24DA004398A9</string>
 											<string>FD6A7104111A24DA004398A9</string>
 											<string>FD6A7149111A2BC6004398A9</string>
-											<string>FDBFB3C811211F410054E172</string>
 											<string>FDBFB3CC11211F410054E172</string>
 											<string>FDBFB3CE11211F410054E172</string>
 											<string>FDE0BADE1123CE1F00A7CE0E</string>
 											<string>FDE0BB891123E9B400A7CE0E</string>
 											<string>FDE0BBA41123EDDB00A7CE0E</string>
 											<string>FD2A3EB21123F4620069C149</string>
-											<string>FD2A3ED81123F6980069C149</string>
 											<string>FD2A3ED91123F6980069C149</string>
 											<string>FD2A405B1124064A0069C149</string>
 											<string>FD2A40641124073D0069C149</string>
 											<string>FD2A406B1124073D0069C149</string>
-											<string>FD3F5E301124A1DF00AD17DE</string>
 											<string>FD3F5F591124B8CB00AD17DE</string>
-											<string>FDA1FCE21125488900A4BFB1</string>
-											<string>FDA1FCE51125488900A4BFB1</string>
 											<string>FDA1FD0411254AD000A4BFB1</string>
-											<string>FDA1FD981125504900A4BFB1</string>
-											<string>FDA1FDB11125510100A4BFB1</string>
-											<string>FDA1FDB21125510100A4BFB1</string>
-											<string>FDA1FDB31125510100A4BFB1</string>
-											<string>FDA1FDE51125533C00A4BFB1</string>
-											<string>FDA1FDE71125533C00A4BFB1</string>
-											<string>FDA1FDE81125533C00A4BFB1</string>
-											<string>FDA1FDED1125536200A4BFB1</string>
-											<string>FDA1FDEE1125536200A4BFB1</string>
-											<string>FDA1FDF51125538800A4BFB1</string>
-											<string>FDA1FDF61125538800A4BFB1</string>
 											<string>FDA1FDF71125538800A4BFB1</string>
-											<string>FDA1FDE61125533C00A4BFB1</string>
+											<string>FDA1FE691125622100A4BFB1</string>
+											<string>FDA1FE7D1125655700A4BFB1</string>
+											<string>FDA1FE7E1125655700A4BFB1</string>
+											<string>FDA1FE921125697300A4BFB1</string>
+											<string>FDA1FE931125697300A4BFB1</string>
+											<string>FDA1FE941125697300A4BFB1</string>
+											<string>FDA1FE951125697300A4BFB1</string>
+											<string>FDA1FE961125697300A4BFB1</string>
+											<string>FDA1FE971125697300A4BFB1</string>
+											<string>FDA1FE981125697300A4BFB1</string>
+											<string>FDA1FE991125697300A4BFB1</string>
+											<string>FDA1FE9A1125697300A4BFB1</string>
+											<string>FDA1FE9B1125697300A4BFB1</string>
+											<string>FDA1FE9C1125697300A4BFB1</string>
+											<string>FDA1FE9D1125697300A4BFB1</string>
+											<string>FDA1FE9E1125697300A4BFB1</string>
+											<string>FDA1FE9F1125697300A4BFB1</string>
+											<string>FDA1FEA01125697300A4BFB1</string>
+											<string>FDA1FEA11125697300A4BFB1</string>
+											<string>FDA1FEA21125697300A4BFB1</string>
+											<string>FDA1FEA31125697300A4BFB1</string>
+											<string>FDA1FEA41125697300A4BFB1</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -607,7 +611,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ES1Renderer.m</string>
+								<string>SequencerRow.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
