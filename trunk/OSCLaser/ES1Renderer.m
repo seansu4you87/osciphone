@@ -127,8 +127,8 @@
 		float zCoord = 0.0;
 		UIColor * curColor = object.currentColor;
 		circleColors[0] = 255*[SharedUtility getRedFromColor:curColor];
-		circleColors[1] = 255*[SharedUtility getBlueFromColor:curColor];
-		circleColors[2] = 255*[SharedUtility getGreenFromColor:curColor];
+		circleColors[1] = 255*[SharedUtility getGreenFromColor:curColor];
+		circleColors[2] = 255*[SharedUtility getBlueFromColor:curColor];
 		circleColors[3] = 255*[SharedUtility getAlphaFromColor:curColor];
 
 		for(int i = 0; i < [controlPoints count]; i++)
