@@ -319,7 +319,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MultiPointObject.m</string>
+								<string>ES1Renderer.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +327,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MultiPointObject.m</string>
+										<string>ES1Renderer.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FDA1FDB51125510100A4BFB1</string>
+										<string>FDA1FE4411255ED500A4BFB1</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -358,7 +358,6 @@
 											<string>FD2A3EB21123F4620069C149</string>
 											<string>FD2A3ED81123F6980069C149</string>
 											<string>FD2A3ED91123F6980069C149</string>
-											<string>FD2A3F6B112402530069C149</string>
 											<string>FD2A405B1124064A0069C149</string>
 											<string>FD2A40641124073D0069C149</string>
 											<string>FD2A406B1124073D0069C149</string>
@@ -367,18 +366,19 @@
 											<string>FDA1FCE21125488900A4BFB1</string>
 											<string>FDA1FCE51125488900A4BFB1</string>
 											<string>FDA1FD0411254AD000A4BFB1</string>
-											<string>FDA1FD0611254AD000A4BFB1</string>
-											<string>FDA1FD0711254AD000A4BFB1</string>
-											<string>FDA1FD1611254B2C00A4BFB1</string>
-											<string>FDA1FD4A11254D2900A4BFB1</string>
-											<string>FDA1FD9111254FB900A4BFB1</string>
 											<string>FDA1FD981125504900A4BFB1</string>
-											<string>FDA1FD9B1125504900A4BFB1</string>
-											<string>FDA1FD9C1125504900A4BFB1</string>
 											<string>FDA1FDB11125510100A4BFB1</string>
 											<string>FDA1FDB21125510100A4BFB1</string>
 											<string>FDA1FDB31125510100A4BFB1</string>
-											<string>FDA1FDB41125510100A4BFB1</string>
+											<string>FDA1FDE51125533C00A4BFB1</string>
+											<string>FDA1FDE71125533C00A4BFB1</string>
+											<string>FDA1FDE81125533C00A4BFB1</string>
+											<string>FDA1FDED1125536200A4BFB1</string>
+											<string>FDA1FDEE1125536200A4BFB1</string>
+											<string>FDA1FDF51125538800A4BFB1</string>
+											<string>FDA1FDF61125538800A4BFB1</string>
+											<string>FDA1FDF71125538800A4BFB1</string>
+											<string>FDA1FDE61125533C00A4BFB1</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -576,7 +576,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FDA1FDB61125510100A4BFB1</string>
 		<string>FDA1FD0F11254AD000A4BFB1</string>
 		<string>FDA1FD1011254AD000A4BFB1</string>
 		<string>1C78EAAD065D492600B07095</string>
@@ -608,7 +607,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MultiPointObject.h</string>
+								<string>ES1Renderer.m</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -677,7 +676,7 @@
 			<key>WindowToolGUID</key>
 			<string>FD78A4EE1116385D008B87CB</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
