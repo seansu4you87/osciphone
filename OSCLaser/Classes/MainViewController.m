@@ -162,20 +162,22 @@
 
 - (UIColor*) colorForIndex:(int)objIndex
 {
-	switch(objIndex%6)
+	switch(objIndex%7)
 	{
 		case 0:
-			return [UIColor greenColor];
-		case 1:
 			return [UIColor blueColor];
+		case 1:
+			return [UIColor greenColor];
 		case 2:
 			return [UIColor redColor];
 		case 3:
-			return [UIColor purpleColor];
+			return [UIColor magentaColor];
 		case 4:
 			return [UIColor orangeColor];
 		case 5:
 			return [UIColor cyanColor];
+		case 6:
+			return [UIColor purpleColor];
 	}
 	
 	return [UIColor grayColor];
@@ -210,7 +212,7 @@
 	MultiPointObject * newMulti = [[MultiPointObject alloc] initWithPoint:[touchOne locationInView:self.view]];
 	newMulti.baseColor = [self colorForIndex:[[collection objects] count]];
 	newMulti.parentView = self.view;
-	//[newMulti setupView];
+
 	[self addSharedObject:newMulti withTouches:[NSMutableSet setWithObject:touchOne]];
 	[newMulti release];
 }

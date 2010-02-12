@@ -13,7 +13,7 @@
 @implementation MultiPointObject
 
 #define VELOCITY_THRESHOLD 3.0
-#define SELECTED_COLOR [UIColor whiteColor]
+#define SELECTED_COLOR [UIColor yellowColor]
 
 @synthesize parentView, currentColor, baseColor;
 
