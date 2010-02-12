@@ -16,6 +16,8 @@
 #define NUM_CIRCLE_DIVISIONS 20
 #define LINE_WIDTH 10.0
 
+static double timer = 0.0;
+
 - (void) initCircleVertices
 {
 	circleVertices = malloc(2*(NUM_CIRCLE_DIVISIONS + 2)*sizeof(GLfloat));
@@ -119,6 +121,8 @@
     glClear(GL_COLOR_BUFFER_BIT);
 	
 	static GLubyte circleColors[] = {0, 0, 0, 0};
+	timer += 0.075;
+	float negHalfToHalf = cos(timer)/2.0;
     
 	for(int j = 0; j< [multiObjects count]; j++)
 	{
@@ -126,10 +130,24 @@
 		NSArray * controlPoints = [object getControlPoints];
 		float zCoord = 0.0;
 		UIColor * curColor = object.currentColor;
-		circleColors[0] = 255*[SharedUtility getRedFromColor:curColor];
-		circleColors[1] = 255*[SharedUtility getGreenFromColor:curColor];
-		circleColors[2] = 255*[SharedUtility getBlueFromColor:curColor];
-		circleColors[3] = 255*[SharedUtility getAlphaFromColor:curColor];
+		float red = 255*[SharedUtility getRedFromColor:curColor];
+		float green = 255*[SharedUtility getGreenFromColor:curColor];
+		float blue = 255*[SharedUtility getBlueFromColor:curColor];
+		float alpha = 255*[SharedUtility getAlphaFromColor:curColor];
+		if(object.selected)
+		{
+			float boost = (negHalfToHalf + 0.5)*175;
+			red += boost;
+			green += boost;
+			blue += boost;
+			red = MIN(red, 255);
+			blue = MIN(blue, 255);
+			green = MIN(green, 255);
+		}
+		circleColors[0] = red;
+		circleColors[1] = green;
+		circleColors[2] = blue;
+		circleColors[3] = alpha;
 
 		for(int i = 0; i < [controlPoints count]; i++)
 		{
@@ -154,7 +172,12 @@
 					zValue *= -1;
 				}
 				glRotatef([SharedUtility degreeAngleBetweenVector:CGPointMake(1.0, 0) andVector:vector], 0.0, 0.0, zValue);
-				glScalef(length, LINE_WIDTH, 1.0);
+				float scaleWidth = LINE_WIDTH;
+				if(object.selected)
+				{
+					scaleWidth += negHalfToHalf*2.0;
+				}
+				glScalef(length, scaleWidth, 1.0);
 				glVertexPointer(2, GL_FLOAT, 0, rectVertices);
 				glEnableClientState(GL_VERTEX_ARRAY);
 				glColorPointer(4, GL_UNSIGNED_BYTE, 0, circleColors);
@@ -169,7 +192,12 @@
 			ControlPoint * current = [controlPoints objectAtIndex:i];
 			glPushMatrix();
 			glTranslatef(current.position.x, current.position.y, zCoord);
-			glScalef(current.radius, current.radius, 1.0);
+			float scaleRadius = current.radius;
+			if(object.selected)
+			{
+				scaleRadius += negHalfToHalf*5.0;
+			}
+			glScalef(scaleRadius, scaleRadius, 1.0);
 			glVertexPointer(2, GL_FLOAT, 0, circleVertices);
 			glEnableClientState(GL_VERTEX_ARRAY);
 			glColorPointer(4, GL_UNSIGNED_BYTE, 0, circleColors);

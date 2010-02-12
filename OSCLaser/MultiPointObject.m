@@ -186,7 +186,7 @@
 
 - (void) updateSelected
 {
-	self.currentColor = SELECTED_COLOR;
+	self.currentColor = self.baseColor;
 	[super updateSelected];
 }
 
