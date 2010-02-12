@@ -14,10 +14,14 @@
 @interface MultiPointObject : SharedObject {
 	NSMutableArray * controlPoints;
 	UIView * parentView;
+	UIColor * baseColor;
+	UIColor * currentColor;
 }
 
 
 @property(nonatomic, assign) UIView * parentView;
+@property(nonatomic, retain) UIColor * currentColor;
+@property(nonatomic, retain) UIColor * baseColor;
 
 - (id) initWithPoint:(CGPoint)initialStart;
 
@@ -26,7 +30,5 @@
 - (void) addControlPoint:(ControlPoint*)newPoint;
 - (BOOL) touch:(UITouch*)theTouch isRelevantToControlPoint:(ControlPoint*)theControlPoint;
 - (BOOL) canAddControlPoint;
-
-- (void) setupView;//this must be called after parentView is set
 
 @end
