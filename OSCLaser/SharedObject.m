@@ -14,7 +14,7 @@ static int currentID;
 
 @implementation SharedObject
 
-@synthesize objectID, objectView, controllingTouches, selected;
+@synthesize objectID, controllingTouches, selected;
 
 - (id) init
 {
@@ -98,7 +98,7 @@ static int currentID;
 - (void) dealloc
 {
 	[controllingTouches release];
-	[objectView release];
+
 	[super dealloc];
 }
 

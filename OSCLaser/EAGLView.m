@@ -12,7 +12,7 @@
 
 @implementation EAGLView
 
-@synthesize animating, collection;
+@synthesize animating;
 @dynamic animationFrameInterval;
 
 // You must implement this method
@@ -61,8 +61,8 @@
 
 - (void) drawView:(id)sender
 {
-	[collection step];
-    [renderer renderMultiPoints:collection.sharedObjects];
+	[[SharedCollection sharedCollection] step];
+    [renderer renderMultiPoints:[SharedCollection sharedCollection].sharedObjects];
 }
 
 - (void) layoutSubviews
@@ -139,7 +139,6 @@
 - (void) dealloc
 {
     [renderer release];
-	[collection release];
 	
     [super dealloc];
 }

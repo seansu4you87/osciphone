@@ -73,6 +73,12 @@
 		FD78A5241116390E008B87CB /* OSCInPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FD78A5221116390E008B87CB /* OSCInPort.m */; };
 		FD78A55711163AE4008B87CB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD78A55611163AE4008B87CB /* CFNetwork.framework */; };
 		FD78A55B11163AF7008B87CB /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD78A55A11163AF7008B87CB /* CoreFoundation.framework */; };
+		FD9232C1112569F1005207BB /* Toggle.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9232C0112569F1005207BB /* Toggle.m */; };
+		FD9232C2112569F1005207BB /* Toggle.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9232C0112569F1005207BB /* Toggle.m */; };
+		FDA1FE6E1125627D00A4BFB1 /* Sequencer.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA1FE6D1125627D00A4BFB1 /* Sequencer.m */; };
+		FDA1FE6F1125627D00A4BFB1 /* Sequencer.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA1FE6D1125627D00A4BFB1 /* Sequencer.m */; };
+		FDA1FE8A1125685600A4BFB1 /* SequencerRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA1FE891125685600A4BFB1 /* SequencerRow.m */; };
+		FDA1FE8B1125685600A4BFB1 /* SequencerRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA1FE891125685600A4BFB1 /* SequencerRow.m */; };
 		FDA7844E1118F80000AC33F0 /* SharedUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA7844D1118F80000AC33F0 /* SharedUtility.m */; };
 		FDA7844F1118F80000AC33F0 /* SharedUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA7844D1118F80000AC33F0 /* SharedUtility.m */; };
 		FDBFB3C511211F310054E172 /* MultiPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */; };
@@ -149,6 +155,12 @@
 		FD78A5261116391C008B87CB /* OSCInPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCInPort.h; sourceTree = "<group>"; };
 		FD78A55611163AE4008B87CB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FD78A55A11163AF7008B87CB /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		FD9232BF112569F1005207BB /* Toggle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toggle.h; sourceTree = "<group>"; };
+		FD9232C0112569F1005207BB /* Toggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toggle.m; sourceTree = "<group>"; };
+		FDA1FE6C1125627D00A4BFB1 /* Sequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sequencer.h; sourceTree = "<group>"; };
+		FDA1FE6D1125627D00A4BFB1 /* Sequencer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sequencer.m; sourceTree = "<group>"; };
+		FDA1FE881125685600A4BFB1 /* SequencerRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequencerRow.h; sourceTree = "<group>"; };
+		FDA1FE891125685600A4BFB1 /* SequencerRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequencerRow.m; sourceTree = "<group>"; };
 		FDA7844C1118F80000AC33F0 /* SharedUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedUtility.h; sourceTree = "<group>"; };
 		FDA7844D1118F80000AC33F0 /* SharedUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedUtility.m; sourceTree = "<group>"; };
 		FDBFB3C311211F310054E172 /* MultiPointObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiPointObject.h; sourceTree = "<group>"; };
@@ -301,6 +313,12 @@
 				FDBFB3C411211F310054E172 /* MultiPointObject.m */,
 				FDBFB3E311211F710054E172 /* ControlPoint.h */,
 				FDBFB3E411211F710054E172 /* ControlPoint.m */,
+				FDA1FE6C1125627D00A4BFB1 /* Sequencer.h */,
+				FDA1FE6D1125627D00A4BFB1 /* Sequencer.m */,
+				FDA1FE881125685600A4BFB1 /* SequencerRow.h */,
+				FDA1FE891125685600A4BFB1 /* SequencerRow.m */,
+				FD9232BF112569F1005207BB /* Toggle.h */,
+				FD9232C0112569F1005207BB /* Toggle.m */,
 			);
 			name = SharedObjects;
 			sourceTree = "<group>";
@@ -481,6 +499,9 @@
 				FDBFB3E611211F710054E172 /* ControlPoint.m in Sources */,
 				FD2A3FAA112404180069C149 /* EAGLView.m in Sources */,
 				FD2A3FB0112404330069C149 /* ES1Renderer.m in Sources */,
+				FDA1FE6E1125627D00A4BFB1 /* Sequencer.m in Sources */,
+				FDA1FE8A1125685600A4BFB1 /* SequencerRow.m in Sources */,
+				FD9232C1112569F1005207BB /* Toggle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,6 +536,9 @@
 				FDBFB3E511211F710054E172 /* ControlPoint.m in Sources */,
 				FD2A3FAB112404180069C149 /* EAGLView.m in Sources */,
 				FD2A3FB2112404330069C149 /* ES1Renderer.m in Sources */,
+				FDA1FE6F1125627D00A4BFB1 /* Sequencer.m in Sources */,
+				FDA1FE8B1125685600A4BFB1 /* SequencerRow.m in Sources */,
+				FD9232C2112569F1005207BB /* Toggle.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

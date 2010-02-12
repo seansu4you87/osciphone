@@ -24,7 +24,7 @@
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
-        collection = [[SharedCollection alloc] init];
+        [SharedCollection sharedCollection];
 		currentlyManipulated = [[NSMutableSet setWithCapacity:0] retain];
 		downTouches = [[NSMutableSet setWithCapacity:0] retain];
     }
@@ -55,7 +55,6 @@
 	 }
 	 
 	 [self.view bringSubviewToFront:infoButton];
-	 glView.collection = collection;
  }
  
 
@@ -111,9 +110,10 @@
 
 - (void)dealloc {
 	[selected release];
-	[collection release];
 	[currentlyManipulated release];
 	[downTouches release];
+	
+	[SharedCollection releaseCollection];
 	
     [super dealloc];
 }
@@ -134,8 +134,8 @@
 	{
 		[currentlyManipulated removeObject:theObject];
 	}
-	[collection removeSharedObject:theObject];
-	[theObject.objectView removeFromSuperview];
+	[[SharedCollection sharedCollection] removeSharedObject:theObject];
+
 	if(theObject == selected)
 	{
 		self.selected = nil;
@@ -177,7 +177,7 @@
 		case 5:
 			return [UIColor cyanColor];
 		case 6:
-			return [UIColor purpleColor];
+			return [UIColor yellowColor];
 	}
 	
 	return [UIColor grayColor];
@@ -201,7 +201,7 @@
 {
 	@synchronized(self)
 	{
-		[collection addSharedObject:theObject];
+		[[SharedCollection sharedCollection] addSharedObject:theObject];
 	}
 
 	[self addManipulatedObject:theObject withTouches:creatingTouches];	
@@ -210,7 +210,7 @@
 - (void) addMultiPointForStartTouch:(UITouch*)touchOne
 {
 	MultiPointObject * newMulti = [[MultiPointObject alloc] initWithPoint:[touchOne locationInView:self.view]];
-	newMulti.baseColor = [self colorForIndex:[[collection objects] count]];
+	newMulti.baseColor = [self colorForIndex:[[[SharedCollection sharedCollection] objects] count]];
 	newMulti.parentView = self.view;
 
 	[self addSharedObject:newMulti withTouches:[NSMutableSet setWithObject:touchOne]];
@@ -303,7 +303,7 @@
 - (NSSet*) manipulateWithTouches:(NSSet*)touches
 {
 	NSMutableSet * result = [NSMutableSet setWithSet:touches];
-	NSArray * allObjects = [collection objects];
+	NSArray * allObjects = [[SharedCollection sharedCollection] objects];
 	for(SharedObject * curObject in allObjects)
 	{
 		if([result count] == 0)

@@ -11,9 +11,30 @@
 #import "OSCConfig.h"
 #import "OSCPort.h"
 
+static SharedCollection * shared;
+
 @implementation SharedCollection
 
 @synthesize sharedObjects;
+
++ (SharedCollection*) sharedCollection
+{
+	if(shared == nil)
+	{
+		shared = [[SharedCollection alloc] init];
+	}
+	
+	return shared;
+}
+
++ (void) releaseCollection
+{
+	if(shared != nil)
+	{
+		[shared release];
+		shared = nil;
+	}
+}
 
 - (id) init
 {

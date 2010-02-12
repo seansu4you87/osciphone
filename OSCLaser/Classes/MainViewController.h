@@ -11,7 +11,7 @@
 @class SharedCollection, SharedObject, EAGLView;
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
-	SharedCollection * collection;
+
 	NSMutableSet * downTouches;
 	NSMutableSet * currentlyManipulated;
 	SharedObject * selected;
