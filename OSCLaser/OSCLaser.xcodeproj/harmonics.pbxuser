@@ -1,0 +1,116 @@
+// !$*UTF8*$!
+{
+	1D6058900D05DD3D006BFB54 /* OSCLaser */ = {
+		activeExec = 0;
+		executables = (
+			BF8E7F7111276B7200F52195 /* OSCLaser */,
+		);
+	};
+	29B97313FDCFA39411CA2CEA /* Project object */ = {
+		activeBuildConfigurationName = Debug;
+		activeExecutable = BF8E7F7111276B7200F52195 /* OSCLaser */;
+		activeTarget = 1D6058900D05DD3D006BFB54 /* OSCLaser */;
+		addToTargets = (
+			1D6058900D05DD3D006BFB54 /* OSCLaser */,
+			FD64089C1118A5DB005185AC /* OSCLaser-iPad */,
+		);
+		codeSenseManager = BF8E7F9811276B9600F52195 /* Code sense */;
+		executables = (
+			BF8E7F7111276B7200F52195 /* OSCLaser */,
+			BF8E7F7211276B7200F52195 /* OSCLaser-iPad */,
+		);
+		perUserDictionary = {
+			PBXConfiguration.PBXFileTableDataSource3.PBXFileTableDataSource = {
+				PBXFileTableDataSourceColumnSortingDirectionKey = "-1";
+				PBXFileTableDataSourceColumnSortingKey = PBXFileDataSource_Filename_ColumnID;
+				PBXFileTableDataSourceColumnWidthsKey = (
+					20,
+					549,
+					20,
+					48.16259765625,
+					43,
+					43,
+					20,
+				);
+				PBXFileTableDataSourceColumnsKey = (
+					PBXFileDataSource_FiletypeID,
+					PBXFileDataSource_Filename_ColumnID,
+					PBXFileDataSource_Built_ColumnID,
+					PBXFileDataSource_ObjectSize_ColumnID,
+					PBXFileDataSource_Errors_ColumnID,
+					PBXFileDataSource_Warnings_ColumnID,
+					PBXFileDataSource_Target_ColumnID,
+				);
+			};
+			PBXPerProjectTemplateStateSaveDate = 287796082;
+			PBXWorkspaceStateSaveDate = 287796082;
+		};
+		sourceControlManager = BF8E7F9711276B9600F52195 /* Source Control */;
+		userBuildSettings = {
+		};
+	};
+	BF8E7F7111276B7200F52195 /* OSCLaser */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 0;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		dylibVariantSuffix = "";
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = OSCLaser;
+		sourceDirectories = (
+		);
+	};
+	BF8E7F7211276B7200F52195 /* OSCLaser-iPad */ = {
+		isa = PBXExecutable;
+		activeArgIndices = (
+		);
+		argumentStrings = (
+		);
+		autoAttachOnCrash = 1;
+		breakpointsEnabled = 1;
+		configStateDict = {
+		};
+		customDataFormattersEnabled = 1;
+		debuggerPlugin = GDBDebugging;
+		disassemblyDisplayState = 0;
+		enableDebugStr = 1;
+		environmentEntries = (
+		);
+		executableSystemSymbolLevel = 0;
+		executableUserSymbolLevel = 0;
+		libgmallocEnabled = 0;
+		name = "OSCLaser-iPad";
+		sourceDirectories = (
+		);
+	};
+	BF8E7F9711276B9600F52195 /* Source Control */ = {
+		isa = PBXSourceControlManager;
+		fallbackIsa = XCSourceControlManager;
+		isSCMEnabled = 0;
+		scmConfiguration = {
+		};
+	};
+	BF8E7F9811276B9600F52195 /* Code sense */ = {
+		isa = PBXCodeSenseManager;
+		indexTemplatePath = "";
+	};
+	FD64089C1118A5DB005185AC /* OSCLaser-iPad */ = {
+		activeExec = 0;
+		executables = (
+			BF8E7F7211276B7200F52195 /* OSCLaser-iPad */,
+		);
+	};
+}
