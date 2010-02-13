@@ -69,7 +69,7 @@ static SharedCollection * shared;
 
 - (void) sendDeleteMessageForObject:(SharedObject*)deletedObject
 {
-	NSString * deleteAddress = [NSString stringWithFormat:@"/%@/del", [deletedObject objectName]];
+	NSString * deleteAddress = [NSString stringWithFormat:@"/%@/del/", [deletedObject objectName]];
 	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
 	[thePort sendTo:[deleteAddress UTF8String] types:"i", deletedObject.objectID];
 }

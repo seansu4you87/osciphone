@@ -80,6 +80,16 @@
 	}
 }
 
+- (CGPoint) scaleXYPoint:(CGPoint)pointInViewCoords
+{
+	if(parentView != nil)
+	{
+		return CGPointMake(pointInViewCoords.x/parentView.frame.size.width, pointInViewCoords.y/parentView.frame.size.height);
+	}
+	
+	return CGPointZero;
+}
+
 - (BOOL) stopTrackingTouches:(NSSet*)touches
 {
 	for(ControlPoint * point in controlPoints)
