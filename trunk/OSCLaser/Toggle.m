@@ -7,7 +7,7 @@
 //
 
 #import "Toggle.h"
-
+#import "SharedCollection.h"
 
 @implementation Toggle
 

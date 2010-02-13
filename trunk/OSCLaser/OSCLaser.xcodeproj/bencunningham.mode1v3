@@ -273,6 +273,7 @@
 								<string>289233A00DB2D0730083E9F9</string>
 								<string>281C6CD70DB2D82200F60ACC</string>
 								<string>080E96DDFE201D6D7F000001</string>
+								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
@@ -303,7 +304,7 @@
 							<real>186</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>32 87 995 691 0 0 1280 778 </string>
+						<string>38 87 995 691 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -319,7 +320,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SequencerRow.h</string>
+								<string>EAGLView.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +328,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SequencerRow.h</string>
+										<string>EAGLView.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FDA1FEA51125697300A4BFB1</string>
+										<string>FD64EDF5112769C30046C644</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -355,34 +356,36 @@
 											<string>FDE0BBA41123EDDB00A7CE0E</string>
 											<string>FD2A3EB21123F4620069C149</string>
 											<string>FD2A3ED91123F6980069C149</string>
-											<string>FD2A405B1124064A0069C149</string>
-											<string>FD2A40641124073D0069C149</string>
 											<string>FD2A406B1124073D0069C149</string>
-											<string>FD3F5F591124B8CB00AD17DE</string>
-											<string>FDA1FD0411254AD000A4BFB1</string>
-											<string>FDA1FDF71125538800A4BFB1</string>
-											<string>FDA1FE691125622100A4BFB1</string>
-											<string>FDA1FE7D1125655700A4BFB1</string>
-											<string>FDA1FE7E1125655700A4BFB1</string>
-											<string>FDA1FE921125697300A4BFB1</string>
-											<string>FDA1FE931125697300A4BFB1</string>
-											<string>FDA1FE941125697300A4BFB1</string>
 											<string>FDA1FE951125697300A4BFB1</string>
-											<string>FDA1FE961125697300A4BFB1</string>
-											<string>FDA1FE971125697300A4BFB1</string>
-											<string>FDA1FE981125697300A4BFB1</string>
-											<string>FDA1FE991125697300A4BFB1</string>
-											<string>FDA1FE9A1125697300A4BFB1</string>
-											<string>FDA1FE9B1125697300A4BFB1</string>
-											<string>FDA1FE9C1125697300A4BFB1</string>
-											<string>FDA1FE9D1125697300A4BFB1</string>
-											<string>FDA1FE9E1125697300A4BFB1</string>
-											<string>FDA1FE9F1125697300A4BFB1</string>
 											<string>FDA1FEA01125697300A4BFB1</string>
-											<string>FDA1FEA11125697300A4BFB1</string>
-											<string>FDA1FEA21125697300A4BFB1</string>
-											<string>FDA1FEA31125697300A4BFB1</string>
-											<string>FDA1FEA41125697300A4BFB1</string>
+											<string>FD9232C8112576E0005207BB</string>
+											<string>FD9232C9112576E0005207BB</string>
+											<string>FD9232CC112576E0005207BB</string>
+											<string>FD64EDC01125E93B0046C644</string>
+											<string>FD64EDDE112769C30046C644</string>
+											<string>FD64EDDF112769C30046C644</string>
+											<string>FD64EDE0112769C30046C644</string>
+											<string>FD64EDE1112769C30046C644</string>
+											<string>FD64EDE2112769C30046C644</string>
+											<string>FD64EDE3112769C30046C644</string>
+											<string>FD64EDE4112769C30046C644</string>
+											<string>FD64EDE5112769C30046C644</string>
+											<string>FD64EDE6112769C30046C644</string>
+											<string>FD64EDE7112769C30046C644</string>
+											<string>FD64EDE8112769C30046C644</string>
+											<string>FD64EDE9112769C30046C644</string>
+											<string>FD64EDEA112769C30046C644</string>
+											<string>FD64EDEB112769C30046C644</string>
+											<string>FD64EDEC112769C30046C644</string>
+											<string>FD64EDED112769C30046C644</string>
+											<string>FD64EDEE112769C30046C644</string>
+											<string>FD64EDEF112769C30046C644</string>
+											<string>FD64EDF0112769C30046C644</string>
+											<string>FD64EDF1112769C30046C644</string>
+											<string>FD64EDF2112769C30046C644</string>
+											<string>FD64EDF3112769C30046C644</string>
+											<string>FD64EDF4112769C30046C644</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -394,14 +397,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {787, 588}}</string>
+								<string>{{0, 0}, {787, 584}}</string>
 								<key>RubberWindowFrame</key>
-								<string>32 87 995 691 0 0 1280 778 </string>
+								<string>38 87 995 691 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>588pt</string>
+							<string>584pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -414,14 +417,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 593}, {787, 57}}</string>
+								<string>{{0, 589}, {787, 61}}</string>
 								<key>RubberWindowFrame</key>
-								<string>32 87 995 691 0 0 1280 778 </string>
+								<string>38 87 995 691 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>57pt</string>
+							<string>61pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -440,9 +443,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>FDA1FCEA1125488900A4BFB1</string>
+				<string>FD64EDC21125E93B0046C644</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>FDA1FCEB1125488900A4BFB1</string>
+				<string>FD64EDC31125E93B0046C644</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -580,15 +583,15 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FDA1FD0F11254AD000A4BFB1</string>
-		<string>FDA1FD1011254AD000A4BFB1</string>
+		<string>FD64EDFD112769C30046C644</string>
+		<string>FD64EDFE112769C30046C644</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
 		<string>FD78A4EE1116385D008B87CB</string>
 		<string>/Users/bencunningham/Desktop/edgeCity/osc_iphone/OSCLaser/OSCLaser.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>32 87 995 691 0 0 1280 778 </string>
+	<string>38 87 995 691 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -604,14 +607,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SequencerRow.h</string>
+								<string></string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -667,7 +668,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>FD78A4EE1116385D008B87CB</string>
-				<string>FDA1FCD91125488000A4BFB1</string>
+				<string>FD64EDC41125E93B0046C644</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
@@ -680,7 +681,7 @@
 			<key>WindowToolGUID</key>
 			<string>FD78A4EE1116385D008B87CB</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -789,13 +790,13 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1CD10A99069EF8BA00B06720</string>
-				<string>FDA1FCDA1125488000A4BFB1</string>
+				<string>FD64EDF6112769C30046C644</string>
 				<string>1C162984064C10D400B95A72</string>
-				<string>FDA1FCDB1125488000A4BFB1</string>
-				<string>FDA1FCDC1125488000A4BFB1</string>
-				<string>FDA1FCDD1125488000A4BFB1</string>
-				<string>FDA1FCDE1125488000A4BFB1</string>
-				<string>FDA1FCDF1125488000A4BFB1</string>
+				<string>FD64EDF7112769C30046C644</string>
+				<string>FD64EDF8112769C30046C644</string>
+				<string>FD64EDF9112769C30046C644</string>
+				<string>FD64EDFA112769C30046C644</string>
+				<string>FD64EDFB112769C30046C644</string>
 			</array>
 			<key>ToolbarConfiguration</key>
 			<string>xcode.toolbar.config.debugV3</string>
@@ -949,7 +950,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C78EAAD065D492600B07095</string>
-				<string>FDA1FD0D11254AD000A4BFB1</string>
+				<string>FD64EDFC112769C30046C644</string>
 				<string>1C78EAAC065D492600B07095</string>
 			</array>
 			<key>ToolbarConfiguration</key>
