@@ -95,24 +95,6 @@ static double timer = 0.0;
 
 - (void) renderMultiPoints:(NSArray*)multiObjects
 {
-	/*
-	//perform z ordering
-	NSMutableArray * sorted = [NSMutableArray arrayWithCapacity:[multiObjects count]];
-	for(int i = 0; i < [multiObjects count]; i++)
-	{
-		MultiPointObject * obj = [multiObjects objectAtIndex:i];
-		if(!obj.selected)
-			[sorted addObject:obj];
-	}
-	for(int i = 0; i < [multiObjects count]; i++)
-	{
-		MultiPointObject * obj = [multiObjects objectAtIndex:i];
-		if(obj.selected)
-			[sorted addObject:obj];
-	}
-	multiObjects = sorted;
-	 */
-
 	// This application only creates a single context which is already set current at this point.
 	// This call is redundant, but needed if dealing with multiple contexts.
     [EAGLContext setCurrentContext:context];
