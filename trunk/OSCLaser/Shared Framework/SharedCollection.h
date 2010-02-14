@@ -24,6 +24,8 @@
 - (void) addSharedObject:(SharedObject*)newObject;
 - (void) removeSharedObject:(SharedObject*)deletedObject;
 - (SharedObject*) objectWithID:(int)theID;
+
 + (NSString*) addressForObjectManip:(SharedObject*)theObject;
++ (NSString*) addressForObjectAdd:(SharedObject*)theObject;
 
 @end

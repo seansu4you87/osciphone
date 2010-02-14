@@ -197,7 +197,48 @@
 	<key>Notifications</key>
 	<array/>
 	<key>OpenEditors</key>
-	<array/>
+	<array>
+		<dict>
+			<key>Content</key>
+			<dict>
+				<key>PBXProjectModuleGUID</key>
+				<string>FD20BFB21127BD980074F16B</string>
+				<key>PBXProjectModuleLabel</key>
+				<string>SharedCollection.h</string>
+				<key>PBXSplitModuleInNavigatorKey</key>
+				<dict>
+					<key>Split0</key>
+					<dict>
+						<key>PBXProjectModuleGUID</key>
+						<string>FD20BFB31127BD980074F16B</string>
+						<key>PBXProjectModuleLabel</key>
+						<string>SharedCollection.h</string>
+						<key>_historyCapacity</key>
+						<integer>0</integer>
+						<key>bookmark</key>
+						<string>FD20BFB41127BD980074F16B</string>
+						<key>history</key>
+						<array>
+							<string>FD20BFA21127BCED0074F16B</string>
+						</array>
+					</dict>
+					<key>SplitCount</key>
+					<string>1</string>
+				</dict>
+				<key>StatusBarVisibility</key>
+				<true/>
+			</dict>
+			<key>Geometry</key>
+			<dict>
+				<key>Frame</key>
+				<string>{{0, 20}, {596, 629}}</string>
+				<key>PBXModuleWindowStatusBarHidden2</key>
+				<false/>
+				<key>RubberWindowFrame</key>
+				<string>15 103 596 670 0 0 1280 778 </string>
+			</dict>
+		</dict>
+	</array>
 	<key>PerspectiveWidths</key>
 	<array>
 		<integer>-1</integer>
@@ -318,7 +359,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MultiPointObject.mm</string>
+								<string>SharedCollection.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -326,11 +367,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MultiPointObject.mm</string>
+										<string>SharedCollection.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD20BF7C1127B50B0074F16B</string>
+										<string>FD20BFB11127BD980074F16B</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -364,32 +405,32 @@
 											<string>FD3D88A811278F9F00588EC6</string>
 											<string>FD3D88AA11278F9F00588EC6</string>
 											<string>FD3D88B311278F9F00588EC6</string>
-											<string>FD20BE3B112791F60074F16B</string>
 											<string>FD20BE58112792EC0074F16B</string>
 											<string>FD20BE9411279D8B0074F16B</string>
 											<string>FD20BE9511279D8B0074F16B</string>
 											<string>FD20BED61127A9500074F16B</string>
 											<string>FD20BEE81127AB900074F16B</string>
 											<string>FD20BEE91127AB900074F16B</string>
-											<string>FD20BF0B1127AD750074F16B</string>
 											<string>FD20BF181127AF3C0074F16B</string>
-											<string>FD20BF191127AF3C0074F16B</string>
 											<string>FD20BF3D1127B0E50074F16B</string>
 											<string>FD20BF511127B1E00074F16B</string>
 											<string>FD20BF541127B1E00074F16B</string>
-											<string>FD20BF551127B1E00074F16B</string>
 											<string>FD20BF561127B1E00074F16B</string>
 											<string>FD20BF5D1127B26E0074F16B</string>
 											<string>FD20BF5E1127B26E0074F16B</string>
 											<string>FD20BF731127B50B0074F16B</string>
-											<string>FD20BF741127B50B0074F16B</string>
-											<string>FD20BF751127B50B0074F16B</string>
-											<string>FD20BF761127B50B0074F16B</string>
-											<string>FD20BF771127B50B0074F16B</string>
 											<string>FD20BF781127B50B0074F16B</string>
-											<string>FD20BF791127B50B0074F16B</string>
-											<string>FD20BF7A1127B50B0074F16B</string>
-											<string>FD20BF7B1127B50B0074F16B</string>
+											<string>FD20BF881127B9840074F16B</string>
+											<string>FD20BF8A1127B9840074F16B</string>
+											<string>FD20BF8B1127B9840074F16B</string>
+											<string>FD20BFA91127BD980074F16B</string>
+											<string>FD20BFAA1127BD980074F16B</string>
+											<string>FD20BFAB1127BD980074F16B</string>
+											<string>FD20BFAC1127BD980074F16B</string>
+											<string>FD20BFAD1127BD980074F16B</string>
+											<string>FD20BFAE1127BD980074F16B</string>
+											<string>FD20BFAF1127BD980074F16B</string>
+											<string>FD20BFB01127BD980074F16B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -587,11 +628,14 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>FD20BFB51127BD980074F16B</string>
 		<string>FD20BE55112791F60074F16B</string>
 		<string>FD20BE56112791F60074F16B</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>FD78A4EE1116385D008B87CB</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
+		<string>FD20BFB21127BD980074F16B</string>
+		<string>FD78A4EE1116385D008B87CB</string>
 		<string>/Users/bencunningham/Desktop/edgeCity/osc_iphone/OSCLaser/OSCLaser.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
@@ -687,7 +731,7 @@
 			<key>WindowToolGUID</key>
 			<string>FD78A4EE1116385D008B87CB</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
@@ -829,12 +873,14 @@
 							<key>Dock</key>
 							<array>
 								<dict>
+									<key>BecomeActive</key>
+									<true/>
 									<key>ContentConfiguration</key>
 									<dict>
 										<key>PBXProjectModuleGUID</key>
 										<string>1CDD528C0622207200134675</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MainViewController.m</string>
+										<string>SharedCollection.mm</string>
 										<key>StatusBarVisibility</key>
 										<true/>
 									</dict>
@@ -855,8 +901,6 @@
 							<string>212pt</string>
 						</dict>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -892,8 +936,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>FD3D8886112784EC00588EC6</string>
-				<string>FD3D8887112784EC00588EC6</string>
+				<string>FD20BF901127B9840074F16B</string>
+				<string>FD20BF911127B9840074F16B</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>
@@ -902,7 +946,7 @@
 			<key>WindowToolGUID</key>
 			<string>1C530D57069F1CE1000CFCEE</string>
 			<key>WindowToolIsVisible</key>
-			<false/>
+			<true/>
 		</dict>
 		<dict>
 			<key>Identifier</key>

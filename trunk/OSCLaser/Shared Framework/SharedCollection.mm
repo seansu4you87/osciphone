@@ -10,6 +10,7 @@
 #import "SharedObject.h"
 #import "OSCConfig.h"
 #import "OSCPort.h"
+#import "MultiPointObject.h"
 
 static SharedCollection * shared;
 
@@ -52,39 +53,66 @@ static SharedCollection * shared;
 	[super dealloc];
 }
 
+- (void) sendUpdateAllMultiPoint
+{
+	NSString * baseAddress = @"/MObj/setAll";
+	NSMutableString * argString = [NSMutableString stringWithFormat:@""];
+	for(int i = 0; i < [sharedObjects count]; i++)
+	{
+		MultiPointObject * curObject = [sharedObjects objectAtIndex:i];
+		for(int j = 0; j < [curObject numControlPoints]; j++)
+		{
+			[argString appendString:@"ff"];
+		}
+	}
+	
+	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
+	[thePort beginSendTo:(char*)[baseAddress UTF8String] types:(char*)[argString UTF8String]];
+	
+	for(int i = 0; i < [sharedObjects count]; i++)
+	{
+		MultiPointObject * curObject = [sharedObjects objectAtIndex:i];
+		for(int j = 0; j < [curObject numControlPoints]; j++)
+		{
+			CGPoint scaledPoint = [curObject scaledPositionAtIndex:j];
+			[thePort appendFloat:scaledPoint.x];
+			[thePort appendFloat:scaledPoint.y];
+		}
+	}
+	
+	[thePort completeSend];
+}
+
 - (void) step
 {
 	for(SharedObject * obj in sharedObjects)
 	{
 		[obj step];
-		//[obj updateAllValues];
 	}
+	
 	if([sharedObjects count] > 0)
 	{
-		SharedObject * obj = [sharedObjects objectAtIndex:0];
-		[obj updateAllValues];
+		[self sendUpdateAllMultiPoint];
 	}
 }
 
 - (void) sendAddMessageForObject:(SharedObject*)newObject
 {
-	NSString * addAddress = [NSString stringWithFormat:@"/%@/add", [newObject objectName]];
-	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
-	[thePort sendTo:(char*)[addAddress UTF8String] types:"i", newObject.objectID];
+	[newObject sendAddMessage];
  }
 
 - (void) sendDeleteMessageForObject:(SharedObject*)deletedObject
 {
 	NSString * deleteAddress = [NSString stringWithFormat:@"/%@/del", [deletedObject objectName]];
+	NSString * argString = [NSString stringWithFormat:@"i"];
 	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
-	[thePort sendTo:(char*)[deleteAddress UTF8String] types:"i", deletedObject.objectID];
+	[thePort sendTo:(char*)[deleteAddress UTF8String] types:(char*)[argString UTF8String], deletedObject.objectID];
 }
  
  - (void) addSharedObject:(SharedObject*)newObject
 {
 	[self sendAddMessageForObject:newObject];
 	[sharedObjects addObject:newObject];
-	[newObject updateAllValues];
 }
 
 - (void) removeSharedObject:(SharedObject*)deletedObject
@@ -109,6 +137,12 @@ static SharedCollection * shared;
 	}
 	
 	return nil;
+}
+
+
++ (NSString*) addressForObjectAdd:(SharedObject*)theObject
+{
+	return [NSString stringWithFormat:@"/%@/add/", [theObject objectName]];
 }
  
  + (NSString*) addressForObjectManip:(SharedObject*)theObject

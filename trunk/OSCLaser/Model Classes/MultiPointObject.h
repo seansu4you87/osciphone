@@ -13,6 +13,7 @@
 @class ControlPoint;
 
 @interface MultiPointObject : SharedObject {
+	BOOL laserAware;
 	NSMutableArray * controlPoints;
 	UIView * parentView;
 	UIColor * baseColor;
@@ -32,6 +33,7 @@
 - (void) addControlPoint:(ControlPoint*)newPoint;
 - (BOOL) touch:(UITouch*)theTouch isRelevantToControlPoint:(ControlPoint*)theControlPoint;
 - (BOOL) canAddControlPoint;
+- (int) numControlPoints;
 - (CGPoint) scaleXYPoint:(CGPoint)pointInViewCoords;
 - (CGPoint) scaledPositionAtIndex:(int)index;
 

@@ -33,9 +33,14 @@ static int currentID;
 	return @"superObj";
 }
 
-- (void) updateAllValues
+- (void) sendAddMessage
 {
-	//this needs to be overridden
+	//override this
+}
+
+- (void) sendUpdateMessage
+{
+	//override this
 }
 
 - (void) updateForTouches:(NSSet*)touches

@@ -25,6 +25,7 @@
 	{
 		controlPoints = [[NSMutableArray arrayWithCapacity:1] retain];
 		soundObject = [[SoundObject alloc] init];
+		laserAware = NO;
 	}
 	
 	return self;
@@ -220,7 +221,50 @@
 	return relevant;
 }
 
-- (void) updateAllValues
+- (void) sendAddMessage
+{
+	NSString * baseAddress = [SharedCollection addressForObjectAdd:self];
+	baseAddress = [baseAddress stringByAppendingString:[NSString stringWithFormat:@"%d", [controlPoints count]]];
+	
+	NSString * argString = @"i";
+	for(int i = 0; i < [controlPoints count]; i++)
+	{
+		argString = [argString stringByAppendingString:@"ff"];
+	}
+	
+	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
+	[thePort beginSendTo:(char*)[baseAddress UTF8String] types:(char*)[argString UTF8String]];
+	
+	for(int i = 0; i < [controlPoints count]; i++)
+	{
+		CGPoint scaledPoint = [self scaledPositionAtIndex:i];
+		[thePort appendFloat:scaledPoint.x];
+		[thePort appendFloat:scaledPoint.y];
+	}
+	
+	[thePort completeSend];
+	
+	laserAware = YES;
+}
+
+- (void) sendAddPointMessage
+{
+	if(laserAware)
+	{
+		NSString * address = [NSString stringWithFormat:@"%@addPt", [SharedCollection addressForObjectManip:self]];
+		NSString * argString = @"iff";
+		CGPoint scaledPoint = [self scaledPositionAtIndex:[controlPoints count] - 1];
+		OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
+		[thePort sendTo:(char*)[address UTF8String] types:(char*)[argString UTF8String], scaledPoint.x, scaledPoint.y, nil];
+	}
+}
+
+- (int) numControlPoints
+{
+	return [controlPoints count];
+}
+
+- (void) sendUpdateMessage
 {
 	NSString * address = [NSString stringWithFormat:@"%@/setPt/%d", [SharedCollection addressForObjectManip:self], [controlPoints count]];
 	
@@ -271,6 +315,7 @@
 - (void) addControlPoint:(ControlPoint*)newPoint
 {
 	[controlPoints addObject:newPoint];
+	[self sendAddPointMessage];
 }
 
 - (void) step
