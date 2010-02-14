@@ -29,6 +29,16 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 			 {
 				  //scaledPosition is an (x,y) point with x,y in [0,1]
 				 CGPoint scaledPosition = [curObject scaledPositionAtIndex:i];
+				 if(i == 0)
+				 {
+					 [curObject.soundObject setForPointOne:scaledPosition];
+				 }else if(i == 1)
+				 {
+					 [curObject.soundObject setForPointTwo:scaledPosition];
+				 }else if(i == 2)
+				 {
+					 [curObject.soundObject setForPointThree:scaledPosition];
+				 }
 			 }
 		 }
 	}

@@ -17,7 +17,7 @@
 
 #define VELOCITY_THRESHOLD 3.0
 
-@synthesize parentView, currentColor, baseColor;
+@synthesize parentView, currentColor, baseColor, soundObject;
 
 - (id) init
 {
@@ -255,7 +255,7 @@
 		NSString * argString = @"iff";
 		CGPoint scaledPoint = [self scaledPositionAtIndex:[controlPoints count] - 1];
 		OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
-		[thePort sendTo:(char*)[address UTF8String] types:(char*)[argString UTF8String], scaledPoint.x, scaledPoint.y, nil];
+		[thePort sendTo:(char*)[address UTF8String] types:(char*)[argString UTF8String], self.objectID, scaledPoint.x, scaledPoint.y];
 	}
 }
 
