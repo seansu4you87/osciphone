@@ -81,10 +81,6 @@ static double timer = 0.0;
 
 - (void) renderMultiPoints:(NSArray*)multiObjects
 {
-    // Replace the implementation of this method to do your own custom drawing
-	
-    
-	
 	//perform z ordering
 	NSMutableArray * sorted = [NSMutableArray arrayWithCapacity:[multiObjects count]];
 	for(int i = 0; i < [multiObjects count]; i++)

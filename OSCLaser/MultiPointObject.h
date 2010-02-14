@@ -32,6 +32,7 @@
 - (BOOL) touch:(UITouch*)theTouch isRelevantToControlPoint:(ControlPoint*)theControlPoint;
 - (BOOL) canAddControlPoint;
 - (CGPoint) scaleXYPoint:(CGPoint)pointInViewCoords;
+- (CGPoint) scaledPositionAtIndex:(int)index;
 
 /*
  //how to access relevant shit
