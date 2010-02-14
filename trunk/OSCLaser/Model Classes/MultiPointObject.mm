@@ -234,7 +234,7 @@
 	
 	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
 	[thePort beginSendTo:(char*)[baseAddress UTF8String] types:(char*)[argString UTF8String]];
-	
+	[thePort appendInt:self.objectID];
 	for(int i = 0; i < [controlPoints count]; i++)
 	{
 		CGPoint scaledPoint = [self scaledPositionAtIndex:i];
