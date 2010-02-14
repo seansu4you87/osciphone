@@ -20,17 +20,18 @@
 void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 {
 	 NSMutableArray * multiPointObjects = [SharedCollection sharedCollection].sharedObjects;
-	 
-	 for(MultiPointObject * curObject in multiPointObjects)
-	 {
-		 NSArray * controlPoints = [curObject getControlPoints];
-		 for(int i = 0; i < [controlPoints count]; i++)
+	 @synchronized(multiPointObjects)
+	{
+		 for(MultiPointObject * curObject in multiPointObjects)
 		 {
-			  //scaledPosition is an (x,y) point with x,y in [0,1]
-			 CGPoint scaledPosition = [curObject scaledPositionAtIndex:i];
+			 NSArray * controlPoints = [curObject getControlPoints];
+			 for(int i = 0; i < [controlPoints count]; i++)
+			 {
+				  //scaledPosition is an (x,y) point with x,y in [0,1]
+				 CGPoint scaledPosition = [curObject scaledPositionAtIndex:i];
+			 }
 		 }
-	 }
-	 
+	}
 }
 
 
