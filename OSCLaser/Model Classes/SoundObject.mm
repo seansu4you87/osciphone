@@ -25,9 +25,16 @@
 		modIndex.min = [SharedUtility randfBetween:10 andUpper: 200];
 		modIndex.max = [SharedUtility randfBetween:modIndex.min andUpper: 2000];
 		modIndex.cur = 0;
+		possibleNotes = [[NSMutableArray array] retain];
 	}
 	
 	return self;
+}
+
+- (int) numQuantizations
+{
+	return 5;
+	//return [possibleNotes count];
 }
 
 - (void) setPan:(float)xLoc
