@@ -25,6 +25,7 @@
 	
 	GLfloat * circleVertices;
 	GLfloat * rectVertices;
+	GLubyte * colorVertices;
 }
 
 - (void) renderMultiPoints:(NSArray*)multiObjects;
