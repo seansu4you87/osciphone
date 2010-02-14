@@ -230,6 +230,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -268,6 +270,7 @@
 								<string>FD2A3FA6112404020069C149</string>
 								<string>FD26DA3D1116C2DA0062DF1F</string>
 								<string>FD26DA101116B0410062DF1F</string>
+								<string>FD78A4FC111638E6008B87CB</string>
 								<string>289233A00DB2D0730083E9F9</string>
 								<string>29B97317FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
@@ -276,8 +279,6 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>4</integer>
-									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -312,14 +313,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ES1Renderer.mm</string>
+								<string>MultiPointObject.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -327,11 +326,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ES1Renderer.mm</string>
+										<string>MultiPointObject.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD20BF5F1127B26E0074F16B</string>
+										<string>FD20BF7C1127B50B0074F16B</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -364,33 +363,33 @@
 											<string>FD3D88A611278F9F00588EC6</string>
 											<string>FD3D88A811278F9F00588EC6</string>
 											<string>FD3D88AA11278F9F00588EC6</string>
-											<string>FD3D88B211278F9F00588EC6</string>
 											<string>FD3D88B311278F9F00588EC6</string>
 											<string>FD20BE3B112791F60074F16B</string>
 											<string>FD20BE58112792EC0074F16B</string>
 											<string>FD20BE9411279D8B0074F16B</string>
 											<string>FD20BE9511279D8B0074F16B</string>
-											<string>FD20BEC11127A46B0074F16B</string>
-											<string>FD20BEC21127A46B0074F16B</string>
 											<string>FD20BED61127A9500074F16B</string>
 											<string>FD20BEE81127AB900074F16B</string>
 											<string>FD20BEE91127AB900074F16B</string>
-											<string>FD20BEEB1127AB900074F16B</string>
-											<string>FD20BEF41127AC9A0074F16B</string>
 											<string>FD20BF0B1127AD750074F16B</string>
 											<string>FD20BF181127AF3C0074F16B</string>
 											<string>FD20BF191127AF3C0074F16B</string>
 											<string>FD20BF3D1127B0E50074F16B</string>
-											<string>FD20BF401127B0E50074F16B</string>
 											<string>FD20BF511127B1E00074F16B</string>
-											<string>FD20BF521127B1E00074F16B</string>
-											<string>FD20BF531127B1E00074F16B</string>
 											<string>FD20BF541127B1E00074F16B</string>
 											<string>FD20BF551127B1E00074F16B</string>
 											<string>FD20BF561127B1E00074F16B</string>
 											<string>FD20BF5D1127B26E0074F16B</string>
 											<string>FD20BF5E1127B26E0074F16B</string>
-											<string>FD20BF171127AF3C0074F16B</string>
+											<string>FD20BF731127B50B0074F16B</string>
+											<string>FD20BF741127B50B0074F16B</string>
+											<string>FD20BF751127B50B0074F16B</string>
+											<string>FD20BF761127B50B0074F16B</string>
+											<string>FD20BF771127B50B0074F16B</string>
+											<string>FD20BF781127B50B0074F16B</string>
+											<string>FD20BF791127B50B0074F16B</string>
+											<string>FD20BF7A1127B50B0074F16B</string>
+											<string>FD20BF7B1127B50B0074F16B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>

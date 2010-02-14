@@ -229,51 +229,18 @@
 	{
 		argString = [argString stringByAppendingString:@"ff"];
 	}
-	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
 	
-	//this code is shameful. i need to figure out how to programmatically pass arbitrary amounts of arguments
-	switch ([controlPoints count]) {
-		case 1:
-		{
-			CGPoint firstPoint = [self scaledPositionAtIndex:0];
-			[thePort sendTo:(char*)[address UTF8String] types:(char*)[argString UTF8String], firstPoint.x, firstPoint.y];
-			break;
-		}
-		case 2:
-		{
-			CGPoint firstPoint = [self scaledPositionAtIndex:0];
-			CGPoint secondPoint = [self scaledPositionAtIndex:1];
-			[thePort sendTo:(char*)[address UTF8String] types:(char*)[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y];
-			break;
-		}
-		case 3:
-		{	
-			CGPoint firstPoint = [self scaledPositionAtIndex:0];
-			CGPoint secondPoint = [self scaledPositionAtIndex:1];
-			CGPoint thirdPoint = [self scaledPositionAtIndex:2];
-			[thePort sendTo:(char*)[address UTF8String] types:(char*)[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y, thirdPoint.x, thirdPoint.y];
-			break;
-		}
-		case 4:
-		{
-			CGPoint firstPoint = [self scaledPositionAtIndex:0];
-			CGPoint secondPoint = [self scaledPositionAtIndex:1];
-			CGPoint thirdPoint = [self scaledPositionAtIndex:2];
-			CGPoint fourthPoint = [self scaledPositionAtIndex:3];
-			[thePort sendTo:(char*)[address UTF8String] types:(char*)[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y, thirdPoint.x, thirdPoint.y, fourthPoint.x, fourthPoint.y];
-			break;
-		}
-		case 5:
-		{
-			CGPoint firstPoint = [self scaledPositionAtIndex:0];
-			CGPoint secondPoint = [self scaledPositionAtIndex:1];
-			CGPoint thirdPoint = [self scaledPositionAtIndex:2];
-			CGPoint fourthPoint = [self scaledPositionAtIndex:3];
-			CGPoint fifthPoint = [self scaledPositionAtIndex:4];
-			[thePort sendTo:(char*)[address UTF8String] types:(char*)[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y, thirdPoint.x, thirdPoint.y, fourthPoint.x, fourthPoint.y, fifthPoint.x, fifthPoint.y];
-			break;
-		}
+	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
+	[thePort beginSendTo:(char*)[address UTF8String] types:(char*)[argString UTF8String]];
+	
+	for(int i = 0; i < [controlPoints count]; i++)
+	{
+		CGPoint scaledPoint = [self scaledPositionAtIndex:i];
+		[thePort appendFloat:scaledPoint.x];
+		[thePort appendFloat:scaledPoint.y];
 	}
+	
+	[thePort completeSend];
 	
 	
 }
