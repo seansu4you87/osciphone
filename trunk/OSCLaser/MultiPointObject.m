@@ -8,12 +8,14 @@
 
 #import "MultiPointObject.h"
 #import "ControlPoint.h"
+#import "SharedCollection.h"
 #import "SharedUtility.h"
+#import "OSCConfig.h"
+#import "OSCPort.h"
 
 @implementation MultiPointObject
 
 #define VELOCITY_THRESHOLD 3.0
-#define SELECTED_COLOR [UIColor yellowColor]
 
 @synthesize parentView, currentColor, baseColor;
 
@@ -35,6 +37,11 @@
 	}
 	
 	return self;
+}
+
+- (NSString *) objectName
+{
+	return @"MObj";
 }
 
 - (NSArray*) getControlPoints
@@ -194,9 +201,67 @@
 	return relevant;
 }
 
+- (void) updateAllValues
+{
+	NSString * address = [NSString stringWithFormat:@"%@/setPt/%d", [SharedCollection addressForObjectManip:self], [controlPoints count]];
+	
+	NSString * argString = @"";
+	for(int i = 0; i < [controlPoints count]; i++)
+	{
+		argString = [argString stringByAppendingString:@"ff"];
+	}
+	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
+	
+	//this code is shameful. i need to figure out how to programmatically pass arbitrary amounts of arguments
+	switch ([controlPoints count]) {
+		case 1:
+		{
+			CGPoint firstPoint = [self scaledPositionAtIndex:0];
+			[thePort sendTo:[address UTF8String] types:[argString UTF8String], firstPoint.x, firstPoint.y];
+			break;
+		}
+		case 2:
+		{
+			CGPoint firstPoint = [self scaledPositionAtIndex:0];
+			CGPoint secondPoint = [self scaledPositionAtIndex:1];
+			[thePort sendTo:[address UTF8String] types:[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y];
+			break;
+		}
+		case 3:
+		{	
+			CGPoint firstPoint = [self scaledPositionAtIndex:0];
+			CGPoint secondPoint = [self scaledPositionAtIndex:1];
+			CGPoint thirdPoint = [self scaledPositionAtIndex:2];
+			[thePort sendTo:[address UTF8String] types:[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y, thirdPoint.x, thirdPoint.y];
+			break;
+		}
+		case 4:
+		{
+			CGPoint firstPoint = [self scaledPositionAtIndex:0];
+			CGPoint secondPoint = [self scaledPositionAtIndex:1];
+			CGPoint thirdPoint = [self scaledPositionAtIndex:2];
+			CGPoint fourthPoint = [self scaledPositionAtIndex:3];
+			[thePort sendTo:[address UTF8String] types:[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y, thirdPoint.x, thirdPoint.y, fourthPoint.x, fourthPoint.y];
+			break;
+		}
+		case 5:
+		{
+			CGPoint firstPoint = [self scaledPositionAtIndex:0];
+			CGPoint secondPoint = [self scaledPositionAtIndex:1];
+			CGPoint thirdPoint = [self scaledPositionAtIndex:2];
+			CGPoint fourthPoint = [self scaledPositionAtIndex:3];
+			CGPoint fifthPoint = [self scaledPositionAtIndex:4];
+			[thePort sendTo:[address UTF8String] types:[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y, thirdPoint.x, thirdPoint.y, fourthPoint.x, fourthPoint.y, fifthPoint.x, fifthPoint.y];
+			break;
+		}
+	}
+	
+	
+}
+
 - (void) updateSelected
 {
-	self.currentColor = self.baseColor;
+	self.currentColor = baseColor;
 	[super updateSelected];
 }
 
@@ -206,6 +271,12 @@
 	[super updateUnselected];
 }
 
+- (CGPoint) scaledPositionAtIndex:(int)index
+{
+ ControlPoint * thePoint = [controlPoints objectAtIndex:index];
+ return [self scaleXYPoint:thePoint.position];
+}
+													 
 - (void) addControlPointAtPosition:(CGPoint)newPosition
 {
 	[self addControlPoint:[ControlPoint controlPointWithPosition:newPosition]];
@@ -214,11 +285,6 @@
 - (void) addControlPoint:(ControlPoint*)newPoint
 {
 	[controlPoints addObject:newPoint];
-}
-
-- (NSString*) objectName
-{
-	return @"MObj";
 }
 
 - (void) step

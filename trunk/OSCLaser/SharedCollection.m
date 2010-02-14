@@ -57,6 +57,7 @@ static SharedCollection * shared;
 	for(SharedObject * obj in sharedObjects)
 	{
 		[obj step];
+		//[obj updateAllValues];
 	}
 }
 
@@ -69,7 +70,7 @@ static SharedCollection * shared;
 
 - (void) sendDeleteMessageForObject:(SharedObject*)deletedObject
 {
-	NSString * deleteAddress = [NSString stringWithFormat:@"/%@/del/", [deletedObject objectName]];
+	NSString * deleteAddress = [NSString stringWithFormat:@"/%@/del", [deletedObject objectName]];
 	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
 	[thePort sendTo:[deleteAddress UTF8String] types:"i", deletedObject.objectID];
 }
@@ -107,7 +108,7 @@ static SharedCollection * shared;
  
  + (NSString*) addressForObjectManip:(SharedObject*)theObject
  {
-	 return [NSString stringWithFormat:@"/%@/manip", [theObject objectName]];
+	 return [NSString stringWithFormat:@"/%@/set/%d/", [theObject objectName], [theObject objectID]];
  }
 
 @end
