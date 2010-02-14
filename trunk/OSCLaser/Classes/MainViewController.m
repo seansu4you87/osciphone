@@ -209,7 +209,7 @@
 
 - (void) addMultiPointForStartTouch:(UITouch*)touchOne
 {
-	MultiPointObject * newMulti = [[MultiPointObject alloc] initWithPoint:[touchOne locationInView:self.view]];
+	MultiPointObject * newMulti = [[MultiPointObject alloc] initWithView: self.view point:[touchOne locationInView:self.view]];
 	newMulti.baseColor = [self colorForIndex:[[[SharedCollection sharedCollection] objects] count]];
 	newMulti.parentView = self.view;
 

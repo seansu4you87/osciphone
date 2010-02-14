@@ -91,6 +91,23 @@
 	return angleValue;
 }
 
++ (float)randfBetween:(float)a andUpper:(float)b
+{
+    float diff = b - a;
+    return a + ((float)rand() / RAND_MAX)*diff;
+}
+
++ (int)randBetween:(int)a andUpper:(int)b
+{
+    int diff = b - a;
+    return a + (rand() % (diff+1));
+}
+
++ (float)mtof:(int)mid
+{
+	return 440 * pow(2, ((float)(mid-69)/12));
+}
+
 #pragma mark CG drawing
 
 + (void) drawCircleAtPoint:(CGPoint)thePoint withRadius:(float)theRadius inContext:(CGContextRef)theContext

@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SharedObject.h"
+#import "SoundObject.h"
 
 @class ControlPoint;
 
@@ -16,7 +17,7 @@
 	UIView * parentView;
 	UIColor * baseColor;
 	UIColor * currentColor;
-	//SoundObjects * soundObjects;
+	SoundObject * soundObject;
 }
 
 
@@ -24,7 +25,7 @@
 @property(nonatomic, retain) UIColor * currentColor;
 @property(nonatomic, retain) UIColor * baseColor;
 
-- (id) initWithPoint:(CGPoint)initialStart;
+- (id) initWithView:(UIView*)theView point:(CGPoint)initialStart;
 
 - (NSArray*) getControlPoints;
 - (void) addControlPointAtPosition:(CGPoint)newPosition;

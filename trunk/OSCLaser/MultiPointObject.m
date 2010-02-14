@@ -24,16 +24,20 @@
 	if(self = [super init])
 	{
 		controlPoints = [[NSMutableArray arrayWithCapacity:1] retain];
+		soundObject = [[SoundObject alloc] init];
 	}
 	
 	return self;
 }
 
-- (id) initWithPoint:(CGPoint)initialStart
+- (id) initWithView:(UIView*)theView point:(CGPoint)initialStart
 {
 	if(self = [self init])
 	{
+		parentView = theView;
 		[self addControlPointAtPosition: initialStart];
+		[soundObject setCarFreq: [self scaleXYPoint:initialStart].y]; 
+		[soundObject setPan: [self scaleXYPoint:initalStart].x]; 
 	}
 	
 	return self;
