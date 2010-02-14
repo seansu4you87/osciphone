@@ -65,14 +65,14 @@ static SharedCollection * shared;
 {
 	NSString * addAddress = [NSString stringWithFormat:@"/%@/add", [newObject objectName]];
 	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
-	[thePort sendTo:[addAddress UTF8String] types:"i", newObject.objectID];
+	//[thePort sendTo:[addAddress UTF8String] types:"i", newObject.objectID];
  }
 
 - (void) sendDeleteMessageForObject:(SharedObject*)deletedObject
 {
 	NSString * deleteAddress = [NSString stringWithFormat:@"/%@/del", [deletedObject objectName]];
 	OSCPort * thePort = [OSCConfig sharedConfig].oscPort;
-	[thePort sendTo:[deleteAddress UTF8String] types:"i", deletedObject.objectID];
+	//[thePort sendTo:[deleteAddress UTF8String] types:"i", deletedObject.objectID];
 }
  
  - (void) addSharedObject:(SharedObject*)newObject

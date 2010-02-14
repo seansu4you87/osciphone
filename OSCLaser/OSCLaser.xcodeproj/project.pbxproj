@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D3623260D0F684500981E51 /* OSCLaserAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* OSCLaserAppDelegate.m */; };
+		1D3623260D0F684500981E51 /* OSCLaserAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* OSCLaserAppDelegate.mm */; };
 		1D60589B0D05DD56006BFB54 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
@@ -17,7 +17,7 @@
 		288765590DF743DE002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
 		289233A60DB2D0840083E9F9 /* FlipsideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A30DB2D0840083E9F9 /* FlipsideView.m */; };
 		289233A70DB2D0840083E9F9 /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A50DB2D0840083E9F9 /* MainView.m */; };
-		289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
+		289233AE0DB2D0DB0083E9F9 /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.mm */; };
 		289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
 		BF595DBE11276EFE00C18CA4 /* AudioManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF595DBD11276EFE00C18CA4 /* AudioManager.mm */; };
 		BF595DBF11276EFE00C18CA4 /* AudioManager.mm in Sources */ = {isa = PBXBuildFile; fileRef = BF595DBD11276EFE00C18CA4 /* AudioManager.mm */; };
@@ -153,19 +153,19 @@
 		BF8E811211276CEE00F52195 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8E811111276CEE00F52195 /* AudioToolbox.framework */; };
 		BF8E811311276CEE00F52195 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8E811111276CEE00F52195 /* AudioToolbox.framework */; };
 		FD0CF9E311163EC000DF5C0F /* OSCConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF9E211163EC000DF5C0F /* OSCConfig.m */; };
-		FD26DA131116B0760062DF1F /* SharedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26DA121116B0760062DF1F /* SharedObject.m */; };
-		FD26DA311116B1E50062DF1F /* SharedCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26DA301116B1E50062DF1F /* SharedCollection.m */; };
-		FD2A3FAA112404180069C149 /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FA9112404180069C149 /* EAGLView.m */; };
-		FD2A3FAB112404180069C149 /* EAGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FA9112404180069C149 /* EAGLView.m */; };
-		FD2A3FB0112404330069C149 /* ES1Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FAD112404330069C149 /* ES1Renderer.m */; };
-		FD2A3FB2112404330069C149 /* ES1Renderer.m in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FAD112404330069C149 /* ES1Renderer.m */; };
+		FD26DA131116B0760062DF1F /* SharedObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD26DA121116B0760062DF1F /* SharedObject.mm */; };
+		FD26DA311116B1E50062DF1F /* SharedCollection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD26DA301116B1E50062DF1F /* SharedCollection.mm */; };
+		FD2A3FAA112404180069C149 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FA9112404180069C149 /* EAGLView.mm */; };
+		FD2A3FAB112404180069C149 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FA9112404180069C149 /* EAGLView.mm */; };
+		FD2A3FB0112404330069C149 /* ES1Renderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FAD112404330069C149 /* ES1Renderer.mm */; };
+		FD2A3FB2112404330069C149 /* ES1Renderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FAD112404330069C149 /* ES1Renderer.mm */; };
 		FD2A3FFA112404B60069C149 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2A3FF9112404B60069C149 /* QuartzCore.framework */; };
 		FD2A4033112404CF0069C149 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2A4032112404CF0069C149 /* OpenGLES.framework */; };
 		FD6408A21118A5DB005185AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
-		FD6408A31118A5DB005185AC /* OSCLaserAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* OSCLaserAppDelegate.m */; };
+		FD6408A31118A5DB005185AC /* OSCLaserAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* OSCLaserAppDelegate.mm */; };
 		FD6408A41118A5DB005185AC /* FlipsideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A30DB2D0840083E9F9 /* FlipsideView.m */; };
 		FD6408A51118A5DB005185AC /* MainView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A50DB2D0840083E9F9 /* MainView.m */; };
-		FD6408A61118A5DB005185AC /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.m */; };
+		FD6408A61118A5DB005185AC /* MainViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.mm */; };
 		FD6408A71118A5DB005185AC /* FlipsideViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */; };
 		FD6408A81118A5DB005185AC /* NetworkReturnAddress.c in Sources */ = {isa = PBXBuildFile; fileRef = FD78A4FD111638E6008B87CB /* NetworkReturnAddress.c */; };
 		FD6408A91118A5DB005185AC /* OSC-address-space.c in Sources */ = {isa = PBXBuildFile; fileRef = FD78A500111638E6008B87CB /* OSC-address-space.c */; };
@@ -181,8 +181,8 @@
 		FD6408B31118A5DB005185AC /* OSCPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FD78A5211116390E008B87CB /* OSCPort.m */; };
 		FD6408B41118A5DB005185AC /* OSCInPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FD78A5221116390E008B87CB /* OSCInPort.m */; };
 		FD6408B51118A5DB005185AC /* OSCConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF9E211163EC000DF5C0F /* OSCConfig.m */; };
-		FD6408B61118A5DB005185AC /* SharedObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26DA121116B0760062DF1F /* SharedObject.m */; };
-		FD6408B71118A5DB005185AC /* SharedCollection.m in Sources */ = {isa = PBXBuildFile; fileRef = FD26DA301116B1E50062DF1F /* SharedCollection.m */; };
+		FD6408B61118A5DB005185AC /* SharedObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD26DA121116B0760062DF1F /* SharedObject.mm */; };
+		FD6408B71118A5DB005185AC /* SharedCollection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD26DA301116B1E50062DF1F /* SharedCollection.mm */; };
 		FD6408BB1118A5DB005185AC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		FD6408BC1118A5DB005185AC /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		FD6408BD1118A5DB005185AC /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765580DF743DE002DB57D /* CoreGraphics.framework */; };
@@ -204,24 +204,24 @@
 		FD78A5231116390E008B87CB /* OSCPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FD78A5211116390E008B87CB /* OSCPort.m */; };
 		FD78A5241116390E008B87CB /* OSCInPort.m in Sources */ = {isa = PBXBuildFile; fileRef = FD78A5221116390E008B87CB /* OSCInPort.m */; };
 		FD78A55711163AE4008B87CB /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD78A55611163AE4008B87CB /* CFNetwork.framework */; };
-		FD9232C1112569F1005207BB /* Toggle.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9232C0112569F1005207BB /* Toggle.m */; };
-		FD9232C2112569F1005207BB /* Toggle.m in Sources */ = {isa = PBXBuildFile; fileRef = FD9232C0112569F1005207BB /* Toggle.m */; };
-		FDA1FE6E1125627D00A4BFB1 /* Sequencer.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA1FE6D1125627D00A4BFB1 /* Sequencer.m */; };
-		FDA1FE6F1125627D00A4BFB1 /* Sequencer.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA1FE6D1125627D00A4BFB1 /* Sequencer.m */; };
+		FD9232C1112569F1005207BB /* Toggle.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD9232C0112569F1005207BB /* Toggle.mm */; };
+		FD9232C2112569F1005207BB /* Toggle.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD9232C0112569F1005207BB /* Toggle.mm */; };
+		FDA1FE6E1125627D00A4BFB1 /* Sequencer.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDA1FE6D1125627D00A4BFB1 /* Sequencer.mm */; };
+		FDA1FE6F1125627D00A4BFB1 /* Sequencer.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDA1FE6D1125627D00A4BFB1 /* Sequencer.mm */; };
 		FDA1FE8A1125685600A4BFB1 /* SequencerRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA1FE891125685600A4BFB1 /* SequencerRow.m */; };
 		FDA1FE8B1125685600A4BFB1 /* SequencerRow.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA1FE891125685600A4BFB1 /* SequencerRow.m */; };
-		FDA7844E1118F80000AC33F0 /* SharedUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA7844D1118F80000AC33F0 /* SharedUtility.m */; };
-		FDA7844F1118F80000AC33F0 /* SharedUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = FDA7844D1118F80000AC33F0 /* SharedUtility.m */; };
-		FDBFB3C511211F310054E172 /* MultiPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */; };
-		FDBFB3C611211F310054E172 /* MultiPointObject.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3C411211F310054E172 /* MultiPointObject.m */; };
-		FDBFB3E511211F710054E172 /* ControlPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3E411211F710054E172 /* ControlPoint.m */; };
-		FDBFB3E611211F710054E172 /* ControlPoint.m in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3E411211F710054E172 /* ControlPoint.m */; };
+		FDA7844E1118F80000AC33F0 /* SharedUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDA7844D1118F80000AC33F0 /* SharedUtility.mm */; };
+		FDA7844F1118F80000AC33F0 /* SharedUtility.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDA7844D1118F80000AC33F0 /* SharedUtility.mm */; };
+		FDBFB3C511211F310054E172 /* MultiPointObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3C411211F310054E172 /* MultiPointObject.mm */; };
+		FDBFB3C611211F310054E172 /* MultiPointObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3C411211F310054E172 /* MultiPointObject.mm */; };
+		FDBFB3E511211F710054E172 /* ControlPoint.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3E411211F710054E172 /* ControlPoint.mm */; };
+		FDBFB3E611211F710054E172 /* ControlPoint.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3E411211F710054E172 /* ControlPoint.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		1D30AB110D05D00D00671497 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1D3623240D0F684500981E51 /* OSCLaserAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCLaserAppDelegate.h; sourceTree = "<group>"; };
-		1D3623250D0F684500981E51 /* OSCLaserAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCLaserAppDelegate.m; sourceTree = "<group>"; };
+		1D3623250D0F684500981E51 /* OSCLaserAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = OSCLaserAppDelegate.mm; sourceTree = "<group>"; };
 		1D6058910D05DD3D006BFB54 /* OSCLaser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSCLaser.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		280E754A0DD40C5E005A515E /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FlipsideView.xib; sourceTree = "<group>"; };
@@ -233,7 +233,7 @@
 		289233A40DB2D0840083E9F9 /* MainView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainView.h; path = Classes/MainView.h; sourceTree = "<group>"; };
 		289233A50DB2D0840083E9F9 /* MainView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainView.m; path = Classes/MainView.m; sourceTree = "<group>"; };
 		289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MainViewController.h; path = Classes/MainViewController.h; sourceTree = "<group>"; };
-		289233A90DB2D0DB0083E9F9 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MainViewController.m; path = Classes/MainViewController.m; sourceTree = "<group>"; };
+		289233A90DB2D0DB0083E9F9 /* MainViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MainViewController.mm; path = Classes/MainViewController.mm; sourceTree = "<group>"; };
 		289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlipsideViewController.h; path = Classes/FlipsideViewController.h; sourceTree = "<group>"; };
 		289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = FlipsideViewController.m; path = Classes/FlipsideViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -476,13 +476,13 @@
 		FD0CF9E111163EC000DF5C0F /* OSCConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCConfig.h; sourceTree = "<group>"; };
 		FD0CF9E211163EC000DF5C0F /* OSCConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCConfig.m; sourceTree = "<group>"; };
 		FD26DA111116B0760062DF1F /* SharedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedObject.h; sourceTree = "<group>"; };
-		FD26DA121116B0760062DF1F /* SharedObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedObject.m; sourceTree = "<group>"; };
+		FD26DA121116B0760062DF1F /* SharedObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SharedObject.mm; sourceTree = "<group>"; };
 		FD26DA2F1116B1E50062DF1F /* SharedCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedCollection.h; sourceTree = "<group>"; };
-		FD26DA301116B1E50062DF1F /* SharedCollection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedCollection.m; sourceTree = "<group>"; };
+		FD26DA301116B1E50062DF1F /* SharedCollection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SharedCollection.mm; sourceTree = "<group>"; };
 		FD2A3FA8112404180069C149 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
-		FD2A3FA9112404180069C149 /* EAGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EAGLView.m; sourceTree = "<group>"; };
+		FD2A3FA9112404180069C149 /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
 		FD2A3FAC112404330069C149 /* ES1Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ES1Renderer.h; sourceTree = "<group>"; };
-		FD2A3FAD112404330069C149 /* ES1Renderer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ES1Renderer.m; sourceTree = "<group>"; };
+		FD2A3FAD112404330069C149 /* ES1Renderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ES1Renderer.mm; sourceTree = "<group>"; };
 		FD2A3FF9112404B60069C149 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		FD2A4032112404CF0069C149 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		FD6408C31118A5DB005185AC /* OSCLaser-iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSCLaser-iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -520,17 +520,17 @@
 		FD78A5261116391C008B87CB /* OSCInPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCInPort.h; sourceTree = "<group>"; };
 		FD78A55611163AE4008B87CB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		FD9232BF112569F1005207BB /* Toggle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toggle.h; sourceTree = "<group>"; };
-		FD9232C0112569F1005207BB /* Toggle.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Toggle.m; sourceTree = "<group>"; };
+		FD9232C0112569F1005207BB /* Toggle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Toggle.mm; sourceTree = "<group>"; };
 		FDA1FE6C1125627D00A4BFB1 /* Sequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sequencer.h; sourceTree = "<group>"; };
-		FDA1FE6D1125627D00A4BFB1 /* Sequencer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Sequencer.m; sourceTree = "<group>"; };
+		FDA1FE6D1125627D00A4BFB1 /* Sequencer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Sequencer.mm; sourceTree = "<group>"; };
 		FDA1FE881125685600A4BFB1 /* SequencerRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequencerRow.h; sourceTree = "<group>"; };
 		FDA1FE891125685600A4BFB1 /* SequencerRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequencerRow.m; sourceTree = "<group>"; };
 		FDA7844C1118F80000AC33F0 /* SharedUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedUtility.h; sourceTree = "<group>"; };
-		FDA7844D1118F80000AC33F0 /* SharedUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SharedUtility.m; sourceTree = "<group>"; };
+		FDA7844D1118F80000AC33F0 /* SharedUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SharedUtility.mm; sourceTree = "<group>"; };
 		FDBFB3C311211F310054E172 /* MultiPointObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiPointObject.h; sourceTree = "<group>"; };
-		FDBFB3C411211F310054E172 /* MultiPointObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MultiPointObject.m; sourceTree = "<group>"; };
+		FDBFB3C411211F310054E172 /* MultiPointObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MultiPointObject.mm; sourceTree = "<group>"; };
 		FDBFB3E311211F710054E172 /* ControlPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPoint.h; sourceTree = "<group>"; };
-		FDBFB3E411211F710054E172 /* ControlPoint.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ControlPoint.m; sourceTree = "<group>"; };
+		FDBFB3E411211F710054E172 /* ControlPoint.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControlPoint.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -567,7 +567,7 @@
 			isa = PBXGroup;
 			children = (
 				1D3623240D0F684500981E51 /* OSCLaserAppDelegate.h */,
-				1D3623250D0F684500981E51 /* OSCLaserAppDelegate.m */,
+				1D3623250D0F684500981E51 /* OSCLaserAppDelegate.mm */,
 			);
 			name = "Application Delegate";
 			path = Classes;
@@ -599,7 +599,7 @@
 				289233A40DB2D0840083E9F9 /* MainView.h */,
 				289233A50DB2D0840083E9F9 /* MainView.m */,
 				289233A80DB2D0DB0083E9F9 /* MainViewController.h */,
-				289233A90DB2D0DB0083E9F9 /* MainViewController.m */,
+				289233A90DB2D0DB0083E9F9 /* MainViewController.mm */,
 			);
 			name = "Main View";
 			sourceTree = "<group>";
@@ -931,11 +931,11 @@
 			isa = PBXGroup;
 			children = (
 				FDA7844C1118F80000AC33F0 /* SharedUtility.h */,
-				FDA7844D1118F80000AC33F0 /* SharedUtility.m */,
+				FDA7844D1118F80000AC33F0 /* SharedUtility.mm */,
 				FD26DA111116B0760062DF1F /* SharedObject.h */,
-				FD26DA121116B0760062DF1F /* SharedObject.m */,
+				FD26DA121116B0760062DF1F /* SharedObject.mm */,
 				FD26DA2F1116B1E50062DF1F /* SharedCollection.h */,
-				FD26DA301116B1E50062DF1F /* SharedCollection.m */,
+				FD26DA301116B1E50062DF1F /* SharedCollection.mm */,
 			);
 			name = SharedProtocol;
 			sourceTree = "<group>";
@@ -944,15 +944,15 @@
 			isa = PBXGroup;
 			children = (
 				FDBFB3C311211F310054E172 /* MultiPointObject.h */,
-				FDBFB3C411211F310054E172 /* MultiPointObject.m */,
+				FDBFB3C411211F310054E172 /* MultiPointObject.mm */,
 				FDBFB3E311211F710054E172 /* ControlPoint.h */,
-				FDBFB3E411211F710054E172 /* ControlPoint.m */,
+				FDBFB3E411211F710054E172 /* ControlPoint.mm */,
 				FDA1FE6C1125627D00A4BFB1 /* Sequencer.h */,
-				FDA1FE6D1125627D00A4BFB1 /* Sequencer.m */,
+				FDA1FE6D1125627D00A4BFB1 /* Sequencer.mm */,
 				FDA1FE881125685600A4BFB1 /* SequencerRow.h */,
 				FDA1FE891125685600A4BFB1 /* SequencerRow.m */,
 				FD9232BF112569F1005207BB /* Toggle.h */,
-				FD9232C0112569F1005207BB /* Toggle.m */,
+				FD9232C0112569F1005207BB /* Toggle.mm */,
 				BF595DBC11276EFE00C18CA4 /* AudioManager.h */,
 				BF595DBD11276EFE00C18CA4 /* AudioManager.mm */,
 				BF595DC6112773B800C18CA4 /* SoundObject.h */,
@@ -965,9 +965,9 @@
 			isa = PBXGroup;
 			children = (
 				FD2A3FAC112404330069C149 /* ES1Renderer.h */,
-				FD2A3FAD112404330069C149 /* ES1Renderer.m */,
+				FD2A3FAD112404330069C149 /* ES1Renderer.mm */,
 				FD2A3FA8112404180069C149 /* EAGLView.h */,
-				FD2A3FA9112404180069C149 /* EAGLView.m */,
+				FD2A3FA9112404180069C149 /* EAGLView.mm */,
 			);
 			name = "GL Stuff";
 			sourceTree = "<group>";
@@ -1152,10 +1152,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
-				1D3623260D0F684500981E51 /* OSCLaserAppDelegate.m in Sources */,
+				1D3623260D0F684500981E51 /* OSCLaserAppDelegate.mm in Sources */,
 				289233A60DB2D0840083E9F9 /* FlipsideView.m in Sources */,
 				289233A70DB2D0840083E9F9 /* MainView.m in Sources */,
-				289233AE0DB2D0DB0083E9F9 /* MainViewController.m in Sources */,
+				289233AE0DB2D0DB0083E9F9 /* MainViewController.mm in Sources */,
 				289233B00DB2D0DB0083E9F9 /* FlipsideViewController.m in Sources */,
 				FD78A516111638E6008B87CB /* NetworkReturnAddress.c in Sources */,
 				FD78A517111638E6008B87CB /* OSC-address-space.c in Sources */,
@@ -1171,16 +1171,16 @@
 				FD78A5231116390E008B87CB /* OSCPort.m in Sources */,
 				FD78A5241116390E008B87CB /* OSCInPort.m in Sources */,
 				FD0CF9E311163EC000DF5C0F /* OSCConfig.m in Sources */,
-				FD26DA131116B0760062DF1F /* SharedObject.m in Sources */,
-				FD26DA311116B1E50062DF1F /* SharedCollection.m in Sources */,
-				FDA7844E1118F80000AC33F0 /* SharedUtility.m in Sources */,
-				FDBFB3C611211F310054E172 /* MultiPointObject.m in Sources */,
-				FDBFB3E611211F710054E172 /* ControlPoint.m in Sources */,
-				FD2A3FAA112404180069C149 /* EAGLView.m in Sources */,
-				FD2A3FB0112404330069C149 /* ES1Renderer.m in Sources */,
-				FDA1FE6E1125627D00A4BFB1 /* Sequencer.m in Sources */,
+				FD26DA131116B0760062DF1F /* SharedObject.mm in Sources */,
+				FD26DA311116B1E50062DF1F /* SharedCollection.mm in Sources */,
+				FDA7844E1118F80000AC33F0 /* SharedUtility.mm in Sources */,
+				FDBFB3C611211F310054E172 /* MultiPointObject.mm in Sources */,
+				FDBFB3E611211F710054E172 /* ControlPoint.mm in Sources */,
+				FD2A3FAA112404180069C149 /* EAGLView.mm in Sources */,
+				FD2A3FB0112404330069C149 /* ES1Renderer.mm in Sources */,
+				FDA1FE6E1125627D00A4BFB1 /* Sequencer.mm in Sources */,
 				FDA1FE8A1125685600A4BFB1 /* SequencerRow.m in Sources */,
-				FD9232C1112569F1005207BB /* Toggle.m in Sources */,
+				FD9232C1112569F1005207BB /* Toggle.mm in Sources */,
 				BF8E7FB611276C6A00F52195 /* mo_accel.mm in Sources */,
 				BF8E7FB711276C6A00F52195 /* mo_audio.mm in Sources */,
 				BF8E7FB811276C6A00F52195 /* mo_colormap.mm in Sources */,
@@ -1277,10 +1277,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				FD6408A21118A5DB005185AC /* main.m in Sources */,
-				FD6408A31118A5DB005185AC /* OSCLaserAppDelegate.m in Sources */,
+				FD6408A31118A5DB005185AC /* OSCLaserAppDelegate.mm in Sources */,
 				FD6408A41118A5DB005185AC /* FlipsideView.m in Sources */,
 				FD6408A51118A5DB005185AC /* MainView.m in Sources */,
-				FD6408A61118A5DB005185AC /* MainViewController.m in Sources */,
+				FD6408A61118A5DB005185AC /* MainViewController.mm in Sources */,
 				FD6408A71118A5DB005185AC /* FlipsideViewController.m in Sources */,
 				FD6408A81118A5DB005185AC /* NetworkReturnAddress.c in Sources */,
 				FD6408A91118A5DB005185AC /* OSC-address-space.c in Sources */,
@@ -1296,16 +1296,16 @@
 				FD6408B31118A5DB005185AC /* OSCPort.m in Sources */,
 				FD6408B41118A5DB005185AC /* OSCInPort.m in Sources */,
 				FD6408B51118A5DB005185AC /* OSCConfig.m in Sources */,
-				FD6408B61118A5DB005185AC /* SharedObject.m in Sources */,
-				FD6408B71118A5DB005185AC /* SharedCollection.m in Sources */,
-				FDA7844F1118F80000AC33F0 /* SharedUtility.m in Sources */,
-				FDBFB3C511211F310054E172 /* MultiPointObject.m in Sources */,
-				FDBFB3E511211F710054E172 /* ControlPoint.m in Sources */,
-				FD2A3FAB112404180069C149 /* EAGLView.m in Sources */,
-				FD2A3FB2112404330069C149 /* ES1Renderer.m in Sources */,
-				FDA1FE6F1125627D00A4BFB1 /* Sequencer.m in Sources */,
+				FD6408B61118A5DB005185AC /* SharedObject.mm in Sources */,
+				FD6408B71118A5DB005185AC /* SharedCollection.mm in Sources */,
+				FDA7844F1118F80000AC33F0 /* SharedUtility.mm in Sources */,
+				FDBFB3C511211F310054E172 /* MultiPointObject.mm in Sources */,
+				FDBFB3E511211F710054E172 /* ControlPoint.mm in Sources */,
+				FD2A3FAB112404180069C149 /* EAGLView.mm in Sources */,
+				FD2A3FB2112404330069C149 /* ES1Renderer.mm in Sources */,
+				FDA1FE6F1125627D00A4BFB1 /* Sequencer.mm in Sources */,
 				FDA1FE8B1125685600A4BFB1 /* SequencerRow.m in Sources */,
-				FD9232C2112569F1005207BB /* Toggle.m in Sources */,
+				FD9232C2112569F1005207BB /* Toggle.mm in Sources */,
 				BF595DBF11276EFE00C18CA4 /* AudioManager.mm in Sources */,
 				BF595DC9112773B800C18CA4 /* SoundObject.mm in Sources */,
 			);
