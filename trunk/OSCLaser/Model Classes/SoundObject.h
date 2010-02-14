@@ -40,5 +40,6 @@ typedef struct {
 - (void) setPan:(float)xLoc;
 - (void) setModFreq:(float)yLoc;
 - (void) setModIndex:(float)xLoc;
+- (void) setGain:(float)newGain;
 
 @end
