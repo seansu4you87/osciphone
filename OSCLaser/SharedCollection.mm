@@ -57,7 +57,7 @@ static SharedCollection * shared;
 	for(SharedObject * obj in sharedObjects)
 	{
 		[obj step];
-		//[obj updateAllValues];
+		[obj updateAllValues];
 	}
 }
 
