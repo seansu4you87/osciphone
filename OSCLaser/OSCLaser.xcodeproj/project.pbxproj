@@ -239,10 +239,10 @@
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* OSCLaser_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCLaser_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* OSCLaser-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "OSCLaser-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		BF595DBC11276EFE00C18CA4 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AudioManager.h; sourceTree = "<group>"; };
-		BF595DBD11276EFE00C18CA4 /* AudioManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = AudioManager.mm; sourceTree = "<group>"; };
-		BF595DC6112773B800C18CA4 /* SoundObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SoundObject.h; sourceTree = "<group>"; };
-		BF595DC7112773B800C18CA4 /* SoundObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SoundObject.mm; sourceTree = "<group>"; };
+		BF595DBC11276EFE00C18CA4 /* AudioManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AudioManager.h; path = "Model Classes/AudioManager.h"; sourceTree = "<group>"; };
+		BF595DBD11276EFE00C18CA4 /* AudioManager.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AudioManager.mm; path = "Model Classes/AudioManager.mm"; sourceTree = "<group>"; };
+		BF595DC6112773B800C18CA4 /* SoundObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SoundObject.h; path = "Model Classes/SoundObject.h"; sourceTree = "<group>"; };
+		BF595DC7112773B800C18CA4 /* SoundObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SoundObject.mm; path = "Model Classes/SoundObject.mm"; sourceTree = "<group>"; };
 		BF8E7F9A11276C6A00F52195 /* mo_accel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mo_accel.h; path = "mopho lib/mo_accel.h"; sourceTree = "<group>"; };
 		BF8E7F9B11276C6A00F52195 /* mo_accel.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = mo_accel.mm; path = "mopho lib/mo_accel.mm"; sourceTree = "<group>"; };
 		BF8E7F9C11276C6A00F52195 /* mo_audio.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mo_audio.h; path = "mopho lib/mo_audio.h"; sourceTree = "<group>"; };
@@ -264,7 +264,7 @@
 		BF8E7FB211276C6A00F52195 /* mo_thread.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = mo_thread.mm; path = "mopho lib/mo_thread.mm"; sourceTree = "<group>"; };
 		BF8E7FB311276C6A00F52195 /* mo_touch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mo_touch.h; path = "mopho lib/mo_touch.h"; sourceTree = "<group>"; };
 		BF8E7FB411276C6A00F52195 /* mo_touch.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = mo_touch.mm; path = "mopho lib/mo_touch.mm"; sourceTree = "<group>"; };
-		BF8E7FB511276C6A00F52195 /* mopho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mopho.h; sourceTree = "<group>"; };
+		BF8E7FB511276C6A00F52195 /* mopho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = mopho.h; path = "mopho lib/mopho.h"; sourceTree = "<group>"; };
 		BF8E7FC611276CA800F52195 /* ADSR.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADSR.h; sourceTree = "<group>"; };
 		BF8E7FC711276CA800F52195 /* Asymp.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Asymp.h; sourceTree = "<group>"; };
 		BF8E7FC811276CA800F52195 /* BandedWG.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BandedWG.h; sourceTree = "<group>"; };
@@ -475,14 +475,14 @@
 		BF8E811111276CEE00F52195 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FD0CF9E111163EC000DF5C0F /* OSCConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCConfig.h; sourceTree = "<group>"; };
 		FD0CF9E211163EC000DF5C0F /* OSCConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCConfig.m; sourceTree = "<group>"; };
-		FD26DA111116B0760062DF1F /* SharedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedObject.h; sourceTree = "<group>"; };
-		FD26DA121116B0760062DF1F /* SharedObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SharedObject.mm; sourceTree = "<group>"; };
-		FD26DA2F1116B1E50062DF1F /* SharedCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedCollection.h; sourceTree = "<group>"; };
-		FD26DA301116B1E50062DF1F /* SharedCollection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SharedCollection.mm; sourceTree = "<group>"; };
-		FD2A3FA8112404180069C149 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
-		FD2A3FA9112404180069C149 /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
-		FD2A3FAC112404330069C149 /* ES1Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ES1Renderer.h; sourceTree = "<group>"; };
-		FD2A3FAD112404330069C149 /* ES1Renderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ES1Renderer.mm; sourceTree = "<group>"; };
+		FD26DA111116B0760062DF1F /* SharedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SharedObject.h; path = "Shared Framework/SharedObject.h"; sourceTree = "<group>"; };
+		FD26DA121116B0760062DF1F /* SharedObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SharedObject.mm; path = "Shared Framework/SharedObject.mm"; sourceTree = "<group>"; };
+		FD26DA2F1116B1E50062DF1F /* SharedCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SharedCollection.h; path = "Shared Framework/SharedCollection.h"; sourceTree = "<group>"; };
+		FD26DA301116B1E50062DF1F /* SharedCollection.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SharedCollection.mm; path = "Shared Framework/SharedCollection.mm"; sourceTree = "<group>"; };
+		FD2A3FA8112404180069C149 /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = EAGLView.h; path = "gl stuff/EAGLView.h"; sourceTree = "<group>"; };
+		FD2A3FA9112404180069C149 /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = EAGLView.mm; path = "gl stuff/EAGLView.mm"; sourceTree = "<group>"; };
+		FD2A3FAC112404330069C149 /* ES1Renderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ES1Renderer.h; path = "gl stuff/ES1Renderer.h"; sourceTree = "<group>"; };
+		FD2A3FAD112404330069C149 /* ES1Renderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ES1Renderer.mm; path = "gl stuff/ES1Renderer.mm"; sourceTree = "<group>"; };
 		FD2A3FF9112404B60069C149 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		FD2A4032112404CF0069C149 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		FD6408C31118A5DB005185AC /* OSCLaser-iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSCLaser-iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -519,18 +519,18 @@
 		FD78A5251116391C008B87CB /* OSCPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCPort.h; sourceTree = "<group>"; };
 		FD78A5261116391C008B87CB /* OSCInPort.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCInPort.h; sourceTree = "<group>"; };
 		FD78A55611163AE4008B87CB /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
-		FD9232BF112569F1005207BB /* Toggle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Toggle.h; sourceTree = "<group>"; };
-		FD9232C0112569F1005207BB /* Toggle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Toggle.mm; sourceTree = "<group>"; };
-		FDA1FE6C1125627D00A4BFB1 /* Sequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Sequencer.h; sourceTree = "<group>"; };
-		FDA1FE6D1125627D00A4BFB1 /* Sequencer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = Sequencer.mm; sourceTree = "<group>"; };
-		FDA1FE881125685600A4BFB1 /* SequencerRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequencerRow.h; sourceTree = "<group>"; };
-		FDA1FE891125685600A4BFB1 /* SequencerRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequencerRow.m; sourceTree = "<group>"; };
-		FDA7844C1118F80000AC33F0 /* SharedUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SharedUtility.h; sourceTree = "<group>"; };
-		FDA7844D1118F80000AC33F0 /* SharedUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SharedUtility.mm; sourceTree = "<group>"; };
-		FDBFB3C311211F310054E172 /* MultiPointObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MultiPointObject.h; sourceTree = "<group>"; };
-		FDBFB3C411211F310054E172 /* MultiPointObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = MultiPointObject.mm; sourceTree = "<group>"; };
-		FDBFB3E311211F710054E172 /* ControlPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ControlPoint.h; sourceTree = "<group>"; };
-		FDBFB3E411211F710054E172 /* ControlPoint.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ControlPoint.mm; sourceTree = "<group>"; };
+		FD9232BF112569F1005207BB /* Toggle.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Toggle.h; path = "Model Classes/Toggle.h"; sourceTree = "<group>"; };
+		FD9232C0112569F1005207BB /* Toggle.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Toggle.mm; path = "Model Classes/Toggle.mm"; sourceTree = "<group>"; };
+		FDA1FE6C1125627D00A4BFB1 /* Sequencer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Sequencer.h; path = "Model Classes/Sequencer.h"; sourceTree = "<group>"; };
+		FDA1FE6D1125627D00A4BFB1 /* Sequencer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Sequencer.mm; path = "Model Classes/Sequencer.mm"; sourceTree = "<group>"; };
+		FDA1FE881125685600A4BFB1 /* SequencerRow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SequencerRow.h; path = "Model Classes/SequencerRow.h"; sourceTree = "<group>"; };
+		FDA1FE891125685600A4BFB1 /* SequencerRow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SequencerRow.m; path = "Model Classes/SequencerRow.m"; sourceTree = "<group>"; };
+		FDA7844C1118F80000AC33F0 /* SharedUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SharedUtility.h; path = "Shared Framework/SharedUtility.h"; sourceTree = "<group>"; };
+		FDA7844D1118F80000AC33F0 /* SharedUtility.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SharedUtility.mm; path = "Shared Framework/SharedUtility.mm"; sourceTree = "<group>"; };
+		FDBFB3C311211F310054E172 /* MultiPointObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiPointObject.h; path = "Model Classes/MultiPointObject.h"; sourceTree = "<group>"; };
+		FDBFB3C411211F310054E172 /* MultiPointObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MultiPointObject.mm; path = "Model Classes/MultiPointObject.mm"; sourceTree = "<group>"; };
+		FDBFB3E311211F710054E172 /* ControlPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlPoint.h; path = "Model Classes/ControlPoint.h"; sourceTree = "<group>"; };
+		FDBFB3E411211F710054E172 /* ControlPoint.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ControlPoint.mm; path = "Model Classes/ControlPoint.mm"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -609,7 +609,7 @@
 			children = (
 				BF8E7F9911276C4D00F52195 /* MoMu */,
 				FD2A3FA6112404020069C149 /* GL Stuff */,
-				FD26DA3D1116C2DA0062DF1F /* SharedObjects */,
+				FD26DA3D1116C2DA0062DF1F /* Model */,
 				FD26DA101116B0410062DF1F /* SharedProtocol */,
 				FD78A4FC111638E6008B87CB /* OSCKit */,
 				289233A00DB2D0730083E9F9 /* Main View */,
@@ -940,7 +940,7 @@
 			name = SharedProtocol;
 			sourceTree = "<group>";
 		};
-		FD26DA3D1116C2DA0062DF1F /* SharedObjects */ = {
+		FD26DA3D1116C2DA0062DF1F /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				FDBFB3C311211F310054E172 /* MultiPointObject.h */,
@@ -958,7 +958,7 @@
 				BF595DC6112773B800C18CA4 /* SoundObject.h */,
 				BF595DC7112773B800C18CA4 /* SoundObject.mm */,
 			);
-			name = SharedObjects;
+			name = Model;
 			sourceTree = "<group>";
 		};
 		FD2A3FA6112404020069C149 /* GL Stuff */ = {
