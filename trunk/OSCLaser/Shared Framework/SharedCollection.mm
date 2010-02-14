@@ -59,6 +59,11 @@ static SharedCollection * shared;
 		[obj step];
 		//[obj updateAllValues];
 	}
+	if([sharedObjects count] > 0)
+	{
+		SharedObject * obj = [sharedObjects objectAtIndex:0];
+		[obj updateAllValues];
+	}
 }
 
 - (void) sendAddMessageForObject:(SharedObject*)newObject

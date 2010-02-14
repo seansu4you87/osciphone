@@ -97,7 +97,6 @@
             
 - (BOOL)sendTo:(char*)address types:(char*)types, ...
 {
-	//NSLog(@"sending message with address:%@", [NSString stringWithCString:address]);
     // potential holders for variable arguments
     char* s;
     
@@ -133,6 +132,7 @@
 }
 
 - (void)beginSendTo:(char*)address types:(char*)types {
+	//NSLog(@"sending message with address:%@", [NSString stringWithCString:address]);
 	// OSC-client wants types to begin with a ,
     memset(_types, 0, DEFAULT_TYPES_SIZE);
     sprintf(_types, ",%s", types);
