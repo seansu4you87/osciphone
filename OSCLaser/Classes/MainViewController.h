@@ -8,7 +8,7 @@
 
 #import "FlipsideViewController.h"
 
-@class SharedCollection, SharedObject, EAGLView;
+@class SharedCollection, SharedObject, EAGLView, AudioManager;
 
 @interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
 
@@ -21,6 +21,7 @@
 	
 	IBOutlet EAGLView * glView;
 	IBOutlet UIButton * infoButton;
+	AudioManager * audioManager;
 }
 
 @property(nonatomic, retain) UITouch * startTouch;
