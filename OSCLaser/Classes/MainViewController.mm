@@ -138,6 +138,15 @@
 	[selected release];
 	selected = [theObject retain];
 	[theObject updateSelected];
+	
+	if(theObject != nil)
+	{
+		NSMutableArray * objects = [SharedCollection sharedCollection].sharedObjects;
+		@synchronized(objects)
+		{
+			[objects exchangeObjectAtIndex:[objects indexOfObject:theObject] withObjectAtIndex:[objects count] - 1];
+		}
+	}
 }
 
 
@@ -200,20 +209,16 @@
 #pragma mark adding objects
 
 - (void) addManipulatedObject:(SharedObject*)theObject withTouches:(NSMutableSet*)manipulatingTouches
-{
-	if([currentlyManipulated count] == 0)
-	{
-		self.selected = theObject;
-	}
-	
+{	
 	[currentlyManipulated addObject: theObject];
 	[theObject trackTouches:manipulatingTouches];
 	[theObject updateSelected];
+	self.selected = theObject;
 }
 
 - (void) addSharedObject:(SharedObject*)theObject withTouches:(NSMutableSet*) creatingTouches
 {
-	@synchronized(self)
+	@synchronized([SharedCollection sharedCollection].sharedObjects)
 	{
 		[[SharedCollection sharedCollection] addSharedObject:theObject];
 	}
