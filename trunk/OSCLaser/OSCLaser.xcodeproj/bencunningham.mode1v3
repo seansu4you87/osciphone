@@ -268,6 +268,7 @@
 							<array>
 								<string>29B97314FDCFA39411CA2CEA</string>
 								<string>FD26DA3D1116C2DA0062DF1F</string>
+								<string>289233A00DB2D0730083E9F9</string>
 								<string>29B97323FDCFA39411CA2CEA</string>
 								<string>1C37FBAC04509CD000000102</string>
 								<string>1C37FABC05509CD000000102</string>
@@ -314,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ES1Renderer.h</string>
+								<string>MainViewController.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -322,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ES1Renderer.h</string>
+										<string>MainViewController.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD20BE5C112794C40074F16B</string>
+										<string>FD20BE6A112795AB0074F16B</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -373,17 +374,17 @@
 											<string>FD3D88B211278F9F00588EC6</string>
 											<string>FD3D88B311278F9F00588EC6</string>
 											<string>FD20BE3B112791F60074F16B</string>
-											<string>FD20BE3C112791F60074F16B</string>
-											<string>FD20BE3D112791F60074F16B</string>
 											<string>FD20BE3E112791F60074F16B</string>
 											<string>FD20BE3F112791F60074F16B</string>
 											<string>FD20BE40112791F60074F16B</string>
 											<string>FD20BE42112791F60074F16B</string>
 											<string>FD20BE43112791F60074F16B</string>
 											<string>FD20BE44112791F60074F16B</string>
-											<string>FD20BE46112791F60074F16B</string>
-											<string>FD20BE47112791F60074F16B</string>
 											<string>FD20BE58112792EC0074F16B</string>
+											<string>FD20BE66112795AB0074F16B</string>
+											<string>FD20BE67112795AB0074F16B</string>
+											<string>FD20BE68112795AB0074F16B</string>
+											<string>FD20BE69112795AB0074F16B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -581,13 +582,13 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FD20BE5D112794C40074F16B</string>
+		<string>FD20BE6B112795AB0074F16B</string>
 		<string>FD20BE55112791F60074F16B</string>
 		<string>FD20BE56112791F60074F16B</string>
 		<string>1C78EAAD065D492600B07095</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>/Users/bencunningham/Desktop/edgeCity/osc_iphone/OSCLaser/OSCLaser.xcodeproj</string>
 		<string>FD78A4EE1116385D008B87CB</string>
+		<string>/Users/bencunningham/Desktop/edgeCity/osc_iphone/OSCLaser/OSCLaser.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>25 87 995 691 0 0 1280 778 </string>
@@ -682,7 +683,7 @@
 			<key>WindowToolGUID</key>
 			<string>FD78A4EE1116385D008B87CB</string>
 			<key>WindowToolIsVisible</key>
-			<true/>
+			<false/>
 		</dict>
 		<dict>
 			<key>FirstTimeWindowDisplayed</key>
