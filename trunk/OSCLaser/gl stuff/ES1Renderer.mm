@@ -15,6 +15,7 @@
 
 #define NUM_CIRCLE_DIVISIONS 20
 #define LINE_WIDTH 10.0
+#define GRID_PADDING 4.0
 
 static double timer = 0.0;
 
@@ -113,6 +114,40 @@ static double timer = 0.0;
 	
     //glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
+	
+	if([multiObjects count] > 0)
+	{
+		MultiPointObject * potentiallySelected = [multiObjects objectAtIndex:[multiObjects count] - 1];
+		int numQuantizations = [potentiallySelected.soundObject numQuantizations];
+		if(potentiallySelected.selected && numQuantizations> 1)
+		{
+			float step = 1.0/numQuantizations;
+			CGPoint scaledPoint = [potentiallySelected scaledPositionAtIndex:0];
+			float width = backingWidth - 2*GRID_PADDING;
+			float unpaddedHeight = backingHeight/(1.0*numQuantizations);
+			float height =  unpaddedHeight - GRID_PADDING;
+			float xCoord = GRID_PADDING;
+			for(int i = 0; i < numQuantizations; i++)
+			{
+				float yCoord = (i+0.5)*unpaddedHeight;
+				glPushMatrix();
+				glTranslatef(xCoord, yCoord, 0.0);
+				glScalef(width, height, 1.0);
+				
+				if(scaledPoint.y >= i*step && scaledPoint.y < (i+1)*step)
+				{
+					glVertexPointer(2, GL_FLOAT, 0, rectVertices);
+					glEnableClientState(GL_VERTEX_ARRAY);
+					glColorPointer(4, GL_UNSIGNED_BYTE, 0, colorVertices);
+					glEnableClientState(GL_COLOR_ARRAY);
+					glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+				}else{
+				}
+				glPopMatrix();
+			}
+			
+		}
+	}
 	
 	timer += 0.075;
 	float negHalfToHalf = cos(timer)/2.0;

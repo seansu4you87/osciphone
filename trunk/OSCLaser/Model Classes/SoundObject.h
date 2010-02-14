@@ -29,7 +29,7 @@ typedef struct {
 	SoundParams pan;
 	SoundParams modFreq;
 	SoundParams modIndex;
-
+	NSMutableArray * possibleNotes;
 }
 
 - (void) setForPointOne:(CGPoint)scaledPoint;
@@ -41,5 +41,7 @@ typedef struct {
 - (void) setModFreq:(float)yLoc;
 - (void) setModIndex:(float)xLoc;
 - (void) setGain:(float)newGain;
+
+- (int) numQuantizations;
 
 @end
