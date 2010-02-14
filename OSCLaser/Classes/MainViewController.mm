@@ -70,6 +70,18 @@
  }
  */
 
+- (BOOL) isTouchControllingAnything:(UITouch*)theTouch
+{
+	for(SharedObject * obj in currentlyManipulated)
+	{
+		if([obj.controllingTouches containsObject:theTouch])
+		{
+			return YES;
+		}
+	}
+	
+	return NO;
+}
 
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
     
@@ -210,13 +222,19 @@
 	[self addManipulatedObject:theObject withTouches:creatingTouches];	
 }
 
-- (void) addMultiPointForStartTouch:(UITouch*)touchOne
+- (void) addMultiPointWithTouches:(NSArray*)touches
 {
-	MultiPointObject * newMulti = [[MultiPointObject alloc] initWithView: self.view point:[touchOne locationInView:self.view]];
+	NSMutableArray * touchPoints = [NSMutableArray arrayWithCapacity:[touches count]];
+	for(int i = 0; i < [touches count]; i++)
+	{
+		UITouch * curTouch = [touches objectAtIndex:i];
+		CGPoint touchPoint = [curTouch locationInView:self.view];
+		[touchPoints addObject:[NSValue value:&touchPoint withObjCType:@encode(CGPoint)]];
+	}
+	MultiPointObject * newMulti = [[MultiPointObject alloc] initWithView: self.view points:touchPoints];
 	newMulti.baseColor = [self colorForIndex:[[[SharedCollection sharedCollection] objects] count]];
-	newMulti.parentView = self.view;
 
-	[self addSharedObject:newMulti withTouches:[NSMutableSet setWithObject:touchOne]];
+	[self addSharedObject:newMulti withTouches:[NSMutableSet setWithArray:touches]];
 	[newMulti release];
 }
 
@@ -227,9 +245,23 @@
 	UITouch * starter = [theTimer userInfo];
 	if([startTouch isEqual:starter])
 	{
-		[self addMultiPointForStartTouch:startTouch];
+		NSMutableArray * touches = [NSMutableArray arrayWithCapacity:1];
+		[touches addObject:starter];
+		for(UITouch * downTouch in downTouches)
+		{
+			if(![downTouch isEqual:starter])
+			{
+				if(![self isTouchControllingAnything:downTouch])
+				{
+					[touches addObject:downTouch];
+				}
+			}
+		}
+		[self addMultiPointWithTouches:touches];
 		[self removeTouchTimer];
 	}
+	
+	
 }
 
 - (void) removeTouchTimer

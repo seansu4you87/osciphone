@@ -30,14 +30,29 @@
 	return self;
 }
 
-- (id) initWithView:(UIView*)theView point:(CGPoint)initialStart
+- (id) initWithView:(UIView*)theView points:(NSArray*)cgPoints
 {
 	if(self = [self init])
 	{
 		parentView = theView;
-		[self addControlPointAtPosition: initialStart];
-		[soundObject setCarFreq: [self scaleXYPoint:initialStart].y]; 
-		[soundObject setPan: [self scaleXYPoint:initialStart].x]; 
+		for(int i = 0; i < [cgPoints count]; i++)
+		{
+			NSValue * pointValue = [cgPoints objectAtIndex:i];
+			CGPoint currentPoint;
+			[pointValue getValue:&currentPoint];
+			[self addControlPointAtPosition:currentPoint];
+			CGPoint scaledPoint = [self scaleXYPoint:currentPoint];
+			if(i == 0)
+			{
+				[soundObject setForPointOne:scaledPoint];
+			}else if(i == 1)
+			{
+				[soundObject setForPointTwo:scaledPoint];
+			}else if(i == 2)
+			{
+				[soundObject setForPointThree:scaledPoint];
+			}
+		}
 	}
 	
 	return self;

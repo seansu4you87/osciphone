@@ -25,7 +25,7 @@
 @property(nonatomic, retain) UIColor * currentColor;
 @property(nonatomic, retain) UIColor * baseColor;
 
-- (id) initWithView:(UIView*)theView point:(CGPoint)initialStart;
+- (id) initWithView:(UIView*)theView points:(NSArray*)cgPoints;
 
 - (NSArray*) getControlPoints;
 - (void) addControlPointAtPosition:(CGPoint)newPosition;
@@ -35,28 +35,5 @@
 - (CGPoint) scaleXYPoint:(CGPoint)pointInViewCoords;
 - (CGPoint) scaledPositionAtIndex:(int)index;
 
-/*
- //how to access relevant shit
- - (void) readMultiPointObjects
- {
- SharedCollection * theCollection = [SharedCollection sharedCollection];
- NSMutableArray * multiPointObjects = theCollection.sharedObjects;
- for(int i = 0; i < [multiPointObjects count]; i++)
- {
- MultiPointObject * curObject = [multiPointObjects objectAtIndex:i];
- }
- 
- for(MultiPointObject * curObject in multiPointObjects)
- {
- NSArray * controlPoints = [curObject getControlPoints];
- for(int i = 0; i < [controlPoints count]; i++)
- {
- ControlPoint * curPoint = [controlPoints objectAtIndex:i];
- CGPoint scaledPosition = [curObject scaleXYPoint:curPoint.position];
- //scaledPosition is an (x,y) point with x,y in [0,1]
- }
- }
- }
- */
 
 @end

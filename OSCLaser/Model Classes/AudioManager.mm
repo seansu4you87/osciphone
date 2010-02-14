@@ -19,22 +19,15 @@
 
 void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 {
-
-	 SharedCollection * theCollection = [SharedCollection sharedCollection];
-	 NSMutableArray * multiPointObjects = theCollection.sharedObjects;
-	 for(int i = 0; i < [multiPointObjects count]; i++)
-	 {
-		 MultiPointObject * curObject = [multiPointObjects objectAtIndex:i];
-	 }
+	 NSMutableArray * multiPointObjects = [SharedCollection sharedCollection].sharedObjects;
 	 
 	 for(MultiPointObject * curObject in multiPointObjects)
 	 {
 		 NSArray * controlPoints = [curObject getControlPoints];
 		 for(int i = 0; i < [controlPoints count]; i++)
 		 {
-			 ControlPoint * curPoint = [controlPoints objectAtIndex:i];
-			 CGPoint scaledPosition = [curObject scaleXYPoint:curPoint.position];
-			 //scaledPosition is an (x,y) point with x,y in [0,1]
+			  //scaledPosition is an (x,y) point with x,y in [0,1]
+			 CGPoint scaledPosition = [curObject scaledPositionAtIndex:i];
 		 }
 	 }
 	 
@@ -52,7 +45,7 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 		NSLog( @"starting real-time audio..." ); 
 		
 		// init the audio layer 
-		bool result = MoAudio::init( SRATE, FRAMESIZE, NUMCHANNELS ); 
+		bool result = MoAudio::init(SRATE, FRAMESIZE, NUMCHANNELS); 
 		if( !result ) 
 		{ 
 			// something went wrong 
@@ -71,7 +64,7 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 {
 	
 	// start the audio layer, registering a callback method 
-	bool result = MoAudio::start( audioCallback, NULL ); 
+	bool result = MoAudio::start(audioCallback, NULL); 
 	if( !result ) 
 	{ 
 		// something went wrong 

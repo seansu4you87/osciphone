@@ -40,6 +40,7 @@
 - (void) addSharedObject:(SharedObject*)theObject withTouches:(NSMutableSet*) creatingTouches;
 - (void) removeSelectedObject;
 - (void) removeTouchTimer;
+- (BOOL) isTouchControllingAnything:(UITouch*)theTouch;
 
 - (UIColor*) colorForIndex:(int)objIndex;
 
