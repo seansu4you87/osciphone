@@ -32,6 +32,10 @@ typedef struct {
 
 }
 
+- (void) setForPointOne:(CGPoint)scaledPoint;
+- (void) setForPointTwo:(CGPoint)scaledPoint;
+- (void) setForPointThree:(CGPoint)scaledPoint;
+
 - (void) setCarFreq:(float)yLoc;
 - (void) setPan:(float)xLoc;
 - (void) setModFreq:(float)yLoc;

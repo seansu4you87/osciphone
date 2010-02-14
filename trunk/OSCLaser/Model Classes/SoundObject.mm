@@ -55,4 +55,20 @@
 	gain = newGain;
 }
 
+- (void) setForPointOne:(CGPoint)scaledPoint
+{
+	[self setCarFreq: scaledPoint.y]; 
+	[self setPan: scaledPoint.x]; 
+}
+
+- (void) setForPointTwo:(CGPoint)scaledPoint
+{
+	
+}
+
+- (void) setForPointThree:(CGPoint)scaledPoint
+{
+	
+}
+
 @end

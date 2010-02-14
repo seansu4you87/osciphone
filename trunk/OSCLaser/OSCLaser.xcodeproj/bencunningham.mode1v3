@@ -315,7 +315,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MainViewController.h</string>
+								<string>MultiPointObject.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -323,11 +323,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MainViewController.h</string>
+										<string>MultiPointObject.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD20BE6A112795AB0074F16B</string>
+										<string>FD20BE9A11279D8B0074F16B</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -353,12 +353,9 @@
 											<string>FD64EDE1112769C30046C644</string>
 											<string>FD64EDE2112769C30046C644</string>
 											<string>FD64EDE3112769C30046C644</string>
-											<string>FD3D87CA11277B3B00588EC6</string>
 											<string>FD3D87D711277B3B00588EC6</string>
 											<string>FD3D87D811277B3B00588EC6</string>
 											<string>FD3D880411277D1700588EC6</string>
-											<string>FD3D882811277DCB00588EC6</string>
-											<string>FD3D8843112780B900588EC6</string>
 											<string>FD3D8844112780B900588EC6</string>
 											<string>FD3D8845112780B900588EC6</string>
 											<string>FD3D8846112780B900588EC6</string>
@@ -370,21 +367,25 @@
 											<string>FD3D88AA11278F9F00588EC6</string>
 											<string>FD3D88AB11278F9F00588EC6</string>
 											<string>FD3D88B011278F9F00588EC6</string>
-											<string>FD3D88B111278F9F00588EC6</string>
 											<string>FD3D88B211278F9F00588EC6</string>
 											<string>FD3D88B311278F9F00588EC6</string>
 											<string>FD20BE3B112791F60074F16B</string>
-											<string>FD20BE3E112791F60074F16B</string>
 											<string>FD20BE3F112791F60074F16B</string>
-											<string>FD20BE40112791F60074F16B</string>
 											<string>FD20BE42112791F60074F16B</string>
-											<string>FD20BE43112791F60074F16B</string>
 											<string>FD20BE44112791F60074F16B</string>
 											<string>FD20BE58112792EC0074F16B</string>
-											<string>FD20BE66112795AB0074F16B</string>
-											<string>FD20BE67112795AB0074F16B</string>
-											<string>FD20BE68112795AB0074F16B</string>
-											<string>FD20BE69112795AB0074F16B</string>
+											<string>FD20BE8511279C3F0074F16B</string>
+											<string>FD20BE8711279C3F0074F16B</string>
+											<string>FD20BE8811279C3F0074F16B</string>
+											<string>FD20BE8A11279C3F0074F16B</string>
+											<string>FD20BE9211279D8B0074F16B</string>
+											<string>FD20BE9311279D8B0074F16B</string>
+											<string>FD20BE9411279D8B0074F16B</string>
+											<string>FD20BE9511279D8B0074F16B</string>
+											<string>FD20BE9611279D8B0074F16B</string>
+											<string>FD20BE9711279D8B0074F16B</string>
+											<string>FD20BE9811279D8B0074F16B</string>
+											<string>FD20BE9911279D8B0074F16B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -582,7 +583,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FD20BE6B112795AB0074F16B</string>
+		<string>FD20BE9B11279D8B0074F16B</string>
 		<string>FD20BE55112791F60074F16B</string>
 		<string>FD20BE56112791F60074F16B</string>
 		<string>1C78EAAD065D492600B07095</string>
