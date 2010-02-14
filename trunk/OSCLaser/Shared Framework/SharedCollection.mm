@@ -147,7 +147,7 @@ static SharedCollection * shared;
  
  + (NSString*) addressForObjectManip:(SharedObject*)theObject
  {
-	 return [NSString stringWithFormat:@"/%@/set/%d/", [theObject objectName], [theObject objectID]];
+	 return [NSString stringWithFormat:@"/%@/set/", [theObject objectName]];
  }
 
 @end

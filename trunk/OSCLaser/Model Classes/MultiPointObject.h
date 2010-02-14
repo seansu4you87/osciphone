@@ -25,6 +25,7 @@
 @property(nonatomic, assign) UIView * parentView;
 @property(nonatomic, retain) UIColor * currentColor;
 @property(nonatomic, retain) UIColor * baseColor;
+@property(nonatomic, readonly) SoundObject * soundObject;
 
 - (id) initWithView:(UIView*)theView points:(NSArray*)cgPoints;
 

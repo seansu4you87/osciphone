@@ -216,10 +216,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>FD2967A91127CA0300088EDC</string>
+						<string>FD22DFAE1127D9D400DE2274</string>
 						<key>history</key>
 						<array>
-							<string>FD20BFC21127BE660074F16B</string>
+							<string>FD2967AE1127CA6600088EDC</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -256,10 +256,10 @@
 						<key>_historyCapacity</key>
 						<integer>0</integer>
 						<key>bookmark</key>
-						<string>FD2967AA1127CA0300088EDC</string>
+						<string>FD22DFAF1127D9D400DE2274</string>
 						<key>history</key>
 						<array>
-							<string>FD20BFC31127BE660074F16B</string>
+							<string>FD2967AF1127CA6600088EDC</string>
 						</array>
 					</dict>
 					<key>SplitCount</key>
@@ -413,7 +413,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD2967A81127CA0300088EDC</string>
+										<string>FD22DFAB1127D9D400DE2274</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -472,7 +472,7 @@
 											<string>FD2967A51127CA0300088EDC</string>
 											<string>FD2967A61127CA0300088EDC</string>
 											<string>FD2967A71127CA0300088EDC</string>
-											<string>FD29677D1127C73900088EDC</string>
+											<string>FD2967AD1127CA6600088EDC</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -484,14 +484,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {939, 576}}</string>
+								<string>{{0, 0}, {939, 574}}</string>
 								<key>RubberWindowFrame</key>
 								<string>25 89 1147 689 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>576pt</string>
+							<string>574pt</string>
 						</dict>
 						<dict>
 							<key>ContentConfiguration</key>
@@ -504,14 +504,14 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 581}, {939, 67}}</string>
+								<string>{{0, 579}, {939, 69}}</string>
 								<key>RubberWindowFrame</key>
 								<string>25 89 1147 689 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
 							<key>Proportion</key>
-							<string>67pt</string>
+							<string>69pt</string>
 						</dict>
 					</array>
 					<key>Proportion</key>
@@ -530,9 +530,9 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>FD2967611127C6BF00088EDC</string>
+				<string>FD22DFAC1127D9D400DE2274</string>
 				<string>1CE0B1FE06471DED0097A5F4</string>
-				<string>FD2967621127C6BF00088EDC</string>
+				<string>FD22DFAD1127D9D400DE2274</string>
 				<string>1CE0B20306471E060097A5F4</string>
 				<string>1CE0B20506471E060097A5F4</string>
 			</array>
@@ -670,15 +670,10 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FD2967AB1127CA0300088EDC</string>
-		<string>FD2967881127C73900088EDC</string>
-		<string>FD29676E1127C6BF00088EDC</string>
-		<string>1C78EAAD065D492600B07095</string>
-		<string>1CD10A99069EF8BA00B06720</string>
 		<string>FD78A4EE1116385D008B87CB</string>
+		<string>/Users/bencunningham/Desktop/edgeCity/osc_iphone/OSCLaser/OSCLaser.xcodeproj</string>
 		<string>FD20BFB21127BD980074F16B</string>
 		<string>FD20BFC01127BE660074F16B</string>
-		<string>/Users/bencunningham/Desktop/edgeCity/osc_iphone/OSCLaser/OSCLaser.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
 	<string>25 89 1147 689 0 0 1280 778 </string>
@@ -758,7 +753,7 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>FD78A4EE1116385D008B87CB</string>
-				<string>FD2967651127C6BF00088EDC</string>
+				<string>FD22DFB01127D9D400DE2274</string>
 				<string>1CD0528F0623707200166675</string>
 				<string>XCMainBuildResultsModuleGUID</string>
 			</array>
