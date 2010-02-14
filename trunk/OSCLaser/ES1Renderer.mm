@@ -52,6 +52,19 @@ static double timer = 0.0;
 	rectVertices[7] = -0.5;
 }
 
+- (void) initColorVertices
+{
+	colorVertices = (GLubyte*)malloc(4*(NUM_CIRCLE_DIVISIONS + 2)*sizeof(GLubyte));
+	
+	for(int i = 0; i < NUM_CIRCLE_DIVISIONS + 2; i++)
+	{
+		colorVertices[4*i] = 0;
+		colorVertices[4*i+1] = 0;
+		colorVertices[4*i+2] = 0;
+		colorVertices[4*i+3] = 0;
+	}
+}
+
 // Create an ES 1.1 context
 - (id) init
 {
@@ -74,6 +87,7 @@ static double timer = 0.0;
 		
 		[self initCircleVertices];
 		[self initRectVertices];
+		[self initColorVertices];
 	}
 	
 	return self;
@@ -81,10 +95,6 @@ static double timer = 0.0;
 
 - (void) renderMultiPoints:(NSArray*)multiObjects
 {
-    // Replace the implementation of this method to do your own custom drawing
-	
-    
-	
 	//perform z ordering
 	NSMutableArray * sorted = [NSMutableArray arrayWithCapacity:[multiObjects count]];
 	for(int i = 0; i < [multiObjects count]; i++)
@@ -120,7 +130,6 @@ static double timer = 0.0;
     //glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 	
-	static GLubyte circleColors[] = {0, 0, 0, 0};
 	timer += 0.075;
 	float negHalfToHalf = cos(timer)/2.0;
     
@@ -144,10 +153,10 @@ static double timer = 0.0;
 			blue = MIN(blue, 255);
 			green = MIN(green, 255);
 		}
-		circleColors[0] = red;
-		circleColors[1] = green;
-		circleColors[2] = blue;
-		circleColors[3] = alpha;
+		colorVertices[0] = red;
+		colorVertices[1] = green;
+		colorVertices[2] = blue;
+		colorVertices[3] = alpha;
 
 		for(int i = 0; i < [controlPoints count]; i++)
 		{
@@ -180,7 +189,7 @@ static double timer = 0.0;
 				glScalef(length, scaleWidth, 1.0);
 				glVertexPointer(2, GL_FLOAT, 0, rectVertices);
 				glEnableClientState(GL_VERTEX_ARRAY);
-				glColorPointer(4, GL_UNSIGNED_BYTE, 0, circleColors);
+				glColorPointer(4, GL_UNSIGNED_BYTE, 0, colorVertices);
 				glEnableClientState(GL_COLOR_ARRAY);
 				glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 				glPopMatrix();
@@ -200,7 +209,7 @@ static double timer = 0.0;
 			glScalef(scaleRadius, scaleRadius, 1.0);
 			glVertexPointer(2, GL_FLOAT, 0, circleVertices);
 			glEnableClientState(GL_VERTEX_ARRAY);
-			glColorPointer(4, GL_UNSIGNED_BYTE, 0, circleColors);
+			glColorPointer(4, GL_UNSIGNED_BYTE, 0, colorVertices);
 			glEnableClientState(GL_COLOR_ARRAY);
 			glDrawArrays(GL_TRIANGLE_FAN, 0, NUM_CIRCLE_DIVISIONS+2);
 			glPopMatrix();

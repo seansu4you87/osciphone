@@ -230,8 +230,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -282,11 +280,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>22</integer>
+									<integer>18</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 0}, {186, 632}}</string>
+							<string>{{0, 9}, {186, 632}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -316,12 +316,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>ES1Renderer.m</string>
+								<string>SharedObject.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +331,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>ES1Renderer.m</string>
+										<string>SharedObject.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD3D88801127830300588EC6</string>
+										<string>FD3D88B511278F9F00588EC6</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -341,7 +343,6 @@
 											<string>FD0CFB19111696CC00DF5C0F</string>
 											<string>FD8EC38D1116FB4500907A48</string>
 											<string>FD6A70EF111A24DA004398A9</string>
-											<string>FD6A70F0111A24DA004398A9</string>
 											<string>FD6A70FE111A24DA004398A9</string>
 											<string>FD6A70FF111A24DA004398A9</string>
 											<string>FD6A7100111A24DA004398A9</string>
@@ -349,34 +350,21 @@
 											<string>FD6A7103111A24DA004398A9</string>
 											<string>FD6A7104111A24DA004398A9</string>
 											<string>FD6A7149111A2BC6004398A9</string>
-											<string>FDBFB3CC11211F410054E172</string>
 											<string>FDE0BADE1123CE1F00A7CE0E</string>
 											<string>FDE0BB891123E9B400A7CE0E</string>
 											<string>FDE0BBA41123EDDB00A7CE0E</string>
 											<string>FD2A3EB21123F4620069C149</string>
 											<string>FD2A3ED91123F6980069C149</string>
-											<string>FD2A406B1124073D0069C149</string>
 											<string>FDA1FE951125697300A4BFB1</string>
 											<string>FD9232CC112576E0005207BB</string>
-											<string>FD64EDDF112769C30046C644</string>
 											<string>FD64EDE0112769C30046C644</string>
 											<string>FD64EDE1112769C30046C644</string>
 											<string>FD64EDE2112769C30046C644</string>
 											<string>FD64EDE3112769C30046C644</string>
-											<string>FD64EDF0112769C30046C644</string>
-											<string>FD64EDF1112769C30046C644</string>
 											<string>FD3D87CA11277B3B00588EC6</string>
-											<string>FD3D87CC11277B3B00588EC6</string>
-											<string>FD3D87CD11277B3B00588EC6</string>
-											<string>FD3D87D311277B3B00588EC6</string>
-											<string>FD3D87D411277B3B00588EC6</string>
-											<string>FD3D87D511277B3B00588EC6</string>
 											<string>FD3D87D711277B3B00588EC6</string>
 											<string>FD3D87D811277B3B00588EC6</string>
-											<string>FD3D880311277D1700588EC6</string>
 											<string>FD3D880411277D1700588EC6</string>
-											<string>FD3D880611277D1700588EC6</string>
-											<string>FD3D880711277D1700588EC6</string>
 											<string>FD3D882811277DCB00588EC6</string>
 											<string>FD3D8843112780B900588EC6</string>
 											<string>FD3D8844112780B900588EC6</string>
@@ -386,7 +374,23 @@
 											<string>FD3D8848112780B900588EC6</string>
 											<string>FD3D8849112780B900588EC6</string>
 											<string>FD3D886A1127829300588EC6</string>
-											<string>FD3D886B1127829300588EC6</string>
+											<string>FD3D88A411278F9F00588EC6</string>
+											<string>FD3D88A511278F9F00588EC6</string>
+											<string>FD3D88A611278F9F00588EC6</string>
+											<string>FD3D88A711278F9F00588EC6</string>
+											<string>FD3D88A811278F9F00588EC6</string>
+											<string>FD3D88A911278F9F00588EC6</string>
+											<string>FD3D88AA11278F9F00588EC6</string>
+											<string>FD3D88AB11278F9F00588EC6</string>
+											<string>FD3D88AC11278F9F00588EC6</string>
+											<string>FD3D88AD11278F9F00588EC6</string>
+											<string>FD3D88AE11278F9F00588EC6</string>
+											<string>FD3D88AF11278F9F00588EC6</string>
+											<string>FD3D88B011278F9F00588EC6</string>
+											<string>FD3D88B111278F9F00588EC6</string>
+											<string>FD3D88B211278F9F00588EC6</string>
+											<string>FD3D88B311278F9F00588EC6</string>
+											<string>FD3D88B411278F9F00588EC6</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -584,7 +588,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FD3D88811127830300588EC6</string>
+		<string>1C530D57069F1CE1000CFCEE</string>
 		<string>FD3D880A11277D1700588EC6</string>
 		<string>FD3D880B11277D1700588EC6</string>
 		<string>1C78EAAD065D492600B07095</string>
@@ -614,7 +618,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SharedCollection.m</string>
+								<string>Stk.h</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
@@ -890,8 +894,8 @@
 			<key>TableOfContents</key>
 			<array>
 				<string>1C530D57069F1CE1000CFCEE</string>
-				<string>FD3F5DE21124989B00AD17DE</string>
-				<string>FD3F5DE31124989B00AD17DE</string>
+				<string>FD3D8886112784EC00588EC6</string>
+				<string>FD3D8887112784EC00588EC6</string>
 				<string>1CDD528C0622207200134675</string>
 				<string>1CD0528E0623707200166675</string>
 			</array>
