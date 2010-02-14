@@ -276,6 +276,8 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
+									<integer>4</integer>
+									<integer>2</integer>
 									<integer>0</integer>
 								</array>
 							</array>
@@ -317,7 +319,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MainViewController.mm</string>
+								<string>ES1Renderer.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +327,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MainViewController.mm</string>
+										<string>ES1Renderer.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD20BF5A1127B1F30074F16B</string>
+										<string>FD20BF5F1127B26E0074F16B</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -358,7 +360,6 @@
 											<string>FD3D8844112780B900588EC6</string>
 											<string>FD3D8845112780B900588EC6</string>
 											<string>FD3D8846112780B900588EC6</string>
-											<string>FD3D8847112780B900588EC6</string>
 											<string>FD3D88A511278F9F00588EC6</string>
 											<string>FD3D88A611278F9F00588EC6</string>
 											<string>FD3D88A811278F9F00588EC6</string>
@@ -377,7 +378,6 @@
 											<string>FD20BEEB1127AB900074F16B</string>
 											<string>FD20BEF41127AC9A0074F16B</string>
 											<string>FD20BF0B1127AD750074F16B</string>
-											<string>FD20BF171127AF3C0074F16B</string>
 											<string>FD20BF181127AF3C0074F16B</string>
 											<string>FD20BF191127AF3C0074F16B</string>
 											<string>FD20BF3D1127B0E50074F16B</string>
@@ -388,7 +388,9 @@
 											<string>FD20BF541127B1E00074F16B</string>
 											<string>FD20BF551127B1E00074F16B</string>
 											<string>FD20BF561127B1E00074F16B</string>
-											<string>FD20BF571127B1E00074F16B</string>
+											<string>FD20BF5D1127B26E0074F16B</string>
+											<string>FD20BF5E1127B26E0074F16B</string>
+											<string>FD20BF171127AF3C0074F16B</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
