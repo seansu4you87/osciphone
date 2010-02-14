@@ -17,6 +17,7 @@
 
 //seconds it takes a touch to become an object
 #define TOUCH_TIME 0.55
+#define TAPS_TO_DELETE 3
 
 @implementation MainViewController
 
@@ -28,6 +29,7 @@
 		currentlyManipulated = [[NSMutableSet setWithCapacity:0] retain];
 		downTouches = [[NSMutableSet setWithCapacity:0] retain];
 		audioManager = [[AudioManager alloc] init];
+		colorIndex = 0;
     }
     return self;
 }
@@ -223,7 +225,8 @@
 		[[SharedCollection sharedCollection] addSharedObject:theObject];
 	}
 
-	[self addManipulatedObject:theObject withTouches:creatingTouches];	
+	[self addManipulatedObject:theObject withTouches:creatingTouches];
+	colorIndex++;
 }
 
 - (void) addMultiPointWithTouches:(NSArray*)touches
@@ -236,7 +239,7 @@
 		[touchPoints addObject:[NSValue value:&touchPoint withObjCType:@encode(CGPoint)]];
 	}
 	MultiPointObject * newMulti = [[MultiPointObject alloc] initWithView: self.view points:touchPoints];
-	newMulti.baseColor = [self colorForIndex:[[[SharedCollection sharedCollection] objects] count]];
+	newMulti.baseColor = [self colorForIndex:colorIndex];
 
 	[self addSharedObject:newMulti withTouches:[NSMutableSet setWithArray:touches]];
 	[newMulti release];
@@ -251,6 +254,7 @@
 	{
 		NSMutableArray * touches = [NSMutableArray arrayWithCapacity:1];
 		[touches addObject:starter];
+		
 		for(UITouch * downTouch in downTouches)
 		{
 			if(![downTouch isEqual:starter])
@@ -261,11 +265,10 @@
 				}
 			}
 		}
+		
 		[self addMultiPointWithTouches:touches];
 		[self removeTouchTimer];
 	}
-	
-	
 }
 
 - (void) removeTouchTimer
@@ -364,6 +367,15 @@
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent*)event
 {
 	[downTouches unionSet:touches];
+	
+	if([touches count] == 1)
+	{
+		UITouch * theTouch = [touches anyObject];
+		if(theTouch.tapCount == TAPS_TO_DELETE && selected != nil)
+		{
+			[self removeSelectedObject];
+		}
+	}
 	
 	//check to see if touches are manipulating other objects and remove ones that are
 	NSSet * touchesLeft = [self manipulateWithTouches:touches];

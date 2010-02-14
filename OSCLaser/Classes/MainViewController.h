@@ -22,6 +22,8 @@
 	IBOutlet EAGLView * glView;
 	IBOutlet UIButton * infoButton;
 	AudioManager * audioManager;
+	
+	int colorIndex;
 }
 
 @property(nonatomic, retain) UITouch * startTouch;
