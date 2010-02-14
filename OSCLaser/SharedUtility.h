@@ -24,6 +24,11 @@
 + (float) degreeAngleBetweenVector:(CGPoint)vectorOne andVector:(CGPoint)vectorTwo;
 + (float) radianAngleBetweenVector:(CGPoint)vectorOne andVector:(CGPoint)vectorTwo;
 
++ (float)randfBetween:(float)a andUpper:(float)b;
++ (int)randBetween:(int)a andUpper:(int)b;
++ (float)mtof:(int)mid;
+
+
 //color functions
 + (UIColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
 + (UIColor *)colorFromColor:(UIColor*)color andAlpha:(float)alpha;
