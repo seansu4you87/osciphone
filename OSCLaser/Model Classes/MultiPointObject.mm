@@ -236,14 +236,14 @@
 		case 1:
 		{
 			CGPoint firstPoint = [self scaledPositionAtIndex:0];
-			//[thePort sendTo:[address UTF8String] types:[argString UTF8String], firstPoint.x, firstPoint.y];
+			[thePort sendTo:(char*)[address UTF8String] types:(char*)[argString UTF8String], firstPoint.x, firstPoint.y];
 			break;
 		}
 		case 2:
 		{
 			CGPoint firstPoint = [self scaledPositionAtIndex:0];
 			CGPoint secondPoint = [self scaledPositionAtIndex:1];
-			//[thePort sendTo:[address UTF8String] types:[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y];
+			[thePort sendTo:(char*)[address UTF8String] types:(char*)[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y];
 			break;
 		}
 		case 3:
@@ -251,7 +251,7 @@
 			CGPoint firstPoint = [self scaledPositionAtIndex:0];
 			CGPoint secondPoint = [self scaledPositionAtIndex:1];
 			CGPoint thirdPoint = [self scaledPositionAtIndex:2];
-			//[thePort sendTo:[address UTF8String] types:[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y, thirdPoint.x, thirdPoint.y];
+			[thePort sendTo:(char*)[address UTF8String] types:(char*)[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y, thirdPoint.x, thirdPoint.y];
 			break;
 		}
 		case 4:
@@ -260,7 +260,7 @@
 			CGPoint secondPoint = [self scaledPositionAtIndex:1];
 			CGPoint thirdPoint = [self scaledPositionAtIndex:2];
 			CGPoint fourthPoint = [self scaledPositionAtIndex:3];
-			//[thePort sendTo:[address UTF8String] types:[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y, thirdPoint.x, thirdPoint.y, fourthPoint.x, fourthPoint.y];
+			[thePort sendTo:(char*)[address UTF8String] types:(char*)[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y, thirdPoint.x, thirdPoint.y, fourthPoint.x, fourthPoint.y];
 			break;
 		}
 		case 5:
@@ -270,7 +270,7 @@
 			CGPoint thirdPoint = [self scaledPositionAtIndex:2];
 			CGPoint fourthPoint = [self scaledPositionAtIndex:3];
 			CGPoint fifthPoint = [self scaledPositionAtIndex:4];
-			//[thePort sendTo:[address UTF8String] types:[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y, thirdPoint.x, thirdPoint.y, fourthPoint.x, fourthPoint.y, fifthPoint.x, fifthPoint.y];
+			[thePort sendTo:(char*)[address UTF8String] types:(char*)[argString UTF8String], firstPoint.x, firstPoint.y, secondPoint.x, secondPoint.y, thirdPoint.x, thirdPoint.y, fourthPoint.x, fourthPoint.y, fifthPoint.x, fifthPoint.y];
 			break;
 		}
 	}

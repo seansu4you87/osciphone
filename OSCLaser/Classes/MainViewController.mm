@@ -17,7 +17,6 @@
 
 //seconds it takes a touch to become an object
 #define TOUCH_TIME 0.55
-#define LOOP_INTERVAL 1.0/60.0
 
 @implementation MainViewController
 
@@ -339,8 +338,9 @@
 {
 	NSMutableSet * result = [NSMutableSet setWithSet:touches];
 	NSArray * allObjects = [[SharedCollection sharedCollection] objects];
-	for(SharedObject * curObject in allObjects)
+	for(int i = [allObjects count] - 1; i >= 0; i--)
 	{
+		SharedObject * curObject = [allObjects objectAtIndex:i];
 		if([result count] == 0)
 		{
 			break;

@@ -986,8 +986,8 @@
 			isa = PBXGroup;
 			children = (
 				FD78A5251116391C008B87CB /* OSCPort.h */,
-				FD78A5261116391C008B87CB /* OSCInPort.h */,
 				FD78A5211116390E008B87CB /* OSCPort.m */,
+				FD78A5261116391C008B87CB /* OSCInPort.h */,
 				FD78A5221116390E008B87CB /* OSCInPort.m */,
 				FD78A4FD111638E6008B87CB /* NetworkReturnAddress.c */,
 				FD78A4FE111638E6008B87CB /* NetworkReturnAddress.h */,
