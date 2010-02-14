@@ -22,7 +22,8 @@
 + (int) nextID;
 
 - (NSString *) objectName;
-- (void) updateAllValues;
+- (void) sendAddMessage;
+- (void) sendUpdateMessage;
 - (BOOL) touchesAreRelevant:(NSSet*)touches;
 - (void) trackTouches:(NSSet*)touches;
 - (BOOL) stopTrackingTouches:(NSSet*)touches;
