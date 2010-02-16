@@ -14,6 +14,7 @@
 #import "MultiPointObject.h"
 #import "EAGLView.h"
 #import "AudioManager.h"
+#import "Sequencer.h"
 
 //seconds it takes a touch to become an object
 #define TOUCH_TIME 0.55
@@ -26,6 +27,7 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         [SharedCollection sharedCollection];
+		[Sequencer sharedSequencer];
 		currentlyManipulated = [[NSMutableSet setWithCapacity:0] retain];
 		downTouches = [[NSMutableSet setWithCapacity:0] retain];
 		audioManager = [[AudioManager alloc] init];

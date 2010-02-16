@@ -11,6 +11,8 @@
 #import <OpenGLES/ES1/gl.h>
 #import <OpenGLES/ES1/glext.h>
 
+@class MultiObjectRenderer, SequencerRenderer;
+
 @interface ES1Renderer : NSObject
 {
 @private
@@ -23,12 +25,11 @@
 	// The OpenGL names for the framebuffer and renderbuffer used to render to this view
 	GLuint defaultFramebuffer, colorRenderbuffer;
 	
-	GLfloat * circleVertices;
-	GLfloat * rectVertices;
-	GLubyte * colorVertices;
+	MultiObjectRenderer * mObjRenderer;
+	SequencerRenderer * sequenceRenderer;
 }
 
-- (void) renderMultiPoints:(NSArray*)multiObjects;
+- (void) renderEverything;
 - (BOOL) resizeFromLayer:(CAEAGLLayer *)layer;
 
 @end

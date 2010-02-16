@@ -62,7 +62,7 @@
 - (void) drawView:(id)sender
 {
 	[[SharedCollection sharedCollection] step];
-    [renderer renderMultiPoints:[SharedCollection sharedCollection].sharedObjects];
+    [renderer renderEverything];
 }
 
 - (void) layoutSubviews
