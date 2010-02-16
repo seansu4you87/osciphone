@@ -19,6 +19,7 @@
 	
 	GLfloat * rectVertices;
 	GLubyte * colorVertices;
+	GLubyte * fullColorVertices;
 }
 
 - (id) initWithHeight:(float)theHeight andWidth:(float)theWidth;
