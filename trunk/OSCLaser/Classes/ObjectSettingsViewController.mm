@@ -66,6 +66,41 @@
 	[notePicker setCurrentNotes:result];
 }
 
+- (void) updateNumOctaves
+{
+	[octaveButton setTitle:[NSString stringWithFormat:@"%d", selected.soundObject.numOctaves] forState:UIControlStateNormal];
+	[octaveButton setNeedsDisplay];
+}
+
+- (IBAction)switched
+{
+	if(quantizeSwitch.on)
+	{
+		notePicker.userInteractionEnabled = YES;
+		//scalePicker.userInteractionEnabled = YES;
+		scalePicker.enabled = YES;
+		
+	}else{
+		notePicker.userInteractionEnabled = NO;
+		//scalePicker.userInteractionEnabled = NO;
+		scalePicker.enabled = NO;
+	}
+	
+	[selected.soundObject setQuantizePitch: quantizeSwitch.on];
+}
+
+- (IBAction)upPressed
+{
+	[selected.soundObject setNumOctaves:selected.soundObject.numOctaves+1];
+	[self updateNumOctaves];
+}
+
+- (IBAction)downPressed
+{
+	[selected.soundObject setNumOctaves:selected.soundObject.numOctaves-1];
+	[self updateNumOctaves];
+}
+
 - (IBAction) scaleChanged
 {
 	if(scalePicker.selectedSegmentIndex != selected.soundObject.scaleType)
@@ -101,7 +136,10 @@
 	wavePicker.selectedSegmentIndex = selected.soundObject.modOsc;
 	scalePicker.selectedSegmentIndex = selected.soundObject.scaleType;
 	volumeSlider.value = selected.soundObject.gain;
+	[self updateNumOctaves];
 	[self updatePickerForNotes:selected.soundObject.possibleNotes inScale:selected.soundObject.scaleType];
+	quantizeSwitch.on = selected.soundObject.quantizePitch;
+	[self switched];
 }
 
 - (void) updateObjectFromView

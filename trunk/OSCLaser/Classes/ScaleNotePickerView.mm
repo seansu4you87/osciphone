@@ -10,7 +10,7 @@
 #import "SharedUtility.h"
 #import "NoteObject.h"
 
-#define NOTE_PADDING 2
+#define NOTE_PADDING 3
 
 @implementation ScaleNotePickerView
 
@@ -27,7 +27,7 @@
 
 - (void)drawSquare:(CGRect)rect selected:(BOOL)selected
 {
-	UIColor * selectedColor = [UIColor grayColor];
+	UIColor * selectedColor = [UIColor lightGrayColor];
 	if(selected)
 	{
 		selectedColor = [UIColor blueColor];
@@ -35,8 +35,10 @@
 	
 	CGContextRef currentContext = UIGraphicsGetCurrentContext();
 	[selectedColor set];
-	CGContextSetLineWidth(currentContext, 1);
+	
 	CGContextFillRect(currentContext, rect);
+	[[UIColor whiteColor] set];
+	CGContextStrokeRectWithWidth(currentContext, rect, 2.0);
 }
 
 #define TEXT_OFFSET 13
@@ -51,7 +53,12 @@
 		[self drawSquare: currentRect selected:curNote.isOn];
 		currentRect.origin.y = TEXT_OFFSET;
 		currentRect.size.height = currentRect.size.height - TEXT_OFFSET;
-		[[UIColor whiteColor] set];
+		if(curNote.isOn)
+		{
+			[[UIColor whiteColor] set];
+		}else{
+			[[UIColor darkGrayColor] set];
+		}
 		[[NSString stringWithFormat:@"%d", i+1] drawInRect:currentRect withFont:systemFont lineBreakMode:UILineBreakModeWordWrap alignment:UITextAlignmentCenter];
 		
 	}

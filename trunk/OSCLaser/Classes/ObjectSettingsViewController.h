@@ -19,6 +19,8 @@
 	IBOutlet UISegmentedControl * scalePicker;
 	IBOutlet UISlider * volumeSlider;
 	IBOutlet ScaleNotePickerView * notePicker;
+	IBOutlet UIButton * octaveButton;
+	IBOutlet UISwitch * quantizeSwitch;
 	MultiPointObject * selected;
 }
 
@@ -27,6 +29,9 @@
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andObject:(MultiPointObject*)selectedObject; 
 - (IBAction)done;
 - (IBAction)scaleChanged;
+- (IBAction)upPressed;
+- (IBAction)downPressed;
+- (IBAction)switched;
 
 @end
 
