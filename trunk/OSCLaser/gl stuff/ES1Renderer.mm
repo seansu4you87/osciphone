@@ -62,7 +62,7 @@
 	glTranslatef(-1.0, 1.0, 0);
 	glScalef(2.0/backingWidth, -2.0/backingHeight, 1.0);
 	
-    //glClearColor(0.5f, 0.5f, 0.5f, 1.0f);
+    glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
     glClear(GL_COLOR_BUFFER_BIT);
 	
 	if(mObjRenderer == nil)
@@ -86,9 +86,38 @@
     [context presentRenderbuffer:GL_RENDERBUFFER_OES];
 }
 
+- (void) translateValue:(float)translation
+{
+	pointsOffset += translation;
+	sequenceOffset += translation;
+}
+
+- (BOOL) isMoving
+{
+	return isRenderingPoints && isRenderingSequencer;
+}
+
 - (void) renderEverything
 {
 	[self glSetup];
+	
+	if(movingToSequencer || movingToPoints)
+	{
+		[self translateValue:step];
+		stepsLeft--;
+		BOOL done = (stepsLeft == 0);
+		if(done)
+		{
+			if(movingToPoints)
+			{
+				isRenderingSequencer = NO;
+				movingToPoints = NO;
+			}else{
+				isRenderingPoints = NO;
+				movingToSequencer = NO;
+			}
+		}
+	}
 	
 	if(isRenderingPoints)
 	{
@@ -107,6 +136,22 @@
 	}
     
 	[self glSetdown];
+}
+
+- (void) switchToSequencer
+{
+	isRenderingSequencer = YES;
+	movingToSequencer = YES;
+	stepsLeft = 30;
+	step = (1.0*backingWidth)/stepsLeft;
+}
+
+- (void) switchToPoints
+{
+	isRenderingPoints = YES;
+	movingToPoints = YES;
+	stepsLeft = 30;
+	step = (0.0 - backingWidth)/stepsLeft;
 }
 
 - (BOOL) resizeFromLayer:(CAEAGLLayer *)layer
