@@ -10,6 +10,7 @@
 #import "MultiPointObject.h"
 #import "SharedCollection.h"
 #import "SharedObject.h"
+#import "MainViewController.h"
 
 //seconds it takes a touch to become an object
 #define TOUCH_TIME 0.55
@@ -17,7 +18,7 @@
 
 @implementation MultiPointController
 
-@synthesize startTouch, selected, touchTimer;
+@synthesize startTouch, selected, touchTimer, mainView;
 
 #pragma mark init
 
@@ -56,7 +57,6 @@
 }
 
 
-
 - (void) removeObject:(SharedObject*)theObject
 {
 	if([currentlyManipulated containsObject:theObject])
@@ -71,6 +71,10 @@
 	}
 	
 	[[Sequencer sharedSequencer] refresh];
+	if([[[SharedCollection sharedCollection] objects] count] == 0)
+	{
+		[mainView refuseSwitch];
+	}
 }
 
 - (void) removeSelectedObject
@@ -124,6 +128,8 @@
 	[self addManipulatedObject:theObject withTouches:creatingTouches];
 	colorIndex++;
 	[[Sequencer sharedSequencer] refresh];
+	
+	[mainView allowSwitch];
 }
 
 - (void) addMultiPointWithTouches:(NSArray*)touches

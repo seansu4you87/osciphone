@@ -50,16 +50,16 @@
 	};
 	289233A80DB2D0DB0083E9F9 /* MainViewController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {833, 549}}";
-			sepNavSelRange = "{538, 18}";
-			sepNavVisRange = "{0, 879}";
+			sepNavIntBoundsRect = "{{0, 0}, {833, 555}}";
+			sepNavSelRange = "{625, 45}";
+			sepNavVisRange = "{0, 895}";
 		};
 	};
 	289233A90DB2D0DB0083E9F9 /* MainViewController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {833, 2505}}";
-			sepNavSelRange = "{2732, 0}";
-			sepNavVisRange = "{2089, 652}";
+			sepNavIntBoundsRect = "{{0, 0}, {833, 2655}}";
+			sepNavSelRange = "{1795, 0}";
+			sepNavVisRange = "{1059, 1119}";
 			sepNavWindowFrame = "{{119, 26}, {1092, 710}}";
 		};
 	};
@@ -349,6 +349,20 @@
 			FD4A648D112A711A00EB75E4 /* PBXTextBookmark */ = FD4A648D112A711A00EB75E4 /* PBXTextBookmark */;
 			FD4A6491112A714700EB75E4 /* PBXTextBookmark */ = FD4A6491112A714700EB75E4 /* PBXTextBookmark */;
 			FD4A6495112A716400EB75E4 /* PBXTextBookmark */ = FD4A6495112A716400EB75E4 /* PBXTextBookmark */;
+			FD4A64AC112A732300EB75E4 /* PBXTextBookmark */ = FD4A64AC112A732300EB75E4 /* PBXTextBookmark */;
+			FD4A64AD112A732300EB75E4 /* PBXTextBookmark */ = FD4A64AD112A732300EB75E4 /* PBXTextBookmark */;
+			FD4A64AE112A732300EB75E4 /* PBXTextBookmark */ = FD4A64AE112A732300EB75E4 /* PBXTextBookmark */;
+			FD4A64AF112A732300EB75E4 /* PBXTextBookmark */ = FD4A64AF112A732300EB75E4 /* PBXTextBookmark */;
+			FD4A64B0112A732300EB75E4 /* PBXTextBookmark */ = FD4A64B0112A732300EB75E4 /* PBXTextBookmark */;
+			FD4A64B1112A732300EB75E4 /* PBXTextBookmark */ = FD4A64B1112A732300EB75E4 /* PBXTextBookmark */;
+			FD4A64B2112A732300EB75E4 /* PBXTextBookmark */ = FD4A64B2112A732300EB75E4 /* PBXTextBookmark */;
+			FD4A64B3112A732300EB75E4 /* PBXTextBookmark */ = FD4A64B3112A732300EB75E4 /* PBXTextBookmark */;
+			FD4A64B4112A732300EB75E4 /* PBXTextBookmark */ = FD4A64B4112A732300EB75E4 /* PBXTextBookmark */;
+			FD4A64B5112A732300EB75E4 /* PBXTextBookmark */ = FD4A64B5112A732300EB75E4 /* PBXTextBookmark */;
+			FD4A64B6112A732300EB75E4 /* PBXTextBookmark */ = FD4A64B6112A732300EB75E4 /* PBXTextBookmark */;
+			FD4A64B7112A732300EB75E4 /* PBXTextBookmark */ = FD4A64B7112A732300EB75E4 /* PBXTextBookmark */;
+			FD4A64B8112A732300EB75E4 /* PBXTextBookmark */ = FD4A64B8112A732300EB75E4 /* PBXTextBookmark */;
+			FD4A64B9112A732300EB75E4 /* PBXTextBookmark */ = FD4A64B9112A732300EB75E4 /* PBXTextBookmark */;
 			FD530622112A281900313CCB = FD530622112A281900313CCB /* PBXTextBookmark */;
 			FD530623112A281900313CCB = FD530623112A281900313CCB /* PBXTextBookmark */;
 			FD530635112A2BA200313CCB = FD530635112A2BA200313CCB /* PBXTextBookmark */;
@@ -674,14 +688,14 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {833, 750}}";
 			sepNavSelRange = "{806, 0}";
-			sepNavVisRange = "{272, 704}";
+			sepNavVisRange = "{21, 748}";
 		};
 	};
 	FD2A3FAD112404330069C149 /* ES1Renderer.mm */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {833, 2970}}";
-			sepNavSelRange = "{3185, 0}";
-			sepNavVisRange = "{3570, 1011}";
+			sepNavSelRange = "{411, 0}";
+			sepNavVisRange = "{3416, 754}";
 			sepNavWindowFrame = "{{15, 48}, {657, 725}}";
 		};
 	};
@@ -740,7 +754,7 @@
 		fRef = FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */;
 		name = "MultiPointController.mm: 276";
 		rLen = 0;
-		rLoc = 6257;
+		rLoc = 6421;
 		rType = 0;
 		vrLen = 852;
 		vrLoc = 3526;
@@ -800,7 +814,7 @@
 		fRef = FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */;
 		name = "MultiPointController.mm: 276";
 		rLen = 0;
-		rLoc = 6257;
+		rLoc = 6421;
 		rType = 0;
 		vrLen = 875;
 		vrLoc = 3562;
@@ -810,7 +824,7 @@
 		fRef = FDE2A470112A3A4800B8CF1F /* MultiPointController.h */;
 		name = "MultiPointController.h: 39";
 		rLen = 198;
-		rLoc = 1022;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 1074;
 		vrLoc = 152;
@@ -850,7 +864,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.mm */;
 		name = "MainViewController.mm: 107";
 		rLen = 0;
-		rLoc = 2732;
+		rLoc = 2874;
 		rType = 0;
 		vrLen = 652;
 		vrLoc = 2089;
@@ -870,7 +884,7 @@
 		fRef = FD2A3FAD112404330069C149 /* ES1Renderer.mm */;
 		name = "ES1Renderer.mm: 149";
 		rLen = 0;
-		rLoc = 3793;
+		rLoc = 3823;
 		rType = 0;
 		vrLen = 592;
 		vrLoc = 2777;
@@ -880,7 +894,7 @@
 		fRef = FD2A3FAD112404330069C149 /* ES1Renderer.mm */;
 		name = "ES1Renderer.mm: 149";
 		rLen = 0;
-		rLoc = 3793;
+		rLoc = 3823;
 		rType = 0;
 		vrLen = 592;
 		vrLoc = 2777;
@@ -890,7 +904,7 @@
 		fRef = FD2A3FAD112404330069C149 /* ES1Renderer.mm */;
 		name = "ES1Renderer.mm: 152";
 		rLen = 0;
-		rLoc = 3845;
+		rLoc = 3882;
 		rType = 0;
 		vrLen = 849;
 		vrLoc = 3229;
@@ -900,7 +914,7 @@
 		fRef = FD2A3FAD112404330069C149 /* ES1Renderer.mm */;
 		name = "ES1Renderer.mm: 152";
 		rLen = 0;
-		rLoc = 3845;
+		rLoc = 3882;
 		rType = 0;
 		vrLen = 849;
 		vrLoc = 3229;
@@ -910,7 +924,7 @@
 		fRef = FD2A3FAD112404330069C149 /* ES1Renderer.mm */;
 		name = "ES1Renderer.mm: 108";
 		rLen = 0;
-		rLoc = 3020;
+		rLoc = 3043;
 		rType = 0;
 		vrLen = 627;
 		vrLoc = 2713;
@@ -920,7 +934,7 @@
 		fRef = FD2A3FAD112404330069C149 /* ES1Renderer.mm */;
 		name = "ES1Renderer.mm: 117";
 		rLen = 0;
-		rLoc = 3185;
+		rLoc = 3208;
 		rType = 0;
 		vrLen = 571;
 		vrLoc = 2713;
@@ -930,7 +944,7 @@
 		fRef = FD2A3FAD112404330069C149 /* ES1Renderer.mm */;
 		name = "ES1Renderer.mm: 117";
 		rLen = 0;
-		rLoc = 3185;
+		rLoc = 3208;
 		rType = 0;
 		vrLen = 1009;
 		vrLoc = 3570;
@@ -940,7 +954,7 @@
 		fRef = FD2A3FAD112404330069C149 /* ES1Renderer.mm */;
 		name = "ES1Renderer.mm: 117";
 		rLen = 0;
-		rLoc = 3185;
+		rLoc = 3208;
 		rType = 0;
 		vrLen = 1011;
 		vrLoc = 3570;
@@ -1470,7 +1484,7 @@
 		fRef = FDE2A470112A3A4800B8CF1F /* MultiPointController.h */;
 		name = "MultiPointController.h: 39";
 		rLen = 198;
-		rLoc = 1022;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 1073;
 		vrLoc = 153;
@@ -1480,7 +1494,7 @@
 		fRef = FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */;
 		name = "MultiPointController.mm: 73";
 		rLen = 38;
-		rLoc = 1475;
+		rLoc = 1515;
 		rType = 0;
 		vrLen = 677;
 		vrLoc = 934;
@@ -1490,7 +1504,7 @@
 		fRef = FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */;
 		name = "MultiPointController.mm: 126";
 		rLen = 0;
-		rLoc = 2654;
+		rLoc = 2818;
 		rType = 0;
 		vrLen = 1192;
 		vrLoc = 2188;
@@ -1500,7 +1514,7 @@
 		fRef = FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */;
 		name = "MultiPointController.mm: 126";
 		rLen = 0;
-		rLoc = 2654;
+		rLoc = 2818;
 		rType = 0;
 		vrLen = 1192;
 		vrLoc = 2188;
@@ -1660,7 +1674,7 @@
 		fRef = FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */;
 		name = "MultiPointController.mm: 126";
 		rLen = 0;
-		rLoc = 2654;
+		rLoc = 2818;
 		rType = 0;
 		vrLen = 1098;
 		vrLoc = 2235;
@@ -1670,7 +1684,7 @@
 		fRef = FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */;
 		name = "MultiPointController.mm: 126";
 		rLen = 0;
-		rLoc = 2654;
+		rLoc = 2818;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 2264;
@@ -1680,7 +1694,7 @@
 		fRef = FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */;
 		name = "MultiPointController.mm: 126";
 		rLen = 0;
-		rLoc = 2654;
+		rLoc = 2818;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 2264;
@@ -1787,7 +1801,7 @@
 		fRef = FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */;
 		name = "MultiPointController.mm: 126";
 		rLen = 0;
-		rLoc = 2615;
+		rLoc = 2752;
 		rType = 0;
 		vrLen = 1116;
 		vrLoc = 2264;
@@ -2342,6 +2356,146 @@
 		vrLen = 851;
 		vrLoc = 624;
 	};
+	FD4A64AC112A732300EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 55";
+		rLen = 0;
+		rLoc = 1074;
+		rType = 0;
+		vrLen = 827;
+		vrLoc = 648;
+	};
+	FD4A64AD112A732300EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDBFB3C311211F310054E172 /* MultiPointObject.h */;
+		name = "MultiPointObject.h: 41";
+		rLen = 0;
+		rLoc = 1146;
+		rType = 0;
+		vrLen = 1001;
+		vrLoc = 147;
+	};
+	FD4A64AE112A732300EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD2A3FAC112404330069C149 /* ES1Renderer.h */;
+		name = "ES1Renderer.h: 38";
+		rLen = 0;
+		rLoc = 806;
+		rType = 0;
+		vrLen = 748;
+		vrLoc = 21;
+	};
+	FD4A64AF112A732300EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD2A3FAD112404330069C149 /* ES1Renderer.mm */;
+		name = "ES1Renderer.mm: 20";
+		rLen = 0;
+		rLoc = 411;
+		rType = 0;
+		vrLen = 754;
+		vrLoc = 3416;
+	};
+	FD4A64B0112A732300EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD26DA111116B0760062DF1F /* SharedObject.h */;
+		name = "SharedObject.h: 25";
+		rLen = 24;
+		rLoc = 464;
+		rType = 0;
+		vrLen = 827;
+		vrLoc = 0;
+	};
+	FD4A64B1112A732300EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD26DA121116B0760062DF1F /* SharedObject.mm */;
+		name = "SharedObject.mm: 43";
+		rLen = 0;
+		rLoc = 689;
+		rType = 0;
+		vrLen = 492;
+		vrLoc = 319;
+	};
+	FD4A64B2112A732300EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDA7844C1118F80000AC33F0 /* SharedUtility.h */;
+		name = "SharedUtility.h: 19";
+		rLen = 0;
+		rLoc = 393;
+		rType = 0;
+		vrLen = 1022;
+		vrLoc = 0;
+	};
+	FD4A64B3112A732300EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDBFB3C411211F310054E172 /* MultiPointObject.mm */;
+		name = "MultiPointObject.mm: 306";
+		rLen = 0;
+		rLoc = 7205;
+		rType = 0;
+		vrLen = 655;
+		vrLoc = 6785;
+	};
+	FD4A64B4112A732300EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDA1FE6C1125627D00A4BFB1 /* Sequencer.h */;
+		name = "Sequencer.h: 31";
+		rLen = 0;
+		rLoc = 703;
+		rType = 0;
+		vrLen = 852;
+		vrLoc = 19;
+	};
+	FD4A64B5112A732300EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDE2A470112A3A4800B8CF1F /* MultiPointController.h */;
+		name = "MultiPointController.h: 29";
+		rLen = 0;
+		rLoc = 725;
+		rType = 0;
+		vrLen = 1045;
+		vrLoc = 46;
+	};
+	FD4A64B6112A732300EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */;
+		name = "MultiPointController.mm: 75";
+		rLen = 0;
+		rLoc = 1647;
+		rType = 0;
+		vrLen = 713;
+		vrLoc = 966;
+	};
+	FD4A64B7112A732300EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A80DB2D0DB0083E9F9 /* MainViewController.h */;
+		name = "MainViewController.h: 27";
+		rLen = 45;
+		rLoc = 625;
+		rType = 0;
+		vrLen = 895;
+		vrLoc = 0;
+	};
+	FD4A64B8112A732300EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.mm */;
+		name = "MainViewController.mm: 43";
+		rLen = 0;
+		rLoc = 906;
+		rType = 0;
+		vrLen = 736;
+		vrLoc = 386;
+	};
+	FD4A64B9112A732300EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.mm */;
+		name = "MainViewController.mm: 69";
+		rLen = 0;
+		rLoc = 1795;
+		rType = 0;
+		vrLen = 1119;
+		vrLoc = 1059;
+	};
 	FD5305CD1129DDE800313CCB /* GLSlider.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {833, 553}}";
@@ -2380,9 +2534,9 @@
 	};
 	FD5305DE112A216400313CCB /* SequencerRenderer.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {833, 3900}}";
-			sepNavSelRange = "{1074, 0}";
-			sepNavVisRange = "{624, 851}";
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 3960}}";
+			sepNavSelRange = "{256, 0}";
+			sepNavVisRange = "{85, 329}";
 		};
 	};
 	FD530622112A281900313CCB /* PBXTextBookmark */ = {
@@ -2853,16 +3007,16 @@
 	};
 	FDA1FE6C1125627D00A4BFB1 /* Sequencer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1002, 660}}";
-			sepNavSelRange = "{258, 0}";
-			sepNavVisRange = "{205, 418}";
+			sepNavIntBoundsRect = "{{0, 0}, {833, 600}}";
+			sepNavSelRange = "{703, 0}";
+			sepNavVisRange = "{19, 852}";
 		};
 	};
 	FDA1FE6D1125627D00A4BFB1 /* Sequencer.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {900, 2085}}";
+			sepNavIntBoundsRect = "{{0, 0}, {900, 2070}}";
 			sepNavSelRange = "{1150, 0}";
-			sepNavVisRange = "{810, 479}";
+			sepNavVisRange = "{795, 353}";
 		};
 	};
 	FDA1FE881125685600A4BFB1 /* SequencerRow.h */ = {
@@ -2891,9 +3045,9 @@
 	};
 	FDA7844C1118F80000AC33F0 /* SharedUtility.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {878, 660}}";
+			sepNavIntBoundsRect = "{{0, 0}, {833, 675}}";
 			sepNavSelRange = "{393, 0}";
-			sepNavVisRange = "{0, 1116}";
+			sepNavVisRange = "{0, 1022}";
 		};
 	};
 	FDA7844D1118F80000AC33F0 /* SharedUtility.mm */ = {
@@ -2907,12 +3061,12 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {833, 675}}";
 			sepNavSelRange = "{1146, 0}";
-			sepNavVisRange = "{148, 1000}";
+			sepNavVisRange = "{147, 1001}";
 		};
 	};
 	FDBFB3C411211F310054E172 /* MultiPointObject.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {833, 5085}}";
+			sepNavIntBoundsRect = "{{0, 0}, {833, 5220}}";
 			sepNavSelRange = "{7205, 0}";
 			sepNavVisRange = "{6785, 655}";
 			sepNavWindowFrame = "{{15, 63}, {1092, 710}}";
@@ -2994,16 +3148,16 @@
 	};
 	FDE2A470112A3A4800B8CF1F /* MultiPointController.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {833, 660}}";
-			sepNavSelRange = "{1022, 198}";
-			sepNavVisRange = "{153, 1073}";
+			sepNavIntBoundsRect = "{{0, 0}, {833, 690}}";
+			sepNavSelRange = "{725, 0}";
+			sepNavVisRange = "{46, 1045}";
 		};
 	};
 	FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {833, 4950}}";
-			sepNavSelRange = "{2615, 0}";
-			sepNavVisRange = "{2264, 1116}";
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 4860}}";
+			sepNavSelRange = "{299, 0}";
+			sepNavVisRange = "{0, 348}";
 		};
 	};
 	FDE2A474112A3A5000B8CF1F /* SequencerController.h */ = {
@@ -3075,7 +3229,7 @@
 		fRef = FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */;
 		name = "MultiPointController.mm: 276";
 		rLen = 0;
-		rLoc = 6257;
+		rLoc = 6421;
 		rType = 0;
 		vrLen = 813;
 		vrLoc = 3562;
@@ -3135,7 +3289,7 @@
 		fRef = FD2A3FAD112404330069C149 /* ES1Renderer.mm */;
 		name = "ES1Renderer.mm: 65";
 		rLen = 0;
-		rLoc = 1974;
+		rLoc = 1997;
 		rType = 0;
 		vrLen = 919;
 		vrLoc = 1886;
@@ -3155,7 +3309,7 @@
 		fRef = 289233A90DB2D0DB0083E9F9 /* MainViewController.mm */;
 		name = "MainViewController.mm: 164";
 		rLen = 0;
-		rLoc = 3968;
+		rLoc = 4110;
 		rType = 0;
 		vrLen = 690;
 		vrLoc = 3374;
@@ -3205,7 +3359,7 @@
 		fRef = FDE2A470112A3A4800B8CF1F /* MultiPointController.h */;
 		name = "MultiPointController.h: 39";
 		rLen = 198;
-		rLoc = 1022;
+		rLoc = 1134;
 		rType = 0;
 		vrLen = 1039;
 		vrLoc = 187;
@@ -3215,7 +3369,7 @@
 		fRef = FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */;
 		name = "MultiPointController.mm: 276";
 		rLen = 0;
-		rLoc = 6257;
+		rLoc = 6421;
 		rType = 0;
 		vrLen = 871;
 		vrLoc = 3562;

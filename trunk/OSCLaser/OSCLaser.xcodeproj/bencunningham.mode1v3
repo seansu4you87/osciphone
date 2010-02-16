@@ -230,8 +230,6 @@
 			<key>Layout</key>
 			<array>
 				<dict>
-					<key>BecomeActive</key>
-					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -312,12 +310,14 @@
 					<key>Dock</key>
 					<array>
 						<dict>
+							<key>BecomeActive</key>
+							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SequencerRenderer.mm</string>
+								<string>MainViewController.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SequencerRenderer.mm</string>
+										<string>MainViewController.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD4A6495112A716400EB75E4</string>
+										<string>FD4A64B9112A732300EB75E4</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -362,28 +362,20 @@
 											<string>FD20BF3D1127B0E50074F16B</string>
 											<string>FD20BF511127B1E00074F16B</string>
 											<string>FD20BFAD1127BD980074F16B</string>
-											<string>FD29677E1127C73900088EDC</string>
 											<string>FD2967A21127CA0300088EDC</string>
 											<string>FD22DFCD1127DBC600DE2274</string>
 											<string>FD530636112A2BA200313CCB</string>
 											<string>FD530637112A2BA200313CCB</string>
 											<string>FDE2A483112A3CE000B8CF1F</string>
 											<string>FDE2A4C9112A476500B8CF1F</string>
-											<string>FDE2A4CB112A476500B8CF1F</string>
 											<string>FD4A6303112A4BD600EB75E4</string>
 											<string>FD4A6304112A4BD600EB75E4</string>
-											<string>FD4A6306112A4BD600EB75E4</string>
-											<string>FD4A6307112A4BD600EB75E4</string>
-											<string>FD4A6338112A57B600EB75E4</string>
 											<string>FD4A6339112A57B600EB75E4</string>
 											<string>FD4A633D112A57B600EB75E4</string>
-											<string>FD4A633E112A57B600EB75E4</string>
 											<string>FD4A633F112A57B600EB75E4</string>
 											<string>FD4A6359112A585000EB75E4</string>
 											<string>FD4A639E112A607700EB75E4</string>
 											<string>FD4A639F112A607700EB75E4</string>
-											<string>FD4A63A0112A607700EB75E4</string>
-											<string>FD4A63BA112A63FE00EB75E4</string>
 											<string>FD4A63BE112A63FE00EB75E4</string>
 											<string>FD4A63BF112A63FE00EB75E4</string>
 											<string>FD4A63C1112A63FE00EB75E4</string>
@@ -391,15 +383,23 @@
 											<string>FD4A63D5112A662900EB75E4</string>
 											<string>FD4A63D6112A662900EB75E4</string>
 											<string>FD4A63D7112A662900EB75E4</string>
-											<string>FD4A63DF112A666500EB75E4</string>
-											<string>FD4A63E0112A666500EB75E4</string>
 											<string>FD4A6404112A68C200EB75E4</string>
-											<string>FD4A6405112A68C200EB75E4</string>
-											<string>FD4A6416112A69FF00EB75E4</string>
 											<string>FD4A6429112A6A8A00EB75E4</string>
 											<string>FD4A6444112A6C5600EB75E4</string>
 											<string>FD4A645D112A6E7F00EB75E4</string>
-											<string>FD4A645E112A6E7F00EB75E4</string>
+											<string>FD4A64AC112A732300EB75E4</string>
+											<string>FD4A64AD112A732300EB75E4</string>
+											<string>FD4A64AE112A732300EB75E4</string>
+											<string>FD4A64AF112A732300EB75E4</string>
+											<string>FD4A64B0112A732300EB75E4</string>
+											<string>FD4A64B1112A732300EB75E4</string>
+											<string>FD4A64B2112A732300EB75E4</string>
+											<string>FD4A64B3112A732300EB75E4</string>
+											<string>FD4A64B4112A732300EB75E4</string>
+											<string>FD4A64B5112A732300EB75E4</string>
+											<string>FD4A64B6112A732300EB75E4</string>
+											<string>FD4A64B7112A732300EB75E4</string>
+											<string>FD4A64B8112A732300EB75E4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -597,6 +597,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
+		<string>FD4A64BA112A732300EB75E4</string>
 		<string>FD4A630B112A4BD600EB75E4</string>
 		<string>FD4A62E9112A478700EB75E4</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -628,7 +629,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SequencerRenderer.mm</string>
+								<string>MultiPointController.mm</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>
