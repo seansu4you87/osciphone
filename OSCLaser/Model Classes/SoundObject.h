@@ -84,7 +84,7 @@ typedef struct {
 - (void) setForPointTwo:(CGPoint)scaledPoint;
 - (void) setForPointThree:(CGPoint)scaledPoint;
 - (void) setForPointFour:(CGPoint)scaledPoint;
-- (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames that:(BOOL)isOn at:(int)t;
+- (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames that:(BOOL)isOn at:(int)t andAlso:(BOOL)seqencerIsActive;
 
 - (void) setQuantizePitch:(BOOL)newVal;
 - (void) setScaleType:(int)newScaleType;
