@@ -33,9 +33,17 @@
 	BOOL isRenderingSequencer;
 	float sequenceOffset;
 	
+	BOOL movingToSequencer;
+	BOOL movingToPoints;
+	int stepsLeft;
+	float step;
 }
 
 - (void) renderEverything;
 - (BOOL) resizeFromLayer:(CAEAGLLayer *)layer;
+
+- (void) switchToSequencer;
+- (void) switchToPoints;
+- (BOOL) isMoving;
 
 @end

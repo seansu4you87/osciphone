@@ -222,6 +222,10 @@
 		FDBFB3C611211F310054E172 /* MultiPointObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3C411211F310054E172 /* MultiPointObject.mm */; };
 		FDBFB3E511211F710054E172 /* ControlPoint.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3E411211F710054E172 /* ControlPoint.mm */; };
 		FDBFB3E611211F710054E172 /* ControlPoint.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDBFB3E411211F710054E172 /* ControlPoint.mm */; };
+		FDE2A472112A3A4800B8CF1F /* MultiPointController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */; };
+		FDE2A473112A3A4800B8CF1F /* MultiPointController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */; };
+		FDE2A476112A3A5000B8CF1F /* SequencerController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDE2A475112A3A5000B8CF1F /* SequencerController.mm */; };
+		FDE2A477112A3A5000B8CF1F /* SequencerController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FDE2A475112A3A5000B8CF1F /* SequencerController.mm */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -543,6 +547,10 @@
 		FDBFB3C411211F310054E172 /* MultiPointObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MultiPointObject.mm; path = "Model Classes/MultiPointObject.mm"; sourceTree = "<group>"; };
 		FDBFB3E311211F710054E172 /* ControlPoint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ControlPoint.h; path = "Model Classes/ControlPoint.h"; sourceTree = "<group>"; };
 		FDBFB3E411211F710054E172 /* ControlPoint.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ControlPoint.mm; path = "Model Classes/ControlPoint.mm"; sourceTree = "<group>"; };
+		FDE2A470112A3A4800B8CF1F /* MultiPointController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiPointController.h; path = Classes/MultiPointController.h; sourceTree = "<group>"; };
+		FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MultiPointController.mm; path = Classes/MultiPointController.mm; sourceTree = "<group>"; };
+		FDE2A474112A3A5000B8CF1F /* SequencerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SequencerController.h; path = Classes/SequencerController.h; sourceTree = "<group>"; };
+		FDE2A475112A3A5000B8CF1F /* SequencerController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SequencerController.mm; path = Classes/SequencerController.mm; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -608,8 +616,12 @@
 		289233A00DB2D0730083E9F9 /* Main View */ = {
 			isa = PBXGroup;
 			children = (
+				FDE2A474112A3A5000B8CF1F /* SequencerController.h */,
+				FDE2A475112A3A5000B8CF1F /* SequencerController.mm */,
 				289233A40DB2D0840083E9F9 /* MainView.h */,
 				289233A50DB2D0840083E9F9 /* MainView.m */,
+				FDE2A470112A3A4800B8CF1F /* MultiPointController.h */,
+				FDE2A471112A3A4800B8CF1F /* MultiPointController.mm */,
 				289233A80DB2D0DB0083E9F9 /* MainViewController.h */,
 				289233A90DB2D0DB0083E9F9 /* MainViewController.mm */,
 			);
@@ -1290,6 +1302,8 @@
 				FD5305CF1129DDE800313CCB /* GLSlider.mm in Sources */,
 				FD5305DB112A215500313CCB /* MultiObjectRenderer.mm in Sources */,
 				FD5305DF112A216400313CCB /* SequencerRenderer.mm in Sources */,
+				FDE2A472112A3A4800B8CF1F /* MultiPointController.mm in Sources */,
+				FDE2A477112A3A5000B8CF1F /* SequencerController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1332,6 +1346,8 @@
 				FD5305D01129DDE800313CCB /* GLSlider.mm in Sources */,
 				FD5305DC112A215500313CCB /* MultiObjectRenderer.mm in Sources */,
 				FD5305E0112A216400313CCB /* SequencerRenderer.mm in Sources */,
+				FDE2A473112A3A4800B8CF1F /* MultiPointController.mm in Sources */,
+				FDE2A476112A3A5000B8CF1F /* SequencerController.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -41,4 +41,8 @@
 - (void) stopAnimation;
 - (void) drawView:(id)sender;
 
+- (void) switchToSequencer;
+- (void) switchToPoints;
+- (BOOL) isMoving;
+
 @end

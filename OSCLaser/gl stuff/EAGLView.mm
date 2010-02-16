@@ -59,6 +59,21 @@
     return self;
 }
 
+- (BOOL) isMoving
+{
+	return [renderer isMoving];
+}
+
+- (void) switchToSequencer
+{
+	[renderer switchToSequencer];
+}
+
+- (void) switchToPoints
+{
+	[renderer switchToPoints];
+}
+
 - (void) drawView:(id)sender
 {
 	[[SharedCollection sharedCollection] step];
