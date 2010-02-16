@@ -8,9 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-
 @interface SequencerRow : NSObject {
 	NSMutableArray * toggles;
+	BOOL rowOn;
 }
 
 - (id) initWithLength:(int)length;

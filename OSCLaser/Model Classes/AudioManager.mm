@@ -12,9 +12,10 @@
 #import "MultiPointObject.h"
 #import "ControlPoint.h"
 
-#define SRATE 24000
-#define FRAMESIZE 256
-#define NUMCHANNELS 2
+
+
+
+
 
 
 void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
@@ -22,9 +23,15 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 	 NSMutableArray * multiPointObjects = [SharedCollection sharedCollection].sharedObjects;
 	 @synchronized(multiPointObjects)
 	{
+		// read the clock
+		int *t = (int*)userData;
+		// zero out output buffer
+		memset(buffer, 0, 2*numFrames*sizeof(SAMPLE));
+
 		 for(MultiPointObject * curObject in multiPointObjects)
 		 {
 			 NSArray * controlPoints = [curObject getControlPoints];
+			
 			 for(int i = 0; i < [controlPoints count]; i++)
 			 {
 				  //scaledPosition is an (x,y) point with x,y in [0,1]
@@ -38,9 +45,17 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 				 }else if(i == 2)
 				 {
 					 [curObject.soundObject setForPointThree:scaledPosition];
+				 }else if(i == 3)
+				 {
+					 [curObject.soundObject setForPointFour:scaledPosition];
 				 }
 			 }
+			 
+			 [curObject.soundObject synthesize:buffer of:numFrames at:*t];
+		
 		 }
+		[AudioManager scaleGainOf:buffer of:numFrames containing:[multiPointObjects count]];
+		*t += numFrames;
 	}
 }
 
@@ -56,7 +71,7 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 		NSLog( @"starting real-time audio..." ); 
 		
 		// init the audio layer 
-		bool result = MoAudio::init(SRATE, FRAMESIZE, NUMCHANNELS); 
+		bool result = MoAudio::init(MY_SRATE, FRAMESIZE, NUMCHANNELS); 
 		if( !result ) 
 		{ 
 			// something went wrong 
@@ -64,6 +79,9 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 			// bail out 
 			return self; 
 		} 
+		
+		t = 0;
+		sequencer = new Sequencer();
 
 		
 	}
@@ -75,7 +93,7 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 {
 	
 	// start the audio layer, registering a callback method 
-	bool result = MoAudio::start(audioCallback, NULL); 
+	bool result = MoAudio::start(audioCallback, &t); 
 	if( !result ) 
 	{ 
 		// something went wrong 
@@ -83,6 +101,15 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 		// bail out 
 		return; 
 	} 
+}
+
++ (void) scaleGainOf:(Float32 *)buffer of:(int)numFrames containing:(int)numObjects
+{
+	for(int i = 0; i < numFrames; i++)
+	{
+		buffer[2*i] /= numObjects;
+		buffer[2*i+1] /= numObjects;
+	}
 }
 
 @end

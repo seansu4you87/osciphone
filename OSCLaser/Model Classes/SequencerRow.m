@@ -15,6 +15,7 @@
 {
 	if(self = [super init])
 	{
+		rowOn = NO;
 		toggles = [[NSMutableArray arrayWithCapacity:length] retain];
 		for(int i = 0; i < length; i++)
 		{
@@ -35,6 +36,11 @@
 {
 	Toggle * relevant = [toggles objectAtIndex:index];
 	[relevant toggle];
+}
+
+- (void) toggleRow
+{
+	[rowOn toggle];
 }
 
 - (void) dealloc
