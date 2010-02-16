@@ -60,6 +60,7 @@
 	 }
 	 
 	 [self.view bringSubviewToFront:infoButton];
+	 [self.view bringSubviewToFront:switchButton];
 	 [audioManager startCallback];
  }
  
@@ -101,6 +102,11 @@
 	[self presentModalViewController:controller animated:YES];
 	
 	[controller release];
+}
+
+- (IBAction)switchView
+{
+	NSLog(@"YO YO");
 }
 
 

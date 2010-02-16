@@ -47,6 +47,11 @@
 	return self;
 }
 
+- (int) numQuantizations
+{
+	return [possibleNotes count];
+}
+
 - (void) setPanTarget:(float)xLoc
 {
 	pan.target = (pan.max - pan.min) * xLoc + pan.min;
@@ -81,16 +86,18 @@
 - (void) updateCarFreq
 {
 	carFreq.cur += SLEW * (carFreq.target - carFreq.cur);
+	/*
 	// modulate carrier with modulator
 	if(modIndex.cur > 0) carrier->setFrequency( carFreq.cur + modIndex.cur * modulator->tick() );
 	// or not
 	else carrier->setFrequency( carFreq.cur );
+	 */
 }
 
 - (void) updateModFreq
 {
 	modFreq.cur += SLEW * (modFreq.target - modFreq.cur);
-	modulator->setFrequency( modFreq.cur );
+	//modulator->setFrequency( modFreq.cur );
 }
 
 - (void) updateModIndex
@@ -130,12 +137,14 @@
 	{
 		// update params
 		[self updateParams];
+		/*
 		// current sample
 		float curSamp = carrier->tick() * gain;
 		// left channel contribution
 		buffer[2*i] += .5 * (1 - pan.cur) * curSamp;
 		// right channel contribution
 		buffer[2*i+1] += .5 * (1 + pan.cur) * curSamp;
+		 */
 	}
 }
 
