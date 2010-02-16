@@ -53,7 +53,7 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 				 }
 			 }
 			 [curObject.soundObject setGainTargetScaledBy: [multiPointObjects count]];
-			 [curObject.soundObject synthesize:buffer of:numFrames];
+			 [curObject.soundObject synthesize:buffer of:numFrames at:*t];
 		
 		 }
 		//[AudioManager scaleGainOf:buffer of:numFrames containing:[multiPointObjects count]];
@@ -64,7 +64,7 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 
 @implementation AudioManager
 		   
-@synthesize mute, t;
+@synthesize mute, t, tempo;
 
 + (AudioManager*) sharedManager
 {
@@ -101,6 +101,7 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 		
 		t = 0;
 		mute = NO;
+		tempo = 80;
 
 		
 	}
@@ -139,6 +140,12 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 		buffer[2*i] /= numObjects;
 		buffer[2*i+1] /= numObjects;
 	}
+}
+
+- (int) getSamplesPerBeat
+{
+	float bps = tempo / 60.0;
+	float bps16th = bps * 4;
 }
 
 @end

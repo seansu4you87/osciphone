@@ -19,4 +19,8 @@
 
 - (id) initWithScaleValue:(int)scaleValue;
 
+- (int) majorToChromatic:(int)scaleValue;
+- (int) minorToChromatic:(int)scaleValue;
+- (int) pentatonicToChromatic:(int)scaleValue;
+
 @end
