@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-//#import "Stk.h"
+#import "Stk.h"
 #import "SineWave.h"
+#import "BlitSaw.h"
+#import "BlitSquare.h"
 #import "ADSR.h"
 #import "OnePole.h"
 #import "Modulate.h"
@@ -29,8 +31,14 @@ typedef struct {
 
 @interface SoundObject : NSObject {
 	
-	Generator *carrier;
-	Generator *modulator;
+	int carOsc;
+	int modOsc;
+	SineWave *sineCarrier;
+	BlitSaw *sawCarrier;
+	BlitSquare *squareCarrier;
+	SineWave *sineModulator;
+	BlitSaw *sawModulator;
+	BlitSquare *squareModulator;
 	OnePole *lpf;
 	OnePole *hpf;
 	Modulate *vibrato;
@@ -47,7 +55,6 @@ typedef struct {
 	NSMutableArray * possibleNotes;
 }
 
-//- (void) stk::Generator::tick(){}
 
 - (void) setForPointOne:(CGPoint)scaledPoint;
 - (void) setForPointTwo:(CGPoint)scaledPoint;
@@ -55,8 +62,8 @@ typedef struct {
 - (void) setForPointFour:(CGPoint)scaledPoint;
 - (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames at:(int)t;
 
-- (void) setCarOsc:(int)osc;
-- (void) setModOsc:(int)osc;
+- (void) setCarOsc:(int)newOsc;
+- (void) setModOsc:(int)newOsc;
 - (void) setGain:(float)newGain;
 - (void) setCarFreqTarget:(float)yLoc;
 - (void) setPanTarget:(float)xLoc;
