@@ -87,11 +87,11 @@
 - (void) initPossibleNotes
 {
 	possibleNotes = [[NSMutableArray arrayWithCapacity:5] retain];
-	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:1] autorelease]];
-	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:3] autorelease]];
+	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:0] autorelease]];
+	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:2] autorelease]];
 	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:4] autorelease]];
-	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:8] autorelease]];
-	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:10] autorelease]];
+	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:7] autorelease]];
+	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:9] autorelease]];
 }
 
 - (void) removePossibleNote:(int)note
@@ -126,13 +126,12 @@
 {
 	int numNotes = [self numQuantizations];
 	float stepSize = 1.0 / numNotes;
-	int step = floor(yLoc / stepSize);
+	int step = floor( (1 - yLoc) / stepSize);
 	int octave = floor(1.0 * step / [possibleNotes count]);
 	int index = step % [possibleNotes count];
 	NoteObject *noteObject = [possibleNotes objectAtIndex:index];
 	int scaleValue = noteObject.note;
 	int midi = rootNote + 12 * octave + scaleValue;
-	NSLog(@"midi: %d", midi);
 	return [SharedUtility mtof:midi];
 }
 
