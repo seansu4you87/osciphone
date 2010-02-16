@@ -104,6 +104,7 @@
 	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:7] autorelease]];
 	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:9] autorelease]];
 	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:12] autorelease]];
+	[self setScaleType:PENTATONIC];
 }
 
 - (void) removePossibleNote:(int)note

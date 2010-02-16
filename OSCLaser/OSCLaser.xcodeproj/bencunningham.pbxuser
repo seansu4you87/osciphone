@@ -423,6 +423,10 @@
 			FD0EFCE4112AD4D80068AC9D /* PBXTextBookmark */ = FD0EFCE4112AD4D80068AC9D /* PBXTextBookmark */;
 			FD0EFCE5112AD4D80068AC9D /* PBXTextBookmark */ = FD0EFCE5112AD4D80068AC9D /* PBXTextBookmark */;
 			FD0EFCE6112AD4D80068AC9D /* PBXTextBookmark */ = FD0EFCE6112AD4D80068AC9D /* PBXTextBookmark */;
+			FD0EFCEA112AD5250068AC9D /* PBXTextBookmark */ = FD0EFCEA112AD5250068AC9D /* PBXTextBookmark */;
+			FD0EFCEB112AD5250068AC9D /* PBXTextBookmark */ = FD0EFCEB112AD5250068AC9D /* PBXTextBookmark */;
+			FD0EFCEC112AD5250068AC9D /* PBXTextBookmark */ = FD0EFCEC112AD5250068AC9D /* PBXTextBookmark */;
+			FD0EFCED112AD5250068AC9D /* PBXTextBookmark */ = FD0EFCED112AD5250068AC9D /* PBXTextBookmark */;
 			FD20BE58112792EC0074F16B = FD20BE58112792EC0074F16B /* PBXTextBookmark */;
 			FD20BEE81127AB900074F16B = FD20BEE81127AB900074F16B /* PBXTextBookmark */;
 			FD20BEE91127AB900074F16B = FD20BEE91127AB900074F16B /* PBXTextBookmark */;
@@ -566,17 +570,17 @@
 	};
 	BF595DC6112773B800C18CA4 /* SoundObject.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1002, 1875}}";
-			sepNavSelRange = "{2926, 0}";
-			sepNavVisRange = "{934, 557}";
+			sepNavIntBoundsRect = "{{0, 0}, {784, 1770}}";
+			sepNavSelRange = "{1489, 0}";
+			sepNavVisRange = "{828, 991}";
 			sepNavWindowFrame = "{{15, 48}, {657, 725}}";
 		};
 	};
 	BF595DC7112773B800C18CA4 /* SoundObject.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {1002, 6390}}";
-			sepNavSelRange = "{10556, 0}";
-			sepNavVisRange = "{9944, 551}";
+			sepNavIntBoundsRect = "{{0, 0}, {784, 6330}}";
+			sepNavSelRange = "{3237, 0}";
+			sepNavVisRange = "{2590, 1130}";
 		};
 	};
 	BF8E7FA711276C6A00F52195 /* mo_gfx.h */ = {
@@ -989,7 +993,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 352";
 		rLen = 0;
-		rLoc = 9559;
+		rLoc = 9592;
 		rType = 0;
 		vrLen = 814;
 		vrLoc = 6242;
@@ -999,7 +1003,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 145";
 		rLen = 30;
-		rLoc = 4351;
+		rLoc = 4384;
 		rType = 0;
 		vrLen = 695;
 		vrLoc = 3388;
@@ -1069,7 +1073,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 145";
 		rLen = 30;
-		rLoc = 4351;
+		rLoc = 4384;
 		rType = 0;
 		vrLen = 805;
 		vrLoc = 145;
@@ -1857,7 +1861,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 137";
 		rLen = 30;
-		rLoc = 4351;
+		rLoc = 4384;
 		rType = 0;
 		vrLen = 1183;
 		vrLoc = 911;
@@ -2117,7 +2121,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 120";
 		rLen = 0;
-		rLoc = 3426;
+		rLoc = 3459;
 		rType = 0;
 		vrLen = 649;
 		vrLoc = 3092;
@@ -2317,7 +2321,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 114";
 		rLen = 0;
-		rLoc = 3426;
+		rLoc = 3459;
 		rType = 0;
 		vrLen = 733;
 		vrLoc = 3105;
@@ -2544,7 +2548,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 117";
 		rLen = 36;
-		rLoc = 3430;
+		rLoc = 3463;
 		rType = 0;
 		vrLen = 728;
 		vrLoc = 3105;
@@ -2554,7 +2558,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 117";
 		rLen = 36;
-		rLoc = 3430;
+		rLoc = 3463;
 		rType = 0;
 		vrLen = 731;
 		vrLoc = 3107;
@@ -2564,7 +2568,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 117";
 		rLen = 36;
-		rLoc = 3430;
+		rLoc = 3463;
 		rType = 0;
 		vrLen = 733;
 		vrLoc = 3148;
@@ -2574,7 +2578,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 117";
 		rLen = 36;
-		rLoc = 3430;
+		rLoc = 3463;
 		rType = 0;
 		vrLen = 733;
 		vrLoc = 3148;
@@ -2584,7 +2588,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 125";
 		rLen = 0;
-		rLoc = 3636;
+		rLoc = 3669;
 		rType = 0;
 		vrLen = 774;
 		vrLoc = 3179;
@@ -2754,7 +2758,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 125";
 		rLen = 0;
-		rLoc = 3636;
+		rLoc = 3669;
 		rType = 0;
 		vrLen = 733;
 		vrLoc = 3179;
@@ -2764,7 +2768,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 346";
 		rLen = 68;
-		rLoc = 9072;
+		rLoc = 9105;
 		rType = 0;
 		vrLen = 947;
 		vrLoc = 8065;
@@ -2774,7 +2778,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 346";
 		rLen = 68;
-		rLoc = 9072;
+		rLoc = 9105;
 		rType = 0;
 		vrLen = 763;
 		vrLoc = 6861;
@@ -3034,7 +3038,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 329";
 		rLen = 0;
-		rLoc = 8143;
+		rLoc = 8176;
 		rType = 0;
 		vrLen = 522;
 		vrLoc = 7573;
@@ -3044,7 +3048,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 329";
 		rLen = 0;
-		rLoc = 8143;
+		rLoc = 8176;
 		rType = 0;
 		vrLen = 522;
 		vrLoc = 7573;
@@ -3185,6 +3189,46 @@
 		rType = 0;
 		vrLen = 742;
 		vrLoc = 143;
+	};
+	FD0EFCEA112AD5250068AC9D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD596F49112A8A91001A09E0 /* NoteObject.h */;
+		name = "NoteObject.h: 26";
+		rLen = 67;
+		rLoc = 440;
+		rType = 0;
+		vrLen = 738;
+		vrLoc = 147;
+	};
+	FD0EFCEB112AD5250068AC9D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
+		name = "ObjectSettingsViewController.mm: 142";
+		rLen = 0;
+		rLoc = 4430;
+		rType = 0;
+		vrLen = 1350;
+		vrLoc = 3488;
+	};
+	FD0EFCEC112AD5250068AC9D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BF595DC6112773B800C18CA4 /* SoundObject.h */;
+		name = "SoundObject.h: 70";
+		rLen = 0;
+		rLoc = 1489;
+		rType = 0;
+		vrLen = 991;
+		vrLoc = 828;
+	};
+	FD0EFCED112AD5250068AC9D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
+		name = "SoundObject.mm: 107";
+		rLen = 0;
+		rLoc = 3237;
+		rType = 0;
+		vrLen = 1130;
+		vrLoc = 2590;
 	};
 	FD20BE58112792EC0074F16B /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -3545,9 +3589,9 @@
 	};
 	FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {784, 2790}}";
+			sepNavIntBoundsRect = "{{0, 0}, {784, 2730}}";
 			sepNavSelRange = "{4430, 0}";
-			sepNavVisRange = "{3373, 1465}";
+			sepNavVisRange = "{3488, 1350}";
 		};
 	};
 	FD4A64C3112A7DC000EB75E4 /* ObjectSettingsView.h */ = {
@@ -3940,7 +3984,7 @@
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {784, 615}}";
 			sepNavSelRange = "{440, 67}";
-			sepNavVisRange = "{143, 742}";
+			sepNavVisRange = "{147, 738}";
 		};
 	};
 	FD596F4A112A8A91001A09E0 /* NoteObject.mm */ = {
@@ -4205,7 +4249,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 295";
 		rLen = 0;
-		rLoc = 7762;
+		rLoc = 7795;
 		rType = 0;
 		vrLen = 974;
 		vrLoc = 6763;
@@ -4235,7 +4279,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 295";
 		rLen = 0;
-		rLoc = 7762;
+		rLoc = 7795;
 		rType = 0;
 		vrLen = 972;
 		vrLoc = 6763;
@@ -4285,7 +4329,7 @@
 		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
 		name = "SoundObject.mm: 297";
 		rLen = 0;
-		rLoc = 7729;
+		rLoc = 7762;
 		rType = 0;
 		vrLen = 738;
 		vrLoc = 3608;
