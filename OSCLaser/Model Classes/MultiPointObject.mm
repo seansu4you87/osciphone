@@ -301,6 +301,11 @@
 	[super updateUnselected];
 }
 
++ (id)copyWithZone:(NSZone *)zone
+{
+	return [NSObject copyWithZone:zone];
+}
+
 - (CGPoint) scaledPositionAtIndex:(int)index
 {
  ControlPoint * thePoint = [controlPoints objectAtIndex:index];

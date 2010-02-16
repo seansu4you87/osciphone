@@ -26,6 +26,11 @@
 	return self;
 }
 
+- (void) toggleRow
+{
+	rowOn = !rowOn;
+}
+
 - (BOOL) onAtIndex:(int)index
 {
 	Toggle * relevant = [toggles objectAtIndex:index];
@@ -36,11 +41,6 @@
 {
 	Toggle * relevant = [toggles objectAtIndex:index];
 	[relevant toggle];
-}
-
-- (void) toggleRow
-{
-	[rowOn toggle];
 }
 
 - (void) dealloc

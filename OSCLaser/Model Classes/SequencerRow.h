@@ -18,4 +18,6 @@
 - (BOOL) onAtIndex:(int)index;
 - (void) toggleAtIndex:(int)index;
 
+- (void) toggleRow;
+
 @end

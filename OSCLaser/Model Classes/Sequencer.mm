@@ -9,12 +9,13 @@
 #import "Sequencer.h"
 #import "SequencerRow.h"
 #import "SharedCollection.h"
+#import "MultiPointObject.h"
 
 static Sequencer * theOne;
 
 @implementation Sequencer
 
-@synthesize delegate;
+@synthesize delegate, beatsPerMeasure, numMeasures;
 
 + (Sequencer*)sharedSequencer
 {
@@ -29,6 +30,21 @@ static Sequencer * theOne;
 + (void) releaseShared
 {
 	[theOne release];
+}
+
++ (NSString*) keyForMultiPointObject:(MultiPointObject*)mObj
+{
+	return [NSString stringWithFormat:@"%d", mObj.objectID];
+}
+
+- (NSArray*) currentObjects
+{
+	if(delegate != nil)
+	{
+		return [delegate objects];
+	}
+	
+	return nil;
 }
 
 - (id) initWithDelegate:(id<SequencerDelegate>)theDelegate measures:(int)nMeasures BPM:(int)bpm
@@ -46,7 +62,7 @@ static Sequencer * theOne;
 
 - (void) addRowForObject:(id)newObject
 {
-	[state setObject:[[[SequencerRow alloc] initWithLength:[self numBeats]] autorelease] forKey:newObject];
+	[state setValue:[[[SequencerRow alloc] initWithLength:[self numBeats]] autorelease] forKey:[Sequencer keyForMultiPointObject:newObject]];
 }
 
 - (void) removeRowForObject:(id)deletedObject
@@ -62,11 +78,12 @@ static Sequencer * theOne;
 		for(int i = 0; i < [objects count]; i++)
 		{
 			id currentObject = [objects objectAtIndex:i];
-			if(![state objectForKey:currentObject])
+			if(![state valueForKey:[Sequencer keyForMultiPointObject:currentObject]])
 			{
 				[self addRowForObject:currentObject];
 			}
 		}
+		/*
 		NSArray * currentObjects = [state allKeys];
 		for(id obj in currentObjects)
 		{
@@ -75,12 +92,42 @@ static Sequencer * theOne;
 				[self removeRowForObject:obj];
 			}
 		}
+		 */
 	}
 }
 
 - (int) numBeats
 {
 	return numMeasures*beatsPerMeasure;
+}
+
+- (BOOL) object:(id)obj isOnAtIndex:(int)beatIndex
+{
+	SequencerRow * row = [state valueForKey:[Sequencer keyForMultiPointObject:obj]];
+	if(row != nil)
+	{
+		return [row onAtIndex:beatIndex];
+	}
+	
+	return NO;
+}
+
+- (void) toggleBeat:(int)beatIndex forObject:(id)obj
+{
+	SequencerRow * row = [state valueForKey:[Sequencer keyForMultiPointObject:obj]];
+	if(row != nil)
+	{
+		[row toggleAtIndex:beatIndex];
+	}
+}
+
+- (void) toggleObject:(id)obj
+{
+	SequencerRow * row = [state valueForKey:[Sequencer keyForMultiPointObject:obj]];
+	if(row != nil)
+	{
+		[row toggleRow];
+	}
 }
 
 - (void) dealloc

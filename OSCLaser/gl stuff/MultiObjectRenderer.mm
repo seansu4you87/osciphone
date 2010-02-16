@@ -227,10 +227,7 @@
 				glEnableClientState(GL_COLOR_ARRAY);
 				glDrawArrays(GL_TRIANGLE_FAN, 0, 2+4*RECT_GRAIN);
 				 glPopMatrix();
-				 
-				
 			}
-			
 		}
 	}
 	
@@ -272,7 +269,7 @@
 			}else{
 				next = [controlPoints objectAtIndex:i+1];
 			}
-			if(!([controlPoints count] == 1 || ([controlPoints count] ==2 && i == 1)))
+			if(!([controlPoints count] == 1 || ([controlPoints count] == 2 && i == 1)))
 			{
 				//rotate to face nextPoint
 				glPushMatrix();

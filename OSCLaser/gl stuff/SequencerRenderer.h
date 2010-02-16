@@ -16,9 +16,14 @@
 	float backingHeight;
 	float backingWidth;
 	NSMutableArray * columnFaders;
+	
+	GLfloat * rectVertices;
+	GLubyte * colorVertices;
 }
 
 - (id) initWithHeight:(float)theHeight andWidth:(float)theWidth;
 - (void) renderSequencer:(Sequencer*)sequencer;
+
++ (void) applyTouchPoint:(CGPoint)thePoint toSequencer:(Sequencer*)theSequencer;
 
 @end
