@@ -44,6 +44,7 @@ typedef struct {
 	Modulate *vibrato;
 	ADSR *adsr;
 	float gain;
+	SoundParams scaledGain;
 	SoundParams carFreq;
 	SoundParams pan;
 	SoundParams modFreq;
@@ -52,6 +53,7 @@ typedef struct {
 	SoundParams hpPole;
 	SoundParams vibRate;
 	SoundParams vibGain;
+	BOOL quantizePitch;
 	NSMutableArray * possibleNotes;
 }
 
@@ -65,6 +67,7 @@ typedef struct {
 - (void) setCarOsc:(int)newOsc;
 - (void) setModOsc:(int)newOsc;
 - (void) setGain:(float)newGain;
+- (void) setGainTargetScaledBy:(int)numObjects;
 - (void) setCarFreqTarget:(float)yLoc;
 - (void) setPanTarget:(float)xLoc;
 - (void) setModFreqTarget:(float)yLoc;
@@ -73,6 +76,7 @@ typedef struct {
 - (void) setHPPoleTarget:(float)xLoc;
 - (void) setVibRateTarget:(float)yLoc;
 - (void) setVibGainTarget:(float)xLoc;
+- (void) updateScaledGain;
 - (void) updateCarFreq;
 - (void) updatePan;
 - (void) updateModFreq;
