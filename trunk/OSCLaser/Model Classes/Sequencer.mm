@@ -8,10 +8,28 @@
 
 #import "Sequencer.h"
 #import "SequencerRow.h"
+#import "SharedCollection.h"
+
+static Sequencer * theOne;
 
 @implementation Sequencer
 
 @synthesize delegate;
+
++ (Sequencer*)sharedSequencer
+{
+	if(theOne == nil)
+	{
+		theOne = [[Sequencer alloc] initWithDelegate:[SharedCollection sharedCollection] measures:4 BPM:4];
+	}
+	
+	return theOne;
+}
+
++ (void) releaseShared
+{
+	[theOne release];
+}
 
 - (id) initWithDelegate:(id<SequencerDelegate>)theDelegate measures:(int)nMeasures BPM:(int)bpm
 {

@@ -14,7 +14,6 @@
 
 @end
 
-
 @interface Sequencer : NSObject {
 	id<SequencerDelegate> delegate;
 	int beatsPerMeasure;
@@ -26,5 +25,8 @@
 
 - (id) initWithDelegate:(id<SequencerDelegate>)theDelegate measures:(int)nMeasures BPM:(int)bpm;
 - (int) numBeats;
+
++ (Sequencer*)sharedSequencer;
++ (void) releaseShared;
 
 @end

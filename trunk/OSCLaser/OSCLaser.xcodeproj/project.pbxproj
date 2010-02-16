@@ -161,6 +161,12 @@
 		FD2A3FB2112404330069C149 /* ES1Renderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FAD112404330069C149 /* ES1Renderer.mm */; };
 		FD2A3FFA112404B60069C149 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2A3FF9112404B60069C149 /* QuartzCore.framework */; };
 		FD2A4033112404CF0069C149 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2A4032112404CF0069C149 /* OpenGLES.framework */; };
+		FD5305CF1129DDE800313CCB /* GLSlider.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD5305CE1129DDE800313CCB /* GLSlider.mm */; };
+		FD5305D01129DDE800313CCB /* GLSlider.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD5305CE1129DDE800313CCB /* GLSlider.mm */; };
+		FD5305DB112A215500313CCB /* MultiObjectRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD5305DA112A215500313CCB /* MultiObjectRenderer.mm */; };
+		FD5305DC112A215500313CCB /* MultiObjectRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD5305DA112A215500313CCB /* MultiObjectRenderer.mm */; };
+		FD5305DF112A216400313CCB /* SequencerRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */; };
+		FD5305E0112A216400313CCB /* SequencerRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */; };
 		FD6408A21118A5DB005185AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		FD6408A31118A5DB005185AC /* OSCLaserAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* OSCLaserAppDelegate.mm */; };
 		FD6408A41118A5DB005185AC /* FlipsideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A30DB2D0840083E9F9 /* FlipsideView.m */; };
@@ -485,6 +491,12 @@
 		FD2A3FAD112404330069C149 /* ES1Renderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ES1Renderer.mm; path = "gl stuff/ES1Renderer.mm"; sourceTree = "<group>"; };
 		FD2A3FF9112404B60069C149 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		FD2A4032112404CF0069C149 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		FD5305CD1129DDE800313CCB /* GLSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLSlider.h; path = "gl stuff/GLSlider.h"; sourceTree = "<group>"; };
+		FD5305CE1129DDE800313CCB /* GLSlider.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GLSlider.mm; path = "gl stuff/GLSlider.mm"; sourceTree = "<group>"; };
+		FD5305D9112A215500313CCB /* MultiObjectRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiObjectRenderer.h; path = "gl stuff/MultiObjectRenderer.h"; sourceTree = "<group>"; };
+		FD5305DA112A215500313CCB /* MultiObjectRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MultiObjectRenderer.mm; path = "gl stuff/MultiObjectRenderer.mm"; sourceTree = "<group>"; };
+		FD5305DD112A216400313CCB /* SequencerRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SequencerRenderer.h; path = "gl stuff/SequencerRenderer.h"; sourceTree = "<group>"; };
+		FD5305DE112A216400313CCB /* SequencerRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SequencerRenderer.mm; path = "gl stuff/SequencerRenderer.mm"; sourceTree = "<group>"; };
 		FD6408C31118A5DB005185AC /* OSCLaser-iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSCLaser-iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6408C61118A5DC005185AC /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FlipsideView.xib; path = "Resources-iPad/FlipsideView.xib"; sourceTree = "<group>"; };
 		FD6408C71118A5DC005185AC /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainView.xib; path = "Resources-iPad/MainView.xib"; sourceTree = "<group>"; };
@@ -968,6 +980,12 @@
 				FD2A3FAD112404330069C149 /* ES1Renderer.mm */,
 				FD2A3FA8112404180069C149 /* EAGLView.h */,
 				FD2A3FA9112404180069C149 /* EAGLView.mm */,
+				FD5305CD1129DDE800313CCB /* GLSlider.h */,
+				FD5305CE1129DDE800313CCB /* GLSlider.mm */,
+				FD5305D9112A215500313CCB /* MultiObjectRenderer.h */,
+				FD5305DA112A215500313CCB /* MultiObjectRenderer.mm */,
+				FD5305DD112A216400313CCB /* SequencerRenderer.h */,
+				FD5305DE112A216400313CCB /* SequencerRenderer.mm */,
 			);
 			name = "GL Stuff";
 			sourceTree = "<group>";
@@ -1269,6 +1287,9 @@
 				BF8E810B11276CA900F52195 /* Wurley.mm in Sources */,
 				BF595DBE11276EFE00C18CA4 /* AudioManager.mm in Sources */,
 				BF595DC8112773B800C18CA4 /* SoundObject.mm in Sources */,
+				FD5305CF1129DDE800313CCB /* GLSlider.mm in Sources */,
+				FD5305DB112A215500313CCB /* MultiObjectRenderer.mm in Sources */,
+				FD5305DF112A216400313CCB /* SequencerRenderer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1308,6 +1329,9 @@
 				FD9232C2112569F1005207BB /* Toggle.mm in Sources */,
 				BF595DBF11276EFE00C18CA4 /* AudioManager.mm in Sources */,
 				BF595DC9112773B800C18CA4 /* SoundObject.mm in Sources */,
+				FD5305D01129DDE800313CCB /* GLSlider.mm in Sources */,
+				FD5305DC112A215500313CCB /* MultiObjectRenderer.mm in Sources */,
+				FD5305E0112A216400313CCB /* SequencerRenderer.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
