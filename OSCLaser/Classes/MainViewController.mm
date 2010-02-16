@@ -38,6 +38,15 @@
 	[glView stopAnimation];
 }
 
+- (void) allowSwitch
+{
+	switchButton.hidden = NO;
+}
+- (void) refuseSwitch
+{
+	switchButton.hidden = YES;
+}
+
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
 	 [super viewDidLoad];
@@ -57,6 +66,7 @@
 	 [audioManager startCallback];
 	 
 	 multiController = [[MultiPointController alloc] initWithParentView:self.view];
+	 multiController.mainView = self;
  }
  
 

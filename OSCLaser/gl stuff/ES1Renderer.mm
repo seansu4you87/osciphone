@@ -17,6 +17,8 @@
 
 @implementation ES1Renderer
 
+#define NUM_STEPS 15;
+
 // Create an ES 1.1 context
 - (id) init
 {
@@ -142,7 +144,7 @@
 {
 	isRenderingSequencer = YES;
 	movingToSequencer = YES;
-	stepsLeft = 30;
+	stepsLeft = NUM_STEPS;
 	step = (1.0*backingWidth)/stepsLeft;
 }
 
@@ -150,7 +152,7 @@
 {
 	isRenderingPoints = YES;
 	movingToPoints = YES;
-	stepsLeft = 30;
+	stepsLeft = NUM_STEPS;
 	step = (0.0 - backingWidth)/stepsLeft;
 }
 

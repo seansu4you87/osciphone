@@ -24,6 +24,9 @@
 - (IBAction)showInfo;
 - (IBAction)switchView;
 
+- (void) allowSwitch;
+- (void) refuseSwitch;
+
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event;

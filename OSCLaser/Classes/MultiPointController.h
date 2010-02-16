@@ -8,9 +8,10 @@
 
 #import <Foundation/Foundation.h>
 
-@class SharedCollection, SharedObject;
+@class SharedCollection, SharedObject, MainViewController;
 
 @interface MultiPointController : NSObject {
+	MainViewController * mainView;
 	NSMutableSet * downTouches;
 	NSMutableSet * currentlyManipulated;
 	SharedObject * selected;
@@ -25,6 +26,7 @@
 @property(nonatomic, retain) UITouch * startTouch;
 @property(nonatomic, retain) SharedObject * selected;
 @property(nonatomic, retain) NSTimer * touchTimer;
+@property(nonatomic, assign) MainViewController * mainView;
 
 - (id) initWithParentView:(UIView*)theParentView;
 
