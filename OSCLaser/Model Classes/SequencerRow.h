@@ -13,6 +13,8 @@
 	BOOL rowOn;
 }
 
+@property(nonatomic) BOOL rowOn;
+
 - (id) initWithLength:(int)length;
 
 - (BOOL) onAtIndex:(int)index;

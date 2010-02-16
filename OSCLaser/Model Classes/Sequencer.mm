@@ -121,6 +121,17 @@ static Sequencer * theOne;
 	}
 }
 
+- (BOOL) isObjectOn:(id)obj
+{
+	SequencerRow * row = [state valueForKey:[Sequencer keyForMultiPointObject:obj]];
+	if(row != nil)
+	{
+		return row.rowOn;
+	}
+	
+	return NO;
+}
+
 - (void) toggleObject:(id)obj
 {
 	SequencerRow * row = [state valueForKey:[Sequencer keyForMultiPointObject:obj]];
