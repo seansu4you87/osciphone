@@ -42,7 +42,7 @@
 		vibrato = new Modulate();
 		adsr = new ADSR();
 		quantizePitch = YES;
-		numOctaves = [SharedUtility randBetween:1 andUpper:3];
+		numOctaves = [SharedUtility randBetween:1 andUpper:5];
 		rootNote = 42;
 		[self initPossibleNotes];
 		seqencerOn = YES;
@@ -375,7 +375,7 @@
 	if(vibGain.cur != vibGain.target) [self updateVibGain];
 }
 
-- (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames that:(BOOL)isOn at:(int)t 
+- (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames that:(BOOL)isOn at:(int)t andAlso:(BOOL)sequencerIsActive
 {
 	
 	if(t % [[AudioManager sharedManager] getSamplesPerBeat] < numFrames)
@@ -389,10 +389,9 @@
 			adsr->keyOff();
 		}
 	}
-	
 	for(int i = 0; i < numFrames; i++)
 	{
-		if(adsr->getState() != ADSR::DONE) 
+		if(!sequencerIsActive || adsr->getState() != ADSR::DONE) 
 		{
 				
 			if(i%FRAMES_PER_UPDATE == 0)
@@ -423,7 +422,7 @@
 			// apply gain
 			curSamp *= scaledGain.cur;
 			// apply ADSR
-			curSamp *= adsr->tick();
+			if(sequencerIsActive) curSamp *= adsr->tick();
 			// left channel contribution
 			buffer[2*i] += .5 * (1 - pan.cur) * curSamp;
 			// right channel contribution

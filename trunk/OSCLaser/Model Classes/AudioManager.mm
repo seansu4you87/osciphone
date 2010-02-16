@@ -54,6 +54,7 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 				 }
 			 }
 			 // determine sequencer status
+			 BOOL sequencerIsActive = [[Sequencer sharedSequencer] isObjectOn:curObject];
 			 int beats = [Sequencer sharedSequencer].beatsPerMeasure * [Sequencer sharedSequencer].numMeasures;
 			 int beatIndex = [AudioManager sharedManager].beatTick % beats;
 			 BOOL isOn = [[Sequencer sharedSequencer] object:curObject isOnAtIndex:beatIndex];
@@ -62,7 +63,7 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 			 [curObject.soundObject setGainTargetScaledBy: [multiPointObjects count]];
 			 
 			 // synthesize
-			 [curObject.soundObject synthesize:buffer of:numFrames that:isOn at:*t];
+			 [curObject.soundObject synthesize:buffer of:numFrames that:isOn at:*t andAlso:sequencerIsActive];
 		
 		 }
 		// tick time counter
