@@ -280,7 +280,7 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>27</integer>
+									<integer>29</integer>
 									<integer>13</integer>
 									<integer>0</integer>
 								</array>
@@ -321,7 +321,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>BF8E811811276D5700F52195</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>AudioManager.mm</string>
+								<string>SoundObject.mm</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -329,11 +329,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>BF8E811911276D5700F52195</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>AudioManager.mm</string>
+										<string>SoundObject.mm</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>BF339919112A9BBA00915A1F</string>
+										<string>BF8AAA21112AA55900DE43D7</string>
 										<key>history</key>
 										<array>
 											<string>BF595E1811278C9800C18CA4</string>
@@ -374,15 +374,15 @@
 											<string>BF063E1A112A731500B7E3CB</string>
 											<string>BF063E1B112A731500B7E3CB</string>
 											<string>BF411AA9112A8466000FA657</string>
-											<string>BF411AAA112A8466000FA657</string>
 											<string>BF411AAB112A8466000FA657</string>
-											<string>BF411AAC112A8466000FA657</string>
 											<string>BF411AAD112A8466000FA657</string>
-											<string>BF3398EF112A9A4E00915A1F</string>
 											<string>BF3398F0112A9A4E00915A1F</string>
-											<string>BF339904112A9BAD00915A1F</string>
 											<string>BF339905112A9BAD00915A1F</string>
-											<string>BF339906112A9BAD00915A1F</string>
+											<string>BF8AAA0B112AA52100DE43D7</string>
+											<string>BF8AAA0C112AA52100DE43D7</string>
+											<string>BF8AAA0D112AA52100DE43D7</string>
+											<string>BF8AAA0E112AA52100DE43D7</string>
+											<string>BF8AAA1A112AA53300DE43D7</string>
 										</array>
 										<key>prevStack</key>
 										<array>
@@ -430,24 +430,9 @@
 											<string>BF411ABD112A8466000FA657</string>
 											<string>BF411ABE112A8466000FA657</string>
 											<string>BF411AC0112A8466000FA657</string>
-											<string>BF3398F2112A9A4E00915A1F</string>
 											<string>BF3398F3112A9A4E00915A1F</string>
 											<string>BF3398F4112A9A4E00915A1F</string>
-											<string>BF3398F5112A9A4E00915A1F</string>
-											<string>BF3398F6112A9A4E00915A1F</string>
-											<string>BF3398F7112A9A4E00915A1F</string>
-											<string>BF3398F8112A9A4E00915A1F</string>
-											<string>BF3398F9112A9A4E00915A1F</string>
-											<string>BF3398FA112A9A4E00915A1F</string>
-											<string>BF3398FB112A9A4E00915A1F</string>
-											<string>BF3398FC112A9A4E00915A1F</string>
 											<string>BF3398FD112A9A4E00915A1F</string>
-											<string>BF339907112A9BAD00915A1F</string>
-											<string>BF339908112A9BAD00915A1F</string>
-											<string>BF339909112A9BAD00915A1F</string>
-											<string>BF33990A112A9BAD00915A1F</string>
-											<string>BF33990B112A9BAD00915A1F</string>
-											<string>BF33990C112A9BAD00915A1F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -487,6 +472,8 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1028, 174}}</string>
+										<key>RubberWindowFrame</key>
+										<string>104 141 1304 731 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -541,8 +528,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {1028, 174}}</string>
-										<key>RubberWindowFrame</key>
-										<string>104 141 1304 731 0 0 1440 878 </string>
 									</dict>
 									<key>Module</key>
 									<string>PBXBuildResultsModule</string>
@@ -570,11 +555,11 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>BF33990E112A9BAD00915A1F</string>
+				<string>BF8AAA22112AA55900DE43D7</string>
 				<string>1CA23ED40692098700951B8B</string>
-				<string>BF33990F112A9BAD00915A1F</string>
+				<string>BF8AAA23112AA55900DE43D7</string>
 				<string>BF8E811811276D5700F52195</string>
-				<string>BF339910112A9BAD00915A1F</string>
+				<string>BF8AAA24112AA55900DE43D7</string>
 				<string>1CA23EDF0692099D00951B8B</string>
 				<string>1CA23EE00692099D00951B8B</string>
 				<string>1CA23EE10692099D00951B8B</string>
@@ -721,13 +706,13 @@
 			</array>
 			<key>TableOfContents</key>
 			<array>
-				<string>BF339911112A9BAD00915A1F</string>
+				<string>BF8AAA02112AA1C200DE43D7</string>
 				<string>1CCC7628064C1048000F2A68</string>
 				<string>1CCC7629064C1048000F2A68</string>
-				<string>BF339912112A9BAD00915A1F</string>
-				<string>BF339913112A9BAD00915A1F</string>
-				<string>BF339914112A9BAD00915A1F</string>
-				<string>BF339915112A9BAD00915A1F</string>
+				<string>BF8AAA03112AA1C200DE43D7</string>
+				<string>BF8AAA04112AA1C200DE43D7</string>
+				<string>BF8AAA05112AA1C200DE43D7</string>
+				<string>BF8AAA06112AA1C200DE43D7</string>
 				<string>BF8E811811276D5700F52195</string>
 			</array>
 			<key>ToolbarConfiguration</key>
@@ -758,8 +743,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>BF339916112A9BAD00915A1F</string>
-		<string>BF339917112A9BAD00915A1F</string>
 		<string>/Users/harmonics/Documents/256b/lasersynth/OSCLaser/OSCLaser.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
