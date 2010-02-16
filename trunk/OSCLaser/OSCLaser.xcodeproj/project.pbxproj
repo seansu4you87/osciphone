@@ -153,6 +153,8 @@
 		BF8E811211276CEE00F52195 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8E811111276CEE00F52195 /* AudioToolbox.framework */; };
 		BF8E811311276CEE00F52195 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF8E811111276CEE00F52195 /* AudioToolbox.framework */; };
 		FD0CF9E311163EC000DF5C0F /* OSCConfig.m in Sources */ = {isa = PBXBuildFile; fileRef = FD0CF9E211163EC000DF5C0F /* OSCConfig.m */; };
+		FD0EFA6D112AA9860068AC9D /* ScaleNotePickerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD0EFA6C112AA9860068AC9D /* ScaleNotePickerView.mm */; };
+		FD0EFA6E112AA9860068AC9D /* ScaleNotePickerView.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD0EFA6C112AA9860068AC9D /* ScaleNotePickerView.mm */; };
 		FD26DA131116B0760062DF1F /* SharedObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD26DA121116B0760062DF1F /* SharedObject.mm */; };
 		FD26DA311116B1E50062DF1F /* SharedCollection.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD26DA301116B1E50062DF1F /* SharedCollection.mm */; };
 		FD2A3FAA112404180069C149 /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FA9112404180069C149 /* EAGLView.mm */; };
@@ -493,6 +495,8 @@
 		BF8E811111276CEE00F52195 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		FD0CF9E111163EC000DF5C0F /* OSCConfig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OSCConfig.h; sourceTree = "<group>"; };
 		FD0CF9E211163EC000DF5C0F /* OSCConfig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OSCConfig.m; sourceTree = "<group>"; };
+		FD0EFA6B112AA9860068AC9D /* ScaleNotePickerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ScaleNotePickerView.h; path = Classes/ScaleNotePickerView.h; sourceTree = "<group>"; };
+		FD0EFA6C112AA9860068AC9D /* ScaleNotePickerView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ScaleNotePickerView.mm; path = Classes/ScaleNotePickerView.mm; sourceTree = "<group>"; };
 		FD26DA111116B0760062DF1F /* SharedObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SharedObject.h; path = "Shared Framework/SharedObject.h"; sourceTree = "<group>"; };
 		FD26DA121116B0760062DF1F /* SharedObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SharedObject.mm; path = "Shared Framework/SharedObject.mm"; sourceTree = "<group>"; };
 		FD26DA2F1116B1E50062DF1F /* SharedCollection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SharedCollection.h; path = "Shared Framework/SharedCollection.h"; sourceTree = "<group>"; };
@@ -628,6 +632,8 @@
 				FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */,
 				FD4A64C3112A7DC000EB75E4 /* ObjectSettingsView.h */,
 				FD4A64C4112A7DC000EB75E4 /* ObjectSettingsView.mm */,
+				FD0EFA6B112AA9860068AC9D /* ScaleNotePickerView.h */,
+				FD0EFA6C112AA9860068AC9D /* ScaleNotePickerView.mm */,
 			);
 			name = "Flipside View";
 			sourceTree = "<group>";
@@ -1331,6 +1337,7 @@
 				FD4A64BF112A7D9C00EB75E4 /* ObjectSettingsViewController.mm in Sources */,
 				FD4A64C5112A7DC000EB75E4 /* ObjectSettingsView.mm in Sources */,
 				FD596F4B112A8A91001A09E0 /* NoteObject.mm in Sources */,
+				FD0EFA6D112AA9860068AC9D /* ScaleNotePickerView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1378,6 +1385,7 @@
 				FD4A64C1112A7D9C00EB75E4 /* ObjectSettingsViewController.mm in Sources */,
 				FD4A64C6112A7DC000EB75E4 /* ObjectSettingsView.mm in Sources */,
 				FD596F4C112A8A91001A09E0 /* NoteObject.mm in Sources */,
+				FD0EFA6E112AA9860068AC9D /* ScaleNotePickerView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

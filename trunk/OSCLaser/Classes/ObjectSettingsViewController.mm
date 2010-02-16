@@ -8,6 +8,7 @@
 
 #import "ObjectSettingsViewController.h"
 #import "MultiPointObject.h"
+#import "ScaleNotePickerView.h"
 #import "SharedUtility.h"
 #import "SoundObject.h"
 
@@ -33,14 +34,37 @@
     return self;
 }
 
+- (IBAction) scaleChanged
+{
+	
+}
 
-// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
-- (void)viewDidLoad {
+- (void) loadViewFromObject
+{
 	UIColor * darkColor = [SharedUtility darkerColorFromColor:selected.baseColor darkFactor:0.5];
 	navBar.tintColor = darkColor;
 	wavePicker.tintColor = darkColor;
 	wavePicker.selectedSegmentIndex = selected.soundObject.modOsc;
 	volumeSlider.value = selected.soundObject.gain;
+	
+	int num = 12;
+	NSMutableArray * crap = [NSMutableArray arrayWithCapacity:num];
+	for(int i = 0; i < num; i++)
+	{
+		[crap addObject:[[NSObject alloc] init]];
+	}
+	[notePicker setCurrentNotes:crap];
+}
+
+- (void) updateObjectFromView
+{
+	[selected.soundObject setModOsc:wavePicker.selectedSegmentIndex];
+	[selected.soundObject setGain:volumeSlider.value];
+}
+
+// Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
+- (void)viewDidLoad {
+	[self loadViewFromObject];
     [super viewDidLoad];
 }
 
@@ -62,6 +86,7 @@
 
 - (IBAction) done
 {
+	[self updateObjectFromView];
 	[delegate objectsSettingsViewControllerDidFinish:self];
 }
 
