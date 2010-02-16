@@ -58,10 +58,10 @@
 	fullColorVertices = (GLubyte*)malloc(4*4*sizeof(GLubyte));
 	for(int i = 0; i < 4; i++)
 	{
-		fullColorVertices[4*i] = 25;
-		fullColorVertices[4*i+1] = 25;
-		fullColorVertices[4*i+2] = 25;
-		fullColorVertices[4*i+3] = 25;
+		fullColorVertices[4*i] = 35;
+		fullColorVertices[4*i+1] = 35;
+		fullColorVertices[4*i+2] = 35;
+		fullColorVertices[4*i+3] = 35;
 	}
 }
 
@@ -196,12 +196,13 @@
 	colorVertices[3] = alpha;
 }
 
-- (void) setColorsOff
+- (void) setColorsOff:(float)darkFactor
 {
-	colorVertices[0] = 100;
-	colorVertices[1] = 100;
-	colorVertices[2] = 100;
-	colorVertices[3] = 100;
+	float newValue = darkFactor*100;
+	colorVertices[0] = newValue;
+	colorVertices[1] = newValue;
+	colorVertices[2] = newValue;
+	colorVertices[3] = newValue;
 }
 
 - (void) renderSequencer:(Sequencer*)sequencer
@@ -239,10 +240,15 @@
 	for(int i = 0; i < [objects count]; i++)
 	{
 		MultiPointObject * mObj = [objects objectAtIndex:i];
-		float yCoord = i*unpaddedBeatHeight + BEAT_PADDING;
-		[self toggleFullColor:mObj.baseColor];
+		BOOL isOn = [sequencer isObjectOn:mObj];
+		UIColor * theColor = mObj.baseColor;
+		if(!isOn)
+		{
+			theColor = [SharedUtility darkerColorFromColor:theColor darkFactor:0.5];
+		}
+		[self toggleFullColor:theColor];
 		glPushMatrix();
-		
+		float yCoord = i*unpaddedBeatHeight + BEAT_PADDING;
 		glTranslatef(0, yCoord, 0.0);
 		glScalef(nameWidth, paddedBeatHeight, 1.0);
 		glVertexPointer(2, GL_FLOAT, 0, rectVertices);
@@ -283,11 +289,19 @@
 			float xCoord = i*unpaddedBeatWidth + BEAT_PADDING;
 			float yCoord = j*unpaddedBeatHeight + BEAT_PADDING;
 			MultiPointObject * mObj = [objects objectAtIndex:j];
+			BOOL isOn = [sequencer isObjectOn:mObj];
+			float darkFactor = 1.0;
+			if(!isOn) darkFactor = 0.70;
 			if([sequencer object:mObj isOnAtIndex:i])
 			{
-				[self setToggledColor:mObj.baseColor];
+				UIColor * theColor = mObj.baseColor;
+				if(!isOn)
+				{
+					theColor = [SharedUtility darkerColorFromColor:theColor darkFactor:darkFactor];
+				}
+				[self setToggledColor:theColor];
 			}else{
-				[self setColorsOff];
+				[self setColorsOff:darkFactor];
 			}
 			
 			glPushMatrix();

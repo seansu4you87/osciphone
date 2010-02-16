@@ -117,6 +117,11 @@ static Sequencer * theOne;
 	SequencerRow * row = [state valueForKey:[Sequencer keyForMultiPointObject:obj]];
 	if(row != nil)
 	{
+		if(!row.rowOn)
+		{
+			[row toggleRow];
+		}
+		
 		[row toggleAtIndex:beatIndex];
 	}
 }
