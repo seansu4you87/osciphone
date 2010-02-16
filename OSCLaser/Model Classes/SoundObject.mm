@@ -11,7 +11,7 @@
 #import "SineWave.h"
 #import "ADSR.h"
 
-#define SLEW .01
+#define SLEW .005
 
 @implementation SoundObject
 
@@ -35,8 +35,9 @@
 		hpf = new OnePole(0);
 		vibrato = new Modulate();
 		adsr = new ADSR();
-		gain = .5;
-		
+		quantizePitch = YES;
+		gain = .8;
+		scaledGain.cur = 0;
 		
 		
 		// init ball 1
@@ -91,6 +92,11 @@
 	gain = newGain;
 }
 
+- (void) setGainTargetScaledBy:(int)numObjects
+{
+	scaledGain.target = gain/numObjects;
+}
+
 - (void) setPanTarget:(float)xLoc
 {
 	pan.target = (pan.max - pan.min) * xLoc + pan.min;
@@ -129,6 +135,11 @@
 - (void) setVibGainTarget:(float)xLoc
 {
 	vibGain.target = vibGain.min + (vibGain.max - vibGain.min) * xLoc;
+}
+
+- (void) updateScaledGain
+{
+	scaledGain.cur += SLEW * (scaledGain.target - scaledGain.cur);
 }
 
 - (void) updatePan
@@ -227,14 +238,15 @@
 
 - (void) updateParams
 {
-	[self updatePan];
-	[self updateCarFreq];
-	[self updateModIndex];
-	[self updateModFreq];
-	[self updateLPPole];
-	[self updateHPPole];
-	[self updateVibRate];
-	[self updateVibGain];
+	if(scaledGain.cur != scaledGain.target) [self updateScaledGain];
+	if(pan.cur != pan.target) [self updatePan];
+	if(carFreq.cur != carFreq.target) [self updateCarFreq];
+	if(modIndex.cur != modIndex.target) [self updateModIndex];
+	if(modFreq.cur != modFreq.target) [self updateModFreq];
+	if(lpPole.cur != lpPole.target) [self updateLPPole];
+	if(hpPole.cur != hpPole.target) [self updateHPPole];
+	if(vibRate.cur != vibRate.target) [self updateVibRate];
+	if(vibGain.cur != vibGain.target) [self updateVibGain];
 }
 
 - (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames
@@ -249,17 +261,19 @@
 		// filter
 		if(lpPole.cur > 0 && hpPole.cur < 0)
 		{
-			if(carOsc == SAW) curSamp = lpf->tick( hpf->tick( sawCarrier->tick() ) ) * gain;
-			else if(carOsc == SQUARE) curSamp = lpf->tick( hpf->tick( squareCarrier->tick() ) ) * gain;
-			else curSamp = lpf->tick( hpf->tick( sineCarrier->tick() ) ) * gain;
+			if(carOsc == SAW) curSamp = lpf->tick( hpf->tick( sawCarrier->tick() ) );
+			else if(carOsc == SQUARE) curSamp = lpf->tick( hpf->tick( squareCarrier->tick() ) );
+			else curSamp = lpf->tick( hpf->tick( sineCarrier->tick() ) );
 		}
 		// or not
 		else
 		{
-			if(carOsc == SAW) curSamp = sawCarrier->tick() * gain;
-			else if(carOsc == SQUARE) curSamp = squareCarrier->tick() * gain;
-			else curSamp = sineCarrier->tick() * gain;
+			if(carOsc == SAW) curSamp = sawCarrier->tick();
+			else if(carOsc == SQUARE) curSamp = squareCarrier->tick();
+			else curSamp = sineCarrier->tick();
 		}
+		// apply gain
+		curSamp *= scaledGain.cur;
 		// left channel contribution
 		buffer[2*i] += .5 * (1 - pan.cur) * curSamp;
 		// right channel contribution
