@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Sequencer.h"
 
 @class SharedObject;
 
-@interface SharedCollection : NSObject {
+@interface SharedCollection : NSObject<SequencerDelegate> {
 	NSMutableArray * sharedObjects;
 }
 

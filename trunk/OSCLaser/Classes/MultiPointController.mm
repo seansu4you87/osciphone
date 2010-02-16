@@ -69,6 +69,8 @@
 	{
 		self.selected = nil;
 	}
+	
+	[[Sequencer sharedSequencer] refresh];
 }
 
 - (void) removeSelectedObject
@@ -121,6 +123,7 @@
 	
 	[self addManipulatedObject:theObject withTouches:creatingTouches];
 	colorIndex++;
+	[[Sequencer sharedSequencer] refresh];
 }
 
 - (void) addMultiPointWithTouches:(NSArray*)touches

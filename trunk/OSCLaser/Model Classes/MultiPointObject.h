@@ -38,5 +38,7 @@
 - (CGPoint) scaleXYPoint:(CGPoint)pointInViewCoords;
 - (CGPoint) scaledPositionAtIndex:(int)index;
 
++ (id)copyWithZone:(NSZone *)zone;
+
 
 @end

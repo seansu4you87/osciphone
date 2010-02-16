@@ -7,7 +7,8 @@
 //
 
 #import "SequencerController.h"
-
+#import "SequencerRenderer.h"
+#import "Sequencer.h"
 
 @implementation SequencerController
 
@@ -33,7 +34,11 @@
 
 - (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
-	
+	for(UITouch * touch in touches)
+	{
+		CGPoint touchPoint = [touch locationInView:parentView];
+		[SequencerRenderer applyTouchPoint:touchPoint toSequencer:[Sequencer sharedSequencer]];
+	}
 }
 
 @end
