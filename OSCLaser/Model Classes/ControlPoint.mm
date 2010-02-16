@@ -83,12 +83,13 @@
 	{
 		if(controllingTouch == nil)
 		{
+			float theRadius = drawnRadius;
 			CGPoint newPoint = [self nextPoint];
-			if(newPoint.x - radius < 0 || newPoint.x + radius > bounds.size.width)
+			if(newPoint.x - theRadius < 0 || newPoint.x + theRadius > bounds.size.width)
 			{
 				velocity.x = -1.0*velocity.x;
 				newPoint = [self nextPoint];
-			} else if(newPoint.y - radius < 0 || newPoint.y + radius > bounds.size.height)
+			} else if(newPoint.y - theRadius < 0 || newPoint.y + theRadius > bounds.size.height)
 			{
 				velocity.y = -1.0*velocity.y;
 				newPoint = [self nextPoint];

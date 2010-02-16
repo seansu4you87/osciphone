@@ -173,6 +173,8 @@
 		FD5305DC112A215500313CCB /* MultiObjectRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD5305DA112A215500313CCB /* MultiObjectRenderer.mm */; };
 		FD5305DF112A216400313CCB /* SequencerRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */; };
 		FD5305E0112A216400313CCB /* SequencerRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */; };
+		FD596F4B112A8A91001A09E0 /* NoteObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD596F4A112A8A91001A09E0 /* NoteObject.mm */; };
+		FD596F4C112A8A91001A09E0 /* NoteObject.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD596F4A112A8A91001A09E0 /* NoteObject.mm */; };
 		FD6408A21118A5DB005185AC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; };
 		FD6408A31118A5DB005185AC /* OSCLaserAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 1D3623250D0F684500981E51 /* OSCLaserAppDelegate.mm */; };
 		FD6408A41118A5DB005185AC /* FlipsideView.m in Sources */ = {isa = PBXBuildFile; fileRef = 289233A30DB2D0840083E9F9 /* FlipsideView.m */; };
@@ -512,6 +514,8 @@
 		FD5305DA112A215500313CCB /* MultiObjectRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = MultiObjectRenderer.mm; path = "gl stuff/MultiObjectRenderer.mm"; sourceTree = "<group>"; };
 		FD5305DD112A216400313CCB /* SequencerRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SequencerRenderer.h; path = "gl stuff/SequencerRenderer.h"; sourceTree = "<group>"; };
 		FD5305DE112A216400313CCB /* SequencerRenderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = SequencerRenderer.mm; path = "gl stuff/SequencerRenderer.mm"; sourceTree = "<group>"; };
+		FD596F49112A8A91001A09E0 /* NoteObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NoteObject.h; sourceTree = "<group>"; };
+		FD596F4A112A8A91001A09E0 /* NoteObject.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = NoteObject.mm; sourceTree = "<group>"; };
 		FD6408C31118A5DB005185AC /* OSCLaser-iPad.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "OSCLaser-iPad.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD6408C61118A5DC005185AC /* FlipsideView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = FlipsideView.xib; path = "Resources-iPad/FlipsideView.xib"; sourceTree = "<group>"; };
 		FD6408C71118A5DC005185AC /* MainView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = MainView.xib; path = "Resources-iPad/MainView.xib"; sourceTree = "<group>"; };
@@ -987,6 +991,8 @@
 				FDBFB3C411211F310054E172 /* MultiPointObject.mm */,
 				FDBFB3E311211F710054E172 /* ControlPoint.h */,
 				FDBFB3E411211F710054E172 /* ControlPoint.mm */,
+				FD596F49112A8A91001A09E0 /* NoteObject.h */,
+				FD596F4A112A8A91001A09E0 /* NoteObject.mm */,
 				FDA1FE6C1125627D00A4BFB1 /* Sequencer.h */,
 				FDA1FE6D1125627D00A4BFB1 /* Sequencer.mm */,
 				FDA1FE881125685600A4BFB1 /* SequencerRow.h */,
@@ -1324,6 +1330,7 @@
 				FDE2A477112A3A5000B8CF1F /* SequencerController.mm in Sources */,
 				FD4A64BF112A7D9C00EB75E4 /* ObjectSettingsViewController.mm in Sources */,
 				FD4A64C5112A7DC000EB75E4 /* ObjectSettingsView.mm in Sources */,
+				FD596F4B112A8A91001A09E0 /* NoteObject.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1370,6 +1377,7 @@
 				FDE2A476112A3A5000B8CF1F /* SequencerController.mm in Sources */,
 				FD4A64C1112A7D9C00EB75E4 /* ObjectSettingsViewController.mm in Sources */,
 				FD4A64C6112A7DC000EB75E4 /* ObjectSettingsView.mm in Sources */,
+				FD596F4C112A8A91001A09E0 /* NoteObject.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
