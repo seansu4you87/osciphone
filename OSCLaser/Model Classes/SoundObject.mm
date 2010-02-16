@@ -17,6 +17,10 @@
 #define SLEW .01
 #define FRAMES_PER_UPDATE 50
 
+#define LOWER_LOWER_FREQ 350
+#define UPPER_LOWER_FREQ 500
+#define UPPER_UPPER_FREQ 2500
+
 @implementation SoundObject
 
 @synthesize carOsc, modOsc, numOctaves, rootNote, gain, quantizePitch, seqencerOn, possibleNotes;
@@ -57,8 +61,8 @@
 		adsr->setAttackTime( [SharedUtility randfBetween:.001 andUpper: .1] );
 		
 		// init ball 1
-		carFreq.min = [SharedUtility randfBetween:50 andUpper: 500];
-		carFreq.max = [SharedUtility randfBetween:modIndex.min andUpper: 2500];
+		carFreq.min = [SharedUtility randfBetween:LOWER_LOWER_FREQ andUpper: UPPER_LOWER_FREQ];
+		carFreq.max = [SharedUtility randfBetween:carFreq.min andUpper: UPPER_UPPER_FREQ];
 		carFreq.cur = 0;
 		pan.min = -1;
 		pan.max = 1;
@@ -69,7 +73,7 @@
 		modIndex.max = [SharedUtility randfBetween:modIndex.min andUpper: 2000];
 		modIndex.cur = 0;
 		modFreq.min = [SharedUtility randfBetween:10 andUpper: 200];
-		modFreq.max = [SharedUtility randfBetween:modIndex.min andUpper: 1000];
+		modFreq.max = [SharedUtility randfBetween:modFreq.min andUpper: 1000];
 		modFreq.cur = 0;
 		
 		// init ball 3
@@ -318,6 +322,11 @@
 
 - (int) numQuantizations
 {
+	if(!quantizePitch)
+	{
+		return 0;
+	}
+	
 	return [possibleNotes count] * numOctaves;
 }
 
@@ -341,6 +350,11 @@
 	if(hpPole.cur != hpPole.target) [self updateHPPole];
 	if(vibRate.cur != vibRate.target) [self updateVibRate];
 	if(vibGain.cur != vibGain.target) [self updateVibGain];
+}
+
+- (void) setQuantizePitch:(BOOL)newVal
+{
+	quantizePitch = newVal;
 }
 
 - (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames at:(int)t
