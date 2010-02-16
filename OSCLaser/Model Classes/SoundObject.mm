@@ -54,7 +54,6 @@
 	return self;
 }
 
-<<<<<<< .mine
 - (void) setCarOsc:(int)newOsc
 {
 	carOsc = newOsc;
@@ -70,13 +69,6 @@
 	gain = newGain;
 }
 
-=======
-- (int) numQuantizations
-{
-	return [possibleNotes count];
-}
-
->>>>>>> .r70
 - (void) setPanTarget:(float)xLoc
 {
 	pan.target = (pan.max - pan.min) * xLoc + pan.min;
@@ -125,7 +117,7 @@
 - (void) updateCarFreq
 {
 	carFreq.cur += SLEW * (carFreq.target - carFreq.cur);
-	/*
+
 	// modulate carrier with modulator
 	float freq = carFreq.cur;
 	if(modIndex.cur > 0) 
@@ -138,19 +130,17 @@
 	if(carOsc == SAW) sawCarrier->setFrequency( freq );
 	else if(carOsc == SQUARE) squareCarrier->setFrequency( freq );
 	else sineCarrier->setFrequency( freq );
-	 */
+
 }
 
 - (void) updateModFreq
 {
 	modFreq.cur += SLEW * (modFreq.target - modFreq.cur);
-<<<<<<< .mine
+
 	if(modOsc == SAW) sawModulator->setFrequency( modFreq.cur );
 	else if(modOsc == SQUARE) squareModulator->setFrequency( modFreq.cur );
 	else sineModulator->setFrequency( modFreq.cur );
-=======
-	//modulator->setFrequency( modFreq.cur );
->>>>>>> .r70
+
 }
 
 - (void) updateModIndex
@@ -190,12 +180,11 @@
 
 - (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames
 {
-	//NSLog(@"freq: %f, pan: %f", carFreq.cur, pan.cur);
 	for(int i = 0; i < numFrames; i++)
 	{
 		// update params
 		[self updateParams];
-		/*
+
 		// current sample
 		float curSamp;
 		if(carOsc == SAW) curSamp = sawCarrier->tick() * gain;
@@ -205,7 +194,7 @@
 		buffer[2*i] += .5 * (1 - pan.cur) * curSamp;
 		// right channel contribution
 		buffer[2*i+1] += .5 * (1 + pan.cur) * curSamp;
-		 */
+
 	}
 }
 
