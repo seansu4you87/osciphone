@@ -133,7 +133,7 @@
 	UIColor * darkColor = [SharedUtility darkerColorFromColor:selected.baseColor darkFactor:0.5];
 	navBar.tintColor = darkColor;
 	wavePicker.tintColor = darkColor;
-	wavePicker.selectedSegmentIndex = selected.soundObject.modOsc;
+	wavePicker.selectedSegmentIndex = selected.soundObject.carOsc;
 	scalePicker.selectedSegmentIndex = selected.soundObject.scaleType;
 	volumeSlider.value = selected.soundObject.gain;
 	[self updateNumOctaves];
@@ -144,7 +144,7 @@
 
 - (void) updateObjectFromView
 {
-	[selected.soundObject setModOsc:wavePicker.selectedSegmentIndex];
+	[selected.soundObject setCarOsc:wavePicker.selectedSegmentIndex];
 	[selected.soundObject setGain:volumeSlider.value];
 	[selected.soundObject setScaleType:scalePicker.selectedSegmentIndex];
 	[selected.soundObject setNotes:[self currentChromaticNotes]];

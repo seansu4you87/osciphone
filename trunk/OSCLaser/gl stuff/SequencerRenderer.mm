@@ -25,6 +25,8 @@
 #define BEAT_PADDING 3
 #define RECT_GRAIN 2
 
+#define UNTOGGLED_GRAY 50
+
 @implementation SequencerRenderer
 
 - (void) initRectVertices
@@ -49,10 +51,10 @@
 	colorVertices = (GLubyte*)malloc(4*4*sizeof(GLubyte));
 	for(int i = 0; i < 4; i++)
 	{
-		colorVertices[4*i] = 50;
-		colorVertices[4*i+1] = 50;
-		colorVertices[4*i+2] = 50;
-		colorVertices[4*i+3] = 50;
+		colorVertices[4*i] = UNTOGGLED_GRAY;
+		colorVertices[4*i+1] = UNTOGGLED_GRAY;
+		colorVertices[4*i+2] = UNTOGGLED_GRAY;
+		colorVertices[4*i+3] = UNTOGGLED_GRAY;
 	}
 	
 	fullColorVertices = (GLubyte*)malloc(4*4*sizeof(GLubyte));
