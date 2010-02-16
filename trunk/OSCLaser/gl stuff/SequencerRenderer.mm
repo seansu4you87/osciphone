@@ -8,13 +8,15 @@
 
 #import "SequencerRenderer.h"
 #import "Sequencer.h"
+#import "SharedUtility.h"
+#import "MultiPointObject.h"
 
 #define SCREEN_WIDTH 320
 #define SCREEN_HEIGHT 460
 
 #define PERCENT_WIDTH 0.95
 #define PERCENT_HEIGHT 0.90
-#define PERCENT_NAME 0.075
+#define PERCENT_NAME 0.1
 #define BEAT_PADDING 2
 
 @implementation SequencerRenderer
@@ -46,6 +48,34 @@
 		colorVertices[4*i+2] = 50;
 		colorVertices[4*i+3] = 50;
 	}
+	
+	fullColorVertices = (GLubyte*)malloc(4*4*sizeof(GLubyte));
+	for(int i = 0; i < 4; i++)
+	{
+		fullColorVertices[4*i] = 25;
+		fullColorVertices[4*i+1] = 25;
+		fullColorVertices[4*i+2] = 25;
+		fullColorVertices[4*i+3] = 25;
+	}
+}
+
+- (void) toggleFullColor:(UIColor*)curColor
+{
+	float red = 255*[SharedUtility getRedFromColor:curColor];
+	float green = 255*[SharedUtility getGreenFromColor:curColor];
+	float blue = 255*[SharedUtility getBlueFromColor:curColor];
+	float alpha = 255*[SharedUtility getAlphaFromColor:curColor];
+	
+	for(int i = 0; i < 4; i++)
+	{
+		if(i != 2)
+		{
+			fullColorVertices[4*i] = red;
+			fullColorVertices[4*i+1] = green;
+			fullColorVertices[4*i+2] = blue;
+			fullColorVertices[4*i+3] = alpha;
+		}
+	}
 }
 
 - (id) init
@@ -71,12 +101,17 @@
 	return self;
 }
 
-- (void) setColorsOn
+- (void) setToggledColor:(UIColor*)curColor
 {
-	colorVertices[0] = 255;
-	colorVertices[1] = 0;
-	colorVertices[2] = 0;
-	colorVertices[3] = 0;
+	float red = 255*[SharedUtility getRedFromColor:curColor];
+	float green = 255*[SharedUtility getGreenFromColor:curColor];
+	float blue = 255*[SharedUtility getBlueFromColor:curColor];
+	float alpha = 255*[SharedUtility getAlphaFromColor:curColor];
+	
+	colorVertices[0] = red;
+	colorVertices[1] = green;
+	colorVertices[2] = blue;
+	colorVertices[3] = alpha;
 }
 
 - (void) setColorsOff
@@ -112,7 +147,20 @@
 	
 	for(int i = 0; i < [objects count]; i++)
 	{
-		//draw names
+		MultiPointObject * mObj = [objects objectAtIndex:i];
+		float yCoord = i*unpaddedBeatHeight + BEAT_PADDING;
+		[self toggleFullColor:mObj.baseColor];
+		glPushMatrix();
+		
+		glTranslatef(0, yCoord, 0.0);
+		glScalef(nameWidth, paddedBeatHeight, 1.0);
+		glVertexPointer(2, GL_FLOAT, 0, rectVertices);
+		glEnableClientState(GL_VERTEX_ARRAY);
+		glColorPointer(4, GL_UNSIGNED_BYTE, 0, fullColorVertices);
+		glEnableClientState(GL_COLOR_ARRAY);
+		glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
+		
+		glPopMatrix();
 	}
 	
 	glTranslatef(nameWidth, 0.0, 0.0);
@@ -123,10 +171,10 @@
 		{
 			float xCoord = i*unpaddedBeatWidth + BEAT_PADDING;
 			float yCoord = j*unpaddedBeatHeight + BEAT_PADDING;
-			
-			if([sequencer object:[objects objectAtIndex:j] isOnAtIndex:i])
+			MultiPointObject * mObj = [objects objectAtIndex:j];
+			if([sequencer object:mObj isOnAtIndex:i])
 			{
-				[self setColorsOn];
+				[self setToggledColor:mObj.baseColor];
 			}else{
 				[self setColorsOff];
 			}

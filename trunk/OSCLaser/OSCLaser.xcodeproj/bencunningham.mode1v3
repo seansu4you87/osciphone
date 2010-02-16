@@ -230,6 +230,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -299,7 +301,7 @@
 							<real>231</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>3 84 1147 689 0 0 1280 778 </string>
+						<string>16 71 1147 689 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -310,8 +312,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -329,7 +329,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD4A642B112A6A8A00EB75E4</string>
+										<string>FD4A6495112A716400EB75E4</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -380,7 +380,6 @@
 											<string>FD4A633E112A57B600EB75E4</string>
 											<string>FD4A633F112A57B600EB75E4</string>
 											<string>FD4A6359112A585000EB75E4</string>
-											<string>FD4A636F112A5E1000EB75E4</string>
 											<string>FD4A639E112A607700EB75E4</string>
 											<string>FD4A639F112A607700EB75E4</string>
 											<string>FD4A63A0112A607700EB75E4</string>
@@ -396,10 +395,11 @@
 											<string>FD4A63E0112A666500EB75E4</string>
 											<string>FD4A6404112A68C200EB75E4</string>
 											<string>FD4A6405112A68C200EB75E4</string>
-											<string>FD4A640D112A691A00EB75E4</string>
 											<string>FD4A6416112A69FF00EB75E4</string>
 											<string>FD4A6429112A6A8A00EB75E4</string>
-											<string>FD4A642A112A6A8A00EB75E4</string>
+											<string>FD4A6444112A6C5600EB75E4</string>
+											<string>FD4A645D112A6E7F00EB75E4</string>
+											<string>FD4A645E112A6E7F00EB75E4</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -413,7 +413,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {894, 566}}</string>
 								<key>RubberWindowFrame</key>
-								<string>3 84 1147 689 0 0 1280 778 </string>
+								<string>16 71 1147 689 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -433,7 +433,7 @@
 								<key>Frame</key>
 								<string>{{0, 571}, {894, 77}}</string>
 								<key>RubberWindowFrame</key>
-								<string>3 84 1147 689 0 0 1280 778 </string>
+								<string>16 71 1147 689 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -597,16 +597,15 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FD4A6423112A6A6500EB75E4</string>
 		<string>FD4A630B112A4BD600EB75E4</string>
 		<string>FD4A62E9112A478700EB75E4</string>
 		<string>1CD10A99069EF8BA00B06720</string>
-		<string>FD78A4EE1116385D008B87CB</string>
 		<string>1C78EAAD065D492600B07095</string>
+		<string>FD78A4EE1116385D008B87CB</string>
 		<string>/Users/bencunningham/Desktop/edgeCity/osc_iphone/OSCLaser/OSCLaser.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>3 84 1147 689 0 0 1280 778 </string>
+	<string>16 71 1147 689 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
@@ -629,7 +628,7 @@
 								<key>PBXProjectModuleGUID</key>
 								<string>1CD0528F0623707200166675</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>Sequencer.h</string>
+								<string>SequencerRenderer.mm</string>
 								<key>StatusBarVisibility</key>
 								<true/>
 							</dict>

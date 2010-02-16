@@ -80,7 +80,7 @@
 	29B97313FDCFA39411CA2CEA /* Project object */ = {
 		activeBuildConfigurationName = Debug;
 		activeExecutable = FD78A4E111163854008B87CB /* OSCLaser */;
-		activeSDKPreference = iphonesimulator3.1.3;
+		activeSDKPreference = iphoneos3.1.3;
 		activeTarget = 1D6058900D05DD3D006BFB54 /* OSCLaser */;
 		addToTargets = (
 			FD64089C1118A5DB005185AC /* OSCLaser-iPad */,
@@ -328,6 +328,27 @@
 			FD4A6429112A6A8A00EB75E4 /* PBXTextBookmark */ = FD4A6429112A6A8A00EB75E4 /* PBXTextBookmark */;
 			FD4A642A112A6A8A00EB75E4 /* PBXTextBookmark */ = FD4A642A112A6A8A00EB75E4 /* PBXTextBookmark */;
 			FD4A642B112A6A8A00EB75E4 /* PBXTextBookmark */ = FD4A642B112A6A8A00EB75E4 /* PBXTextBookmark */;
+			FD4A6444112A6C5600EB75E4 /* PBXTextBookmark */ = FD4A6444112A6C5600EB75E4 /* PBXTextBookmark */;
+			FD4A6445112A6C5600EB75E4 /* PBXTextBookmark */ = FD4A6445112A6C5600EB75E4 /* PBXTextBookmark */;
+			FD4A6446112A6C5600EB75E4 /* PBXTextBookmark */ = FD4A6446112A6C5600EB75E4 /* PBXTextBookmark */;
+			FD4A6447112A6C5600EB75E4 /* PBXTextBookmark */ = FD4A6447112A6C5600EB75E4 /* PBXTextBookmark */;
+			FD4A644D112A6DB500EB75E4 /* PBXTextBookmark */ = FD4A644D112A6DB500EB75E4 /* PBXTextBookmark */;
+			FD4A645D112A6E7F00EB75E4 /* PBXTextBookmark */ = FD4A645D112A6E7F00EB75E4 /* PBXTextBookmark */;
+			FD4A645E112A6E7F00EB75E4 /* PBXTextBookmark */ = FD4A645E112A6E7F00EB75E4 /* PBXTextBookmark */;
+			FD4A645F112A6E7F00EB75E4 /* PBXTextBookmark */ = FD4A645F112A6E7F00EB75E4 /* PBXTextBookmark */;
+			FD4A6463112A6EF200EB75E4 /* PBXTextBookmark */ = FD4A6463112A6EF200EB75E4 /* PBXTextBookmark */;
+			FD4A6467112A6F5A00EB75E4 /* PBXTextBookmark */ = FD4A6467112A6F5A00EB75E4 /* PBXTextBookmark */;
+			FD4A646B112A6FAC00EB75E4 /* PBXTextBookmark */ = FD4A646B112A6FAC00EB75E4 /* PBXTextBookmark */;
+			FD4A646F112A6FC800EB75E4 /* PBXTextBookmark */ = FD4A646F112A6FC800EB75E4 /* PBXTextBookmark */;
+			FD4A6473112A6FE600EB75E4 /* PBXTextBookmark */ = FD4A6473112A6FE600EB75E4 /* PBXTextBookmark */;
+			FD4A647A112A702D00EB75E4 /* PBXTextBookmark */ = FD4A647A112A702D00EB75E4 /* PBXTextBookmark */;
+			FD4A647E112A705000EB75E4 /* PBXTextBookmark */ = FD4A647E112A705000EB75E4 /* PBXTextBookmark */;
+			FD4A6482112A706A00EB75E4 /* PBXTextBookmark */ = FD4A6482112A706A00EB75E4 /* PBXTextBookmark */;
+			FD4A6485112A70B200EB75E4 /* PBXTextBookmark */ = FD4A6485112A70B200EB75E4 /* PBXTextBookmark */;
+			FD4A6489112A70EA00EB75E4 /* PBXTextBookmark */ = FD4A6489112A70EA00EB75E4 /* PBXTextBookmark */;
+			FD4A648D112A711A00EB75E4 /* PBXTextBookmark */ = FD4A648D112A711A00EB75E4 /* PBXTextBookmark */;
+			FD4A6491112A714700EB75E4 /* PBXTextBookmark */ = FD4A6491112A714700EB75E4 /* PBXTextBookmark */;
+			FD4A6495112A716400EB75E4 /* PBXTextBookmark */ = FD4A6495112A716400EB75E4 /* PBXTextBookmark */;
 			FD530622112A281900313CCB = FD530622112A281900313CCB /* PBXTextBookmark */;
 			FD530623112A281900313CCB = FD530623112A281900313CCB /* PBXTextBookmark */;
 			FD530635112A2BA200313CCB = FD530635112A2BA200313CCB /* PBXTextBookmark */;
@@ -1049,7 +1070,7 @@
 		fRef = FD5305DD112A216400313CCB /* SequencerRenderer.h */;
 		name = "SequencerRenderer.h: 21";
 		rLen = 0;
-		rLoc = 432;
+		rLoc = 462;
 		rType = 0;
 		vrLen = 637;
 		vrLoc = 0;
@@ -1059,7 +1080,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 110";
 		rLen = 0;
-		rLoc = 2885;
+		rLoc = 4473;
 		rType = 0;
 		vrLen = 818;
 		vrLoc = 2006;
@@ -1069,7 +1090,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 44";
 		rLen = 0;
-		rLoc = 894;
+		rLoc = 947;
 		rType = 0;
 		vrLen = 625;
 		vrLoc = 565;
@@ -1089,7 +1110,7 @@
 		fRef = FD5305DD112A216400313CCB /* SequencerRenderer.h */;
 		name = "SequencerRenderer.h: 21";
 		rLen = 0;
-		rLoc = 432;
+		rLoc = 462;
 		rType = 0;
 		vrLen = 637;
 		vrLoc = 0;
@@ -1099,7 +1120,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 44";
 		rLen = 0;
-		rLoc = 894;
+		rLoc = 947;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 1190;
@@ -1109,7 +1130,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 91";
 		rLen = 0;
-		rLoc = 2282;
+		rLoc = 3338;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 1190;
@@ -1119,7 +1140,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 91";
 		rLen = 0;
-		rLoc = 2282;
+		rLoc = 3338;
 		rType = 0;
 		vrLen = 1054;
 		vrLoc = 1190;
@@ -1129,7 +1150,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 14";
 		rLen = 0;
-		rLoc = 334;
+		rLoc = 388;
 		rType = 0;
 		vrLen = 673;
 		vrLoc = 85;
@@ -1169,7 +1190,7 @@
 		fRef = FD5305DD112A216400313CCB /* SequencerRenderer.h */;
 		name = "SequencerRenderer.h: 21";
 		rLen = 0;
-		rLoc = 432;
+		rLoc = 462;
 		rType = 0;
 		vrLen = 637;
 		vrLoc = 0;
@@ -1219,7 +1240,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 111";
 		rLen = 0;
-		rLoc = 2711;
+		rLoc = 4298;
 		rType = 0;
 		vrLen = 730;
 		vrLoc = 2161;
@@ -1229,7 +1250,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 78";
 		rLen = 0;
-		rLoc = 1350;
+		rLoc = 2429;
 		rType = 0;
 		vrLen = 566;
 		vrLoc = 1032;
@@ -1239,7 +1260,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 78";
 		rLen = 0;
-		rLoc = 1350;
+		rLoc = 2429;
 		rType = 0;
 		vrLen = 566;
 		vrLoc = 1032;
@@ -1249,7 +1270,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 47";
 		rLen = 0;
-		rLoc = 893;
+		rLoc = 946;
 		rType = 0;
 		vrLen = 1139;
 		vrLoc = 2911;
@@ -1259,7 +1280,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 47";
 		rLen = 0;
-		rLoc = 893;
+		rLoc = 946;
 		rType = 0;
 		vrLen = 1139;
 		vrLoc = 2911;
@@ -1269,7 +1290,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 166";
 		rLen = 0;
-		rLoc = 3712;
+		rLoc = 5300;
 		rType = 0;
 		vrLen = 1114;
 		vrLoc = 3495;
@@ -1279,7 +1300,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 166";
 		rLen = 0;
-		rLoc = 3712;
+		rLoc = 5300;
 		rType = 0;
 		vrLen = 1177;
 		vrLoc = 2820;
@@ -1289,7 +1310,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 166";
 		rLen = 0;
-		rLoc = 3712;
+		rLoc = 5300;
 		rType = 0;
 		vrLen = 676;
 		vrLoc = 1086;
@@ -1509,7 +1530,7 @@
 		fRef = FD5305DD112A216400313CCB /* SequencerRenderer.h */;
 		name = "SequencerRenderer.h: 21";
 		rLen = 0;
-		rLoc = 432;
+		rLoc = 462;
 		rType = 0;
 		vrLen = 637;
 		vrLoc = 0;
@@ -1853,7 +1874,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 166";
 		rLen = 0;
-		rLoc = 3712;
+		rLoc = 5300;
 		rType = 0;
 		vrLen = 714;
 		vrLoc = 3328;
@@ -1952,7 +1973,7 @@
 		fRef = FD5305DD112A216400313CCB /* SequencerRenderer.h */;
 		name = "SequencerRenderer.h: 21";
 		rLen = 0;
-		rLoc = 432;
+		rLoc = 462;
 		rType = 0;
 		vrLen = 637;
 		vrLoc = 0;
@@ -1962,7 +1983,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 154";
 		rLen = 79;
-		rLoc = 3194;
+		rLoc = 4782;
 		rType = 0;
 		vrLen = 1262;
 		vrLoc = 3276;
@@ -1972,7 +1993,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 154";
 		rLen = 79;
-		rLoc = 3194;
+		rLoc = 4782;
 		rType = 0;
 		vrLen = 1262;
 		vrLoc = 3276;
@@ -1992,7 +2013,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 154";
 		rLen = 79;
-		rLoc = 3194;
+		rLoc = 4782;
 		rType = 0;
 		vrLen = 1263;
 		vrLoc = 3276;
@@ -2022,7 +2043,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 170";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 5461;
 		rType = 0;
 		vrLen = 1262;
 		vrLoc = 3276;
@@ -2062,7 +2083,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 170";
 		rLen = 0;
-		rLoc = 3873;
+		rLoc = 5461;
 		rType = 0;
 		vrLen = 1108;
 		vrLoc = 3495;
@@ -2098,7 +2119,7 @@
 		isa = PBXTextBookmark;
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		rLen = 0;
-		rLoc = 187;
+		rLoc = 235;
 		rType = 1;
 	};
 	FD4A642B112A6A8A00EB75E4 /* PBXTextBookmark */ = {
@@ -2106,10 +2127,220 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 188";
 		rLen = 0;
-		rLoc = 4452;
+		rLoc = 6040;
 		rType = 0;
 		vrLen = 1108;
 		vrLoc = 3495;
+	};
+	FD4A6444112A6C5600EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DA112A215500313CCB /* MultiObjectRenderer.mm */;
+		name = "MultiObjectRenderer.mm: 243";
+		rLen = 562;
+		rLoc = 6052;
+		rType = 0;
+		vrLen = 1035;
+		vrLoc = 5984;
+	};
+	FD4A6445112A6C5600EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DD112A216400313CCB /* SequencerRenderer.h */;
+		name = "SequencerRenderer.h: 21";
+		rLen = 0;
+		rLoc = 462;
+		rType = 0;
+		vrLen = 637;
+		vrLoc = 0;
+	};
+	FD4A6446112A6C5600EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 75";
+		rLen = 0;
+		rLoc = 2074;
+		rType = 0;
+		vrLen = 1042;
+		vrLoc = 1881;
+	};
+	FD4A6447112A6C5600EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 48";
+		rLen = 0;
+		rLoc = 918;
+		rType = 0;
+		vrLen = 614;
+		vrLoc = 477;
+	};
+	FD4A644D112A6DB500EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 122";
+		rLen = 0;
+		rLoc = 3512;
+		rType = 0;
+		vrLen = 1118;
+		vrLoc = 2257;
+	};
+	FD4A645D112A6E7F00EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DD112A216400313CCB /* SequencerRenderer.h */;
+		name = "SequencerRenderer.h: 22";
+		rLen = 17;
+		rLoc = 444;
+		rType = 0;
+		vrLen = 667;
+		vrLoc = 0;
+	};
+	FD4A645E112A6E7F00EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 74";
+		rLen = 0;
+		rLoc = 1664;
+		rType = 0;
+		vrLen = 1263;
+		vrLoc = 2719;
+	};
+	FD4A645F112A6E7F00EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 149";
+		rLen = 0;
+		rLoc = 3592;
+		rType = 0;
+		vrLen = 1228;
+		vrLoc = 2758;
+	};
+	FD4A6463112A6EF200EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 73";
+		rLen = 139;
+		rLoc = 1526;
+		rType = 0;
+		vrLen = 852;
+		vrLoc = 956;
+	};
+	FD4A6467112A6F5A00EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 19";
+		rLen = 0;
+		rLoc = 389;
+		rType = 0;
+		vrLen = 667;
+		vrLoc = 3;
+	};
+	FD4A646B112A6FAC00EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 156";
+		rLen = 0;
+		rLoc = 3683;
+		rType = 0;
+		vrLen = 1214;
+		vrLoc = 2814;
+	};
+	FD4A646F112A6FC800EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 156";
+		rLen = 0;
+		rLoc = 3683;
+		rType = 0;
+		vrLen = 1245;
+		vrLoc = 2816;
+	};
+	FD4A6473112A6FE600EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 156";
+		rLen = 0;
+		rLoc = 3685;
+		rType = 0;
+		vrLen = 1187;
+		vrLoc = 2915;
+	};
+	FD4A647A112A702D00EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 156";
+		rLen = 0;
+		rLoc = 3683;
+		rType = 0;
+		vrLen = 1109;
+		vrLoc = 3079;
+	};
+	FD4A647E112A705000EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 71";
+		rLen = 0;
+		rLoc = 1517;
+		rType = 0;
+		vrLen = 802;
+		vrLoc = 1042;
+	};
+	FD4A6482112A706A00EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 71";
+		rLen = 0;
+		rLoc = 1517;
+		rType = 0;
+		vrLen = 807;
+		vrLoc = 1042;
+	};
+	FD4A6485112A70B200EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 71";
+		rLen = 0;
+		rLoc = 1517;
+		rType = 0;
+		vrLen = 746;
+		vrLoc = 1107;
+	};
+	FD4A6489112A70EA00EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 71";
+		rLen = 0;
+		rLoc = 1516;
+		rType = 0;
+		vrLen = 805;
+		vrLoc = 891;
+	};
+	FD4A648D112A711A00EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 71";
+		rLen = 0;
+		rLoc = 1517;
+		rType = 0;
+		vrLen = 762;
+		vrLoc = 949;
+	};
+	FD4A6491112A714700EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 55";
+		rLen = 0;
+		rLoc = 1074;
+		rType = 0;
+		vrLen = 849;
+		vrLoc = 624;
+	};
+	FD4A6495112A716400EB75E4 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
+		name = "SequencerRenderer.mm: 55";
+		rLen = 0;
+		rLoc = 1074;
+		rType = 0;
+		vrLen = 851;
+		vrLoc = 624;
 	};
 	FD5305CD1129DDE800313CCB /* GLSlider.h */ = {
 		uiCtxt = {
@@ -2134,24 +2365,24 @@
 	};
 	FD5305DA112A215500313CCB /* MultiObjectRenderer.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {833, 4800}}";
-			sepNavSelRange = "{6968, 0}";
-			sepNavVisRange = "{6671, 1200}";
+			sepNavIntBoundsRect = "{{0, 0}, {833, 4680}}";
+			sepNavSelRange = "{6052, 562}";
+			sepNavVisRange = "{5984, 1035}";
 		};
 	};
 	FD5305DD112A216400313CCB /* SequencerRenderer.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {833, 501}}";
-			sepNavSelRange = "{432, 0}";
-			sepNavVisRange = "{0, 637}";
+			sepNavSelRange = "{444, 17}";
+			sepNavVisRange = "{0, 667}";
 			sepNavWindowFrame = "{{15, 48}, {657, 725}}";
 		};
 	};
 	FD5305DE112A216400313CCB /* SequencerRenderer.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {833, 2925}}";
-			sepNavSelRange = "{4452, 0}";
-			sepNavVisRange = "{3495, 1108}";
+			sepNavIntBoundsRect = "{{0, 0}, {833, 3900}}";
+			sepNavSelRange = "{1074, 0}";
+			sepNavVisRange = "{624, 851}";
 		};
 	};
 	FD530622112A281900313CCB /* PBXTextBookmark */ = {
@@ -2179,7 +2410,7 @@
 		fRef = FD5305DE112A216400313CCB /* SequencerRenderer.mm */;
 		name = "SequencerRenderer.mm: 32";
 		rLen = 0;
-		rLoc = 1253;
+		rLoc = 2027;
 		rType = 0;
 		vrLen = 506;
 		vrLoc = 149;
@@ -2622,16 +2853,16 @@
 	};
 	FDA1FE6C1125627D00A4BFB1 /* Sequencer.h */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {833, 585}}";
-			sepNavSelRange = "{677, 0}";
-			sepNavVisRange = "{19, 899}";
+			sepNavIntBoundsRect = "{{0, 0}, {1002, 660}}";
+			sepNavSelRange = "{258, 0}";
+			sepNavVisRange = "{205, 418}";
 		};
 	};
 	FDA1FE6D1125627D00A4BFB1 /* Sequencer.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {833, 2070}}";
-			sepNavSelRange = "{2209, 0}";
-			sepNavVisRange = "{1902, 625}";
+			sepNavIntBoundsRect = "{{0, 0}, {900, 2085}}";
+			sepNavSelRange = "{1150, 0}";
+			sepNavVisRange = "{810, 479}";
 		};
 	};
 	FDA1FE881125685600A4BFB1 /* SequencerRow.h */ = {
