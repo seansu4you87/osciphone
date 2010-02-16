@@ -34,6 +34,7 @@
 - (NSArray*) currentObjects;
 - (BOOL) object:(id)obj isOnAtIndex:(int)beatIndex;
 - (void) toggleObject:(id)obj;
+- (BOOL) isObjectOn:(id)obj;
 - (void) toggleBeat:(int)beatIndex forObject:(id)obj;
 - (void) refresh;
 

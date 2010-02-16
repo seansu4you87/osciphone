@@ -11,6 +11,8 @@
 
 @implementation SequencerRow
 
+@synthesize rowOn;
+
 - (id) initWithLength:(int)length
 {
 	if(self = [super init])
