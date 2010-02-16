@@ -20,10 +20,16 @@
 {
 	if(self = [super init])
 	{
-		carrier = new SineWave();
-		modulator = new SineWave();
+		carOsc = [SharedUtility randBetween:0 andUpper:2];
+		modOsc = [SharedUtility randBetween:0 andUpper:2];
+		sineCarrier = new SineWave();
+		sawCarrier = new BlitSaw(0);
+		squareCarrier = new BlitSquare(0);
+		sineModulator = new SineWave();
+		sawModulator = new BlitSaw(0);
+		squareModulator = new BlitSquare(0);
 		adsr = new ADSR();
-		gain = .5;
+		gain = .9;
 		
 		// init ball 1
 		carFreq.min = [SharedUtility randfBetween:50 andUpper: 500];
@@ -41,17 +47,36 @@
 		modFreq.max = [SharedUtility randfBetween:modIndex.min andUpper: 1000];
 		modFreq.cur = 0;
 		
+		// init
 		
 	}
 	
 	return self;
 }
 
+<<<<<<< .mine
+- (void) setCarOsc:(int)newOsc
+{
+	carOsc = newOsc;
+}
+
+- (void) setModOsc:(int)newOsc
+{
+	modOsc = newOsc;
+}
+
+- (void) setGain:(float)newGain
+{
+	gain = newGain;
+}
+
+=======
 - (int) numQuantizations
 {
 	return [possibleNotes count];
 }
 
+>>>>>>> .r70
 - (void) setPanTarget:(float)xLoc
 {
 	pan.target = (pan.max - pan.min) * xLoc + pan.min;
@@ -72,11 +97,25 @@
 	modIndex.target = (modIndex.max - modIndex.min) * xLoc + modIndex.min;
 }
 
-- (void) setGain:(float)newGain
+- (void) setLPPoleTarget:(float)yLoc
 {
-	gain = newGain;
+	lpPole.target = lpPole.min + (lpPole.max - lpPole.min) * yLoc;
 }
 
+- (void) setHPPoleTarget:(float)xLoc
+{
+	hpPole.target = hpPole.min + (hpPole.max - hpPole.min) * xLoc;
+}
+
+- (void) setVibRateTarget:(float)yLoc
+{
+	vibRate.target = vibRate.max - (vibRate.max - vibRate.min) * yLoc;
+}
+
+- (void) setVibGainTarget:(float)xLoc
+{
+	vibGain.target = vibGain.min + (vibGain.max - vibGain.min) * xLoc;
+}
 
 - (void) updatePan
 {
@@ -88,16 +127,30 @@
 	carFreq.cur += SLEW * (carFreq.target - carFreq.cur);
 	/*
 	// modulate carrier with modulator
-	if(modIndex.cur > 0) carrier->setFrequency( carFreq.cur + modIndex.cur * modulator->tick() );
-	// or not
-	else carrier->setFrequency( carFreq.cur );
+	float freq = carFreq.cur;
+	if(modIndex.cur > 0) 
+	{
+		if(modOsc == SAW) freq += modIndex.cur * sawModulator->tick();
+		else if(modOsc == SQUARE) freq += modIndex.cur * squareModulator->tick();
+		else freq += modIndex.cur * sineModulator->tick();
+	}
+	
+	if(carOsc == SAW) sawCarrier->setFrequency( freq );
+	else if(carOsc == SQUARE) squareCarrier->setFrequency( freq );
+	else sineCarrier->setFrequency( freq );
 	 */
 }
 
 - (void) updateModFreq
 {
 	modFreq.cur += SLEW * (modFreq.target - modFreq.cur);
+<<<<<<< .mine
+	if(modOsc == SAW) sawModulator->setFrequency( modFreq.cur );
+	else if(modOsc == SQUARE) squareModulator->setFrequency( modFreq.cur );
+	else sineModulator->setFrequency( modFreq.cur );
+=======
 	//modulator->setFrequency( modFreq.cur );
+>>>>>>> .r70
 }
 
 - (void) updateModIndex
@@ -122,6 +175,11 @@
 	
 }
 
+- (int) numQuantizations
+{
+	return [possibleNotes count];
+}
+
 - (void) updateParams
 {
 	[self updatePan];
@@ -139,7 +197,10 @@
 		[self updateParams];
 		/*
 		// current sample
-		float curSamp = carrier->tick() * gain;
+		float curSamp;
+		if(carOsc == SAW) curSamp = sawCarrier->tick() * gain;
+		else if(carOsc == SQUARE) curSamp = squareCarrier->tick() * gain;
+		else curSamp = sineCarrier->tick() * gain;
 		// left channel contribution
 		buffer[2*i] += .5 * (1 - pan.cur) * curSamp;
 		// right channel contribution
