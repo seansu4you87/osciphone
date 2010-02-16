@@ -10,6 +10,7 @@
 #import "SharedUtility.h"
 #import "SineWave.h"
 #import "ADSR.h"
+#import "NoteObject.h"
 
 #define SLEW .005
 
@@ -36,6 +37,8 @@
 		vibrato = new Modulate();
 		adsr = new ADSR();
 		quantizePitch = YES;
+		numOctaves = [SharedUtility randBetween:1 andUpper:3];
+		[self initPossibleNotes];
 		gain = .8;
 		scaledGain.cur = 0;
 		
@@ -77,6 +80,39 @@
 	return self;
 }
 
+- (void) initPossibleNotes
+{
+	possibleNotes = [[NSMutableArray arrayWithCapacity:5] retain];
+	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:1] autorelease]];
+	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:3] autorelease]];
+	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:4] autorelease]];
+	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:8] autorelease]];
+	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:10] autorelease]];
+}
+
+- (void) removePossibleNote:(int)note
+{
+	for(NoteObject *curNote in possibleNotes)
+	{
+		if(curNote.note == note) [possibleNotes removeObject:curNote];
+	}
+}
+
+- (void) addPossibleNote:(int)note
+{
+	for(int i = 0; i < [possibleNotes count]; i++)
+	{
+		NoteObject *curNote = [possibleNotes objectAtIndex:i];
+		if(curNote.note > note) 
+			[possibleNotes insertObject:[[[NoteObject alloc] initWithScaleValue:note] autorelease] atIndex:i];
+	}
+}
+
+- (float) getQuantizedPitchAt:(float)yLoc
+{
+	return 440.0;
+}
+
 - (void) setCarOsc:(int)newOsc
 {
 	carOsc = newOsc;
@@ -104,7 +140,8 @@
 
 - (void) setCarFreqTarget:(float)yLoc
 {
-	carFreq.target = carFreq.max - (carFreq.max - carFreq.min) * yLoc;
+	if(quantizePitch) carFreq.target = [self getQuantizedPitchAt:yLoc];
+	else carFreq.target = carFreq.max - (carFreq.max - carFreq.min) * yLoc;
 }
 
 - (void) setModFreqTarget:(float)yLoc
@@ -233,7 +270,7 @@
 
 - (int) numQuantizations
 {
-	return [possibleNotes count];
+	return [possibleNotes count] * numOctaves;
 }
 
 - (void) updateParams
