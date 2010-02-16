@@ -16,6 +16,9 @@
 
 @implementation SoundObject
 
+@synthesize carOsc, modOsc, numOctaves, rootNote, gain, quantizePitch;
+@synthesize carFreq, pan, modFreq, modIndex;
+@synthesize lpPole, hpPole, vibRate, vibGain;
 
 - (id) init
 {
@@ -38,6 +41,7 @@
 		adsr = new ADSR();
 		quantizePitch = YES;
 		numOctaves = [SharedUtility randBetween:1 andUpper:3];
+		rootNote = 42;
 		[self initPossibleNotes];
 		gain = .8;
 		scaledGain.cur = 0;
@@ -108,9 +112,28 @@
 	}
 }
 
+- (void) setNumOctaves:(int)newNumOctaves
+{
+	numOctaves = newNumOctaves;
+}
+
+- (void) setRootNote:(int)newRootNote
+{
+	rootNote = newRootNote;
+}
+
 - (float) getQuantizedPitchAt:(float)yLoc
 {
-	return 440.0;
+	int numNotes = [self numQuantizations];
+	float stepSize = 1.0 / numNotes;
+	int step = floor(yLoc / stepSize);
+	int octave = floor(1.0 * step / [possibleNotes count]);
+	int index = step % [possibleNotes count];
+	NoteObject *noteObject = [possibleNotes objectAtIndex:index];
+	int scaleValue = noteObject.note;
+	int midi = rootNote + 12 * octave + scaleValue;
+	NSLog(@"midi: %d", midi);
+	return [SharedUtility mtof:midi];
 }
 
 - (void) setCarOsc:(int)newOsc

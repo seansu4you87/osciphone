@@ -16,7 +16,6 @@
 	IBOutlet EAGLView * glView;
 	IBOutlet UIButton * infoButton;
 	IBOutlet UIButton * switchButton;
-	AudioManager * audioManager;
 	MultiPointController * multiController;
 	SequencerController * sequenceController;
 	BOOL pointMode;

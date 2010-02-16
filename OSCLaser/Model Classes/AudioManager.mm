@@ -12,7 +12,7 @@
 #import "MultiPointObject.h"
 #import "ControlPoint.h"
 
-
+static AudioManager * shared;
 
 
 
@@ -27,6 +27,8 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 		int *t = (int*)userData;
 		// zero out output buffer
 		memset(buffer, 0, 2*numFrames*sizeof(SAMPLE));
+		
+		if([AudioManager sharedManager].mute) return;
 
 		 for(MultiPointObject * curObject in multiPointObjects)
 		 {
@@ -61,6 +63,23 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 
 
 @implementation AudioManager
+		   
+@synthesize mute, t;
+
++ (AudioManager*) sharedManager
+{
+	if(shared == nil)
+	{
+		shared = [[AudioManager alloc] init];
+	}
+	
+	return shared;
+}
+
++ (void) releaseShared
+{
+	[shared release];
+}
 
 - (id) init
 {
@@ -81,7 +100,7 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 		} 
 		
 		t = 0;
-		sequencer = new Sequencer();
+		mute = NO;
 
 		
 	}
@@ -101,6 +120,16 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 		// bail out 
 		return; 
 	} 
+}
+
+- (void) muteOn
+{
+	mute = YES;
+}
+
+- (void) muteOff
+{
+	mute = NO;
 }
 
 + (void) scaleGainOf:(Float32 *)buffer of:(int)numFrames containing:(int)numObjects

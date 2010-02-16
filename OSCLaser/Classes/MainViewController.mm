@@ -23,7 +23,8 @@
     if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
         [SharedCollection sharedCollection];
 		[Sequencer sharedSequencer];
-		audioManager = [[AudioManager alloc] init];
+		[AudioManager sharedManager];
+		
 		pointMode = YES;
     }
     return self;
@@ -81,7 +82,7 @@
 	 [self.view bringSubviewToFront:infoButton];
 	 [self.view bringSubviewToFront:switchButton];
 	 
-	 [audioManager startCallback];
+	 [[AudioManager sharedManager] startCallback];
 	 
 	 multiController = [[MultiPointController alloc] initWithParentView:self.view];
 	 multiController.mainView = self;
