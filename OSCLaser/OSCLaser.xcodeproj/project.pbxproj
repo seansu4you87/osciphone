@@ -161,6 +161,12 @@
 		FD2A3FB2112404330069C149 /* ES1Renderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD2A3FAD112404330069C149 /* ES1Renderer.mm */; };
 		FD2A3FFA112404B60069C149 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2A3FF9112404B60069C149 /* QuartzCore.framework */; };
 		FD2A4033112404CF0069C149 /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FD2A4032112404CF0069C149 /* OpenGLES.framework */; };
+		FD4A64BF112A7D9C00EB75E4 /* ObjectSettingsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */; };
+		FD4A64C0112A7D9C00EB75E4 /* ObjectSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD4A64BE112A7D9C00EB75E4 /* ObjectSettingsView.xib */; };
+		FD4A64C1112A7D9C00EB75E4 /* ObjectSettingsViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */; };
+		FD4A64C2112A7D9C00EB75E4 /* ObjectSettingsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = FD4A64BE112A7D9C00EB75E4 /* ObjectSettingsView.xib */; };
+		FD4A64C5112A7DC000EB75E4 /* ObjectSettingsView.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD4A64C4112A7DC000EB75E4 /* ObjectSettingsView.mm */; };
+		FD4A64C6112A7DC000EB75E4 /* ObjectSettingsView.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD4A64C4112A7DC000EB75E4 /* ObjectSettingsView.mm */; };
 		FD5305CF1129DDE800313CCB /* GLSlider.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD5305CE1129DDE800313CCB /* GLSlider.mm */; };
 		FD5305D01129DDE800313CCB /* GLSlider.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD5305CE1129DDE800313CCB /* GLSlider.mm */; };
 		FD5305DB112A215500313CCB /* MultiObjectRenderer.mm in Sources */ = {isa = PBXBuildFile; fileRef = FD5305DA112A215500313CCB /* MultiObjectRenderer.mm */; };
@@ -495,6 +501,11 @@
 		FD2A3FAD112404330069C149 /* ES1Renderer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ES1Renderer.mm; path = "gl stuff/ES1Renderer.mm"; sourceTree = "<group>"; };
 		FD2A3FF9112404B60069C149 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
 		FD2A4032112404CF0069C149 /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
+		FD4A64BC112A7D9C00EB75E4 /* ObjectSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectSettingsViewController.h; path = Classes/ObjectSettingsViewController.h; sourceTree = "<group>"; };
+		FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ObjectSettingsViewController.mm; path = Classes/ObjectSettingsViewController.mm; sourceTree = "<group>"; };
+		FD4A64BE112A7D9C00EB75E4 /* ObjectSettingsView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ObjectSettingsView.xib; sourceTree = "<group>"; };
+		FD4A64C3112A7DC000EB75E4 /* ObjectSettingsView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectSettingsView.h; path = Classes/ObjectSettingsView.h; sourceTree = "<group>"; };
+		FD4A64C4112A7DC000EB75E4 /* ObjectSettingsView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = ObjectSettingsView.mm; path = Classes/ObjectSettingsView.mm; sourceTree = "<group>"; };
 		FD5305CD1129DDE800313CCB /* GLSlider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GLSlider.h; path = "gl stuff/GLSlider.h"; sourceTree = "<group>"; };
 		FD5305CE1129DDE800313CCB /* GLSlider.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = GLSlider.mm; path = "gl stuff/GLSlider.mm"; sourceTree = "<group>"; };
 		FD5305D9112A215500313CCB /* MultiObjectRenderer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MultiObjectRenderer.h; path = "gl stuff/MultiObjectRenderer.h"; sourceTree = "<group>"; };
@@ -609,6 +620,10 @@
 				289233A30DB2D0840083E9F9 /* FlipsideView.m */,
 				289233AC0DB2D0DB0083E9F9 /* FlipsideViewController.h */,
 				289233AD0DB2D0DB0083E9F9 /* FlipsideViewController.m */,
+				FD4A64BC112A7D9C00EB75E4 /* ObjectSettingsViewController.h */,
+				FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */,
+				FD4A64C3112A7DC000EB75E4 /* ObjectSettingsView.h */,
+				FD4A64C4112A7DC000EB75E4 /* ObjectSettingsView.mm */,
 			);
 			name = "Flipside View";
 			sourceTree = "<group>";
@@ -660,6 +675,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				FD4A64BE112A7D9C00EB75E4 /* ObjectSettingsView.xib */,
 				280E754A0DD40C5E005A515E /* FlipsideView.xib */,
 				280E754B0DD40C5E005A515E /* MainView.xib */,
 				280E754C0DD40C5E005A515E /* MainWindow.xib */,
@@ -1161,6 +1177,7 @@
 				BF8E80BD11276CA900F52195 /* tomlowdr.raw in Resources */,
 				BF8E80BE11276CA900F52195 /* tommiddr.raw in Resources */,
 				BF8E80BF11276CA900F52195 /* twopeaks.raw in Resources */,
+				FD4A64C0112A7D9C00EB75E4 /* ObjectSettingsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1171,6 +1188,7 @@
 				FD6408C91118A5DC005185AC /* FlipsideView.xib in Resources */,
 				FD6408CA1118A5DC005185AC /* MainView.xib in Resources */,
 				FD6408CB1118A5DC005185AC /* MainWindow.xib in Resources */,
+				FD4A64C2112A7D9C00EB75E4 /* ObjectSettingsView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1304,6 +1322,8 @@
 				FD5305DF112A216400313CCB /* SequencerRenderer.mm in Sources */,
 				FDE2A472112A3A4800B8CF1F /* MultiPointController.mm in Sources */,
 				FDE2A477112A3A5000B8CF1F /* SequencerController.mm in Sources */,
+				FD4A64BF112A7D9C00EB75E4 /* ObjectSettingsViewController.mm in Sources */,
+				FD4A64C5112A7DC000EB75E4 /* ObjectSettingsView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1348,6 +1368,8 @@
 				FD5305E0112A216400313CCB /* SequencerRenderer.mm in Sources */,
 				FDE2A473112A3A4800B8CF1F /* MultiPointController.mm in Sources */,
 				FDE2A476112A3A5000B8CF1F /* SequencerController.mm in Sources */,
+				FD4A64C1112A7D9C00EB75E4 /* ObjectSettingsViewController.mm in Sources */,
+				FD4A64C6112A7DC000EB75E4 /* ObjectSettingsView.mm in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -63,6 +63,7 @@
 	[self ipChanged];
 	[portTextField becomeFirstResponder];
 }
+
 - (IBAction) portEditingDone
 {
 	[self portChanged];

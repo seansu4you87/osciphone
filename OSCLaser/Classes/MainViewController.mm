@@ -12,6 +12,7 @@
 #import "OSCPort.h"
 #import "EAGLView.h"
 #import "AudioManager.h"
+#import "MultiPointObject.h"
 #import "MultiPointController.h"
 #import "SequencerController.h"
 #import "SharedCollection.h"
@@ -28,6 +29,8 @@
     return self;
 }
 
+#pragma mark physics/animation toggles
+
 - (void) startAnimation
 {
 	[glView startAnimation];
@@ -38,6 +41,8 @@
 	[glView stopAnimation];
 }
 
+#pragma mark button toggles
+
 - (void) allowSwitch
 {
 	switchButton.hidden = NO;
@@ -47,11 +52,24 @@
 	switchButton.hidden = YES;
 }
 
+- (void) allowInfo
+{
+	infoButton.hidden = NO;
+}
+
+- (void) refuseInfo
+{
+	infoButton.hidden = YES;
+}
+
+#pragma mark viewController logic
+
  // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
  - (void)viewDidLoad {
 	 [super viewDidLoad];
 	 MainView * myView = (MainView*)(self.view);
 	 myView.parent = self;
+	 /*
 	 OSCConfig * theConfig = [OSCConfig sharedConfig];
 	 if(![theConfig isConfigured])
 	 {
@@ -59,7 +77,7 @@
 		 [alert show];
 		 [alert release];
 	 }
-	 
+	 */
 	 [self.view bringSubviewToFront:infoButton];
 	 [self.view bringSubviewToFront:switchButton];
 	 
@@ -86,10 +104,28 @@
 	[self dismissModalViewControllerAnimated:YES];
 }
 
+- (void)objectsSettingsViewControllerDidFinish:(ObjectSettingsViewController *)controller
+{
+	[self dismissModalViewControllerAnimated:YES];
+}
+
+
+- (void) showOSCSettings
+{
+	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
+	controller.delegate = self;
+	
+	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	[self presentModalViewController:controller animated:YES];
+	
+	[controller release];
+}
+
+
 
 - (IBAction)showInfo {    
 	
-	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
+	ObjectSettingsViewController *controller = [[ObjectSettingsViewController alloc] initWithNibName:@"ObjectSettingsView" bundle:nil andObject:(MultiPointObject*)(multiController.selected)];
 	controller.delegate = self;
 	
 	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;

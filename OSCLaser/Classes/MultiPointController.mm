@@ -53,6 +53,9 @@
 		{
 			[objects exchangeObjectAtIndex:[objects indexOfObject:theObject] withObjectAtIndex:[objects count] - 1];
 		}
+		[mainView allowInfo];
+	}else{
+		[mainView refuseInfo];
 	}
 }
 

@@ -7,10 +7,11 @@
 //
 
 #import "FlipsideViewController.h"
+#import "ObjectSettingsViewController.h"
 
 @class EAGLView, AudioManager, MultiPointController, SequencerController;
 
-@interface MainViewController : UIViewController <FlipsideViewControllerDelegate> {
+@interface MainViewController : UIViewController <FlipsideViewControllerDelegate, ObjectSettingsViewControllerDelegate> {
 
 	IBOutlet EAGLView * glView;
 	IBOutlet UIButton * infoButton;
@@ -26,6 +27,9 @@
 
 - (void) allowSwitch;
 - (void) refuseSwitch;
+
+- (void) allowInfo;
+- (void) refuseInfo;
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event;
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event;

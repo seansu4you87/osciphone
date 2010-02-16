@@ -302,7 +302,7 @@
 			ControlPoint * current = [controlPoints objectAtIndex:i];
 			glPushMatrix();
 			glTranslatef(current.position.x, current.position.y, zCoord);
-			float scaleRadius = current.radius;
+			float scaleRadius = current.drawnRadius;
 			if(object.selected)
 			{
 				scaleRadius += negHalfToHalf*5.0;

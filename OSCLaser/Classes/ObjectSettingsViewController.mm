@@ -1,15 +1,18 @@
 //
-//  ParamsViewController.m
+//  ObjectSettingsViewController.m
 //  OSCLaser
 //
-//  Created by Stanford Harmonics on 2/14/10.
+//  Created by Ben Cunningham on 2/15/10.
 //  Copyright 2010 Stanford University. All rights reserved.
 //
 
-#import "ParamsViewController.h"
+#import "ObjectSettingsViewController.h"
+#import "MultiPointObject.h"
+#import "SharedUtility.h"
 
+@implementation ObjectSettingsViewController
 
-@implementation ParamsViewController
+@synthesize delegate;
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -21,12 +24,21 @@
 }
 */
 
-/*
+- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil andObject:(MultiPointObject*)selectedObject
+{
+	if (self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil]) {
+        selected = selectedObject;
+    }
+    return self;
+}
+
+
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
+	navBar.tintColor = [SharedUtility darkerColorFromColor:selected.baseColor darkFactor:0.5];
     [super viewDidLoad];
 }
-*/
+
 
 /*
 // Override to allow orientations other than the default portrait orientation.
@@ -41,6 +53,11 @@
     [super didReceiveMemoryWarning];
 	
 	// Release any cached data, images, etc that aren't in use.
+}
+
+- (IBAction) done
+{
+	[delegate objectsSettingsViewControllerDidFinish:self];
 }
 
 - (void)viewDidUnload {

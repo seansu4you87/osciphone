@@ -15,16 +15,7 @@
 
 @implementation ControlPoint
 
-@synthesize controllingTouch, position, radius, touchPosition;;
-
-- (id) init
-{
-	if(self = [super init])
-	{
-	}
-	
-	return self;
-}
+@synthesize controllingTouch, position, radius, touchPosition, drawnRadius;
 
 - (void) setControllingTouch:(UITouch *)theTouch
 {
@@ -59,10 +50,11 @@
 
 - (id) initWithPosition:(CGPoint)thePosition andRadius:(float)theRadius
 {
-	if(self = [self init])
+	if(self = [super init])
 	{
 		position = thePosition;
 		radius = theRadius;
+		drawnRadius = theRadius;
 		velocity = CGPointZero;
 	}
 	

@@ -17,6 +17,11 @@
 
 #define VELOCITY_THRESHOLD 3.0
 
+#define SECOND_BALL_PERCENT 0.77
+#define THIRD_BALL_PERCENT 0.6
+#define FOURTH_BALL_PERCENT 0.4
+#define FIFTH_BALL_PERCENT 0.3
+
 @synthesize parentView, currentColor, baseColor, soundObject;
 
 - (id) init
@@ -57,6 +62,25 @@
 	}
 	
 	return self;
+}
+
++ (float) percentDecreaseForIndex:(int)index
+{
+	if(index == 0)
+	{
+		return 1.0;
+	}else if(index == 1)
+	{
+		return SECOND_BALL_PERCENT;
+	}else if(index == 2)
+	{
+		return THIRD_BALL_PERCENT;
+	}else if(index == 3)
+	{
+		return FOURTH_BALL_PERCENT;
+	}else {
+		return FIFTH_BALL_PERCENT;
+	}
 }
 
 - (NSString *) objectName
@@ -319,6 +343,7 @@
 
 - (void) addControlPoint:(ControlPoint*)newPoint
 {
+	newPoint.drawnRadius = [MultiPointObject percentDecreaseForIndex:[controlPoints count]]*newPoint.radius;
 	[controlPoints addObject:newPoint];
 	[self sendAddPointMessage];
 }
