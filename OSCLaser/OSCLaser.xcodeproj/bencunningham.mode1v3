@@ -230,6 +230,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -310,8 +312,6 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
@@ -329,7 +329,7 @@
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD897DBF112AEBE9002E6C7F</string>
+										<string>FD897DD0112AEFAB002E6C7F</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -378,8 +378,6 @@
 											<string>FD0EFB84112AB1ED0068AC9D</string>
 											<string>FD0EFBDB112AB76C0068AC9D</string>
 											<string>FD0EFBDC112AB76C0068AC9D</string>
-											<string>FD0EFBF8112ABC330068AC9D</string>
-											<string>FD0EFC25112AC0620068AC9D</string>
 											<string>FD0EFC3F112AC1680068AC9D</string>
 											<string>FD0EFC7A112ACA0F0068AC9D</string>
 											<string>FD0EFC7B112ACA0F0068AC9D</string>
@@ -397,17 +395,19 @@
 											<string>FD897D5F112AE654002E6C7F</string>
 											<string>FD897D60112AE654002E6C7F</string>
 											<string>FD897D61112AE654002E6C7F</string>
-											<string>FD897D62112AE654002E6C7F</string>
-											<string>FD897D89112AE89E002E6C7F</string>
-											<string>FD897D8A112AE89E002E6C7F</string>
 											<string>FD897D8D112AE89E002E6C7F</string>
 											<string>FD897D8E112AE89E002E6C7F</string>
 											<string>FD897D8F112AE89E002E6C7F</string>
 											<string>FD897D90112AE89E002E6C7F</string>
 											<string>FD897D96112AE8E5002E6C7F</string>
 											<string>FD897D97112AE8E5002E6C7F</string>
-											<string>FD897D98112AE8E5002E6C7F</string>
-											<string>FD897D8C112AE89E002E6C7F</string>
+											<string>FD897DC3112AEF6C002E6C7F</string>
+											<string>FD897DC4112AEF6C002E6C7F</string>
+											<string>FD897DC5112AEF6C002E6C7F</string>
+											<string>FD897DC6112AEF6C002E6C7F</string>
+											<string>FD897DCE112AEFAB002E6C7F</string>
+											<string>FD897DCF112AEFAB002E6C7F</string>
+											<string>FD897DC8112AEF6C002E6C7F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -605,7 +605,7 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FD897DC0112AEBE9002E6C7F</string>
+		<string>FD897DD1112AEFAB002E6C7F</string>
 		<string>FD897D70112AE654002E6C7F</string>
 		<string>FD897D71112AE654002E6C7F</string>
 		<string>1C78EAAD065D492600B07095</string>
