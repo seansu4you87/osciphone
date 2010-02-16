@@ -28,6 +28,7 @@
 
 
 @protocol FlipsideViewControllerDelegate
+- (void)flipsideViewDidLoad:(FlipsideViewController *)controller;
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller;
 @end
 

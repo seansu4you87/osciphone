@@ -35,11 +35,13 @@
 - (void) startAnimation
 {
 	[glView startAnimation];
+	[[AudioManager sharedManager] muteOff];
 }
 
 - (void) stopAnimation
 {
 	[glView stopAnimation];
+	[[AudioManager sharedManager] muteOn];
 }
 
 #pragma mark button toggles
@@ -100,23 +102,35 @@
 
 
 
+- (void)flipsideViewDidLoad:(FlipsideViewController *)controller
+{
+	[self stopAnimation];
+}
+
 - (void)flipsideViewControllerDidFinish:(FlipsideViewController *)controller {
-    
+	[self startAnimation];
 	[self dismissModalViewControllerAnimated:YES];
+}
+
+- (void)objectsSettingsViewDidLoad:(ObjectSettingsViewController *)controller
+{
+	[self stopAnimation];
 }
 
 - (void)objectsSettingsViewControllerDidFinish:(ObjectSettingsViewController *)controller
 {
+	[self startAnimation];
 	[self dismissModalViewControllerAnimated:YES];
 }
 
 
 - (void) showOSCSettings
 {
+	[self stopAnimation];
 	FlipsideViewController *controller = [[FlipsideViewController alloc] initWithNibName:@"FlipsideView" bundle:nil];
 	controller.delegate = self;
 	
-	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	//controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:controller animated:YES];
 	
 	[controller release];
@@ -125,11 +139,11 @@
 
 
 - (IBAction)showInfo {    
-	
+	[self stopAnimation];
 	ObjectSettingsViewController *controller = [[ObjectSettingsViewController alloc] initWithNibName:@"ObjectSettingsView" bundle:nil andObject:(MultiPointObject*)(multiController.selected)];
 	controller.delegate = self;
 	
-	controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
+	//controller.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
 	[self presentModalViewController:controller animated:YES];
 	
 	[controller release];
@@ -210,6 +224,17 @@
 {
 	if(pointMode)
 	{
+		if([touches count] == 3)
+		{
+			for(UITouch * touch in touches)
+			{
+				if([touch tapCount] == 3)
+				{
+					[self showOSCSettings];
+					return;
+				}
+			}
+		}
 		[multiController touchesBegan:touches withEvent:event];
 	}else{
 		[sequenceController touchesBegan:touches withEvent:event];
