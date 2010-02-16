@@ -54,9 +54,10 @@
 		adsr = new ADSR();
 		adsr->setAttackTime( [SharedUtility randfBetween:.0001 andUpper: .01] );
 		adsr->setDecayTime( [SharedUtility randfBetween:.0001 andUpper: .05] );
-		adsr->setAttackTime( [SharedUtility randfBetween:.3 andUpper: .6] );
-		adsr->setAttackTime( [SharedUtility randfBetween:.001 andUpper: .1] );
+		adsr->setSustainLevel( [SharedUtility randfBetween:.3 andUpper: .6] );
+		adsr->setReleaseTime( [SharedUtility randfBetween:.001 andUpper: .1] );
 		adsr->keyOff();
+		
 		
 		// init ball 1
 		carFreq.min = [SharedUtility randfBetween:50 andUpper: 500];
@@ -377,27 +378,22 @@
 - (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames that:(BOOL)isOn at:(int)t 
 {
 	
-	int samplesPerBeat = [[AudioManager sharedManager] getSamplesPerBeat];
+	if(t % [[AudioManager sharedManager] getSamplesPerBeat] < numFrames)
+	{
+		if(isOn) 
+		{
+			adsr->keyOn();
+		}
+		else 
+		{
+			adsr->keyOff();
+		}
+	}
 	
 	for(int i = 0; i < numFrames; i++)
 	{
-		int adsrState = adsr->getState();
-		//NSLog(@"state: %d", adsrState);
 		if(adsr->getState() != ADSR::DONE) 
 		{
-			if(t % samplesPerBeat == 0)
-			{
-				if(isOn) 
-				{
-					adsr->keyOn();
-					//NSLog(@"keyOn! spb: %d", samplesPerBeat);
-				}
-				else 
-				{
-					adsr->keyOn();
-					//NSLog(@"keyOff!");
-				}
-			}
 				
 			if(i%FRAMES_PER_UPDATE == 0)
 			{
