@@ -60,7 +60,7 @@
 		
 		// init ball 1
 		carFreq.min = [SharedUtility randfBetween:50 andUpper: 500];
-		carFreq.max = [SharedUtility randfBetween:modIndex.min andUpper: 2500];
+		carFreq.max = [SharedUtility randfBetween:carFreq.min andUpper: 2500];
 		carFreq.cur = 0;
 		pan.min = -1;
 		pan.max = 1;
@@ -71,7 +71,7 @@
 		modIndex.max = [SharedUtility randfBetween:modIndex.min andUpper: 2000];
 		modIndex.cur = 0;
 		modFreq.min = [SharedUtility randfBetween:10 andUpper: 200];
-		modFreq.max = [SharedUtility randfBetween:modIndex.min andUpper: 1000];
+		modFreq.max = [SharedUtility randfBetween:modFreq.min andUpper: 1000];
 		modFreq.cur = 0;
 		
 		// init ball 3
