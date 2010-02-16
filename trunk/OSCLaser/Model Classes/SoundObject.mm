@@ -19,7 +19,7 @@
 
 @implementation SoundObject
 
-@synthesize carOsc, modOsc, numOctaves, rootNote, gain, quantizePitch, seqencerOn;
+@synthesize carOsc, modOsc, numOctaves, rootNote, gain, quantizePitch, seqencerOn, possibleNotes;
 @synthesize carFreq, pan, modFreq, modIndex, lpPole, hpPole, vibRate, vibGain, scaleType;
 
 - (id) init
@@ -111,13 +111,13 @@
 
 - (BOOL) containsNote:(int)note
 {
-	for(NoteObject *curNote in possibleNotes)
-	{
-		if(curNote.note == note)
-			return YES;
-	}
-	
-	return NO;
+	return [NoteObject array:possibleNotes containsValue:note];
+}
+
+- (void) setNotes:(NSArray*)newNotes
+{
+	[possibleNotes removeAllObjects];
+	[possibleNotes addObjectsFromArray:newNotes];
 }
 
 - (void) removePossibleNote:(int)note

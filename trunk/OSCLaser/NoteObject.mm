@@ -35,7 +35,7 @@
 			return [NoteObject pentatonicToChromatic:scaleValue];
 	}
 	
-	return scaleType;
+	return scaleValue;
 }
 
 - (void) toggle
@@ -125,6 +125,17 @@
 	}
 	
 	return 12;
+}
+
++ (BOOL) array:(NSArray*)noteArray containsValue:(int)scaleValue
+{
+	for(NoteObject *curNote in noteArray)
+	{
+		if(curNote.note == scaleValue)
+			return YES;
+	}
+	
+	return NO;
 }
 
 @end

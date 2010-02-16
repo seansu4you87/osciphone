@@ -35,9 +35,45 @@
     return self;
 }
 
+- (NSArray*) currentChromaticNotes
+{
+	NSArray * notes = notePicker.notes;
+	NSMutableArray * result = [NSMutableArray array];
+	for(int i = 0; i < [notes count]; i++)
+	{
+		NoteObject * curNote = [notes objectAtIndex:i];
+		if(curNote.isOn)
+		{
+			[result addObject:curNote];
+		}
+	}
+	
+	return result;
+}
+
+- (void) updatePickerForNotes:(NSArray*)notes inScale:(int)theScale
+{
+	int num = [NoteObject numStepsForType:theScale];
+	NSMutableArray * result = [NSMutableArray arrayWithCapacity:num];
+	for(int i = 0; i < num; i++)
+	{
+		int curChromaticValue = [NoteObject convertToChromatic:i fromType:theScale];
+		NoteObject * curNote = [[NoteObject alloc] initWithScaleValue:curChromaticValue];
+		curNote.isOn = [NoteObject array:notes containsValue:curChromaticValue];
+		[result addObject:[curNote autorelease]];
+	}
+	
+	[notePicker setCurrentNotes:result];
+}
+
 - (IBAction) scaleChanged
 {
-	
+	if(scalePicker.selectedSegmentIndex != selected.soundObject.scaleType)
+	{
+		selected.soundObject.scaleType = scalePicker.selectedSegmentIndex;
+		[selected.soundObject setNotes:[self currentChromaticNotes]];
+		[self updatePickerForNotes:selected.soundObject.possibleNotes inScale:selected.soundObject.scaleType];
+	}
 }
 
 - (void) loadViewFromObject
@@ -48,17 +84,7 @@
 	wavePicker.selectedSegmentIndex = selected.soundObject.modOsc;
 	scalePicker.selectedSegmentIndex = selected.soundObject.scaleType;
 	volumeSlider.value = selected.soundObject.gain;
-	
-	int num = [NoteObject numStepsForType:selected.soundObject.scaleType];
-	NSMutableArray * notes = [NSMutableArray arrayWithCapacity:num];
-	for(int i = 0; i < num; i++)
-	{
-		int curChromaticValue = [NoteObject convertToChromatic:i fromType:selected.soundObject.scaleType];
-		NoteObject * curNote = [[NoteObject alloc] initWithScaleValue:curChromaticValue];
-		curNote.isOn = [selected.soundObject containsNote:curChromaticValue];
-		[notes addObject:[curNote autorelease]];
-	}
-	[notePicker setCurrentNotes:notes];
+	[self updatePickerForNotes:selected.soundObject.possibleNotes inScale:selected.soundObject.scaleType];
 }
 
 - (void) updateObjectFromView
@@ -66,7 +92,7 @@
 	[selected.soundObject setModOsc:wavePicker.selectedSegmentIndex];
 	[selected.soundObject setGain:volumeSlider.value];
 	[selected.soundObject setScaleType:scalePicker.selectedSegmentIndex];
-	//do notes too
+	[selected.soundObject setNotes:[self currentChromaticNotes]];
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

@@ -35,4 +35,6 @@ enum {
 
 + (int)numStepsForType:(int)scaleType;
 
++ (BOOL) array:(NSArray*)noteArray containsValue:(int)scaleValue;
+
 @end
