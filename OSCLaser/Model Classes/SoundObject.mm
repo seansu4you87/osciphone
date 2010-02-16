@@ -20,7 +20,7 @@
 @implementation SoundObject
 
 @synthesize carOsc, modOsc, numOctaves, rootNote, gain, quantizePitch, seqencerOn;
-@synthesize carFreq, pan, modFreq, modIndex, lpPole, hpPole, vibRate, vibGain;
+@synthesize carFreq, pan, modFreq, modIndex, lpPole, hpPole, vibRate, vibGain, scaleType;
 
 - (id) init
 {
@@ -101,6 +101,23 @@
 	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:4] autorelease]];
 	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:7] autorelease]];
 	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:9] autorelease]];
+	scaleType = PENTATONIC;
+}
+
+- (void) setScaleType:(int)newScaleType
+{
+	scaleType = newScaleType;
+}
+
+- (BOOL) containsNote:(int)note
+{
+	for(NoteObject *curNote in possibleNotes)
+	{
+		if(curNote.note == note)
+			return YES;
+	}
+	
+	return NO;
 }
 
 - (void) removePossibleNote:(int)note
