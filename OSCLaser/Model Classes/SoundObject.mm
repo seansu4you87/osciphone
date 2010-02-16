@@ -17,14 +17,10 @@
 #define SLEW .01
 #define FRAMES_PER_UPDATE 50
 
-#define LOWER_LOWER_FREQ 350
-#define UPPER_LOWER_FREQ 500
-#define UPPER_UPPER_FREQ 2500
-
 @implementation SoundObject
 
-@synthesize carOsc, modOsc, numOctaves, rootNote, gain, quantizePitch, seqencerOn, possibleNotes;
-@synthesize carFreq, pan, modFreq, modIndex, lpPole, hpPole, vibRate, vibGain, scaleType;
+@synthesize carOsc, modOsc, numOctaves, rootNote, gain, quantizePitch, seqencerOn;
+@synthesize carFreq, pan, modFreq, modIndex, lpPole, hpPole, vibRate, vibGain;
 
 - (id) init
 {
@@ -50,6 +46,7 @@
 		rootNote = 42;
 		[self initPossibleNotes];
 		seqencerOn = YES;
+		lastBeatWasOn = NO;
 		gain = .8;
 		scaledGain.cur = 0;
 		
@@ -59,10 +56,11 @@
 		adsr->setDecayTime( [SharedUtility randfBetween:.0001 andUpper: .05] );
 		adsr->setAttackTime( [SharedUtility randfBetween:.3 andUpper: .6] );
 		adsr->setAttackTime( [SharedUtility randfBetween:.001 andUpper: .1] );
+		adsr->keyOff();
 		
 		// init ball 1
-		carFreq.min = [SharedUtility randfBetween:LOWER_LOWER_FREQ andUpper: UPPER_LOWER_FREQ];
-		carFreq.max = [SharedUtility randfBetween:carFreq.min andUpper: UPPER_UPPER_FREQ];
+		carFreq.min = [SharedUtility randfBetween:50 andUpper: 500];
+		carFreq.max = [SharedUtility randfBetween:modIndex.min andUpper: 2500];
 		carFreq.cur = 0;
 		pan.min = -1;
 		pan.max = 1;
@@ -73,7 +71,7 @@
 		modIndex.max = [SharedUtility randfBetween:modIndex.min andUpper: 2000];
 		modIndex.cur = 0;
 		modFreq.min = [SharedUtility randfBetween:10 andUpper: 200];
-		modFreq.max = [SharedUtility randfBetween:modFreq.min andUpper: 1000];
+		modFreq.max = [SharedUtility randfBetween:modIndex.min andUpper: 1000];
 		modFreq.cur = 0;
 		
 		// init ball 3
@@ -99,29 +97,13 @@
 
 - (void) initPossibleNotes
 {
-	possibleNotes = [[NSMutableArray arrayWithCapacity:5] retain];
+	possibleNotes = [[NSMutableArray arrayWithCapacity:6] retain];
 	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:0] autorelease]];
 	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:2] autorelease]];
 	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:4] autorelease]];
 	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:7] autorelease]];
 	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:9] autorelease]];
-	scaleType = PENTATONIC;
-}
-
-- (void) setScaleType:(int)newScaleType
-{
-	scaleType = newScaleType;
-}
-
-- (BOOL) containsNote:(int)note
-{
-	return [NoteObject array:possibleNotes containsValue:note];
-}
-
-- (void) setNotes:(NSArray*)newNotes
-{
-	[possibleNotes removeAllObjects];
-	[possibleNotes addObjectsFromArray:newNotes];
+	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:12] autorelease]];
 }
 
 - (void) removePossibleNote:(int)note
@@ -157,8 +139,18 @@
 	int numNotes = [self numQuantizations];
 	float stepSize = 1.0 / numNotes;
 	int step = floor( (1- yLoc) / stepSize);
-	int octave = floor(1.0 * step / [possibleNotes count]);
-	int index = step % [possibleNotes count];
+	
+	// if it's at the top note, done
+	if(step == numNotes && [self scaleContainsTop])
+	{
+		int midi = rootNote + 12 * numOctaves;
+		return [SharedUtility mtof:midi];
+	}
+	
+	int numScaleTones = [possibleNotes count];
+	if([self scaleContainsTop]) numScaleTones--;
+	int octave = floor(1.0 * step / numScaleTones);
+	int index = step % numScaleTones;
 	NoteObject *noteObject = [possibleNotes objectAtIndex:index];
 	int scaleValue = noteObject.note;
 	int midi = rootNote + 12 * octave + scaleValue;
@@ -320,14 +312,17 @@
 	[self setVibGainTarget: scaledPoint.x];
 }
 
+- (BOOL) scaleContainsTop
+{
+	NoteObject *noteObject = [possibleNotes objectAtIndex: [possibleNotes count] - 1];
+	return noteObject.note == 12;
+}
+
 - (int) numQuantizations
 {
-	if(!quantizePitch)
-	{
-		return 0;
-	}
-	
-	return [possibleNotes count] * numOctaves;
+	int num = [possibleNotes count] * numOctaves;
+	if([self scaleContainsTop]) num -= numOctaves - 1;
+	return num;
 }
 
 - (void) turnOnSequencer
@@ -352,28 +347,38 @@
 	if(vibGain.cur != vibGain.target) [self updateVibGain];
 }
 
-- (void) setQuantizePitch:(BOOL)newVal
+- (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames that:(BOOL)isOn at:(int)t 
 {
-	quantizePitch = newVal;
-}
-
-- (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames at:(int)t
-{
+	
+	int samplesPerBeat = [[AudioManager sharedManager] getSamplesPerBeat];
 	
 	for(int i = 0; i < numFrames; i++)
 	{
-		int beats = [Sequencer sharedSequencer].beatsPerMeasure * [Sequencer sharedSequencer].numMeasures;
+		int adsrState = adsr->getState();
+		//NSLog(@"state: %d", adsrState);
 		if(adsr->getState() != ADSR::DONE) 
 		{
-			//if(t % )
-		
-		
+			if(t % samplesPerBeat == 0)
+			{
+				if(isOn) 
+				{
+					adsr->keyOn();
+					//NSLog(@"keyOn! spb: %d", samplesPerBeat);
+				}
+				else 
+				{
+					adsr->keyOn();
+					//NSLog(@"keyOff!");
+				}
+			}
+				
 			if(i%FRAMES_PER_UPDATE == 0)
 			{
 				// update params
 				[self updateParams];
 			}
 			
+			// always update carrier
 			if(carFreq.cur != carFreq.target) [self updateCarFreq];
 			
 			// current sample
@@ -394,6 +399,8 @@
 			}
 			// apply gain
 			curSamp *= scaledGain.cur;
+			// apply ADSR
+			curSamp *= adsr->tick();
 			// left channel contribution
 			buffer[2*i] += .5 * (1 - pan.cur) * curSamp;
 			// right channel contribution

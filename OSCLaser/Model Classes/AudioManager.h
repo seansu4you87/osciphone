@@ -18,16 +18,17 @@
 	BOOL mute;
 	int t;
 	int tempo;
+	int beatTick;
 
 }
 
 @property(nonatomic, readonly) BOOL mute;
-@property(nonatomic, readonly) int t, tempo;
+@property(nonatomic, readonly) int t, tempo, beatTick;
 
 - (void) startCallback;
 - (void) muteOn;
 - (void) muteOff;
-+ (void) scaleGainOf:(Float32 *)buffer of:(int)numFrames containing:(int)numObjects;
+- (void) incBeatTick;
 
 + (AudioManager*) sharedManager;
 + (void) releaseShared;

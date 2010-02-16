@@ -60,6 +60,7 @@ typedef struct {
 	BOOL quantizePitch;
 	NSMutableArray * possibleNotes;
 	BOOL seqencerOn;
+	BOOL lastBeatWasOn;
 }
 
 @property(nonatomic, readonly) int carOsc, modOsc, numOctaves, rootNote, scaleType;
@@ -76,13 +77,14 @@ typedef struct {
 - (void) setNumOctaves:(int)newNumOctaves;
 - (void) setRootNote:(int)newRootNote;
 - (float) getQuantizedPitchAt:(float)yLoc;
+- (BOOL) scaleContainsTop;
 
 
 - (void) setForPointOne:(CGPoint)scaledPoint;
 - (void) setForPointTwo:(CGPoint)scaledPoint;
 - (void) setForPointThree:(CGPoint)scaledPoint;
 - (void) setForPointFour:(CGPoint)scaledPoint;
-- (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames at:(int)t;
+- (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames that:(BOOL)isOn at:(int)t;
 
 - (void) setQuantizePitch:(BOOL)newVal;
 - (void) setScaleType:(int)newScaleType;

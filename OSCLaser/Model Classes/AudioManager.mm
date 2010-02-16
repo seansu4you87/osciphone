@@ -20,6 +20,7 @@ static AudioManager * shared;
 
 void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 {
+	NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 	 NSMutableArray * multiPointObjects = [SharedCollection sharedCollection].sharedObjects;
 	 @synchronized(multiPointObjects)
 	{
@@ -52,19 +53,31 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 					 [curObject.soundObject setForPointFour:scaledPosition];
 				 }
 			 }
+			 // determine sequencer status
+			 int beats = [Sequencer sharedSequencer].beatsPerMeasure * [Sequencer sharedSequencer].numMeasures;
+			 int beatIndex = [AudioManager sharedManager].beatTick % beats;
+			 BOOL isOn = [[Sequencer sharedSequencer] object:curObject isOnAtIndex:beatIndex];
+			
+			 // scale gain for multiple objects
 			 [curObject.soundObject setGainTargetScaledBy: [multiPointObjects count]];
-			 [curObject.soundObject synthesize:buffer of:numFrames at:*t];
+			 
+			 // synthesize
+			 [curObject.soundObject synthesize:buffer of:numFrames that:isOn at:*t];
 		
 		 }
-		//[AudioManager scaleGainOf:buffer of:numFrames containing:[multiPointObjects count]];
+		// tick time counter
 		*t += numFrames;
+		// tick beat counter
+		if(*t % [[AudioManager sharedManager] getSamplesPerBeat] < numFrames) [[AudioManager sharedManager] incBeatTick];
 	}
+	
+	[pool release];
 }
 
 
 @implementation AudioManager
 		   
-@synthesize mute, t, tempo;
+@synthesize mute, t, tempo, beatTick;
 
 + (AudioManager*) sharedManager
 {
@@ -102,6 +115,7 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 		t = 0;
 		mute = NO;
 		tempo = 80;
+		beatTick = 0;
 
 		
 	}
@@ -132,20 +146,17 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 {
 	mute = NO;
 }
-
-+ (void) scaleGainOf:(Float32 *)buffer of:(int)numFrames containing:(int)numObjects
+			
+- (void) incBeatTick
 {
-	for(int i = 0; i < numFrames; i++)
-	{
-		buffer[2*i] /= numObjects;
-		buffer[2*i+1] /= numObjects;
-	}
+	beatTick++;
 }
 
 - (int) getSamplesPerBeat
 {
 	float bps = tempo / 60.0;
 	float bps16th = bps * 4;
+	return floor( MY_SRATE / bps16th );
 }
 
 @end
