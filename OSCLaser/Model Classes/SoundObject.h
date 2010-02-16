@@ -60,7 +60,7 @@ typedef struct {
 - (void) setForPointTwo:(CGPoint)scaledPoint;
 - (void) setForPointThree:(CGPoint)scaledPoint;
 - (void) setForPointFour:(CGPoint)scaledPoint;
-- (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames at:(int)t;
+- (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames;
 
 - (void) setCarOsc:(int)newOsc;
 - (void) setModOsc:(int)newOsc;

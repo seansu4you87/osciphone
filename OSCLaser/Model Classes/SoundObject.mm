@@ -11,7 +11,7 @@
 #import "SineWave.h"
 #import "ADSR.h"
 
-#define SLEW .1
+#define SLEW .01
 
 @implementation SoundObject
 
@@ -20,16 +20,24 @@
 {
 	if(self = [super init])
 	{
+		Stk::setSampleRate( 16384.0 );
+
+		
 		carOsc = [SharedUtility randBetween:0 andUpper:2];
-		modOsc = [SharedUtility randBetween:0 andUpper:2];
+		modOsc = 0;
 		sineCarrier = new SineWave();
 		sawCarrier = new BlitSaw(0);
 		squareCarrier = new BlitSquare(0);
 		sineModulator = new SineWave();
 		sawModulator = new BlitSaw(0);
 		squareModulator = new BlitSquare(0);
+		lpf = new OnePole(0);
+		hpf = new OnePole(0);
+		vibrato = new Modulate();
 		adsr = new ADSR();
-		gain = .9;
+		gain = .5;
+		
+		
 		
 		// init ball 1
 		carFreq.min = [SharedUtility randfBetween:50 andUpper: 500];
@@ -47,7 +55,21 @@
 		modFreq.max = [SharedUtility randfBetween:modIndex.min andUpper: 1000];
 		modFreq.cur = 0;
 		
-		// init
+		// init ball 3
+		lpPole.min = .1;
+		lpPole.max = .99999;
+		lpPole.cur = 0;
+		hpPole.min = -.1;
+		hpPole.max = -.4;
+		hpPole.cur = 0;
+		
+		// init ball 4
+		vibRate.min = [SharedUtility randfBetween:4 andUpper: 6];
+		vibRate.max = [SharedUtility randfBetween:10 andUpper: 15];
+		vibRate.cur = 0;
+		vibGain.min = [SharedUtility randfBetween:10 andUpper: 20];
+		vibGain.max = [SharedUtility randfBetween:30 andUpper: 40];
+		vibGain.cur = 0;
 		
 	}
 	
@@ -126,6 +148,8 @@
 		else if(modOsc == SQUARE) freq += modIndex.cur * squareModulator->tick();
 		else freq += modIndex.cur * sineModulator->tick();
 	}
+	// add vibrato
+	if(vibGain.cur > 0) freq += vibrato->tick();
 	
 	if(carOsc == SAW) sawCarrier->setFrequency( freq );
 	else if(carOsc == SQUARE) squareCarrier->setFrequency( freq );
@@ -136,7 +160,6 @@
 - (void) updateModFreq
 {
 	modFreq.cur += SLEW * (modFreq.target - modFreq.cur);
-
 	if(modOsc == SAW) sawModulator->setFrequency( modFreq.cur );
 	else if(modOsc == SQUARE) squareModulator->setFrequency( modFreq.cur );
 	else sineModulator->setFrequency( modFreq.cur );
@@ -146,6 +169,31 @@
 - (void) updateModIndex
 {
 	modIndex.cur += SLEW * (modIndex.target - modIndex.cur); 
+}
+
+- (void) updateLPPole
+{
+	lpPole.cur += SLEW * (lpPole.target - lpPole.cur); 
+	lpf->setPole(lpPole.cur);
+}
+
+- (void) updateHPPole
+{
+	hpPole.cur += SLEW * (hpPole.target - hpPole.cur); 
+	hpf->setPole(hpPole.cur);
+}
+
+- (void) updateVibRate
+{
+	vibRate.cur += SLEW * (vibRate.target - vibRate.cur); 
+	vibrato->setVibratoRate(vibRate.cur);
+}
+
+- (void) updateVibGain
+{
+	vibGain.cur += SLEW * (vibGain.target - vibGain.cur); 
+	vibrato->setVibratoGain(vibGain.cur);
+	vibrato->setRandomGain(vibGain.cur);
 }
 
 - (void) setForPointOne:(CGPoint)scaledPoint
@@ -162,7 +210,14 @@
 
 - (void) setForPointThree:(CGPoint)scaledPoint
 {
-	
+	[self setLPPoleTarget: scaledPoint.y];
+	[self setHPPoleTarget: scaledPoint.x];
+}
+
+- (void) setForPointFour:(CGPoint)scaledPoint
+{
+	[self setVibRateTarget: scaledPoint.y];
+	[self setVibGainTarget: scaledPoint.x];
 }
 
 - (int) numQuantizations
@@ -176,6 +231,10 @@
 	[self updateCarFreq];
 	[self updateModIndex];
 	[self updateModFreq];
+	[self updateLPPole];
+	[self updateHPPole];
+	[self updateVibRate];
+	[self updateVibGain];
 }
 
 - (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames
@@ -187,9 +246,20 @@
 
 		// current sample
 		float curSamp;
-		if(carOsc == SAW) curSamp = sawCarrier->tick() * gain;
-		else if(carOsc == SQUARE) curSamp = squareCarrier->tick() * gain;
-		else curSamp = sineCarrier->tick() * gain;
+		// filter
+		if(lpPole.cur > 0 && hpPole.cur < 0)
+		{
+			if(carOsc == SAW) curSamp = lpf->tick( hpf->tick( sawCarrier->tick() ) ) * gain;
+			else if(carOsc == SQUARE) curSamp = lpf->tick( hpf->tick( squareCarrier->tick() ) ) * gain;
+			else curSamp = lpf->tick( hpf->tick( sineCarrier->tick() ) ) * gain;
+		}
+		// or not
+		else
+		{
+			if(carOsc == SAW) curSamp = sawCarrier->tick() * gain;
+			else if(carOsc == SQUARE) curSamp = squareCarrier->tick() * gain;
+			else curSamp = sineCarrier->tick() * gain;
+		}
 		// left channel contribution
 		buffer[2*i] += .5 * (1 - pan.cur) * curSamp;
 		// right channel contribution
