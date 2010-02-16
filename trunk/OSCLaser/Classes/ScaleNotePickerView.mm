@@ -8,13 +8,13 @@
 
 #import "ScaleNotePickerView.h"
 #import "SharedUtility.h"
+#import "NoteObject.h"
 
 #define NOTE_PADDING 2
 
 @implementation ScaleNotePickerView
 
 @synthesize notes;
-
 
 /*
 - (id)initWithFrame:(CGRect)frame {
@@ -46,8 +46,9 @@
 	UIFont *systemFont = [UIFont boldSystemFontOfSize:16.0];
     for(int i = 0; i < [notes count]; i++)
 	{
+		NoteObject * curNote = [notes objectAtIndex:i];
 		CGRect currentRect = CGRectMake(i*width + NOTE_PADDING, NOTE_PADDING, width - 2*NOTE_PADDING, rect.size.height - 2*NOTE_PADDING);
-		[self drawSquare: currentRect selected:random];
+		[self drawSquare: currentRect selected:curNote.isOn];
 		currentRect.origin.y = TEXT_OFFSET;
 		currentRect.size.height = currentRect.size.height - TEXT_OFFSET;
 		[[UIColor whiteColor] set];
@@ -70,8 +71,8 @@
 
 - (void) toggleNoteAtIndex:(int)noteIndex
 {
-	NSLog(@"index:%d", noteIndex+1);
-	random = !random;
+	NoteObject * touched = [notes objectAtIndex:noteIndex];
+	[touched toggle];
 	[self setNeedsDisplay];
 }
 

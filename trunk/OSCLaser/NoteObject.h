@@ -8,19 +8,31 @@
 
 #import <Foundation/Foundation.h>
 
+enum {
+	MAJOR = 0, MINOR = 1, CHROMATIC = 2, PENTATONIC=3
+};
 
 @interface NoteObject : NSObject {
-	
+	BOOL isOn;
 	int note;
-
 }
 
 @property(nonatomic, readonly) int note;
+@property(nonatomic) BOOL isOn;
 
 - (id) initWithScaleValue:(int)scaleValue;
+- (void) toggle;
 
-- (int) majorToChromatic:(int)scaleValue;
-- (int) minorToChromatic:(int)scaleValue;
-- (int) pentatonicToChromatic:(int)scaleValue;
++ (int) convertToChromatic:(int)scaleValue fromType:(int)scaleType;
+
++ (int) majorToChromatic:(int)scaleValue;
++ (int) minorToChromatic:(int)scaleValue;
++ (int) pentatonicToChromatic:(int)scaleValue;
+
++ (int) chromaticToPentatonic:(int)scaleValue;
++ (int) chromaticToMajor:(int)scaleValue;
++ (int) chromaticToMinor:(int)scaleValue;
+
++ (int)numStepsForType:(int)scaleType;
 
 @end

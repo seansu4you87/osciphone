@@ -11,6 +11,7 @@
 #import "ScaleNotePickerView.h"
 #import "SharedUtility.h"
 #import "SoundObject.h"
+#import "NoteObject.h"
 
 @implementation ObjectSettingsViewController
 
@@ -45,21 +46,27 @@
 	navBar.tintColor = darkColor;
 	wavePicker.tintColor = darkColor;
 	wavePicker.selectedSegmentIndex = selected.soundObject.modOsc;
+	scalePicker.selectedSegmentIndex = selected.soundObject.scaleType;
 	volumeSlider.value = selected.soundObject.gain;
 	
-	int num = 12;
-	NSMutableArray * crap = [NSMutableArray arrayWithCapacity:num];
+	int num = [NoteObject numStepsForType:selected.soundObject.scaleType];
+	NSMutableArray * notes = [NSMutableArray arrayWithCapacity:num];
 	for(int i = 0; i < num; i++)
 	{
-		[crap addObject:[[NSObject alloc] init]];
+		int curChromaticValue = [NoteObject convertToChromatic:i fromType:selected.soundObject.scaleType];
+		NoteObject * curNote = [[NoteObject alloc] initWithScaleValue:curChromaticValue];
+		curNote.isOn = [selected.soundObject containsNote:curChromaticValue];
+		[notes addObject:[curNote autorelease]];
 	}
-	[notePicker setCurrentNotes:crap];
+	[notePicker setCurrentNotes:notes];
 }
 
 - (void) updateObjectFromView
 {
 	[selected.soundObject setModOsc:wavePicker.selectedSegmentIndex];
 	[selected.soundObject setGain:volumeSlider.value];
+	[selected.soundObject setScaleType:scalePicker.selectedSegmentIndex];
+	//do notes too
 }
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.

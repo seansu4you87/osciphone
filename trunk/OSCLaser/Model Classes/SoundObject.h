@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Stk.h"
 #import "SineWave.h"
+#import "NoteObject.h"
 #import "BlitSaw.h"
 #import "BlitSquare.h"
 #import "ADSR.h"
@@ -33,6 +34,7 @@ typedef struct {
 	
 	int carOsc;
 	int modOsc;
+	int scaleType;
 	SineWave *sineCarrier;
 	BlitSaw *sawCarrier;
 	BlitSquare *squareCarrier;
@@ -60,7 +62,7 @@ typedef struct {
 	BOOL seqencerOn;
 }
 
-@property(nonatomic, readonly) int carOsc, modOsc, numOctaves, rootNote;
+@property(nonatomic, readonly) int carOsc, modOsc, numOctaves, rootNote, scaleType;
 @property(nonatomic, readonly) float gain;
 @property(nonatomic, readonly) BOOL quantizePitch, seqencerOn;
 @property(nonatomic, readonly) SoundParams carFreq, pan, modFreq, modIndex, lpPole, hpPole, vibRate, vibGain;
@@ -68,6 +70,7 @@ typedef struct {
 - (void) initPossibleNotes;
 - (void) removePossibleNote:(int)note;
 - (void) addPossibleNote:(int)note;
+- (BOOL) containsNote:(int)note;
 - (void) setNumOctaves:(int)newNumOctaves;
 - (void) setRootNote:(int)newRootNote;
 - (float) getQuantizedPitchAt:(float)yLoc;
@@ -79,6 +82,7 @@ typedef struct {
 - (void) setForPointFour:(CGPoint)scaledPoint;
 - (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames at:(int)t;
 
+- (void) setScaleType:(int)newScaleType;
 - (void) setCarOsc:(int)newOsc;
 - (void) setModOsc:(int)newOsc;
 - (void) setGain:(float)newGain;
