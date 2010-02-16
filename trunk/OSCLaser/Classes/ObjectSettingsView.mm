@@ -1,15 +1,15 @@
 //
-//  ParamsView.mm
+//  ObjectSettingsView.m
 //  OSCLaser
 //
-//  Created by Stanford Harmonics on 2/14/10.
+//  Created by Ben Cunningham on 2/15/10.
 //  Copyright 2010 Stanford University. All rights reserved.
 //
 
-#import "ParamsView.h"
+#import "ObjectSettingsView.h"
 
 
-@implementation ParamsView
+@implementation ObjectSettingsView
 
 
 - (id)initWithFrame:(CGRect)frame {

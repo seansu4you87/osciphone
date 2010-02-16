@@ -12,6 +12,7 @@
 
 @interface ControlPoint : NSObject {
 	float radius;
+	float drawnRadius;
 	CGPoint prevPosition;
 	CGPoint position;
 	CGPoint velocity;
@@ -20,6 +21,7 @@
 }
 
 @property(nonatomic, retain) UITouch * controllingTouch;
+@property(nonatomic, assign) float drawnRadius;
 @property(nonatomic, readonly) CGPoint touchPosition;
 @property(nonatomic, readonly) CGPoint position;
 @property(nonatomic, readonly) float radius;

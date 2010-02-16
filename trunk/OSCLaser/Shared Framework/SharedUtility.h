@@ -32,6 +32,7 @@
 //color functions
 + (UIColor *)colorWithRed:(CGFloat)red green:(CGFloat)green blue:(CGFloat)blue alpha:(CGFloat)alpha;
 + (UIColor *)colorFromColor:(UIColor*)color andAlpha:(float)alpha;
++ (UIColor *)darkerColorFromColor:(UIColor*)color darkFactor:(float)darkFactor;
 + (float) getRedFromColor:(UIColor*)theColor;
 + (float) getGreenFromColor:(UIColor*)theColor;
 + (float) getBlueFromColor:(UIColor*)theColor;

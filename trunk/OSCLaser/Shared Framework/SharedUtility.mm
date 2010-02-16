@@ -46,6 +46,16 @@
 	return [UIColor colorWithRed:[SharedUtility getRedFromColor:theColor] green:[SharedUtility getGreenFromColor:theColor] blue:[SharedUtility getBlueFromColor:theColor] alpha:newAlpha];
 }
 
++ (UIColor *)darkerColorFromColor:(UIColor*)color darkFactor:(float)darkFactor
+{
+	float red = [SharedUtility getRedFromColor:color];
+	float green = [SharedUtility getGreenFromColor:color];
+	float blue = [SharedUtility getBlueFromColor:color];
+	float alpha = [SharedUtility getAlphaFromColor:color];
+	
+	return [UIColor colorWithRed:red*darkFactor green:green*darkFactor blue:blue*darkFactor alpha:alpha];
+}
+
 #pragma mark math
 
 + (float) distanceFrom:(CGPoint)fromPoint to:(CGPoint)toPoint
