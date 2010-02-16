@@ -53,9 +53,15 @@ typedef struct {
 	SoundParams hpPole;
 	SoundParams vibRate;
 	SoundParams vibGain;
+	int numOctaves;
 	BOOL quantizePitch;
 	NSMutableArray * possibleNotes;
 }
+
+- (void) initPossibleNotes;
+- (void) removePossibleNote:(int)note;
+- (void) addPossibleNote:(int)note;
+- (float) getQuantizedPitchAt:(float)yLoc;
 
 
 - (void) setForPointOne:(CGPoint)scaledPoint;
