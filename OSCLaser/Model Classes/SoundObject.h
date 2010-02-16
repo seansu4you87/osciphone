@@ -19,7 +19,7 @@
 using namespace stk;
 
 enum {
-	SINE, SAW, SQUARE
+	SINE = 0, SAW = 1, SQUARE = 2
 };
 
 typedef struct {

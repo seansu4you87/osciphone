@@ -15,6 +15,8 @@
 @interface ObjectSettingsViewController : UIViewController {
 	id <ObjectSettingsViewControllerDelegate> delegate;
 	IBOutlet UINavigationBar * navBar;
+	IBOutlet UISegmentedControl * wavePicker;
+	IBOutlet UISlider * volumeSlider;
 	MultiPointObject * selected;
 }
 
@@ -26,6 +28,7 @@
 @end
 
 @protocol ObjectSettingsViewControllerDelegate
+- (void)objectsSettingsViewDidLoad:(ObjectSettingsViewController *)controller;
 - (void)objectsSettingsViewControllerDidFinish:(ObjectSettingsViewController *)controller;
 @end
 

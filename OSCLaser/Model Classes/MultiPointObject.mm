@@ -57,6 +57,9 @@
 			}else if(i == 2)
 			{
 				[soundObject setForPointThree:scaledPoint];
+			}else if(i == 3)
+			{
+				[soundObject setForPointFour:scaledPoint];
 			}
 		}
 	}

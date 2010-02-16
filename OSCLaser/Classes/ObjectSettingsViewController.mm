@@ -9,6 +9,7 @@
 #import "ObjectSettingsViewController.h"
 #import "MultiPointObject.h"
 #import "SharedUtility.h"
+#import "SoundObject.h"
 
 @implementation ObjectSettingsViewController
 
@@ -35,7 +36,11 @@
 
 // Implement viewDidLoad to do additional setup after loading the view, typically from a nib.
 - (void)viewDidLoad {
-	navBar.tintColor = [SharedUtility darkerColorFromColor:selected.baseColor darkFactor:0.5];
+	UIColor * darkColor = [SharedUtility darkerColorFromColor:selected.baseColor darkFactor:0.5];
+	navBar.tintColor = darkColor;
+	wavePicker.tintColor = darkColor;
+	wavePicker.selectedSegmentIndex = selected.soundObject.modOsc;
+	volumeSlider.value = selected.soundObject.gain;
     [super viewDidLoad];
 }
 
