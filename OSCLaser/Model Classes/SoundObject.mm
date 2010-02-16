@@ -19,8 +19,8 @@
 
 @implementation SoundObject
 
-@synthesize carOsc, modOsc, numOctaves, rootNote, gain, quantizePitch, seqencerOn;
-@synthesize carFreq, pan, modFreq, modIndex, lpPole, hpPole, vibRate, vibGain;
+@synthesize carOsc, modOsc, numOctaves, rootNote, gain, quantizePitch, seqencerOn, possibleNotes;
+@synthesize carFreq, pan, modFreq, modIndex, lpPole, hpPole, vibRate, vibGain, scaleType;
 
 - (id) init
 {
@@ -134,6 +134,11 @@
 	rootNote = newRootNote;
 }
 
+- (BOOL) containsNote:(int)note
+{
+	return [NoteObject array:possibleNotes containsValue:note];
+}
+
 - (float) getQuantizedPitchAt:(float)yLoc
 {
 	int numNotes = [self numQuantizations];
@@ -155,6 +160,11 @@
 	int scaleValue = noteObject.note;
 	int midi = rootNote + 12 * octave + scaleValue;
 	return [SharedUtility mtof:midi];
+}
+
+- (void) setQuantizePitch:(BOOL)newVal
+{
+	quantizePitch = newVal;
 }
 
 - (void) setCarOsc:(int)newOsc
@@ -320,6 +330,11 @@
 
 - (int) numQuantizations
 {
+	if(!quantizePitch)
+	{
+		return 0;
+	}
+	
 	int num = [possibleNotes count] * numOctaves;
 	if([self scaleContainsTop]) num -= numOctaves - 1;
 	return num;
@@ -333,6 +348,17 @@
 - (void) turnOffSequencer
 {
 	seqencerOn = NO;
+}
+
+- (void) setScaleType:(int)newScaleType
+{
+	scaleType = newScaleType;
+}
+
+- (void) setNotes:(NSArray *)newNotes
+{
+	[possibleNotes removeAllObjects];
+	[possibleNotes addObjectsFromArray:newNotes];
 }
 
 - (void) updateParams
