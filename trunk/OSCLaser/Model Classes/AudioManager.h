@@ -17,11 +17,12 @@
 	
 	BOOL mute;
 	int t;
+	int tempo;
 
 }
 
 @property(nonatomic, readonly) BOOL mute;
-@property(nonatomic, readonly) int t;
+@property(nonatomic, readonly) int t, tempo;
 
 - (void) startCallback;
 - (void) muteOn;
@@ -30,5 +31,7 @@
 
 + (AudioManager*) sharedManager;
 + (void) releaseShared;
+
+- (int) getSamplesPerBeat;
 
 @end

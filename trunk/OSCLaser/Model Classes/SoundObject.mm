@@ -11,25 +11,26 @@
 #import "SineWave.h"
 #import "ADSR.h"
 #import "NoteObject.h"
+#import "AudioManager.h"
+#import "Sequencer.h"
 
-#define SLEW .005
+#define SLEW .01
 #define FRAMES_PER_UPDATE 50
 
 @implementation SoundObject
 
-@synthesize carOsc, modOsc, numOctaves, rootNote, gain, quantizePitch;
-@synthesize carFreq, pan, modFreq, modIndex;
-@synthesize lpPole, hpPole, vibRate, vibGain;
+@synthesize carOsc, modOsc, numOctaves, rootNote, gain, quantizePitch, seqencerOn;
+@synthesize carFreq, pan, modFreq, modIndex, lpPole, hpPole, vibRate, vibGain;
 
 - (id) init
 {
 	if(self = [super init])
 	{
-		Stk::setSampleRate( 16384.0 );
+		Stk::setSampleRate( MY_SRATE * 1.0 );
 
 		
-		carOsc = [SharedUtility randBetween:0 andUpper:2];
-		modOsc = 0;
+		carOsc = 0;
+		modOsc = 0; //[SharedUtility randBetween:0 andUpper:2];
 		sineCarrier = new SineWave();
 		sawCarrier = new BlitSaw(0);
 		squareCarrier = new BlitSquare(0);
@@ -44,9 +45,16 @@
 		numOctaves = [SharedUtility randBetween:1 andUpper:3];
 		rootNote = 42;
 		[self initPossibleNotes];
+		seqencerOn = YES;
 		gain = .8;
 		scaledGain.cur = 0;
 		
+		//init ADSR
+		adsr = new ADSR();
+		adsr->setAttackTime( [SharedUtility randfBetween:.0001 andUpper: .01] );
+		adsr->setDecayTime( [SharedUtility randfBetween:.0001 andUpper: .05] );
+		adsr->setAttackTime( [SharedUtility randfBetween:.3 andUpper: .6] );
+		adsr->setAttackTime( [SharedUtility randfBetween:.001 andUpper: .1] );
 		
 		// init ball 1
 		carFreq.min = [SharedUtility randfBetween:50 andUpper: 500];
@@ -88,11 +96,11 @@
 - (void) initPossibleNotes
 {
 	possibleNotes = [[NSMutableArray arrayWithCapacity:5] retain];
-	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:1] autorelease]];
-	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:3] autorelease]];
+	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:0] autorelease]];
+	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:2] autorelease]];
 	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:4] autorelease]];
-	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:8] autorelease]];
-	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:10] autorelease]];
+	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:7] autorelease]];
+	[possibleNotes addObject:[[[NoteObject alloc] initWithScaleValue:9] autorelease]];
 }
 
 - (void) removePossibleNote:(int)note
@@ -127,13 +135,12 @@
 {
 	int numNotes = [self numQuantizations];
 	float stepSize = 1.0 / numNotes;
-	int step = floor(yLoc / stepSize);
+	int step = floor( (1- yLoc) / stepSize);
 	int octave = floor(1.0 * step / [possibleNotes count]);
 	int index = step % [possibleNotes count];
 	NoteObject *noteObject = [possibleNotes objectAtIndex:index];
 	int scaleValue = noteObject.note;
 	int midi = rootNote + 12 * octave + scaleValue;
-	//NSLog(@"midi: %d", midi);
 	return [SharedUtility mtof:midi];
 }
 
@@ -297,11 +304,20 @@
 	return [possibleNotes count] * numOctaves;
 }
 
+- (void) turnOnSequencer
+{
+	seqencerOn = YES;
+}
+
+- (void) turnOffSequencer
+{
+	seqencerOn = NO;
+}
+
 - (void) updateParams
 {
 	if(scaledGain.cur != scaledGain.target) [self updateScaledGain];
 	if(pan.cur != pan.target) [self updatePan];
-	if(carFreq.cur != carFreq.target) [self updateCarFreq];
 	if(modIndex.cur != modIndex.target) [self updateModIndex];
 	if(modFreq.cur != modFreq.target) [self updateModFreq];
 	if(lpPole.cur != lpPole.target) [self updateLPPole];
@@ -310,40 +326,48 @@
 	if(vibGain.cur != vibGain.target) [self updateVibGain];
 }
 
-- (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames
+- (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames at:(int)t
 {
 	
 	for(int i = 0; i < numFrames; i++)
 	{
-		if(i%FRAMES_PER_UPDATE == 0)
+		int beats = [Sequencer sharedSequencer].beatsPerMeasure * [Sequencer sharedSequencer].numMeasures;
+		if(adsr->getState() != ADSR::DONE) 
 		{
-			// update params
-			[self updateParams];
-		}
+			//if(t % )
 		
-		// current sample
-		float curSamp;
-		// filter
-		if(lpPole.cur > 0 && hpPole.cur < 0)
-		{
-			if(carOsc == SAW) curSamp = lpf->tick( hpf->tick( sawCarrier->tick() ) );
-			else if(carOsc == SQUARE) curSamp = lpf->tick( hpf->tick( squareCarrier->tick() ) );
-			else curSamp = lpf->tick( hpf->tick( sineCarrier->tick() ) );
+		
+			if(i%FRAMES_PER_UPDATE == 0)
+			{
+				// update params
+				[self updateParams];
+			}
+			
+			if(carFreq.cur != carFreq.target) [self updateCarFreq];
+			
+			// current sample
+			float curSamp;
+			// filter
+			if(lpPole.cur > 0 && hpPole.cur < 0)
+			{
+				if(carOsc == SAW) curSamp = lpf->tick( hpf->tick( sawCarrier->tick() ) );
+				else if(carOsc == SQUARE) curSamp = lpf->tick( hpf->tick( squareCarrier->tick() ) );
+				else curSamp = lpf->tick( hpf->tick( sineCarrier->tick() ) );
+			}
+			// or not
+			else
+			{
+				if(carOsc == SAW) curSamp = sawCarrier->tick();
+				else if(carOsc == SQUARE) curSamp = squareCarrier->tick();
+				else curSamp = sineCarrier->tick();
+			}
+			// apply gain
+			curSamp *= scaledGain.cur;
+			// left channel contribution
+			buffer[2*i] += .5 * (1 - pan.cur) * curSamp;
+			// right channel contribution
+			buffer[2*i+1] += .5 * (1 + pan.cur) * curSamp;
 		}
-		// or not
-		else
-		{
-			if(carOsc == SAW) curSamp = sawCarrier->tick();
-			else if(carOsc == SQUARE) curSamp = squareCarrier->tick();
-			else curSamp = sineCarrier->tick();
-		}
-		// apply gain
-		curSamp *= scaledGain.cur;
-		// left channel contribution
-		buffer[2*i] += .5 * (1 - pan.cur) * curSamp;
-		// right channel contribution
-		buffer[2*i+1] += .5 * (1 + pan.cur) * curSamp;
-
 	}
 }
 

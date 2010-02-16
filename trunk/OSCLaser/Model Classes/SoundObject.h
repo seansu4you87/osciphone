@@ -57,11 +57,12 @@ typedef struct {
 	int rootNote;
 	BOOL quantizePitch;
 	NSMutableArray * possibleNotes;
+	BOOL seqencerOn;
 }
 
 @property(nonatomic, readonly) int carOsc, modOsc, numOctaves, rootNote;
 @property(nonatomic, readonly) float gain;
-@property(nonatomic, readonly) BOOL quantizePitch;
+@property(nonatomic, readonly) BOOL quantizePitch, seqencerOn;
 @property(nonatomic, readonly) SoundParams carFreq, pan, modFreq, modIndex, lpPole, hpPole, vibRate, vibGain;
 
 - (void) initPossibleNotes;
@@ -76,7 +77,7 @@ typedef struct {
 - (void) setForPointTwo:(CGPoint)scaledPoint;
 - (void) setForPointThree:(CGPoint)scaledPoint;
 - (void) setForPointFour:(CGPoint)scaledPoint;
-- (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames;
+- (void) synthesize:(Float32 *)buffer of:(UInt32)numFrames at:(int)t;
 
 - (void) setCarOsc:(int)newOsc;
 - (void) setModOsc:(int)newOsc;
@@ -101,5 +102,7 @@ typedef struct {
 - (void) updateVibGain;
 
 - (int) numQuantizations;
+- (void) turnOnSequencer;
+- (void) turnOffSequencer;
 
 @end
