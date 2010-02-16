@@ -270,7 +270,7 @@
 		float rectXCoord = (i+0.5)*unpaddedBeatWidth;
 		glPushMatrix();
 		glTranslatef(rectXCoord, totalHeight/2.0, 0.0);
-		glScalef(unpaddedBeatWidth+2*BEAT_PADDING, backingWidth*1.1, 1.0);
+		glScalef(unpaddedBeatWidth+2, backingWidth*1.1, 1.0);
 		glVertexPointer(2, GL_FLOAT, 0, centeredRectVertices);
 		glEnableClientState(GL_VERTEX_ARRAY);
 		glColorPointer(4, GL_UNSIGNED_BYTE, 0, centeredRectColors);
