@@ -13,6 +13,7 @@
 #import "MultiObjectRenderer.h"
 #import "SequencerRenderer.h"
 #import "SharedUtility.h"
+#import "Sequencer.h"
 
 @implementation ES1Renderer
 
@@ -36,6 +37,8 @@
 		glBindRenderbufferOES(GL_RENDERBUFFER_OES, colorRenderbuffer);
 		glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_OES, GL_RENDERBUFFER_OES, colorRenderbuffer);
 		
+		isRenderingPoints = YES;
+		isRenderingSequencer = NO;
 	}
 	
 	return self;
@@ -65,11 +68,13 @@
 	if(mObjRenderer == nil)
 	{
 		mObjRenderer = [[MultiObjectRenderer alloc] initWithHeight:backingHeight andWidth:backingWidth];
+		pointsOffset = 0;
 	}
 	
 	if(sequenceRenderer == nil)
 	{
 		sequenceRenderer = [[SequencerRenderer alloc] initWithHeight:backingHeight andWidth:backingWidth];
+		sequenceOffset = -backingWidth;
 	}
 }
 
@@ -85,7 +90,21 @@
 {
 	[self glSetup];
 	
-	[mObjRenderer renderMultiPointObjects:[SharedCollection sharedCollection].sharedObjects];
+	if(isRenderingPoints)
+	{
+		glPushMatrix();
+		glTranslatef(pointsOffset, 0.0, 0.0);
+		[mObjRenderer renderMultiPointObjects:[SharedCollection sharedCollection].sharedObjects];
+		glPopMatrix();
+	}
+	
+	if(isRenderingSequencer)
+	{
+		glPushMatrix();
+		glTranslatef(sequenceOffset, 0.0, 0.0);
+		[sequenceRenderer renderSequencer:[Sequencer sharedSequencer]];
+		glPopMatrix();
+	}
     
 	[self glSetdown];
 }

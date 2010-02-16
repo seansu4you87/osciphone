@@ -26,7 +26,13 @@
 	GLuint defaultFramebuffer, colorRenderbuffer;
 	
 	MultiObjectRenderer * mObjRenderer;
+	BOOL isRenderingPoints;
+	float pointsOffset;
+	
 	SequencerRenderer * sequenceRenderer;
+	BOOL isRenderingSequencer;
+	float sequenceOffset;
+	
 }
 
 - (void) renderEverything;

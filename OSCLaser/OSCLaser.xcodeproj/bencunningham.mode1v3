@@ -230,6 +230,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXBottomSmartGroupGIDs</key>
@@ -299,7 +301,7 @@
 							<real>231</real>
 						</array>
 						<key>RubberWindowFrame</key>
-						<string>3 88 1147 689 0 0 1280 778 </string>
+						<string>3 86 1147 689 0 0 1280 778 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -310,14 +312,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1CE0B20306471E060097A5F4</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>MultiObjectRenderer.mm</string>
+								<string>ES1Renderer.h</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -325,11 +325,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1CE0B20406471E060097A5F4</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>MultiObjectRenderer.mm</string>
+										<string>ES1Renderer.h</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>FD530683112A305200313CCB</string>
+										<string>FD530699112A323B00313CCB</string>
 										<key>history</key>
 										<array>
 											<string>FD0CFAC9111689CD00DF5C0F</string>
@@ -390,12 +390,12 @@
 											<string>FD530643112A2BE500313CCB</string>
 											<string>FD530644112A2BE500313CCB</string>
 											<string>FD530645112A2BE500313CCB</string>
-											<string>FD530664112A2E4500313CCB</string>
 											<string>FD530665112A2E4500313CCB</string>
-											<string>FD530666112A2E4500313CCB</string>
-											<string>FD530667112A2E4500313CCB</string>
 											<string>FD530668112A2E4500313CCB</string>
-											<string>FD530669112A2E4500313CCB</string>
+											<string>FD530694112A323B00313CCB</string>
+											<string>FD530695112A323B00313CCB</string>
+											<string>FD530696112A323B00313CCB</string>
+											<string>FD530697112A323B00313CCB</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -409,7 +409,7 @@
 								<key>Frame</key>
 								<string>{{0, 0}, {894, 570}}</string>
 								<key>RubberWindowFrame</key>
-								<string>3 88 1147 689 0 0 1280 778 </string>
+								<string>3 86 1147 689 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
@@ -429,7 +429,7 @@
 								<key>Frame</key>
 								<string>{{0, 575}, {894, 73}}</string>
 								<key>RubberWindowFrame</key>
-								<string>3 88 1147 689 0 0 1280 778 </string>
+								<string>3 86 1147 689 0 0 1280 778 </string>
 							</dict>
 							<key>Module</key>
 							<string>XCDetailModule</string>
@@ -593,7 +593,6 @@
 	<integer>5</integer>
 	<key>WindowOrderList</key>
 	<array>
-		<string>FD530684112A305200313CCB</string>
 		<string>FD53061D112A26E400313CCB</string>
 		<string>FD530614112A26BD00313CCB</string>
 		<string>1CD10A99069EF8BA00B06720</string>
@@ -602,7 +601,7 @@
 		<string>/Users/bencunningham/Desktop/edgeCity/osc_iphone/OSCLaser/OSCLaser.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>3 88 1147 689 0 0 1280 778 </string>
+	<string>3 86 1147 689 0 0 1280 778 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
