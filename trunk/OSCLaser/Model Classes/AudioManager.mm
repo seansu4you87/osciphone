@@ -52,7 +52,7 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 				 }
 			 }
 			 
-			 [curObject.soundObject synthesize:buffer of:numFrames at:*t];
+			 [curObject.soundObject synthesize:buffer of:numFrames];
 		
 		 }
 		[AudioManager scaleGainOf:buffer of:numFrames containing:[multiPointObjects count]];
