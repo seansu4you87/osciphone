@@ -54,13 +54,21 @@ typedef struct {
 	SoundParams vibRate;
 	SoundParams vibGain;
 	int numOctaves;
+	int rootNote;
 	BOOL quantizePitch;
 	NSMutableArray * possibleNotes;
 }
 
+@property(nonatomic, readonly) int carOsc, modOsc, numOctaves, rootNote;
+@property(nonatomic, readonly) float gain;
+@property(nonatomic, readonly) BOOL quantizePitch;
+@property(nonatomic, readonly) SoundParams carFreq, pan, modFreq, modIndex, lpPole, hpPole, vibRate, vibGain;
+
 - (void) initPossibleNotes;
 - (void) removePossibleNote:(int)note;
 - (void) addPossibleNote:(int)note;
+- (void) setNumOctaves:(int)newNumOctaves;
+- (void) setRootNote:(int)newRootNote;
 - (float) getQuantizedPitchAt:(float)yLoc;
 
 

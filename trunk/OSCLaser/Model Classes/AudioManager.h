@@ -15,12 +15,20 @@
 
 @interface AudioManager : NSObject {
 	
-	Sequencer *sequencer;
+	BOOL mute;
 	int t;
 
 }
 
+@property(nonatomic, readonly) BOOL mute;
+@property(nonatomic, readonly) int t;
+
 - (void) startCallback;
+- (void) muteOn;
+- (void) muteOff;
 + (void) scaleGainOf:(Float32 *)buffer of:(int)numFrames containing:(int)numObjects;
+
++ (AudioManager*) sharedManager;
++ (void) releaseShared;
 
 @end
