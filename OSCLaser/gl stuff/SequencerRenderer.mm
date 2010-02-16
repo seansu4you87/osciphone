@@ -10,6 +10,11 @@
 #import "Sequencer.h"
 #import "SharedUtility.h"
 #import "MultiPointObject.h"
+#import "GLSlider.h"
+#import "AudioManager.h"
+
+#define DECEL_RATE 0.03
+#define ACCEL_RATE 0.11
 
 #define SCREEN_WIDTH 320
 #define SCREEN_HEIGHT 480
@@ -17,7 +22,8 @@
 #define PERCENT_WIDTH 0.95
 #define PERCENT_HEIGHT 0.90
 #define PERCENT_NAME 0.1
-#define BEAT_PADDING 2
+#define BEAT_PADDING 3
+#define RECT_GRAIN 2
 
 @implementation SequencerRenderer
 
@@ -78,6 +84,80 @@
 	}
 }
 
+- (void) initCenteredRectColors
+{
+	int numVertices = 2 + 4*RECT_GRAIN;
+	centeredRectColors = (GLubyte*)malloc(4*numVertices*sizeof(GLubyte));
+	for(int i = 0; i < numVertices; i++)
+	{
+		centeredRectColors[4*i] = 25;
+		centeredRectColors[4*i+1] = 25;
+		centeredRectColors[4*i+2] = 25;
+		centeredRectColors[4*i+3] = 25;
+	}
+}
+
+- (void) initCenteredRectVertices
+{
+	centeredRectVertices = (GLfloat*)malloc(2*(2+4*RECT_GRAIN)*sizeof(GLfloat));
+	
+	int currentIndex = 0;
+	centeredRectVertices[currentIndex] = 0;
+	centeredRectVertices[currentIndex+1] = 0;
+	currentIndex += 2;
+	
+	float xValue, yValue;
+	float step = 1.0/RECT_GRAIN;
+	
+	//top (left to right)
+	yValue = -0.5;
+	for(int i = 0; i <= RECT_GRAIN; i++)
+	{
+		centeredRectVertices[currentIndex] = -0.5 + i*step;
+		centeredRectVertices[currentIndex+1] = yValue;
+		currentIndex += 2;
+	}
+	
+	//right (top to bottom)
+	xValue = 0.5;
+	for(int i = 1; i <= RECT_GRAIN; i++)
+	{
+		centeredRectVertices[currentIndex] = xValue;
+		centeredRectVertices[currentIndex+1] = -0.5 + i*step;
+		currentIndex += 2;
+	}
+	
+	//bottom (right to left)
+	yValue = 0.5;
+	for(int i = 1; i <= RECT_GRAIN; i++)
+	{
+		centeredRectVertices[currentIndex] = 0.5 - i*step;
+		centeredRectVertices[currentIndex+1] = yValue;
+		currentIndex += 2;
+	}
+	
+	//left (bottom to top)
+	xValue = -0.5;
+	for(int i = 1; i <= RECT_GRAIN; i++)
+	{
+		centeredRectVertices[currentIndex] = xValue;
+		centeredRectVertices[currentIndex+1] = 0.5 - i*step;
+		currentIndex += 2;
+	}
+}
+
+- (void) setRectColorFromValue:(float)theValue
+{
+	float minValue = 0.0;
+	float maxValue = 0.85;
+	float newValue = 255*(minValue + theValue*(maxValue - minValue));
+	
+	centeredRectColors[0] = newValue;
+	centeredRectColors[1] = newValue;
+	centeredRectColors[2] = newValue;
+	centeredRectColors[3] = newValue;
+}
+
 - (id) init
 {
 	if(self = [super init])
@@ -85,6 +165,8 @@
 		columnFaders = [[NSMutableArray arrayWithCapacity:16] retain];
 		[self initRectVertices];
 		[self initColorVertices];
+		[self initCenteredRectVertices];
+		[self initCenteredRectColors];
 	}
 	
 	return self;
@@ -127,6 +209,15 @@
 	NSArray * objects = [sequencer currentObjects];
 	int nBeats = [sequencer numBeats];
 	
+	if([columnFaders count] != nBeats)
+	{
+		[columnFaders removeAllObjects];
+		for(int i = 0; i < nBeats; i++)
+		{
+			[columnFaders addObject:[[[GLSlider alloc] initWithAccelRate:ACCEL_RATE decelRate:DECEL_RATE] autorelease]];
+		}
+	}
+	
 	glPushMatrix();
 	//prepare for landscape drawing
 	glTranslatef(backingWidth, 0.0, 0.0);
@@ -164,9 +255,29 @@
 	}
 	
 	glTranslatef(nameWidth, 0.0, 0.0);
-	
+	int currentBeat = [AudioManager sharedManager].beatTick%([sequencer numBeats]);
 	for(int i = 0; i < nBeats; i++)
 	{
+		GLSlider * curSlider = [columnFaders objectAtIndex:i];
+		if(currentBeat == i)
+		{
+			[curSlider increment];
+		}else{
+			[curSlider decrement];
+		}
+		
+		[self setRectColorFromValue:curSlider.currentValue];
+		float rectXCoord = (i+0.5)*unpaddedBeatWidth;
+		glPushMatrix();
+		glTranslatef(rectXCoord, totalHeight/2.0, 0.0);
+		glScalef(unpaddedBeatWidth+2*BEAT_PADDING, backingWidth*1.1, 1.0);
+		glVertexPointer(2, GL_FLOAT, 0, centeredRectVertices);
+		glEnableClientState(GL_VERTEX_ARRAY);
+		glColorPointer(4, GL_UNSIGNED_BYTE, 0, centeredRectColors);
+		glEnableClientState(GL_COLOR_ARRAY);
+		glDrawArrays(GL_TRIANGLE_FAN, 0, 2+4*RECT_GRAIN);
+		glPopMatrix();
+		
 		for(int j = 0; j < [objects count]; j++)
 		{
 			float xCoord = i*unpaddedBeatWidth + BEAT_PADDING;
@@ -190,6 +301,7 @@
 			glDrawArrays(GL_TRIANGLE_FAN, 0, 4);
 			
 			glPopMatrix();
+			 
 		}
 	}
 	
