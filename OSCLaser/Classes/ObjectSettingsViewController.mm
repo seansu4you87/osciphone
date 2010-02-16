@@ -70,9 +70,26 @@
 {
 	if(scalePicker.selectedSegmentIndex != selected.soundObject.scaleType)
 	{
-		selected.soundObject.scaleType = scalePicker.selectedSegmentIndex;
-		[selected.soundObject setNotes:[self currentChromaticNotes]];
-		[self updatePickerForNotes:selected.soundObject.possibleNotes inScale:selected.soundObject.scaleType];
+		if((scalePicker.selectedSegmentIndex == MINOR || scalePicker.selectedSegmentIndex == MAJOR) 
+		   &&(selected.soundObject.scaleType == MINOR || selected.soundObject.scaleType == MAJOR))
+		{
+			NSMutableArray * newNotes = [NSMutableArray array];
+			for(int i = 0; i < [notePicker.notes count]; i++)
+			{
+				NoteObject * curNote = [notePicker.notes objectAtIndex:i];
+				if(curNote.isOn)
+				{
+					[newNotes addObject:[[[NoteObject alloc] initWithScaleValue:[NoteObject convertToChromatic:i fromType:scalePicker.selectedSegmentIndex]] autorelease]];
+				}
+			}
+			selected.soundObject.scaleType = scalePicker.selectedSegmentIndex;
+			[selected.soundObject setNotes:newNotes];
+			[self updatePickerForNotes:selected.soundObject.possibleNotes inScale:selected.soundObject.scaleType];
+		}else{
+			selected.soundObject.scaleType = scalePicker.selectedSegmentIndex;
+			[selected.soundObject setNotes:[self currentChromaticNotes]];
+			[self updatePickerForNotes:selected.soundObject.possibleNotes inScale:selected.soundObject.scaleType];
+		}
 	}
 }
 

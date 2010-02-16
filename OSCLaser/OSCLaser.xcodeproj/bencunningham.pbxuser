@@ -362,6 +362,11 @@
 			FD0EFC56112AC2B90068AC9D /* PBXTextBookmark */ = FD0EFC56112AC2B90068AC9D /* PBXTextBookmark */;
 			FD0EFC5A112AC2FD0068AC9D /* PBXTextBookmark */ = FD0EFC5A112AC2FD0068AC9D /* PBXTextBookmark */;
 			FD0EFC5C112AC3010068AC9D /* PBXTextBookmark */ = FD0EFC5C112AC3010068AC9D /* PBXTextBookmark */;
+			FD0EFC5F112AC5AA0068AC9D /* PBXTextBookmark */ = FD0EFC5F112AC5AA0068AC9D /* PBXTextBookmark */;
+			FD0EFC60112AC5AA0068AC9D /* PBXTextBookmark */ = FD0EFC60112AC5AA0068AC9D /* PBXTextBookmark */;
+			FD0EFC61112AC5AA0068AC9D /* PBXTextBookmark */ = FD0EFC61112AC5AA0068AC9D /* PBXTextBookmark */;
+			FD0EFC62112AC5AA0068AC9D /* PBXTextBookmark */ = FD0EFC62112AC5AA0068AC9D /* PBXTextBookmark */;
+			FD0EFC63112AC5AA0068AC9D /* PBXTextBookmark */ = FD0EFC63112AC5AA0068AC9D /* PBXTextBookmark */;
 			FD20BE58112792EC0074F16B = FD20BE58112792EC0074F16B /* PBXTextBookmark */;
 			FD20BEE81127AB900074F16B = FD20BEE81127AB900074F16B /* PBXTextBookmark */;
 			FD20BEE91127AB900074F16B = FD20BEE91127AB900074F16B /* PBXTextBookmark */;
@@ -513,8 +518,8 @@
 	BF595DC7112773B800C18CA4 /* SoundObject.mm */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {784, 5805}}";
-			sepNavSelRange = "{3278, 36}";
-			sepNavVisRange = "{3148, 733}";
+			sepNavSelRange = "{3484, 0}";
+			sepNavVisRange = "{3179, 774}";
 		};
 	};
 	BF8E7FA711276C6A00F52195 /* mo_gfx.h */ = {
@@ -857,7 +862,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 43";
 		rLen = 0;
-		rLoc = 3161;
+		rLoc = 3961;
 		rType = 0;
 		vrLen = 1178;
 		vrLoc = 488;
@@ -867,7 +872,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 43";
 		rLen = 0;
-		rLoc = 3161;
+		rLoc = 3961;
 		rType = 0;
 		vrLen = 1226;
 		vrLoc = 488;
@@ -887,7 +892,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 43";
 		rLen = 0;
-		rLoc = 3161;
+		rLoc = 3961;
 		rType = 0;
 		vrLen = 1226;
 		vrLoc = 488;
@@ -897,7 +902,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 43";
 		rLen = 0;
-		rLoc = 3161;
+		rLoc = 3961;
 		rType = 0;
 		vrLen = 1113;
 		vrLoc = 600;
@@ -907,7 +912,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 43";
 		rLen = 0;
-		rLoc = 3161;
+		rLoc = 3961;
 		rType = 0;
 		vrLen = 1172;
 		vrLoc = 735;
@@ -967,7 +972,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 47";
 		rLen = 0;
-		rLoc = 2855;
+		rLoc = 3655;
 		rType = 0;
 		vrLen = 1093;
 		vrLoc = 738;
@@ -977,7 +982,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 75";
 		rLen = 0;
-		rLoc = 3727;
+		rLoc = 4527;
 		rType = 0;
 		vrLen = 786;
 		vrLoc = 1556;
@@ -987,7 +992,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 75";
 		rLen = 0;
-		rLoc = 3727;
+		rLoc = 4527;
 		rType = 0;
 		vrLen = 1091;
 		vrLoc = 1031;
@@ -1061,7 +1066,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 90";
 		rLen = 0;
-		rLoc = 3941;
+		rLoc = 4741;
 		rType = 0;
 		vrLen = 248;
 		vrLoc = 2142;
@@ -1071,7 +1076,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 38";
 		rLen = 0;
-		rLoc = 2247;
+		rLoc = 3047;
 		rType = 0;
 		vrLen = 318;
 		vrLoc = 716;
@@ -1141,7 +1146,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 95";
 		rLen = 0;
-		rLoc = 3941;
+		rLoc = 4741;
 		rType = 0;
 		vrLen = 757;
 		vrLoc = 1666;
@@ -1241,7 +1246,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 55";
 		rLen = 0;
-		rLoc = 2726;
+		rLoc = 3526;
 		rType = 0;
 		vrLen = 852;
 		vrLoc = 716;
@@ -1361,7 +1366,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 56";
 		rLen = 0;
-		rLoc = 2726;
+		rLoc = 3526;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 1191;
@@ -1371,7 +1376,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 56";
 		rLen = 0;
-		rLoc = 2726;
+		rLoc = 3526;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 1191;
@@ -1501,7 +1506,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 56";
 		rLen = 0;
-		rLoc = 2726;
+		rLoc = 3526;
 		rType = 0;
 		vrLen = 1096;
 		vrLoc = 1096;
@@ -1511,7 +1516,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 50";
 		rLen = 0;
-		rLoc = 2624;
+		rLoc = 3424;
 		rType = 0;
 		vrLen = 917;
 		vrLoc = 1063;
@@ -1521,7 +1526,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 50";
 		rLen = 0;
-		rLoc = 2624;
+		rLoc = 3424;
 		rType = 0;
 		vrLen = 1056;
 		vrLoc = 1063;
@@ -1541,7 +1546,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 50";
 		rLen = 0;
-		rLoc = 2624;
+		rLoc = 3424;
 		rType = 0;
 		vrLen = 752;
 		vrLoc = 1901;
@@ -1591,7 +1596,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 50";
 		rLen = 0;
-		rLoc = 2624;
+		rLoc = 3424;
 		rType = 0;
 		vrLen = 756;
 		vrLoc = 1897;
@@ -1601,7 +1606,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 50";
 		rLen = 0;
-		rLoc = 2624;
+		rLoc = 3424;
 		rType = 0;
 		vrLen = 916;
 		vrLoc = 1063;
@@ -1611,7 +1616,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 50";
 		rLen = 0;
-		rLoc = 2624;
+		rLoc = 3424;
 		rType = 0;
 		vrLen = 1010;
 		vrLoc = 1063;
@@ -1691,7 +1696,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 50";
 		rLen = 0;
-		rLoc = 2624;
+		rLoc = 3424;
 		rType = 0;
 		vrLen = 1009;
 		vrLoc = 1065;
@@ -1701,7 +1706,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 50";
 		rLen = 0;
-		rLoc = 2624;
+		rLoc = 3424;
 		rType = 0;
 		vrLen = 1009;
 		vrLoc = 1065;
@@ -2065,7 +2070,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 58";
 		rLen = 0;
-		rLoc = 2624;
+		rLoc = 3424;
 		rType = 0;
 		vrLen = 1001;
 		vrLoc = 1030;
@@ -2075,7 +2080,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 59";
 		rLen = 0;
-		rLoc = 2624;
+		rLoc = 3424;
 		rType = 0;
 		vrLen = 1163;
 		vrLoc = 1036;
@@ -2085,7 +2090,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 70";
 		rLen = 0;
-		rLoc = 3016;
+		rLoc = 3816;
 		rType = 0;
 		vrLen = 922;
 		vrLoc = 1976;
@@ -2095,7 +2100,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 40";
 		rLen = 0;
-		rLoc = 2247;
+		rLoc = 3047;
 		rType = 0;
 		vrLen = 1098;
 		vrLoc = 655;
@@ -2155,7 +2160,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 60";
 		rLen = 0;
-		rLoc = 2244;
+		rLoc = 3044;
 		rType = 0;
 		vrLen = 1353;
 		vrLoc = 1527;
@@ -2165,7 +2170,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 60";
 		rLen = 0;
-		rLoc = 2244;
+		rLoc = 3044;
 		rType = 0;
 		vrLen = 1017;
 		vrLoc = 1093;
@@ -2195,7 +2200,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 60";
 		rLen = 0;
-		rLoc = 2244;
+		rLoc = 3044;
 		rType = 0;
 		vrLen = 1036;
 		vrLoc = 1274;
@@ -2205,7 +2210,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 60";
 		rLen = 0;
-		rLoc = 2244;
+		rLoc = 3044;
 		rType = 0;
 		vrLen = 1173;
 		vrLoc = 1293;
@@ -2295,7 +2300,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 86";
 		rLen = 0;
-		rLoc = 2622;
+		rLoc = 3422;
 		rType = 0;
 		vrLen = 1189;
 		vrLoc = 2250;
@@ -2412,7 +2417,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 95";
 		rLen = 0;
-		rLoc = 3014;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 1224;
 		vrLoc = 2250;
@@ -2422,7 +2427,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 95";
 		rLen = 0;
-		rLoc = 3014;
+		rLoc = 3814;
 		rType = 0;
 		vrLen = 1230;
 		vrLoc = 2278;
@@ -2432,7 +2437,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 95";
 		rLen = 0;
-		rLoc = 3013;
+		rLoc = 3813;
 		rType = 0;
 		vrLen = 1236;
 		vrLoc = 2250;
@@ -2462,7 +2467,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 95";
 		rLen = 0;
-		rLoc = 3013;
+		rLoc = 3813;
 		rType = 0;
 		vrLen = 1235;
 		vrLoc = 2250;
@@ -2516,6 +2521,56 @@
 		rType = 0;
 		vrLen = 733;
 		vrLoc = 3148;
+	};
+	FD0EFC5F112AC5AA0068AC9D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = BF595DC7112773B800C18CA4 /* SoundObject.mm */;
+		name = "SoundObject.mm: 125";
+		rLen = 0;
+		rLoc = 3484;
+		rType = 0;
+		vrLen = 774;
+		vrLoc = 3179;
+	};
+	FD0EFC60112AC5AA0068AC9D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD4A64BC112A7D9C00EB75E4 /* ObjectSettingsViewController.h */;
+		name = "ObjectSettingsViewController.h: 13";
+		rLen = 0;
+		rLoc = 279;
+		rType = 0;
+		vrLen = 1109;
+		vrLoc = 0;
+	};
+	FD0EFC61112AC5AA0068AC9D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD596F49112A8A91001A09E0 /* NoteObject.h */;
+		name = "NoteObject.h: 26";
+		rLen = 67;
+		rLoc = 440;
+		rType = 0;
+		vrLen = 846;
+		vrLoc = 33;
+	};
+	FD0EFC62112AC5AA0068AC9D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
+		name = "ObjectSettingsViewController.mm: 82";
+		rLen = 0;
+		rLoc = 2478;
+		rType = 0;
+		vrLen = 1221;
+		vrLoc = 1576;
+	};
+	FD0EFC63112AC5AA0068AC9D /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
+		name = "ObjectSettingsViewController.mm: 85";
+		rLen = 0;
+		rLoc = 2639;
+		rType = 0;
+		vrLen = 1309;
+		vrLoc = 1739;
 	};
 	FD20BE58112792EC0074F16B /* PBXTextBookmark */ = {
 		isa = PBXTextBookmark;
@@ -2876,9 +2931,9 @@
 	};
 	FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {900, 1965}}";
-			sepNavSelRange = "{1813, 0}";
-			sepNavVisRange = "{2622, 566}";
+			sepNavIntBoundsRect = "{{0, 0}, {784, 2355}}";
+			sepNavSelRange = "{2639, 0}";
+			sepNavVisRange = "{1739, 1309}";
 		};
 	};
 	FD4A64C3112A7DC000EB75E4 /* ObjectSettingsView.h */ = {
@@ -3040,7 +3095,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 38";
 		rLen = 0;
-		rLoc = 3161;
+		rLoc = 3961;
 		rType = 0;
 		vrLen = 1133;
 		vrLoc = 258;
@@ -3269,7 +3324,7 @@
 	FD596F49112A8A91001A09E0 /* NoteObject.h */ = {
 		uiCtxt = {
 			sepNavIntBoundsRect = "{{0, 0}, {784, 615}}";
-			sepNavSelRange = "{813, 65}";
+			sepNavSelRange = "{440, 67}";
 			sepNavVisRange = "{33, 846}";
 		};
 	};
@@ -3415,7 +3470,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 38";
 		rLen = 0;
-		rLoc = 3161;
+		rLoc = 3961;
 		rType = 0;
 		vrLen = 1274;
 		vrLoc = 231;
@@ -3655,7 +3710,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 38";
 		rLen = 0;
-		rLoc = 3161;
+		rLoc = 3961;
 		rType = 0;
 		vrLen = 1248;
 		vrLoc = 257;
@@ -3665,7 +3720,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 40";
 		rLen = 0;
-		rLoc = 3161;
+		rLoc = 3961;
 		rType = 0;
 		vrLen = 1203;
 		vrLoc = 257;
@@ -3675,7 +3730,7 @@
 		fRef = FD4A64BD112A7D9C00EB75E4 /* ObjectSettingsViewController.mm */;
 		name = "ObjectSettingsViewController.mm: 40";
 		rLen = 0;
-		rLoc = 3161;
+		rLoc = 3961;
 		rType = 0;
 		vrLen = 1109;
 		vrLoc = 257;
