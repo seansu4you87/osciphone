@@ -47,7 +47,7 @@ typedef struct {
 	NSMutableArray * possibleNotes;
 }
 
-- (void) stk::Generator::tick(){}
+//- (void) stk::Generator::tick(){}
 
 - (void) setForPointOne:(CGPoint)scaledPoint;
 - (void) setForPointTwo:(CGPoint)scaledPoint;

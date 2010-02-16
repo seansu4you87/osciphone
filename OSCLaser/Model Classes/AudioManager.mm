@@ -20,6 +20,7 @@
 
 void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 {
+	/*
 	 NSMutableArray * multiPointObjects = [SharedCollection sharedCollection].sharedObjects;
 	 @synchronized(multiPointObjects)
 	{
@@ -57,6 +58,7 @@ void audioCallback( Float32 * buffer, UInt32 numFrames, void * userData)
 		[AudioManager scaleGainOf:buffer of:numFrames containing:[multiPointObjects count]];
 		*t += numFrames;
 	}
+	 */
 }
 
 

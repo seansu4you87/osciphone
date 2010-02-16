@@ -21,6 +21,7 @@
 	
 	IBOutlet EAGLView * glView;
 	IBOutlet UIButton * infoButton;
+	IBOutlet UIButton * switchButton;
 	AudioManager * audioManager;
 	
 	int colorIndex;
@@ -31,6 +32,7 @@
 @property(nonatomic, retain) NSTimer * touchTimer;
 
 - (IBAction)showInfo;
+- (IBAction)switchView;
 
 - (CGPoint) percentCoordsForTouch:(UITouch*)theTouch;
 
